@@ -1,12 +1,101 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <title>Hello World</title>                         
-  <!-- callback handler -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的GitHub网页</title>
+    <!-- callback handler -->
   <script src="/callback_handler.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .banner {
+      background-color: #f4f4f4;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .banner h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .banner p {
+      font-size: 1.2em;
+      color: #666;
+    }
+    .image-links {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+    .image-links a {
+      flex: 1;
+      margin: 0 10px;
+      text-align: center;
+    }
+    .image-links img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .image-links p {
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #333;
+    }
+  </style>
 </head>
-  
 <body>
-  <h1>Welcome to My GitHub Page!</h1>
+  <!-- Logo和导航栏 -->
+  <header>
+    <img src="/_media/logo.jpg" alt="Logo">
+    <nav>
+      <a href="#">首页</a>
+      <a href="#">关于</a>
+      <a href="#">服务</a>
+      <a href="#">联系</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>欢迎来到我的GitHub网页</h1>
+    <p>这里是简单而优雅的网页设计</p>
+  </div>
+
+  <!-- 分三列的图片链接 -->
+  <div class="image-links">
+    <a href="#">
+      <img src="/_media/advertisement.webp" alt="图片1">
+      <p>项目1</p>
+    </a>
+    <a href="#">
+      <img src="/_media/website building.webp" alt="图片2">
+      <p>项目2</p>
+    </a>
+    <a href="#">
+      <img src="/_media/social media.jpg" alt="图片3">
+      <p>项目3</p>
+    </a>
+  </div>
 </body>
 </html>
