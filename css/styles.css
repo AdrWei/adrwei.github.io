@@ -13,16 +13,15 @@ header {
   align-items: center;
 }
 
-header img {
+.logo img {
   height: 50px;
 }
 
 nav {
-  background-color: #0f1626; /* 更改导航栏背景颜色 */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  flex: 1; /* 让 nav 占据剩余空间 */
 }
 
 .nav-center {
