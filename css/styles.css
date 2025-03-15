@@ -19,12 +19,36 @@ header img {
 
 nav {
   background-color: #0f1626; /* 更改导航栏背景颜色 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-nav a {
+.nav-center {
+  display: flex;
+  justify-content: center;
+  flex: 1; /* 让导航栏项目居中 */
+}
+
+.nav-center a {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 15px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right a {
+  margin-left: 15px;
+}
+
+.nav-right img {
+  height: 24px; /* 设置图标大小 */
+  width: auto;
 }
 
 .banner {
@@ -55,10 +79,19 @@ nav a {
   text-align: center;
 }
 
-.image-links img {
+.image-container {
+  aspect-ratio: 16 / 9; /* 设置宽高比为 16:9 */
+  overflow: hidden; /* 超出部分裁切 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover; /* 缩放图片以填满容器 */
+  object-position: center; /* 图片居中 */
 }
 
 .image-links p {
