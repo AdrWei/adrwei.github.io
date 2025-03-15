@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  height: 50px;
+}
+
+nav {
+  background-color: #0f1626; /* 更改导航栏背景颜色 */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.banner {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.banner p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.image-links {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.image-links a {
+  flex: 1;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.image-links img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.image-links p {
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #333;
+}
