@@ -19,7 +19,6 @@
     <h1>欢迎来到我的GitHub网页</h1>
     <p>这里是简单而优雅的网页设计</p>
   </div>
-
   <!-- 分三列的图片链接 -->
   <div class="image-links">
     <a href="#">
@@ -43,20 +42,6 @@
   </div>
     <!-- footer占位 -->
     <div id="footer"></div>
-    <script>
-  // 加载 header
-  fetch('/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header').innerHTML = data;
-    });
-
-  // 加载 footer
-  fetch('/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    });
-</script>
+    <script src="/scripts/header-footer.js"></script>
 </body>
 </html>
