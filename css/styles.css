@@ -11,7 +11,7 @@ header {
   width: 100%;
   background-color: #101727; /* 背景颜色 */
   color: white; /* 文字颜色 */
-  padding: 10px 60px; /* 内边距 */
+  padding: 10px 30px; /* 内边距 */
   display: flex; /* 弹性布局 */
   justify-content: space-between; /* 水平对齐 */
   align-items: center; /* 垂直对齐 */
@@ -19,6 +19,7 @@ header {
   z-index: 1000; /* 确保 header 在最上层 */
   opacity: 1; /* 不透明度 */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 动画效果 */
+  box-sizing: border-box; /* 确保 padding 包含在 width 内 */
 }
 
 /* 向下滚动时隐藏 header */
@@ -61,7 +62,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 5px; /* 图标之间的间距 */
-  margin-left: auto; /* 将图标向左移动 */
 }
 
 .nav-right a {
