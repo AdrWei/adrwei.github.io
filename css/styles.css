@@ -14,7 +14,9 @@ header {
 }
 
 .logo img {
-  height: 50px;
+  width: 100px; /* 设置 logo 的宽度 */
+  height: auto; /* 保持宽高比 */
+  margin-right: 20px; /* 将 logo 向右移动 */
 }
 
 nav {
@@ -39,6 +41,8 @@ nav {
 .nav-right {
   display: flex;
   align-items: center;
+  gap: 10px; /* 图标之间的间距 */
+  margin-left: auto; /* 将图标向左移动 */
 }
 
 .nav-right a {
@@ -46,7 +50,7 @@ nav {
 }
 
 .nav-right img {
-  height: 24px; /* 设置图标大小 */
+  height: 36px; /* 设置图标大小 */
   width: auto;
 }
 
