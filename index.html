@@ -12,29 +12,8 @@
   <script src="/callback_handler.js"></script>
 </head>
 <body>
-  <!-- Logo和导航栏 -->
-  <header>
-    <div class="logo">
-      <img src="/media/logo.jpg" alt="Logo">
-    </div>
-    <nav>
-      <div class="nav-center">
-        <a href="#">首页</a>
-        <a href="#">关于</a>
-        <a href="#">服务</a>
-        <a href="#">联系</a>
-      </div>
-      <div class="nav-right">
-        <a href="https://www.facebook.com" target="_blank">
-          <img src="/media/fb_Icon-tuya.webp" alt="Facebook">
-        </a>
-        <a href="https://www.linkedin.com" target="_blank">
-          <img src="/media/LinkedIn_Icon.webp" alt="LinkedIn">
-        </a>
-      </div>
-    </nav>
-  </header>
-
+  <!-- header占位 -->
+  <div id="header"></div> 
   <!-- Banner -->
   <div class="banner">
     <h1>欢迎来到我的GitHub网页</h1>
@@ -62,5 +41,22 @@
       <p>社媒运维</p>
     </a>
   </div>
+    <!-- footer占位 -->
+    <div id="footer"></div>
+    <script>
+  // 加载 header
+  fetch('/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
+
+  // 加载 footer
+  fetch('/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
 </body>
 </html>
