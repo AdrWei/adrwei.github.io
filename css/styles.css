@@ -26,6 +26,8 @@ header {
 header.hide {
   opacity: 0;
   transform: translateY(-100%);
+  visibility: hidden; /* 确保 header 完全隐藏 */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 /* 页面内容 */
