@@ -55,11 +55,10 @@ nav {
 
 .banner {
   background-color: #f4f4f4;
-  padding: 50px 20px;
   text-align: center;
   position: relative;
   width: 100vw; /* 覆盖整个视口宽度 */
-  height: 400px; /* 根据图片高度调整 */
+  height: 50vw; /* 根据图片高度调整 */
   overflow: hidden; /* 隐藏超出部分 */
 }
 
