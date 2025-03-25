@@ -4,7 +4,7 @@ body {
   padding: 0;
 }
 
-header {
+#header {
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@ header {
 }
 
 /* 向下滚动时隐藏 header */
-header.hide {
+#header.hide {
   opacity: 0;
   transform: translateY(-100%);
   visibility: hidden; /* 确保 header 完全隐藏 */
