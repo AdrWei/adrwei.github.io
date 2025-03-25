@@ -35,7 +35,7 @@ header.hide {
 }
 
 .logo img {
-  width: 60px; /* 设置 logo 的宽度 */
+  max-width: 60px; /* 设置 logo 的宽度 */
   height: auto; /* 保持宽高比 */
 }
 
@@ -43,25 +43,28 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1; /* 让 nav 占据剩余空间 */
+  width: 100%; /* 确保 nav 占满 header 的宽度 */
 }
 
 .nav-center {
   display: flex;
   justify-content: center;
   flex: 1; /* 让导航栏项目居中 */
+  margin: 0 auto; /* 确保居中 */
 }
 
 .nav-center a {
   color: white;
   text-decoration: none;
   margin: 0 15px;
+  white-space: nowrap; /* 防止链接换行 */
 }
 
 .nav-right {
   display: flex;
-  align-items: center;
+  align-items: right;
   gap: 5px; /* 图标之间的间距 */
+  flex-shrink: 0; /* 防止 nav-right 被挤压 */
 }
 
 .nav-right a {
@@ -71,6 +74,7 @@ nav {
 .nav-right img {
   height: 24px; /* 设置图标大小 */
   width: auto;
+  max-width: 100%; /* 防止图标超出容器 */
 }
 
 .banner {
