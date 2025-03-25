@@ -5,40 +5,24 @@ body {
 }
 
 header {
-  background-color: #101727;
-  color: white;
-  padding: 10px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white; /* 背景颜色 */
+  background-color: #101727; /* 背景颜色 */
+  color: white; /* 文字颜色 */
+  padding: 10px 60px; /* 内边距 */
+  display: flex; /* 弹性布局 */
+  justify-content: space-between; /* 水平对齐 */
+  align-items: center; /* 垂直对齐 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
   z-index: 1000; /* 确保 header 在最上层 */
-  transition: transform 0.3s ease-in-out; /* 动画效果 */
-}
-
-/* Header 固定在最上方 */
-#header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  opacity: 1;
-  transition: transform 0.3s ease-in-out;
+  opacity: 1; /* 不透明度 */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 动画效果 */
 }
 
 /* 向下滚动时隐藏 header */
-#header.hide {
+header.hide {
   opacity: 0;
   transform: translateY(-100%);
 }
