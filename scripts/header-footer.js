@@ -1,25 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-// 加载 header
-fetch('/header.html')
-.then(response => response.text())
-.then(data => {
-document.getElementById('header').innerHTML = data;
+  // 加载 header
+  fetch('/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
 
-// 在 header 加载完成后，添加切换导航栏的代码
-const nav = document.querySelector('nav');
-const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      // 在 header 加载完成后，添加切换导航栏的代码
+      const nav = document.querySelector('nav');
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 
-if (mobileNavToggle) { // 确保 mobileNavToggle 存在，防止报错
-mobileNavToggle.addEventListener('click', () => {
-nav.classList.toggle('active');
-});
-}
-});
+      if (mobileNavToggle) { // 确保 mobileNavToggle 存在，防止报错
+        mobileNavToggle.addEventListener('click', () => {
+          nav.classList.toggle('active');
+        });
+      }
 
-// 加载 footer
-fetch('/footer.html')
-.then(response => response.text())
-.then(data => {
-document.getElementById('footer').innerHTML = data;
-});
+      // 添加滚动隐藏 header 的代码
+      let lastScrollTop = 0;
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const header = document.querySelector('header');
+
+        if (scrollTop > lastScrollTop) {
+          // 向下滚动
+          header.classList.add('hidden');
+        } else {
+          // 向上滚动
+          header.classList.remove('hidden');
+        }
+
+        lastScrollTop = scrollTop;
+      });
+    });
+
+  // 加载 footer
+  fetch('/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
 });
