@@ -215,12 +215,11 @@ nav {
 .content-card {
   width: 100%;
   max-width: 800px;
-  aspect-ratio: 4/3 */
+  margin:10px;
+  aspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
-  position: relative;
   border-radius: 8px;
-  margin: 20px 0;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
