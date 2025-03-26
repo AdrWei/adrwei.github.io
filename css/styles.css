@@ -183,38 +183,50 @@ nav {
   color: #333;
 }
 
+/* 图片网格布局 */
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 两列 */
+  gap: 30px; /* 图片间距 */
+}
+
+/* 每张图片卡片样式 */
+.image-card {
+  text-align: center; /* 内容居中 */
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.image-card p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
 .section {
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
   background-color: var(--section-bg-color);
   max-width: var(--section-max-width);
   margin: 0 auto; /* 水平居中 */
-  display: flex;          /* 启用Flex布局 */
-  flex-wrap: wrap;        /* 允许换行 */
-  gap: 40px;              /* 子元素间距 */
-  text-align: center; /* 内部所有文本居中 */
 }
 
 .section--dark {
   background-color: var(--section-dark-bg-color);
 }
 
-/* 图片+内容的通用容器（自动换行） */
-.section > div {
-  flex: 1 1 45%;          /* 每个容器占~50%宽度（考虑gap） */
-  min-width: 300px;       /* 最小宽度防止挤压 */
-  display: flex;          /* 内部图片和内容横向排列 */
-  gap: 20px;              /* 图片和内容的间距 */
-  align-items: center;    /* 垂直居中 */
+/* 标题和描述 */
+.section-header {
+  margin-bottom: 40px;
 }
-
-/* 图片自适应 */
-.section img {
-  width: 50%;             /* 图片占容器50%宽度 */
-  height: auto;           /* 保持比例 */
-  border-radius: 8px;
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
-
-/* 文字内容区域 */
-.section-content {
-  width: 50%;             /* 内容占50%宽度 */
+.section-header .section-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
