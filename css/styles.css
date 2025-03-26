@@ -215,7 +215,6 @@ nav {
 .content-card {
   width: 100%;
   max-width: 800px;
-  margin:10px;
   aspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
@@ -224,5 +223,42 @@ nav {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+.text-container{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+}
+
+/* 功能列表样式 */
+.features {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+.features li {
+  margin-bottom: 8px;
+  list-style-type: none;
+  position: relative;
+}
+.features li:before {
+  content: "✓";
+  color: #0066cc;
+  position: absolute;
+  left: -20px;
+}
+
+/* 按钮样式 */
+.img-card button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
 
 
