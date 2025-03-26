@@ -282,6 +282,17 @@ button {
   margin: 0 auto;
 }
 
+/* 媒体查询：针对小屏幕（例如手机） */
+@media (max-width: 768px) {
+  .two-column-layout {
+    display: block; /* 修改为块级布局，使内容按顺序排列 */
+  }
+
+  .content-card {
+    margin-bottom: 20px; /* 添加内容卡之间的间距 */
+  }
+}
+
 /* 左侧文字区域 */
 .two-column-content {
   flex: 0 0 40%; /* 不扩展(flex-grow:0) 不收缩(flex-shrink:0) 基础宽度40% */
