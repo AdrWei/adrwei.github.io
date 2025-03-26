@@ -475,3 +475,9 @@ button {
   color: #bdc3c7;
   margin: 0 10px;
 }
+
+/* 媒体查询：针对小屏幕（例如手机） */
+@media (max-width: 768px) {
+  .footer-section {
+    display: none; /* 在手机端隐藏其他 footer 内容 */
+  }
