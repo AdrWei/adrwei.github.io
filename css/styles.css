@@ -17,21 +17,7 @@ header {
   align-items: center; /* 垂直对齐 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
   z-index: 1000; /* 确保 header 在最上层 */
-  opacity: 1; /* 不透明度 */
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 动画效果 */
   box-sizing: border-box; /* 确保 padding 包含在 width 内 */
-}
-
-/* 向下滚动时隐藏 header */
-header.hide {
-  opacity: 0;
-  transform: translateY(-100%);
-}
-
-/* 页面内容 */
-.content {
-  padding-top: 80px; /* 为 header 留出空间 */
-  height: 200vh; /* 模拟长页面 */
 }
 
 .logo img {
@@ -81,7 +67,7 @@ nav {
   background-color: #f4f4f4;
   text-align: center;
   position: relative;
-  width: 100vw; /* 覆盖整个视口宽度 */
+  max-width: 98vw; /* 覆盖整个视口宽度 */
   height: 50vh; /* 根据图片高度调整 */
   overflow: hidden; /* 隐藏超出部分 */
 }
@@ -95,13 +81,11 @@ nav {
 .banner-text {
   position: absolute;
   top: 50%; /* 垂直居中 */
-  left: 50%; /* 水平居中 */
+  left: 25%; /* 水平居中 */
   transform: translate(-50%, -50%); /* 精确居中 */
-  text-align: center;
+  text-align: left;
   color: white; /* 文字颜色 */
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
   padding: 20px;
-  border-radius: 10px; /* 圆角 */
 }
 
 .banner h1 {
