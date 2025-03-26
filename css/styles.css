@@ -70,6 +70,17 @@ header {
   height: auto; /* 保持宽高比 */
 }
 
+/* 按钮样式 */
+button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -215,7 +226,8 @@ nav {
 }
 
 .text-container{
-  display: flex; /* 弹性布局 */
+  display: grid;
+  place-items: center; /* 简写属性：同时水平和垂直居中 */
   padding-left: 50px;
   justify-content: center;
 }
@@ -237,18 +249,24 @@ nav {
   left: -20px;
 }
 
-/* 按钮样式 */
-button {
-  background: #0066cc;
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
+
+/* 底部悬浮栏 - 深蓝色渐变背景 */
+.floating-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
-/* 基础样式 */
+/* foother基础样式 */
 .site-footer {
   background-color: #2c3e50;
   color: #ecf0f1;
