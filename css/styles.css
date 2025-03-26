@@ -328,6 +328,18 @@ nav {
   color: #3498db;
 }
 
+/* 二维码区域 */
+.qrcode-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* 两栏间距 */
+  padding-top: 15px;
+}
+
+.qrcode-column {
+  text-align: center;
+}
+
 /* 版权信息 */
 .copyright {
   text-align: center;
