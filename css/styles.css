@@ -15,8 +15,9 @@
   
   /* 字体大小变量（可选） */
   --h1-size: 3vw;
-  --h2-size: 2.5vw;
-  --p-size: 1.2vw;
+  --h2-size: 2vw;
+  --h3-size: 2vw;
+  --p-size: 1vw;
 }
 
 body {
@@ -32,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 { font-size: var(--h1-size); }
 h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
 
 p {
   color: var(--paragraph-color);
