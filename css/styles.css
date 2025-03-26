@@ -490,3 +490,6 @@ button {
     margin-top: 0; /* 取消手机端的 margin-top */
     border-top: none; /* 取消手机端的 border-top */
   }
+  .bottom-fence {
+  width:60%;
+}
