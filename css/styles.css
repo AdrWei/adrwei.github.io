@@ -152,15 +152,12 @@ nav {
 
 /* 每张图片卡片样式 */
 .image-card {
-  position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 比例 (9/16=0.5625) */
   overflow: hidden; /* 裁剪溢出部分 */
 }
 
 /* 图片绝对定位填充 */
 .image-card img {
-  position: absolute;
   width: 100%;
   height: auto;
   object-fit: cover; /* 强制填充并裁剪 */
