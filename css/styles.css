@@ -486,4 +486,7 @@ button {
 @media (max-width: 768px) {
   .footer-container {
     display: none; /* 在手机端隐藏其他 footer 内容 */
+    padding-top: 0; /* 取消手机端的 padding-top */
+    margin-top: 0; /* 取消手机端的 margin-top */
+    border-top: none; /* 取消手机端的 border-top */
   }
