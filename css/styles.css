@@ -228,7 +228,11 @@ nav {
 }
 
 .text-container{
-  padding-left: 50px;
+  text-align: center;  /* 使内联内容居中 */
+  /* 如果是块级子元素（如按钮）也需要居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中 */
 }
 
 /* 功能列表样式 */
@@ -276,6 +280,11 @@ nav {
   padding: 0 20px;
 }
 
+.footer-about {
+  margin-bottom: 30px;
+  grid-column: span 2; /* 跨2列 */
+}
+
 /* 各栏目样式 */
 .footer-col {
   margin-bottom: 30px;
@@ -284,12 +293,6 @@ nav {
 .footer-logo {
   width: 150px;
   margin-bottom: 20px;
-}
-
-.footer-about {
-  line-height: 1.6;
-  margin-bottom: 20px;
-  opacity: 0.8;
 }
 
 .footer-title {
