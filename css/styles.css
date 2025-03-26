@@ -39,7 +39,7 @@ p {
 
 /* 可选：链接样式 */
 a {
-  color: #333333;
+  color: #ffffff;
   text-decoration: none;
 }
 a:hover {
@@ -82,7 +82,7 @@ nav {
 }
 
 .nav-center a {
-  color: white;
+  color: #333333;
   text-decoration: none;
   margin: 0 15px;
   white-space: nowrap; /* 防止链接换行 */
