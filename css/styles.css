@@ -246,7 +246,7 @@ nav {
 }
 
 /* 按钮样式 */
-.button {
+button {
   background: #0066cc;
   color: white;
   border: none;
