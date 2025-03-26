@@ -1,3 +1,12 @@
+:root {
+  /* 默认section的padding值 */
+  --section-padding-vertical: 4vw;
+  /* 可选：其他样式变量（如背景色） */
+  --section-bg-color: #333333;
+  --section-dark-bg-color: #f5f9fd;
+  --section-max-width:100vw;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -131,4 +140,18 @@ nav {
   margin-top: 10px;
   font-size: 1.1em;
   color: #333;
+}
+
+.section {
+  padding: var(--section-padding-vertical) var(--section-padding-horizontal);
+  background-color: var(--section-bg-color);
+  max-width: var(--section-max-width);
+  margin: 0 auto; /* 水平居中 */
+}
+
+.section-dark {
+  padding: var(--section-padding-vertical) var(--section-padding-horizontal);
+  background-color: var(--section-dark-bg-color);
+  max-width: var(--section-max-width);
+  margin: 0 auto; /* 水平居中 */
 }
