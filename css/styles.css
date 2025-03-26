@@ -283,7 +283,7 @@ nav {
   max-width: 1440px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 30px;
   padding: 0 20px;
 }
