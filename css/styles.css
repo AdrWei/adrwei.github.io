@@ -317,6 +317,16 @@ button {
   .content-card {
     margin-bottom: 20px; /* 添加内容卡之间的间距 */
   }
+
+  /* 将所有非 image-card 的元素放在前面 */
+  .two-column-layout > *:not(.image-card) {
+    order: 1;
+  }
+
+  /* 将 image-card 元素放在最后 */
+  .image-card {
+    order: 2;
+  }
 }
 
 /* 左侧文字区域 */
