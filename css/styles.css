@@ -17,7 +17,8 @@
   --h1-size: 3rem;
   --h2-size: 2.5rem;
   --h3-size: 1.8rem;
-  --p-size: 1.2rem;
+  --h4-size: 1.4rem;
+  --p-size: 1rem;
 }
 
 body {
@@ -364,7 +365,7 @@ nav {
 }
 
 .copyright a {
-  font-size: 10px;
+  font-size: 14px;
   color: #bdc3c7;
   margin: 0 10px;
 }
