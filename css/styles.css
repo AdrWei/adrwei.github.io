@@ -200,3 +200,16 @@ nav {
   opacity: 0.9;
   text-align: center;
 }
+
+/* 两列布局容器 */
+.two-column-layout {
+  display: flex;           /* 启用 Flexbox */
+  gap: 40px;               /* 两列之间的间距 */
+  align-items: center;     /* 垂直居中（可选） */
+}
+
+/* 左侧文字区域 */
+.text-content {
+  flex: 1;                 /* 占据剩余空间 */
+  max-width: 50%;          /* 限制宽度（可选） */
+}
