@@ -212,11 +212,11 @@ nav {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  justify-content: center;
 }
 
 .text-container{
   padding-left: 50px;
+  justify-content: center;
 }
 
 /* 功能列表样式 */
