@@ -161,13 +161,13 @@ nav {
 /* 图片绝对定位填充 */
 .image-card img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 16/9; /* 直接设置宽高比 */
   object-fit: cover; /* 强制填充并裁剪 */
+  display: block; /* 避免图片底部间隙 */
 }
 
 .image-card p {
   margin-top: 10px; /* 文字与图片间距 */
-  color: #656565;
 }
 
 .section {
