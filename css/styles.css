@@ -1,11 +1,20 @@
 :root {
   /* 默认section的padding值 */
-  --section-padding-vertical: 4vw;
+  --section-padding-vertical: 4vw;  
+  --section-padding-horizontal: 15px;
   /* 可选：其他样式变量（如背景色） */
   --section-bg-color: #ffffff;
   --section-dark-bg-color: #f5f9fd;
   --section-max-width:100vw;
+    
+  /* 定义颜色变量 */
+  --heading-color: #333;    /* 标题颜色 */
+  --paragraph-color: #656565;  /* 段落颜色 */
   
+  /* 字体大小变量（可选） */
+  --h1-size: 2.5rem;
+  --h2-size: 2rem;
+  --p-size: 1rem;
 }
 
 body {
@@ -14,33 +23,17 @@ body {
   padding: 0;
 }
 
-/* 标题层级 */
-h1 {
-  font-size: 2.2rem;
-  color: #ffffff;
-  margin: 0 0 20px 0;
-  font-weight: 700;
+/* 应用变量到标题和段落 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  margin: 0 0 1em 0; /* 统一标题间距 */
 }
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
 
-h2 {
-  font-size: 1.8rem;
-  color: #ffffff;
-  margin: 0 0 15px 0;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 1.4rem;
-  color: #ffffff;
-  margin: 0 0 10px 0;
-  font-weight: 500;
-}
-
-/* 段落文本 */
 p {
-  font-size: 1rem;
-  color: #ffffff;
-  margin: 0 0 15px 0;
+  color: var(--paragraph-color);
+  font-size: var(--p-size);
   line-height: 1.6;
 }
 
@@ -60,7 +53,7 @@ header {
   width: 100%;
   background-color: #101727; /* 背景颜色 */
   color: white; /* 文字颜色 */
-  padding: 10px 30px; /* 内边距 */
+  padding: 10px 40px; /* 内边距 */
   display: flex; /* 弹性布局 */
   justify-content: space-between; /* 水平对齐 */
   align-items: center; /* 垂直对齐 */
@@ -151,28 +144,35 @@ nav {
 /* 图片网格布局 */
 .image-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 两列 */
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px; /* 图片间距 */
-  margin: 0 auto 30px;
   max-width: 600px; /* 控制网格总宽度 */
+  margin: 0 auto;
 }
 
 /* 每张图片卡片样式 */
 .image-card {
   position: relative;       /* 关键：建立定位上下文 */
-  text-align: center; /* 内容居中 */
-  width: 100%;
-  padding-top: 56.25%;      /* 16:9比例 */
   overflow: hidden;         /* 裁剪溢出部分 */
   border-radius: 8px;       /* 可选圆角 */
 }
 
-.image-card img {
+/* 图片比例控制器（关键修改） */
+.image-container {
+  position: relative;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  object-fit: cover;        /* 关键：填充并裁剪 */
+  padding-top: 56.25%; /* 16:9比例 */
+  overflow: hidden;
+}
+
+/* 图片绝对定位填充 */
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 强制填充并裁剪 */
 }
 
 .image-card p {
