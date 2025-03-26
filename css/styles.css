@@ -307,14 +307,11 @@ button {
 /* 媒体查询：针对小屏幕（例如手机） */
 @media (max-width: 768px) {
   .two-column-layout {
-    display: block; /* 修改为块级布局，使内容按顺序排列 */
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
   }
-
-  .content-card {
-    margin-bottom: 20px; /* 添加内容卡之间的间距 */
-  }
-
-  /* 将所有非 image-card 的元素放在前面 */
+  
+    /* 将所有非 image-card 的元素放在前面 */
   .two-column-layout > *:not(.image-card) {
     order: 1;
   }
@@ -322,6 +319,10 @@ button {
   /* 将 image-card 元素放在最后 */
   .image-card {
     order: 2;
+  }
+  
+  .content-card {
+    margin-bottom: 20px; /* 添加内容卡之间的间距 */
   }
 }
 
