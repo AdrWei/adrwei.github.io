@@ -51,9 +51,9 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #101727; /* 背景颜色 */
-  color: white; /* 文字颜色 */
-  padding: 10px 40px; /* 内边距 */
+  background-color: #ffffff; /* 背景颜色 */
+  color: black; /* 文字颜色 */
+  padding: 10px 50px; /* 内边距 */
   display: flex; /* 弹性布局 */
   justify-content: space-between; /* 水平对齐 */
   align-items: center; /* 垂直对齐 */
@@ -152,9 +152,10 @@ nav {
 
 /* 每张图片卡片样式 */
 .image-card {
+  display: grid;
   overflow: hidden;         /* 裁剪溢出部分 */
+  aspect-ratio: 16/9; /* 直接设置宽高比 */
   width: 100%;
-  aspect-ratio: 4/3;
 }
 
 /* 图片绝对定位填充 */
