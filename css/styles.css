@@ -141,11 +141,25 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
-  nav a {
-    margin: 0;
+  .nav-center {
+    display: flex;
+    flex-direction: column; /* 修改此处：垂直排列 nav-center 中的导航项 */
+    align-items: center; /* 可选：居中导航项 */
+  }
+
+  .nav-center a {
+    margin: 10px 0; /* 修改此处：添加垂直间距 */
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #eee;
+    width: 100%; /* 可选：使导航项宽度占满容器 */
+    box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
+  }
+
+  .nav-right {
+    display: flex; /* 保持 nav-right 水平排列 */
+    justify-content: center; /* 可选：居中社交媒体图标 */
+    margin-top: 20px; /* 可选：添加上边距 */
   }
 
   .mobile-nav-toggle {
@@ -154,7 +168,7 @@ nav {
 
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
-    display: flex;
+    display: flex; /* 修改此处：显示导航栏 */
   }
 }
 
