@@ -14,10 +14,10 @@
   --paragraph-color: #656565;  /* 段落颜色 */
   
   /* 字体大小变量（可选） */
-  --h1-size: 3vw;
-  --h2-size: 2vw;
-  --h3-size: 2vw;
-  --p-size: 1vw;
+  --h1-size: 3rem;
+  --h2-size: 2.5rem;
+  --h3-size: 2.5rem;
+  --p-size: 1.2rem;
 }
 
 body {
