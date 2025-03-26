@@ -1,4 +1,6 @@
 :root {
+  --header-height: 70px; /* 定义变量 */
+
   /* 默认section的padding值 */
   --section-padding-vertical: 4vw;  
   --section-padding-horizontal: 15px;
@@ -18,6 +20,7 @@
 }
 
 body {
+  padding-top: var(--header-height);
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -48,8 +51,7 @@ a:hover {
 
 header {
   position: fixed;
-  top: 0;
-  left: 0;
+  height: var(--header-height);
   width: 100%;
   background-color: #ffffff; /* 背景颜色 */
   color: black; /* 文字颜色 */
