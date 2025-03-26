@@ -75,60 +75,9 @@ header {
   box-sizing: border-box; /* 确保 padding 包含在 width 内 */
 }
 
-.mobile-nav-toggle {
-  display: none; /* 默认情况下，手机导航切换按钮隐藏 */
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* 媒体查询：针对小屏幕（例如手机） */
-@media (max-width: 768px) {
-  header {
-    padding: 10px 20px; /* 缩小手机端的内边距 */
-  }
-
-  .nav {
-    display: none; /* 在手机端隐藏导航栏 */
-    flex-direction: column;
-    position: absolute;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav a {
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-  }
-
-  .mobile-nav-toggle {
-    display: block; /* 在手机端显示导航切换按钮 */
-  }
-
-  /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
-  .nav.active {
-    display: flex;
-  }
-}
-
 .logo img {
   max-width: 60px; /* 设置 logo 的宽度 */
   height: auto; /* 保持宽高比 */
-}
-
-/* 按钮样式 */
-button {
-  background: #0066cc;
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
 }
 
 nav {
@@ -169,6 +118,57 @@ nav {
   max-width: 100%; /* 防止图标超出容器 */
 }
 
+.mobile-nav-toggle {
+  display: none; /* 默认情况下，手机导航切换按钮隐藏 */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 媒体查询：针对小屏幕（例如手机） */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px; /* 缩小手机端的内边距 */
+  }
+
+  .nav {
+    display: none; /* 在手机端隐藏导航栏 */
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav a {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-nav-toggle {
+    display: block; /* 在手机端显示导航切换按钮 */
+  }
+
+  /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
+  .nav.active {
+    display: flex;
+  }
+}
+
+/* 按钮样式 */
+button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .banner {
   padding-top: var(--header-height);
   background-color: #f4f4f4;
@@ -185,6 +185,10 @@ nav {
   object-fit: cover; /* 确保图片覆盖整个区域 */
 }
 
+.mobile-banner {
+  display: none; /* 默认情况下隐藏手机端图片 */
+}
+
 .banner-text {
   position: absolute;
   top: 50%; /* 垂直居中 */
@@ -193,6 +197,25 @@ nav {
   text-align: left;
   color: white; /* 文字颜色 */
   padding: 20px;
+}
+
+/* 媒体查询：针对小屏幕（例如手机） */
+@media (max-width: 768px) {
+  .pc-banner {
+    display: none; /* 在手机端隐藏 PC 端图片 */
+  }
+
+  .mobile-banner {
+    display: block; /* 在手机端显示手机端图片 */
+  }
+
+  .banner {
+    height: 50vh; /* 在手机端调整 banner 高度 */
+  }
+
+  .banner-text {
+    display: none; /* 在手机端隐藏 banner 文本 */
+  }
 }
 
 /* 图片网格布局 */
