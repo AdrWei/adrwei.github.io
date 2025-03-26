@@ -309,6 +309,7 @@ button {
   .two-column-layout {
     display: flex;
     flex-direction: column; /* 垂直排列 */
+    gap: 0px;               /* 两列之间的间距 */
   }
   
     /* 将所有非 image-card 的元素放在前面 */
