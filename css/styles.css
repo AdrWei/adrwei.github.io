@@ -164,6 +164,7 @@ nav {
   aspect-ratio: 16/9; /* 直接设置宽高比 */
   object-fit: cover; /* 强制填充并裁剪 */
   display: block; /* 避免图片底部间隙 */
+  border-radius: 8px; /* 可选：圆角 */
 }
 
 .image-card p {
