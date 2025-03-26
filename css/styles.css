@@ -154,6 +154,7 @@ nav {
 .image-card {
   overflow: hidden;         /* 裁剪溢出部分 */
   width: 100%;
+  aspect-ratio: 4/3;
 }
 
 /* 图片绝对定位填充 */
@@ -206,6 +207,7 @@ nav {
 
 /* 左侧文字区域 */
 .two-column-content {
-  flex: 1;                 /* 占据剩余空间 */
-  max-width: 50%;          /* 限制宽度（可选） */
+  flex: 0 0 40%; /* 不扩展(flex-grow:0) 不收缩(flex-shrink:0) 基础宽度40% */
 }
+
+
