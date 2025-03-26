@@ -21,6 +21,18 @@
   --p-size: 1rem;
 }
 
+/* 媒体查询：针对小屏幕（例如手机） */
+@media (max-width: 768px) {
+  :root {
+    --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
+    --h1-size: 3rem;
+    --h2-size: 1.8rem;
+    --h3-size: 1.4rem;
+    --h4-size: 1.2rem;
+    --p-size: 1rem;
+  }
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
