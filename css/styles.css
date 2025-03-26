@@ -139,13 +139,13 @@ nav {
 
 .banner h1 {
   margin-bottom: 10px;
-  color: white; /* 文字颜色 */
+  color: #333333; /* 文字颜色 */
   font-size: 2.5em;
 }
 
 .banner p {
   font-size: 1.2em;
-  color: white;
+  color: #656565;
 }
 
 .image-links {
