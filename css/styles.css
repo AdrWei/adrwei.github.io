@@ -304,29 +304,6 @@ button {
   margin: 0 auto;
 }
 
-/* 媒体查询：针对小屏幕（例如手机） */
-@media (max-width: 768px) {
-  .two-column-layout {
-    display: flex;
-    flex-direction: column; /* 垂直排列 */
-    gap: 0px;               /* 两列之间的间距 */
-  }
-  
-    /* 将所有非 image-card 的元素放在前面 */
-  .two-column-layout > *:not(.image-card) {
-    order: 1;
-  }
-
-  /* 将 image-card 元素放在最后 */
-  .image-card {
-    order: 2;
-  }
-  
-  .content-card {
-    margin-bottom: 20px; /* 添加内容卡之间的间距 */
-  }
-}
-
 /* 左侧文字区域 */
 .two-column-content {
   flex: 0 0 40%; /* 不扩展(flex-grow:0) 不收缩(flex-shrink:0) 基础宽度40% */
@@ -369,6 +346,31 @@ button {
   color: #0066cc;
   position: absolute;
   left: -20px;
+}
+
+/* 媒体查询：针对小屏幕（例如手机） */
+@media (max-width: 768px) {
+  .two-column-layout {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    gap: 0px;               /* 两列之间的间距 */
+  }
+  
+    /* 将所有非 image-card 的元素放在前面 */
+  .two-column-layout > *:not(.image-card) {
+    order: 1;
+  }
+
+  /* 将 image-card 元素放在最后 */
+  .image-card {
+    order: 2;
+    aspect-ratio: 1/1;
+  }
+  
+  .content-card {
+    margin-bottom: 20px; /* 添加内容卡之间的间距 */
+    aspect-ratio: 1/1;
+  }
 }
 
 /* 底部悬浮栏 - 深蓝色渐变背景 */
