@@ -243,17 +243,6 @@ button {
   background-color: var(--section-dark-bg-color);
 }
 
-/* 底部悬浮栏 - 深蓝色渐变背景 */
-.section-fence {
-    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
-    text-align: center;
-    background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
-}
-
-.section-fence p,h3{
-    color:white;
-}
-
 /* 标题和描述 */
 .section-header {
   margin-bottom: 40px;
@@ -268,6 +257,17 @@ button {
 .content-header-left{
   place-items: left;
   margin-bottom: 20px;
+}
+
+/* 底部悬浮栏 - 深蓝色渐变背景 */
+.section-fence {
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
+    text-align: center;
+    background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
+}
+
+.section-fence p,h3{
+    color:#ffffff;
 }
 
 /* 两列布局容器 */
