@@ -88,15 +88,12 @@ header {
 header-content {
    min-width: 1200px;
    max-width: 1580px;
+   display:contents;
 }
 
 
 header.hidden {
   transform: translateY(-100%);
-}
-
-.logo{
-   display:contents;
 }
 
 .logo img {
