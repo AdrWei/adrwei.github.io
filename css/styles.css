@@ -464,6 +464,12 @@ button {
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
     display: flex; /* 修改此处：显示导航栏 */
+    justify-content: center;
+    gap: 33px;
+  }
+
+  nav.active > * { /* 选择容器的所有子元素 */
+    transform: translateY(-30%); /* 将子元素向上移动 30% */
   }
 
   .pc-banner {
