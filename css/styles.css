@@ -209,8 +209,17 @@ button {
 }
 
 .section-dark {
-  padding: var(--section-padding-vertical) var(--section-padding-horizontal);
   background-color: var(--section-dark-bg-color);
+}
+
+/* 底部悬浮栏 - 深蓝色渐变背景 */
+.section-fence {
+    text-align: center;
+    background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
+}
+
+.section-fence p,h3{
+    color:white;
 }
 
 /* 标题和描述 */
@@ -270,23 +279,6 @@ button {
   color: #0066cc;
   position: absolute;
   left: -20px;
-}
-
-/* 底部悬浮栏 - 深蓝色渐变背景 */
-.bottom-fence {
-    color: white;
-    text-align: center;
-    background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
-    padding: var(--section-padding-vertical) 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
-
-.bottom-fence p,h3{
-    color:white;
 }
 
 /* foother基础样式 */
@@ -475,10 +467,6 @@ button {
   .content-card {
     margin-bottom: 20px; /* 添加内容卡之间的间距 */
     aspect-ratio: 1/1;
-  }
-
-.bottom-fence  {
-    padding: var(--section-padding-vertical) 0;
   }
   
   .site-footer {
