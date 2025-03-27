@@ -96,7 +96,6 @@ nav {
 .nav-center {
   display: flex;
   justify-content: center;
-  flex: 1; /* 让导航栏项目居中 */
   margin: 0 auto; /* 确保居中 */
 }
 
@@ -111,7 +110,6 @@ nav {
   display: flex;
   align-items: right;
   gap: 5px; /* 图标之间的间距 */
-  flex-shrink: 0; /* 防止 nav-right 被挤压 */
 }
 
 .nav-right a {
@@ -122,6 +120,27 @@ nav {
   height: 24px; /* 设置图标大小 */
   width: auto;
   max-width: 100%; /* 防止图标超出容器 */
+}
+
+.nav-right:hover .hover-image {
+display: block; /* 鼠标悬停时显示图片 */
+}
+
+.hover-image {
+  position: absolute; /* 设置绝对定位，相对于容器定位 */
+  top: 100%; /* 将图片定位在容器底部 */
+  left: 50%; /* 将图片水平居中 */
+  transform: translateX(-50%); /* 调整图片位置，使其完全居中 */
+  display: none; /* 初始状态下隐藏图片 */
+  max-width: 200px; /* 设置图片最大宽度 */
+  border: 1px solid #ccc; /* 添加边框 */
+  padding: 5px; /* 添加内边距 */
+  background-color: white; /* 设置背景色 */
+  z-index: 1000; /* 确保图片在其他元素之上 */
+}
+
+.mobile-nav-right {
+  display: none; /* 默认情况下，手机导航切换按钮隐藏 */
 }
 
 .mobile-nav-toggle {
@@ -391,8 +410,9 @@ button {
     flex-direction: column;
     position: absolute;
     top: var(--header-height);
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 80%;
+    height:100vh;
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
@@ -413,11 +433,17 @@ button {
   }
 
   .nav-right {
-    display: flex; /* 保持 nav-right 水平排列 */
-    justify-content: center; /* 可选：居中社交媒体图标 */
-    margin-top: 20px; /* 可选：添加上边距 */
+    /* 隐藏原始内容 */
+    display: none;
   }
 
+  .mobile-nav-right {
+    /* 显示图标 */
+    display: block;
+    font-size: 24px; /* 调整图标大小 */
+    color: #333; /* 调整图标颜色 */
+  }
+  
   .mobile-nav-toggle {
     display: block; /* 在手机端显示导航切换按钮 */
   }
