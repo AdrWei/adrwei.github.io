@@ -272,8 +272,8 @@ button {
 }
 
 .section-fence button{
-   background: var(--VI-color);
-   color: var(--VI-bright);
+   background: var(--VI-bright);
+   color: var(--VI-color);
 }
 
 /* 两列布局容器 */
@@ -411,7 +411,7 @@ button {
 
 /* 链接样式 */
 .footer-links li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   list-style: none;
 }
 
