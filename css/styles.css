@@ -90,8 +90,8 @@ header.hidden {
 }
 
 .logo img {
-  max-width: 60px; /* 设置 logo 的宽度 */
-  height: auto; /* 保持宽高比 */
+  max-width: auto; /* 设置 logo 的宽度 */
+  height: 80%; /* 保持宽高比 */
 }
 
 nav {
