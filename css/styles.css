@@ -73,21 +73,17 @@ ul {
 header {
   position: fixed;
   height: var(--header-height);
+  width: 100%;
   background-color: var(--VI-color); /* 背景颜色 */
   color: var(--VI-bright); /* 文字颜色 */
   padding: 10px 50px; /* 内边距 */
+  display: flex; /* 弹性布局 */
+  justify-content: space-between; /* 水平对齐 */
+  align-items: center; /* 垂直对齐 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
   z-index: 1000; /* 确保 header 在最上层 */
   box-sizing: border-box; /* 确保 padding 包含在 width 内 */
   transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
-}
-
-header > div {
-  max-width: 1520px; /* 设置内容的最大宽度 */
-  width: 100%; /* 确保内容占据可用空间 */
-  display: flex;
-  justify-content: space-between; /* logo 和导航栏之间的空间 */
-  align-items: center;
 }
 
 header.hidden {
