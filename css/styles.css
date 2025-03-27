@@ -421,6 +421,14 @@ button {
 
   nav {
     display: none; /* 在手机端隐藏导航栏 */
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    width: 80%;
+    height:100vh;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .nav-center {
@@ -455,15 +463,7 @@ button {
 
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
-    flex-direction: column;
-    justify-content: flex-start;
-    position: absolute;
-    top: var(--header-height);
-    right: 0;
-    width: 80%;
-    height:100vh;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* 修改此处：显示导航栏 */
   }
 
   .pc-banner {
