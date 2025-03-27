@@ -53,11 +53,11 @@ p {
 
 /* 可选：链接样式 */
 a {
-  color: #ffffff;
+  color: var(--VI-bright);
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  color: var(--VI-dark);
 }
 
 ul {
@@ -267,7 +267,7 @@ button {
     background: var(--VI-color);
 }
 
-.section-fence p,h3{
+.section-fence p,h4{
     color:var(--VI-bright);
 }
 
