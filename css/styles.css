@@ -413,6 +413,7 @@ button {
 .footer-links li {
   margin-bottom: 10px;
   list-style: none;
+  font-size: 10px;
 }
 
 .footer-links a {
