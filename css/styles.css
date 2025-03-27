@@ -1,6 +1,7 @@
 :root {
+  
+  
   --header-height: 70px; /* 定义变量 */
-
   /* 默认section的padding值 */
   --section-padding-vertical: 4vw;  
   --section-padding-horizontal: 15px;
@@ -529,7 +530,7 @@ button {
     display: none; /* 在手机端隐藏 banner 文本 */
   }
 
-  .section-header, content-header, content-header-left{
+  .section-header, .content-header, .content-header-left{
   margin-bottom:10px;
   }
 
