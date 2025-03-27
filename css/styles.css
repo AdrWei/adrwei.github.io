@@ -8,7 +8,7 @@
   --header-height: 70px; /* 定义变量 */
   /* 默认section的padding值 */
   --section-padding-vertical: 4vw;  
-  --section-padding-horizontal: 15px;
+  --section-padding-horizontal: 3vh;
   /* 可选：其他样式变量（如背景色） */
   --section-max-width:100vw;
     
@@ -551,14 +551,14 @@ button {
   margin-bottom:0px;
   }
 
-  .two-column-layout {
+  .column-layout {
     display: flex;
     flex-direction: column; /* 垂直排列 */
     align-items:flex-start;
   }
 
   /* 将所有非 image-card 的元素放在前面 */
-  .two-column-layout > *:not(.image-card) {
+  .column-layout > *:not(.image-card) {
     order: 1;
   }
 
