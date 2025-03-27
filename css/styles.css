@@ -139,6 +139,7 @@ nav {
   transform: translateX(-50%); /* 调整图片位置，使其完全居中 */
   display: none; /* 初始状态下隐藏图片 */
   max-width: 75px; /* 设置图片最大宽度 */
+  height:auto;
   border: 1px solid #ccc; /* 添加边框 */
   padding: 5px; /* 添加内边距 */
   background-color: white; /* 设置背景色 */
@@ -420,14 +421,6 @@ button {
 
   nav {
     display: none; /* 在手机端隐藏导航栏 */
-    flex-direction: column;
-    position: absolute;
-    top: var(--header-height);
-    right: 0;
-    width: 80%;
-    height:100vh;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .nav-center {
@@ -461,8 +454,15 @@ button {
 
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
-    display: flex; /* 修改此处：显示导航栏 */
-    
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    width: 80%;
+    height:100vh;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .pc-banner {
