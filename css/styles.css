@@ -85,6 +85,12 @@ header {
   transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
 }
 
+header-content {
+   min-width: 1200px;
+   max-width: 1580px;
+}
+
+
 header.hidden {
   transform: translateY(-100%);
 }
