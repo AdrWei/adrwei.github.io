@@ -228,11 +228,13 @@ button {
 }
 
 .section-dark {
+  padding: var(--section-padding-vertical) var(--section-padding-horizontal);  /* 仍需要添加 */
   background-color: var(--section-dark-bg-color);
 }
 
 /* 底部悬浮栏 - 深蓝色渐变背景 */
 .section-fence {
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     text-align: center;
     background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
 }
