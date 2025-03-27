@@ -530,13 +530,14 @@ button {
   }
 
   .section-header, content-header, content-header-left{
-  padding-bottom:10px;
+  margin-bottom:10px;
   }
 
   .two-column-layout {
     display: flex;
     flex-direction: column; /* 垂直排列 */
     gap: 30px; /* 两列之间的间距 */
+    align-items:flex-start;
   }
 
   /* 将所有非 image-card 的元素放在前面 */
