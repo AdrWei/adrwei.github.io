@@ -75,7 +75,7 @@ header {
   width: 100%;
   background-color: var(--VI-color); /* 背景颜色 */
   color: var(--VI-bright); /* 文字颜色 */
-  padding: 10px 240px; /* 内边距 */
+  padding: 10px 50px; /* 内边距 */
   display: flex; /* 弹性布局 */
   justify-content: space-between; /* 水平对齐 */
   align-items: center; /* 垂直对齐 */
@@ -108,7 +108,7 @@ nav {
 .nav-center {
   display: flex;
   justify-content: center;
-  margin: 0 auto; /* 确保居中 */
+  margin: 0 20px; /* 确保居中 */
 }
 
 .nav-center a {
