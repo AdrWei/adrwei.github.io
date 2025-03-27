@@ -283,7 +283,7 @@ button {
 /* 两列布局容器 */
 .two-column-layout {
   display: flex;           /* 启用 Flexbox */
-  gap: 40px;               /* 两列之间的间距 */
+  gap: 6vw;               /* 两列之间的间距 */
   align-items: center;     /* 垂直居中（可选） */
   max-width: 1440px; /* 控制网格总宽度 */
   margin: 0 auto;
@@ -292,6 +292,7 @@ button {
 /* 左侧文字区域 */
 .two-column-content {
   flex: 0 0 40%; /* 不扩展(flex-grow:0) 不收缩(flex-shrink:0) 基础宽度40% */
+  padding:5.5vw
 }
 
 .content-card {
@@ -539,13 +540,12 @@ button {
   }
 
   .section-header, .content-header, .content-header-left{
-  margin-bottom:10px;
+  margin-bottom:0px;
   }
 
   .two-column-layout {
     display: flex;
     flex-direction: column; /* 垂直排列 */
-    gap: 30px; /* 两列之间的间距 */
     align-items:flex-start;
   }
 
