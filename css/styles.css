@@ -262,10 +262,12 @@ button {
 
 .content-header{
   place-items: center;
+  margin-bottom: 20px;
 }
 
 .content-header-left{
   place-items: left;
+  margin-bottom: 20px;
 }
 
 /* 两列布局容器 */
