@@ -264,11 +264,16 @@ button {
 .section-fence {
     padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     text-align: center;
-    background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
+    background: var(--VI-color);
 }
 
 .section-fence p,h3{
     color:var(--VI-bright);
+}
+
+.section-fence button{
+   background: var(--VI-color);
+   color: var(--VI-bright);
 }
 
 /* 两列布局容器 */
