@@ -552,8 +552,7 @@ button {
   margin-bottom:0px;
   }
 
-   .column-layout,
-   column-layout-3vwgap {
+   .column-layout,.column-layout-3vwgap {
      display: flex;
      flex-direction: column;
      align-items: flex-start;
@@ -561,7 +560,7 @@ button {
    
    /* 将 column-layout 和 column-layout-3vwgap 内部的非 image-card 元素放在前面 */
    .column-layout > *:not(.image-card),
-   column-layout-3vwgap > *:not(.image-card) {
+   .column-layout-3vwgap > *:not(.image-card) {
      order: 1;
    }
 
