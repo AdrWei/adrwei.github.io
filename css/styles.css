@@ -446,6 +446,7 @@ button {
   .mobile-nav-right {
     /* 显示图标 */
     display: block;
+    max-width:33%;
   }
   
   .mobile-nav-toggle {
