@@ -131,7 +131,8 @@ nav {
 
 /* 按钮样式 */
 button {
-  width: auto; /* 按钮宽度自动适应内容 */
+  width: auto;
+  white-space: nowrap;
   background: #0066cc;
   color: white;
   border: none;
@@ -139,7 +140,6 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  white-space: nowrap; /* 防止按钮文字换行 */
 }
 
 .banner {
@@ -274,7 +274,6 @@ button {
 /* 底部悬浮栏 - 深蓝色渐变背景 */
 .bottom-fence {
     color: white;
-    display: flex; /* 使用 Flexbox 布局 */
     text-align: center;
     background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
     padding: 5vw 0;
@@ -432,6 +431,7 @@ button {
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
     display: flex; /* 修改此处：显示导航栏 */
+    
   }
 
   .pc-banner {
