@@ -20,7 +20,7 @@
   --h1-size: 3rem;
   --h2-size: 2.5rem;
   --h3-size: 1.8rem;
-  --h4-size: 1.4rem;
+  --h4-size: 1.8rem;
   --p-size: 1rem;
 }
 
@@ -43,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: var(--h1-size); }
 h2 { font-size: var(--h2-size); }
 h3 { font-size: var(--h3-size); }
+h3 { font-size: var(--h4-size); }
 
 p {
   color: var(--paragraph-color);
