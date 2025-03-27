@@ -21,18 +21,6 @@
   --p-size: 1rem;
 }
 
-/* 媒体查询：针对小屏幕（例如手机） */
-@media (max-width: 768px) {
-  :root {
-    --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
-    --h1-size: 3rem;
-    --h2-size: 1.8rem;
-    --h3-size: 1.4rem;
-    --h4-size: 1.2rem;
-    --p-size: 1rem;
-  }
-}
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -141,56 +129,9 @@ nav {
   cursor: pointer;
 }
 
-/* 媒体查询：针对小屏幕（例如手机） */
-@media (max-width: 768px) {
-  header {
-    padding: 10px 20px; /* 缩小手机端的内边距 */
-  }
-
-  nav {
-    display: none; /* 在手机端隐藏导航栏 */
-    flex-direction: column;
-    position: absolute;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-center {
-    display: flex;
-    flex-direction: column; /* 修改此处：垂直排列 nav-center 中的导航项 */
-    align-items: center; /* 可选：居中导航项 */
-  }
-
-  .nav-center a {
-    margin: 10px 0; /* 修改此处：添加垂直间距 */
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    width: 100%; /* 可选：使导航项宽度占满容器 */
-    box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
-  }
-
-  .nav-right {
-    display: flex; /* 保持 nav-right 水平排列 */
-    justify-content: center; /* 可选：居中社交媒体图标 */
-    margin-top: 20px; /* 可选：添加上边距 */
-  }
-
-  .mobile-nav-toggle {
-    display: block; /* 在手机端显示导航切换按钮 */
-  }
-
-  /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
-  nav.active {
-    display: flex; /* 修改此处：显示导航栏 */
-  }
-}
-
 /* 按钮样式 */
 button {
+  width: auto; /* 按钮宽度自动适应内容 */
   background: #0066cc;
   color: white;
   border: none;
@@ -198,6 +139,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  white-space: nowrap; /* 防止按钮文字换行 */
 }
 
 .banner {
@@ -228,25 +170,6 @@ button {
   text-align: left;
   color: white; /* 文字颜色 */
   padding: 20px;
-}
-
-/* 媒体查询：针对小屏幕（例如手机） */
-@media (max-width: 768px) {
-  .pc-banner {
-    display: none; /* 在手机端隐藏 PC 端图片 */
-  }
-
-  .mobile-banner {
-    display: block; /* 在手机端显示手机端图片 */
-  }
-
-  .banner {
-    height: 50vh; /* 在手机端调整 banner 高度 */
-  }
-
-  .banner-text {
-    display: none; /* 在手机端隐藏 banner 文本 */
-  }
 }
 
 /* 图片网格布局 */
@@ -348,37 +271,10 @@ button {
   left: -20px;
 }
 
-/* 媒体查询：针对小屏幕（例如手机） */
-@media (max-width: 768px) {
-  .two-column-layout {
-    display: flex;
-    flex-direction: column; /* 垂直排列 */
-    gap: 0px;               /* 两列之间的间距 */
-  }
-  
-    /* 将所有非 image-card 的元素放在前面 */
-  .two-column-layout > *:not(.image-card) {
-    order: 1;
-  }
-
-  /* 将 image-card 元素放在最后 */
-  .image-card {
-    order: 2;
-  }
-  
-  .image-card img {
-    aspect-ratio: 1/1; /* 直接设置宽高比 */
-  }
-  
-  .content-card {
-    margin-bottom: 20px; /* 添加内容卡之间的间距 */
-    aspect-ratio: 1/1;
-  }
-}
-
 /* 底部悬浮栏 - 深蓝色渐变背景 */
 .bottom-fence {
     color: white;
+    display: flex; /* 使用 Flexbox 布局 */
     text-align: center;
     background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
     padding: 5vw 0;
@@ -484,12 +380,114 @@ button {
 
 /* 媒体查询：针对小屏幕（例如手机） */
 @media (max-width: 768px) {
-  .footer-container {
-    display: none; /* 在手机端隐藏其他 footer 内容 */
-    padding-top: 0; /* 取消手机端的 padding-top */
-    margin-top: 0; /* 取消手机端的 margin-top */
-    border-top: none; /* 取消手机端的 border-top */
+  :root {
+    --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
+    --h1-size: 3rem;
+    --h2-size: 1.8rem;
+    --h3-size: 1.4rem;
+    --h4-size: 1.2rem;
+    --p-size: 1rem;
   }
-  .bottom-fence {
-  width:60%;
+
+  header {
+    padding: 10px 20px; /* 缩小手机端的内边距 */
+  }
+
+  nav {
+    display: none; /* 在手机端隐藏导航栏 */
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-center {
+    display: flex;
+    flex-direction: column; /* 修改此处：垂直排列 nav-center 中的导航项 */
+    align-items: center; /* 可选：居中导航项 */
+  }
+
+  .nav-center a {
+    margin: 10px 0; /* 修改此处：添加垂直间距 */
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    width: 100%; /* 可选：使导航项宽度占满容器 */
+    box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
+  }
+
+  .nav-right {
+    display: flex; /* 保持 nav-right 水平排列 */
+    justify-content: center; /* 可选：居中社交媒体图标 */
+    margin-top: 20px; /* 可选：添加上边距 */
+  }
+
+  .mobile-nav-toggle {
+    display: block; /* 在手机端显示导航切换按钮 */
+  }
+
+  /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
+  nav.active {
+    display: flex; /* 修改此处：显示导航栏 */
+  }
+
+  .pc-banner {
+    display: none; /* 在手机端隐藏 PC 端图片 */
+  }
+
+  .mobile-banner {
+    display: block; /* 在手机端显示手机端图片 */
+  }
+
+  .banner {
+    height: 50vh; /* 在手机端调整 banner 高度 */
+  }
+
+  .banner-text {
+    display: none; /* 在手机端隐藏 banner 文本 */
+  }
+
+  .two-column-layout {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    gap: 0px; /* 两列之间的间距 */
+  }
+
+  /* 将所有非 image-card 的元素放在前面 */
+  .two-column-layout > *:not(.image-card) {
+    order: 1;
+  }
+
+  /* 将 image-card 元素放在最后 */
+  .image-card {
+    order: 2;
+  }
+
+  .image-card img {
+    aspect-ratio: 1/1; /* 直接设置宽高比 */
+  }
+
+  .content-card {
+    margin-bottom: 20px; /* 添加内容卡之间的间距 */
+    aspect-ratio: 1/1;
+  }
+
+  .site-footer {
+    padding: 20px 0 20px;
+  }
+  .footer-container {
+      display: none; /* 在手机端隐藏其他 footer 内容 */
+      padding-top: 0; /* 取消手机端的 padding-top */
+      margin-top: 0; /* 取消手机端的 margin-top */
+      border-top: none; /* 取消手机端的 border-top */
+  }
+
+  .copyright {  
+    border-top: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
 }
