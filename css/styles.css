@@ -108,7 +108,7 @@ nav {
 
 .nav-right {
   display: flex;
-  align-items: right;
+  align-items: center; /* 修改此处 */
   gap: 5px; /* 图标之间的间距 */
 }
 
@@ -122,8 +122,9 @@ nav {
   max-width: 100%; /* 防止图标超出容器 */
 }
 
-.nav-right:hover .hover-image {
-display: block; /* 鼠标悬停时显示图片 */
+.hover-container {
+  position: relative; /* 设置相对定位 */
+  display: inline-block; /* 修改此处 */
 }
 
 .hover-image {
@@ -137,6 +138,10 @@ display: block; /* 鼠标悬停时显示图片 */
   padding: 5px; /* 添加内边距 */
   background-color: white; /* 设置背景色 */
   z-index: 1000; /* 确保图片在其他元素之上 */
+}
+
+.nav-right:hover .hover-image {
+display: block; /* 鼠标悬停时显示图片 */
 }
 
 .mobile-nav-right {
@@ -442,8 +447,6 @@ button {
   .mobile-nav-right {
     /* 显示图标 */
     display: block;
-    font-size: 24px; /* 调整图标大小 */
-    color: #333; /* 调整图标颜色 */
   }
   
   .mobile-nav-toggle {
