@@ -297,6 +297,30 @@ button {
 }
 
 /* 功能列表样式 */
+.toggle-container {
+    width: 300px; /* 设置容器宽度 */
+    border: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.toggle-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggle-content {
+    padding: 10px;
+    display: none; /* 初始状态下隐藏内容 */
+}
+
+.toggle-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 .features {
   padding-left: 20px;
   margin: 15px 0;
