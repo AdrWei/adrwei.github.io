@@ -551,14 +551,14 @@ button {
   margin-bottom:0px;
   }
 
-  .column-layout {
+  .column-layout, column-layout-3vwgap{
     display: flex;
     flex-direction: column; /* 垂直排列 */
     align-items:flex-start;
   }
 
   /* 将所有非 image-card 的元素放在前面 */
-  .column-layout > *:not(.image-card) {
+  .column-layout, column-layout-3vwgap > *:not(.image-card) {
     order: 1;
   }
 
