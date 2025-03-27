@@ -281,7 +281,15 @@ button {
 }
 
 /* 两列布局容器 */
-.two-column-layout {
+.column-layout-3vwgap {
+  display: flex;           /* 启用 Flexbox */
+  gap: 3vw;               /* 两列之间的间距 */
+  align-items: center;     /* 垂直居中（可选） */
+  max-width: 1440px; /* 控制网格总宽度 */
+  margin: 0 auto;
+}
+
+.column-layout- {
   display: flex;           /* 启用 Flexbox */
   gap: 6vw;               /* 两列之间的间距 */
   align-items: center;     /* 垂直居中（可选） */
@@ -291,8 +299,7 @@ button {
 
 /* 左侧文字区域 */
 .two-column-content {
-  flex: 0 0 40%; /* 不扩展(flex-grow:0) 不收缩(flex-shrink:0) 基础宽度40% */
-  padding:5.5vw
+  flex: 0 0 45%; /* 不扩展(flex-grow:0) 不收缩(flex-shrink:0) 基础宽度40% */
 }
 
 .content-card {
@@ -303,7 +310,7 @@ button {
   aspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
