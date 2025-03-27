@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const nav = document.querySelector('nav');
       const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 
-      if (mobileNavToggle) { // 确保 mobileNavToggle 存在，防止报错
+      if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', () => {
           nav.classList.toggle('active');
         });
@@ -32,6 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         lastScrollTop = scrollTop;
       });
+
+      // 添加 toggle 效果的代码
+      const toggleHeader = document.querySelector('.toggle-header');
+      const toggleContent = document.querySelector('.toggle-content');
+      const toggleIcon = document.querySelector('.toggle-icon');
+
+      if (toggleHeader && toggleContent && toggleIcon) { // 确保元素存在
+        toggleHeader.addEventListener('click', () => {
+          if (toggleContent.style.display === 'block') {
+            toggleContent.style.display = 'none';
+            toggleIcon.textContent = '+';
+          } else {
+            toggleContent.style.display = 'block';
+            toggleIcon.textContent = '-';
+          }
+        });
+      }
     });
 
   // 加载 footer
