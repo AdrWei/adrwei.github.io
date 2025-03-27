@@ -298,27 +298,38 @@ button {
 
 /* 功能列表样式 */
 .toggle-container {
-    width: 300px; /* 设置容器宽度 */
-    border: 1px solid #ccc;
+    width: 300px;
     margin: 20px auto;
 }
 
+.toggle-item {
+    border-bottom: 1px solid #eee;
+}
+
 .toggle-header {
-    background-color: #f0f0f0;
     padding: 10px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-header.active {
+    background-color: #e6f7ff;
+    color: #1890ff;
 }
 
 .toggle-content {
     padding: 10px;
-    display: none; /* 初始状态下隐藏内容 */
+    display: none;
 }
 
-.toggle-content ul {
-    list-style-type: none;
-    padding: 0;
+.toggle-content.active {
+    display: block;
+}
+
+.toggle-icon {
+    font-size: 1.2em;
 }
 
 .features {
