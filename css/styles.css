@@ -257,7 +257,15 @@ button {
 /* 标题和描述 */
 .section-header {
   margin-bottom: 40px;
-  text-align: center;
+  place-items: center;
+}
+
+.content-header{
+  place-items: center;
+}
+
+.content-header-left{
+  place-items: left;
 }
 
 /* 两列布局容器 */
@@ -288,25 +296,12 @@ button {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.text-container{
-  text-align: center;  /* 使内联内容居中 */
-  /* 如果是块级子元素（如按钮）也需要居中 */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* 水平居中 */
-}
-
-.text-container-left{
-  text-align: left;  /* 使内联内容居中 */
-  /* 如果是块级子元素（如按钮）也需要居中 */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* 水平居中 */
-}
-
 /* 功能列表样式 */
 .toggle-container {
     width: 100%;
+    display: flex; /* 添加 Flexbox 布局 */
+    flex-direction: column; /* 垂直排列子元素 */
+    gap: 10px; /* 添加间距，您可以根据需要调整 */
 }
 
 .toggle-item {
@@ -325,7 +320,7 @@ button {
 
 .toggle-header.active {
     background-color: #1f51ff;
-    color: #1890ff;
+    color: #ffffff;
 }
 
 .toggle-content {
