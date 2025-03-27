@@ -277,7 +277,7 @@ button {
     color: white;
     text-align: center;
     background: linear-gradient(135deg, #1a3a8f 0%, #0c1f4d 100%);
-    padding: 5vw 0;
+    padding: var(--section-padding-vertical) 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -477,9 +477,14 @@ button {
     aspect-ratio: 1/1;
   }
 
+.bottom-fence  {
+    padding: var(--section-padding-vertical) 0;
+  }
+  
   .site-footer {
     padding: 20px 0 20px;
   }
+  
   .footer-container {
       display: none; /* 在手机端隐藏其他 footer 内容 */
       padding-top: 0; /* 取消手机端的 padding-top */
