@@ -28,7 +28,7 @@ body {
   padding: 0;
 }
 
-image {
+img {
   width:100%;
 }
 
@@ -132,13 +132,13 @@ nav {
   display: inline-block; /* 修改此处 */
 }
 
-.hover-image {
+.nav-right .hover-container .hover-image {
   position: absolute; /* 设置绝对定位，相对于容器定位 */
   top: 100%; /* 将图片定位在容器底部 */
   left: 50%; /* 将图片水平居中 */
   transform: translateX(-50%); /* 调整图片位置，使其完全居中 */
   display: none; /* 初始状态下隐藏图片 */
-  max-width: 200px; /* 设置图片最大宽度 */
+  max-width: 75px; /* 设置图片最大宽度 */
   border: 1px solid #ccc; /* 添加边框 */
   padding: 5px; /* 添加内边距 */
   background-color: white; /* 设置背景色 */
@@ -386,6 +386,7 @@ button {
 
 .qrcode-column {
   text-align: center;
+  max-width:33%
 }
 
 /* 版权信息 */
