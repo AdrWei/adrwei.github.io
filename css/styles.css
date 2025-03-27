@@ -296,10 +296,17 @@ button {
   align-items: center; /* 水平居中 */
 }
 
+.text-container-left{
+  text-align: left;  /* 使内联内容居中 */
+  /* 如果是块级子元素（如按钮）也需要居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中 */
+}
+
 /* 功能列表样式 */
 .toggle-container {
-    width: 300px;
-    margin: 20px auto;
+    width: 100%;
 }
 
 .toggle-item {
@@ -312,10 +319,12 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #ffffff;
+    font-weight: bold;
 }
 
 .toggle-header.active {
-    background-color: #e6f7ff;
+    background-color: #1f51ff;
     color: #1890ff;
 }
 
