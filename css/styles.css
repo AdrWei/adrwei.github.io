@@ -65,7 +65,7 @@ ul {
     display: flex;
     list-style: disc;
     flex-direction: column;
-    list-style-position: initial;
+    list-style-position: inside;
     padding-inline-start:0px;
     gap:5px;
 }
