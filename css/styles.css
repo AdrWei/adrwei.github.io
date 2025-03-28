@@ -605,6 +605,10 @@ button {
     margin-bottom: 20px; /* 添加内容卡之间的间距 */
     aspect-ratio: 1/1;
   }
+
+   .short-box{
+      width:100%;
+   }
    
      .features {
      grid-template-columns: repeat(2, 1fr); /* 创建 3 列，每列宽度相等 */
