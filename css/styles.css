@@ -62,12 +62,18 @@ a:hover {
 }
 
 ul {
-    display: block;
-    list-style-type: disc;
-    padding-inline-start: 0px;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    unicode-bidi: isolate;
+    display: flex;
+    list-style: disc;
+    flex-direction: column;
+    list-style-position: initial;
+}
+
+li {
+  font-size: calc(var(--p-size) /1.1);
+}
+
+li::marker {
+  color: var(--VI-color); /* 设置列表项标记的颜色为红色 */
 }
 
 header {
@@ -374,25 +380,6 @@ button {
 
 .toggle-header.active:before {
   content: "-"; /* 激活状态显示 "-" 号 */
-}
-
-ul{
-   display:flex;
-   gap: 5px; /* 设置列之间的间距 */
-   list-style: none; /* 移除默认的列表样式 */
-}
-
-li {
-  /* 可以添加一些额外的样式，例如边框、内边距等 */
-  padding: 00px 0px 10px 10px;
-  font-size: calc(var(--p-size) /1.1);
-}
-li:before {
-  content: "·";
-  color: var(--VI-color);
-  position: relative;
-  left: -8px;
-  font-size: var(--h2-size);
 }
 
 .features {
