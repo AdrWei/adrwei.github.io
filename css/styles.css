@@ -201,6 +201,10 @@ button {
     font-size: calc(var(--p-size) / 1.2);
 }
 
+box-icon{
+   height:80%
+}
+
 .banner {
   padding-top: var(--header-height);
   text-align: center;
