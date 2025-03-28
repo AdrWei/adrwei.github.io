@@ -38,7 +38,7 @@ img {
 /* 应用变量到标题和段落 */
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
-  margin: 0 0 0.2em 0; /* 统一标题间距 */
+  margin: 0 0 1vw 0; /* 统一标题间距 */
 }
 h1 { font-size: var(--h1-size); }
 h2 { font-size: var(--h2-size); }
@@ -374,14 +374,14 @@ button {
 }
 .features li {
   /* 可以添加一些额外的样式，例如边框、内边距等 */
-  padding: 10px 0px 10px 10px;
+  padding: 00px 0px 10px 10px;
   font-size: calc(var(--p-size) /1.2);
 }
 .features li:before {
   content: "✓";
   color: var(--VI-color);
   position: relative;
-  left: -20px;
+  left: -8px;
   font-size: var(--p-size);
 }
 
