@@ -341,11 +341,13 @@ button {
     align-items: center;
     background-color: var(--VI-bright);
     font-weight: bold;
+    font-size:var(--p-size);
 }
 
 .toggle-header.active {
     background-color: var(--VI-color);
     color: var(--VI-bright);
+    font-size:calc(var(--p-size) /1.2);
 }
 
 .toggle-content {
@@ -368,12 +370,12 @@ button {
   grid-gap: 10px; /* 设置列之间的间距 */
   list-style: none; /* 移除默认的列表样式 */
   padding: 0; /* 移除默认的内边距 */
-  justify-items: center;
+  justify-items: left;
 }
 .features li {
   /* 可以添加一些额外的样式，例如边框、内边距等 */
   padding: 10px 0px 10px 10px;
-  font-size: var(--p-size);
+  font-size: calc(var(--p-size) /1.2);
 }
 .features li:before {
   content: "✓";
@@ -587,7 +589,16 @@ button {
     margin-bottom: 20px; /* 添加内容卡之间的间距 */
     aspect-ratio: 1/1;
   }
-  
+   
+     .features {
+     grid-template-columns: repeat(2, 1fr); /* 创建 3 列，每列宽度相等 */
+     justify-items: left;
+   }
+   
+   .features li:before {
+     left: -10px;
+   }
+   
   .site-footer {
     padding: 20px 0 20px;
   }
