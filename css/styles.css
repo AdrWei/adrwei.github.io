@@ -342,12 +342,11 @@ button {
     padding: 10px;
     cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: var(--VI-bright);
     font-weight: bold;
     font-size:var(--p-size);
-    gap:5px;
+    gap:10px;
 }
 
 .toggle-header.active {
