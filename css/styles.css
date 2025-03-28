@@ -18,10 +18,10 @@
   
   /* 字体大小变量（可选） */
  --h1-size: 2.5rem;
- --h2-size: 1.6rem;
- --h3-size: 1.4rem;
- --h4-size: 1.4rem;
- --p-size: 1rem;
+ --h2-size: 1.8rem;
+ --h3-size: 1.6rem;
+ --h4-size: 1.6rem;
+ --p-size: 1.2rem;
 }
 
 /* 通用函数 */
@@ -178,7 +178,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  font-size:calc(var(--p-size)/1.2);
+  font-size:calc(var(--p-size));
 }
 
 .banner {
@@ -376,7 +376,7 @@ button {
 .features li {
   /* 可以添加一些额外的样式，例如边框、内边距等 */
   padding: 00px 0px 10px 10px;
-  font-size: calc(var(--p-size) /1.2);
+  font-size: calc(var(--p-size) /1.1);
 }
 .features li:before {
   content: "✓";
