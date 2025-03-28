@@ -272,14 +272,18 @@ button {
     background: var(--VI-color);
 }
 
-.section-fence p,h4{
-   color:var(--VI-bright);
-   p { font-size: var(--h1-size); }
-   h4 { font-size: var(--h4-size); }
+.section-fence p,
+.section-fence h4 {
+  color: var(--VI-bright);
 }
 
+.section-fence p {
+  font-size: var(--h1-size);
+}
 
-
+.section-fence h4 {
+  font-size: var(--h4-size);
+}
 
 .section-fence button{
    background: var(--VI-bright);
