@@ -260,6 +260,10 @@ button {
   margin-bottom: 0 20px;
 }
 
+.short-box{
+   width:60%
+}
+
 /* 底部悬浮栏 - 深蓝色渐变背景 */
 .section-fence {
     padding: var(--section-padding-vertical) var(--section-padding-horizontal);
