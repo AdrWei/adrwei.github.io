@@ -190,12 +190,15 @@ button {
 }
 
 .button-box {
-  display: inline-flex; /* 使用 flexbox 布局 */
-  align-items: left; /* 垂直居中对齐 */
-  padding: 10px 15px; /* 设置内边距 */
-  border: 1px solid var(--VI-dark); /* 设置边框 */
-  border-radius: 5px; /* 设置圆角 */
-  cursor: pointer; /* 设置鼠标指针样式 */
+    display: inline-flex;
+    padding: 10px;
+    border: 1px solid var(--VI-dark);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--VI-dark);
+    font-weight: normal;
+    font-size: calc(var(--p-size) / 1.2);
 }
 
 .banner {
