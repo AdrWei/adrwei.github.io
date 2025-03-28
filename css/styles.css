@@ -393,6 +393,16 @@ button {
   padding: 60px 0 20px;
 }
 
+.text-box {
+  display: inline-block; /* 使 div 元素以行内块形式显示，以便调整宽度和高度 */
+  padding: 10px 15px; /* 设置内边距，根据需要调整 */
+  border-radius: 5px; /* 设置圆角，根据需要调整 */
+  color: var(--VI-bright); /* 设置文本颜色，根据需要调整 */
+  font-size: var(--p-size); /* 设置字体大小，根据需要调整 */
+  cursor: default; /* 设置鼠标指针样式，表示不可点击 */
+  margin: 5px; /* 添加外边距，用于分隔多个框 */
+}
+
 .footer-container {
   max-width: 1440px;
   margin: 0 auto;
