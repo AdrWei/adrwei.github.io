@@ -66,6 +66,7 @@ ul {
     list-style: disc;
     flex-direction: column;
     list-style-position: initial;
+   gap:5px;
 }
 
 li {
@@ -228,16 +229,17 @@ button {
 /* 每张图片卡片样式 */
 .image-card {
   width: 100%;
+  aspect-ratio: 16/9; /* 直接设置宽高比 */
   border-radius: 8px; /* 可选：圆角 */
   overflow: hidden; /* 裁剪溢出部分 */
 }
 
 /* 图片绝对定位填充 */
 .image-card img {
-  width: 100%;
-  aspect-ratio: 16/9; /* 直接设置宽高比 */
-  object-fit: cover; /* 强制填充并裁剪 */
-  display: block; /* 避免图片底部间隙 */
+   width: 100%;
+   height:auto;
+   object-fit: cover; /* 强制填充并裁剪 */
+   display: block; /* 避免图片底部间隙 */
 }
 
 .image-card p {
