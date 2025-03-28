@@ -17,11 +17,11 @@
   --paragraph-color: #656565;  /* 段落颜色 */
   
   /* 字体大小变量（可选） */
- --h1-size: 3vw;
- --h2-size: 2.5vw;
- --h3-size: 1.8vw;
- --h4-size: 1.8vw;
- --p-size: 1.4vw;
+ --h1-size: 2.5rem;
+ --h2-size: 1.8 rem;
+ --h3-size: 1.4rem;
+ --h4-size: 1.4rem;
+ --p-size: 1rem;
 }
 
 /* 通用函数 */
