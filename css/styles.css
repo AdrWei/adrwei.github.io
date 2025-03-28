@@ -223,8 +223,8 @@ display: block; /* 鼠标悬停时显示图片 */
 
 /* 嵌套下拉菜单样式 */
 .nested-dropdown {
-  position: relative;
-  display: inline-block;
+  margin: 0px;
+  justify-content: center;
 }
 
 .nested-dropbtn {
