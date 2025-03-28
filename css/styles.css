@@ -19,7 +19,7 @@
   /* 字体大小变量（可选） */
  --h1-size: 2.5rem;
  --h2-size: 1.8rem;
- --h3-size: 1.6rem;
+ --h3-size: 1.4rem;
  --h4-size: 1.6rem;
  --p-size: 1.2rem;
 }
@@ -513,7 +513,7 @@ button {
     --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
      --h1-size: 6vw;
      --h2-size: 6vw;
-     --h3-size: 6vw;
+     --h3-size: 5vw;
      --h4-size: 6vw;
      --p-size: 4.5vw;
   }
