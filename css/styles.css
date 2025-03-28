@@ -86,7 +86,7 @@ header {
   color: var(--VI-bright); /* 文字颜色 */
   padding: 10px 50px; /* 内边距 */
   display: flex; /* 弹性布局 */
-  justify-content: space-between; /* 水平对齐 */
+  justify-content: space-around; /* 水平对齐 */
   align-items: center; /* 垂直对齐 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
   z-index: 1000; /* 确保 header 在最上层 */
@@ -537,6 +537,7 @@ button {
 
   header {
     padding: 10px 20px; /* 缩小手机端的内边距 */
+    justify-content:space-between;
   }
 
   nav {
