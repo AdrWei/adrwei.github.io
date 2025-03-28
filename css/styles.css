@@ -201,7 +201,7 @@ button {
     font-size: calc(var(--p-size) / 1.2);
 }
 
-box-icon{
+.box-icon{
    height:80%
 }
 
