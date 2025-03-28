@@ -368,13 +368,31 @@ button {
 .toggle-header:before {
   content: "+"; /* 默认显示 "+" 号 */
   font-size: var(--p-size);
-  margin-right: 10px; /* 添加右侧间距 */
-  position: absolute;
-  left: 10px; /* 调整 left 值 */
+  margin: 0 10px; /* 添加左右间距 */
+  position: relative;
 }
 
 .toggle-header.active:before {
   content: "-"; /* 激活状态显示 "-" 号 */
+}
+
+ul{
+   display:flex;
+   grid-gap: 10px; /* 设置列之间的间距 */
+   list-style: none; /* 移除默认的列表样式 */
+}
+
+li {
+  /* 可以添加一些额外的样式，例如边框、内边距等 */
+  padding: 00px 0px 10px 10px;
+  font-size: calc(var(--p-size) /1.1);
+}
+li:before {
+  content: "·";
+  color: var(--VI-color);
+  position: relative;
+  left: -8px;
+  font-size: var(--h2-size);
 }
 
 .features {
@@ -382,9 +400,8 @@ button {
   grid-template-columns: repeat(3, 1fr); /* 创建 3 列，每列宽度相等 */
   grid-gap: 10px; /* 设置列之间的间距 */
   list-style: none; /* 移除默认的列表样式 */
-  padding: 0; /* 移除默认的内边距 */
-  justify-items: left;
 }
+
 .features li {
   /* 可以添加一些额外的样式，例如边框、内边距等 */
   padding: 00px 0px 10px 10px;
