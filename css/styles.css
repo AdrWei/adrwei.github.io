@@ -178,8 +178,7 @@ display: block; /* 鼠标悬停时显示图片 */
 
 /* 下拉菜单样式 */
 .dropdown {
-  position: relative;
-  display: inline-block;
+
 }
 
 .dropbtn {
@@ -189,6 +188,13 @@ display: block; /* 鼠标悬停时显示图片 */
   font-size: 16px;
   border: none;
   cursor: pointer;
+}
+
+/* 下拉菜单箭头样式 */
+.dropbtn::after {
+   content: "▼"; /* Unicode 字符，表示向下的箭头 */
+   margin-left: 5px; /* 调整箭头与文字的间距 */
+   font-size: 12px; /* 调整箭头大小 */
 }
 
 .dropdown-content {
@@ -231,12 +237,14 @@ display: block; /* 鼠标悬停时显示图片 */
 }
 
 .nested-dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 2; /* 设置更高的 z-index */
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   z-index: 2; /* 设置更高的 z-index */
+   left: 100%; /* 将嵌套下拉菜单向右偏移 100% */
+   top: 0; /* 将嵌套下拉菜单的垂直位置与父级下拉菜单对齐 */
 }
 
 .nested-dropdown-content a {
