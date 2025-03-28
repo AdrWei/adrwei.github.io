@@ -378,7 +378,7 @@ button {
 
 ul{
    display:flex;
-   grid-gap: 10px; /* 设置列之间的间距 */
+   gap: 5px; /* 设置列之间的间距 */
    list-style: none; /* 移除默认的列表样式 */
 }
 
