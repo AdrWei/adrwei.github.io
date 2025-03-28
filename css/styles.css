@@ -14,7 +14,7 @@
     
   /* 定义颜色变量 */
   --heading-color: #333;    /* 标题颜色 */
-  --paragraph-color: #656565;  /* 段落颜色 */
+  --paragraph-color: #333  /* 段落颜色 */
   
   /* 字体大小变量（可选） */
  --h1-size: 2.5rem;
@@ -86,7 +86,7 @@ header {
   color: var(--VI-bright); /* 文字颜色 */
   padding: 10px 50px; /* 内边距 */
   display: flex; /* 弹性布局 */
-  justify-content: space-around; /* 水平对齐 */
+  justify-content: space-around; / */
   align-items: center; /* 垂直对齐 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
   z-index: 1000; /* 确保 header 在最上层 */
@@ -280,6 +280,10 @@ button {
 .section-header {
   margin-bottom: 40px;
   place-items: center;
+}
+
+.section-subheader{
+   color:#656565;
 }
 
 .content-header{
