@@ -524,7 +524,6 @@ button {
   nav.active {
     display: flex; /* 修改此处：显示导航栏 */
     justify-content: center;
-    gap: 33px;
     background-color:var(--VI-dark);
   }
 
