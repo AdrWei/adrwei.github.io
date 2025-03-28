@@ -366,7 +366,7 @@ button {
 }
 .features li {
   /* 可以添加一些额外的样式，例如边框、内边距等 */
-  padding: 10px;
+  padding: 10px 0px 10px 10px;
 }
 .features li:before {
   content: "✓";
