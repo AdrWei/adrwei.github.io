@@ -279,7 +279,7 @@ button {
 }
 
 .section-fence p {
-  font-size: var(--h1-size);
+  font-size: var(--p-size);
 }
 
 .section-fence h4 {
