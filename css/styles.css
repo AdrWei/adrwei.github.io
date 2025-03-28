@@ -111,7 +111,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* 确保 nav 占满 header 的宽度 */
 }
 
 .nav-center {
