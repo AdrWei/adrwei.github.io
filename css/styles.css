@@ -345,7 +345,6 @@ button {
     background-color: var(--VI-bright);
     font-weight: bold;
     font-size:var(--p-size);
-    gap:10px;
 }
 
 .toggle-header.active {
@@ -366,8 +365,16 @@ button {
     line-height: 1.6;
 }
 
-.toggle-icon {
-    font-size: var(--p-size);
+.toggle-header:before {
+  content: "+"; /* 默认显示 "+" 号 */
+  font-size: var(--p-size);
+  margin-right: 10px; /* 添加右侧间距 */
+  position: absolute;
+  left: 10px; /* 调整 left 值 */
+}
+
+.toggle-header.active:before {
+  content: "-"; /* 激活状态显示 "-" 号 */
 }
 
 .features {
