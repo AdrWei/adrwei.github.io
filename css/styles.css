@@ -357,13 +357,16 @@ button {
 }
 
 .features {
-  padding-left: 20px;
-  margin: 15px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 创建 3 列，每列宽度相等 */
+  grid-gap: 10px; /* 设置列之间的间距 */
+  list-style: none; /* 移除默认的列表样式 */
+  padding: 0; /* 移除默认的内边距 */
 }
 .features li {
-  margin-bottom: 8px;
-  list-style-type: none;
-  position: relative;
+  /* 可以添加一些额外的样式，例如边框、内边距等 */
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 .features li:before {
   content: "✓";
