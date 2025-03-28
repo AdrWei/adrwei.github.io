@@ -362,7 +362,9 @@ button {
 
 .toggle-content.active {
     display: block;
+    background-color: var(--VI-bright);
     font-size:calc(var(--p-size) /1.2);
+    line-height: 1.6;
 }
 
 .toggle-icon {
