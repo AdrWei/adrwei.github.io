@@ -183,10 +183,19 @@ button {
   color: var(--VI-bright);;
   border: none;
   padding: 10px 25px;
-  border-radius: 4px;
+  border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
   font-size:calc(var(--p-size));
+}
+
+.button-box {
+  display: inline-flex; /* 使用 flexbox 布局 */
+  align-items: left; /* 垂直居中对齐 */
+  padding: 10px 15px; /* 设置内边距 */
+  border: 1px solid var(--VI-dark); /* 设置边框 */
+  border-radius: 5px; /* 设置圆角 */
+  cursor: pointer; /* 设置鼠标指针样式 */
 }
 
 .banner {
