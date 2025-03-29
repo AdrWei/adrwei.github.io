@@ -177,21 +177,6 @@ display: block; /* 鼠标悬停时显示图片 */
   padding-bottom: 25px;
 }
 
-.dropbtn::after {
-    content: ""; /* 清空 content 属性 */
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    width: 16px; /* 调整图标的宽度 */
-    height: 16px; /* 调整图标的高度 */
-    background-image: url('/icons/向下.svg'); /* 设置图标的路径 */
-    background-size: contain; /* 保持图标的宽高比 */
-    background-repeat: no-repeat; /* 防止图标重复 */
-    pointer-events: none;
-}
-
-
 .nav-item:hover .dropdown-content {
   display: block;
 }
