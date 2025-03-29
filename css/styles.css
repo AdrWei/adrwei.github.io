@@ -620,6 +620,7 @@ button {
     right: -80vw;
     width: 80%;
     height:100vh;
+    visibility: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
   }
@@ -630,6 +631,7 @@ button {
     justify-content: center;
     background-color:var(--VI-dark);
     gap:4vh;
+    visibility: visible;
     transform: translateX(-80vw); /* 移动到屏幕可见区域 */
   }
    
