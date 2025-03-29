@@ -198,10 +198,6 @@ display: block; /* 鼠标悬停时显示图片 */
   background-color: var(--VI-color);
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 /* 嵌套下拉菜单样式 */
 .nested-dropdown {
    padding:0;
