@@ -652,6 +652,12 @@ button {
     box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
   }
 
+  .dropdown {
+   position: relative;
+   display: grid;
+   padding: 25px 0px;
+   }
+   
   .nav-right {
     /* 隐藏原始内容 */
     display: none;
