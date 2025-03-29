@@ -100,6 +100,14 @@ header.hidden {
   transform: translateY(-100%);
 }
 
+.header-content {
+    max-width: 1520px; /* 限制内容的最大宽度 */
+    margin: 0 auto; /* 水平居中内容 */
+    display: flex; /* 使用 flex 布局 */
+    justify-content: space-between; /* logo 和 nav-right 分别在左右两侧 */
+    align-items: center; /* 垂直居中内容 */
+}
+
 .logo{
    display:contents;
 }
