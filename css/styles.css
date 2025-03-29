@@ -624,6 +624,7 @@ button {
   header {
     padding: 10px 20px; /* 缩小手机端的内边距 */
     justify-content:space-between;
+    align-items: center;
   }
 
   nav {
