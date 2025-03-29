@@ -89,7 +89,6 @@ header {
    padding: 10px calc((100% - 1160px) / 2);  
    display: flex; /* 弹性布局 */
    justify-content: space-between;
-   align-items: center; /* 垂直对齐 */
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
    z-index: 1000; /* 确保 header 在最上层 */
    box-sizing: border-box; /* 确保 padding 包含在 width 内 */
