@@ -656,7 +656,9 @@ button {
   .mobile-nav-toggle {
     display: block; /* 在手机端显示导航切换按钮 */
     font-size: 24px;
-     cursor: pointer;
+   cursor: pointer;
+   position: relative; /* 添加相对定位，以便 close-icon 使用绝对定位 */
+
   }
 
    .mobile-nav-toggle::before {
