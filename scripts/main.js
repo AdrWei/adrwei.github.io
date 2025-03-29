@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.text())
     .then(data => {
       document.getElementById('header').innerHTML = data;
-      
+
       const nav = document.querySelector('nav');
       const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 
@@ -44,26 +44,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // 添加下拉菜单的代码
-      const dropbtn = document.querySelector('.dropbtn');
-      const dropdownContent = document.querySelector('.dropdown-content');
+      // 添加下拉菜单的代码（PC 端鼠标悬停显示）
+      const dropdowns = document.querySelectorAll('.dropdown');
 
-      if (dropbtn && dropdownContent) {
-        dropbtn.addEventListener('click', (event) => {
-          event.stopPropagation(); // 阻止事件冒泡
-          dropdownContent.classList.toggle('show');
-        });
-
-        window.addEventListener('click', (event) => {
-          if (!event.target.matches('.dropbtn')) {
-            if (dropdownContent.classList.contains('show')) {
-              dropdownContent.classList.remove('show');
-            }
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+          const dropdownContent = dropdown.querySelector('.dropdown-content');
+          if (dropdownContent) {
+            dropdownContent.style.display = 'block';
           }
         });
+
+        dropdown.addEventListener('mouseleave', () => {
+          const dropdownContent = dropdown.querySelector('.dropdown-content');
+          if (dropdownContent) {
+            dropdownContent.style.display = 'none';
+          }
+        });
+      });
+
+      // 手机端点击“服务”栏目显示子栏目
+      if (window.innerWidth <= 768) {
+        const serviceDropdown = document.querySelectorAll('.dropdown')[1]; // 获取“服务”栏目
+        const serviceDropdownContent = serviceDropdown.querySelector('.dropdown-content');
+
+        if (serviceDropdown && serviceDropdownContent) {
+          serviceDropdown.addEventListener('click', () => {
+            serviceDropdownContent.classList.toggle('active');
+          });
+        }
       }
 
-      // 添加嵌套下拉菜单的代码
+      // 添加嵌套下拉菜单的代码 (保持不变)
       const nestedDropbtn = document.querySelector('.nested-dropbtn');
       const nestedDropdownContent = document.querySelector('.nested-dropdown-content');
 
