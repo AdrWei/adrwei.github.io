@@ -51,20 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropbtn = dropdown.querySelector('.dropbtn');
     const dropdownContent = dropdown.querySelector('.dropdown-content');
 
-    if (dropbtn) { // 只检查 dropbtn 是否存在
+    if (dropbtn && dropdownContent) { // 确保 dropbtn 和 dropdownContent 都存在
       dropbtn.addEventListener('mouseenter', () => {
-        if (dropdownContent) { // 如果 dropdownContent 存在，则显示
-          dropdownContent.style.display = 'block';
-        }
+        dropdownContent.style.display = 'block';
       });
 
       dropbtn.addEventListener('mouseleave', () => {
-        if (dropdownContent) { // 如果 dropdownContent 存在，则隐藏
-          dropdownContent.style.display = 'none';
-        }
+        dropdownContent.style.display = 'none';
       });
     }
   });
+});
 
       // 手机端点击“服务”栏目显示子栏目
       if (window.innerWidth <= 768) {
