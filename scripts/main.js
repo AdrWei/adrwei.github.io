@@ -4,14 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.text())
     .then(data => {
       document.getElementById('header').innerHTML = data;
-
-      // 修改：手机端导航栏切换
+      
+      const nav = document.querySelector('nav');
       const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-      const dropdown = document.querySelector('.dropdown'); // 获取 dropdown 元素
 
-      if (mobileNavToggle && dropdown) {
+      if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', () => {
-          dropdown.classList.toggle('active'); // 切换 dropdown 的 active 类
+          nav.classList.toggle('active');
         });
       }
 
