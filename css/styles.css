@@ -81,19 +81,18 @@ li::marker {
 }
 
 header {
-  position: fixed;
-  height: var(--header-height);
-  width: 100%;
-  background-color: var(--VI-color); /* 背景颜色 */
-  color: var(--VI-bright); /* 文字颜色 */
-  padding: 10px 50px; /* 内边距 */
-  display: flex; /* 弹性布局 */
-  justify-content: space-between; / */
-  align-items: center; /* 垂直对齐 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-  z-index: 1000; /* 确保 header 在最上层 */
-  box-sizing: border-box; /* 确保 padding 包含在 width 内 */
-  transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
+   position: fixed;
+   height: var(--header-height);
+   width: 100%;
+   background-color: var(--VI-color); /* 背景颜色 */
+   color: var(--VI-bright); /* 文字颜色 */
+   padding: 10px calc((100% - 1200px) / 2);  display: flex; /* 弹性布局 */
+   justify-content: space-between; / */
+   align-items: center; /* 垂直对齐 */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+   z-index: 1000; /* 确保 header 在最上层 */
+   box-sizing: border-box; /* 确保 padding 包含在 width 内 */
+   transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
 }
 
 header.hidden {
@@ -305,7 +304,7 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px; /* 图片间距 */
-  max-width: 1440px; /* 控制网格总宽度 */
+  max-width: 1400px; /* 控制网格总宽度 */
   margin: 0 auto;
 }
 
