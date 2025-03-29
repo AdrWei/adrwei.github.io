@@ -178,6 +178,9 @@ display: block; /* 鼠标悬停时显示图片 */
 
 /* 下拉菜单样式 */
 .dropdown {
+   position: relative;
+   display: inline-block;
+   padding: 25px 0px;
 }
 
 .dropbtn {
@@ -223,6 +226,7 @@ display: block; /* 鼠标悬停时显示图片 */
 
 /* 嵌套下拉菜单样式 */
 .nested-dropdown {
+   padding:0;
 }
 
 .nested-dropbtn {
@@ -239,10 +243,7 @@ display: block; /* 鼠标悬停时显示图片 */
    position: absolute;
    background-color: var(--VI-light);
    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-   left: 100%; /* 将嵌套下拉菜单向右偏移 100% */
-   top: 0; /* 将嵌套下拉菜单的垂直位置与父级下拉菜单对齐 */
-   text-align: center;
-   height: 100%;
+   left: 0; /* 将嵌套下拉菜单向右偏移 100% */
 }
 
 .nested-dropdown-content a {
