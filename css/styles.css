@@ -86,8 +86,9 @@ header {
    width: 100%;
    background-color: var(--VI-color); /* 背景颜色 */
    color: var(--VI-bright); /* 文字颜色 */
-   padding: 10px calc((100% - 1200px) / 2);  display: flex; /* 弹性布局 */
-   justify-content: space-between; / */
+   padding: 10px calc((100% - 1160px) / 2);  
+   display: flex; /* 弹性布局 */
+   justify-content: space-between;
    align-items: center; /* 垂直对齐 */
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
    z-index: 1000; /* 确保 header 在最上层 */
