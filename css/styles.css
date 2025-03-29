@@ -262,6 +262,7 @@ button {
     font-weight: normal;
     font-size: calc(var(--p-size) / 1.2);
    gap:10px;
+   align-items: center;
 }
 
 .icon{
@@ -665,7 +666,7 @@ button {
    }
    
    .mobile-nav-toggle.active::before {
-       content: 'x'; 
+       content: '×'; 
    }
    
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
