@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       document.getElementById('header').innerHTML = data;
 
-      // 在 header 加载完成后，添加切换导航栏的代码
-      const nav = document.querySelector('nav');
+      // 修改：手机端导航栏切换
       const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const dropdown = document.querySelector('.dropdown'); // 获取 dropdown 元素
 
-      if (mobileNavToggle) {
+      if (mobileNavToggle && dropdown) {
         mobileNavToggle.addEventListener('click', () => {
-          nav.classList.toggle('active');
+          dropdown.classList.toggle('active'); // 切换 dropdown 的 active 类
         });
       }
 
