@@ -666,6 +666,10 @@ button {
     gap:4vh;
   }
 
+   .mobile-nav-toggle.active::before {
+       content: 'x';
+   }
+
   .pc-banner {
     display: none; /* 在手机端隐藏 PC 端图片 */
   }
