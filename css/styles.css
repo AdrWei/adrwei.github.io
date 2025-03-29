@@ -630,6 +630,15 @@ button {
    padding: 25px 0px;
    }
    
+   .dropbtn {
+   margin: 10px 0; /* 修改此处：添加垂直间距 */
+   padding: 10px;
+   text-align: center;
+   border-bottom: 1px solid #eee;
+   width: 100%; /* 可选：使导航项宽度占满容器 */
+   box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
+   }   
+   
   .nav-right {
     /* 隐藏原始内容 */
     display: none;
