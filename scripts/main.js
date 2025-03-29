@@ -13,12 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileNavToggle.addEventListener('click', () => {
           nav.classList.toggle('active');
         });
+           // 切换 toggle 按钮的图标
+          mobileNavToggle.classList.toggle('active');
       }
 
-      // 添加滚动隐藏 header 的代码
+      // PC端添加滚动隐藏 header 的代码
   if (window.innerWidth >= 768) { // 只在电脑端应用
       let lastScrollTop = 0;
-
       window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const header = document.querySelector('header');
@@ -30,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
           // 向上滚动
           header.classList.remove('hidden');
         }
-
         lastScrollTop = scrollTop;
       });
   }
