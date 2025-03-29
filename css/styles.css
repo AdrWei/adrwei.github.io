@@ -100,10 +100,6 @@ header.hidden {
   transform: translateY(-100%);
 }
 
-.header-content {
-max-width:1520;
-}
-
 .logo{
    display:contents;
 }
