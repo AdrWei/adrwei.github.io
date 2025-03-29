@@ -614,7 +614,6 @@ button {
    }
 
    nav {
-    display: none; /* 在手机端隐藏导航栏 */
     flex-direction: column;
     position: absolute;
     top: 0;
@@ -623,6 +622,15 @@ button {
     height:100vh;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
+  }
+   
+     /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
+  nav.active {
+    display: flex; /* 修改此处：显示导航栏 */
+    justify-content: center;
+    background-color:var(--VI-dark);
+    gap:4vh;
+    transform: translateX(-80vw); /* 移动到屏幕可见区域 */
   }
    
   .dropdown {
@@ -667,15 +675,6 @@ button {
    .mobile-nav-toggle.active::before {
        content: '×'; 
    }
-   
-  /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
-  nav.active {
-    display: flex; /* 修改此处：显示导航栏 */
-    justify-content: center;
-    background-color:var(--VI-dark);
-    gap:4vh;
-    transform: translateX(-80vw); /* 移动到屏幕可见区域 */
-  }
    
   .pc-banner {
     display: none; /* 在手机端隐藏 PC 端图片 */
