@@ -242,7 +242,6 @@ display: block; /* 鼠标悬停时显示图片 */
    left: 100%; /* 将嵌套下拉菜单向右偏移 100% */
    top: 0; /* 将嵌套下拉菜单的垂直位置与父级下拉菜单对齐 */
    text-align: center;
-   display: inline-flex;
    height: 100%;
 }
 
@@ -250,7 +249,7 @@ display: block; /* 鼠标悬停时显示图片 */
   color: black;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
+  display: inline-flex;
 }
 
 .nested-dropdown-content a:hover {
