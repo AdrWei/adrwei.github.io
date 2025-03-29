@@ -12,9 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', () => {
           nav.classList.toggle('active');
-        });
-           // 切换 toggle 按钮的图标
           mobileNavToggle.classList.toggle('active');
+        });
       }
 
       // PC端添加滚动隐藏 header 的代码
