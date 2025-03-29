@@ -88,7 +88,7 @@ header {
   color: var(--VI-bright); /* 文字颜色 */
   padding: 10px 50px; /* 内边距 */
   display: flex; /* 弹性布局 */
-  justify-content: space-around; / */
+  justify-content: space-between; / */
   align-items: center; /* 垂直对齐 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
   z-index: 1000; /* 确保 header 在最上层 */
@@ -107,25 +107,6 @@ header.hidden {
 .logo img {
     max-height: 100%;
     width: auto;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-center {
-  display: flex;
-  justify-content: center;
-  margin: 0 20px; /* 确保居中 */
-}
-
-.nav-center a {
-  color: var(--VI-bright);;
-  text-decoration: none;
-  margin: 0 15px;
-  white-space: nowrap; /* 防止链接换行 */
 }
 
 .nav-right {
@@ -627,33 +608,8 @@ button {
     align-items: center;
   }
 
-  nav {
-    display: none; /* 在手机端隐藏导航栏 */
-    flex-direction: column;
-    position: absolute;
-    top: var(--header-height);
-    right: 0;
-    width: 80%;
-    height:100vh;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-center {
-    display: flex;
-    flex-direction: column; /* 修改此处：垂直排列 nav-center 中的导航项 */
-    align-items: center; /* 可选：居中导航项 */
-  }
-
-  .nav-center a {
-    margin: 10px 0; /* 修改此处：添加垂直间距 */
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    width: 100%; /* 可选：使导航项宽度占满容器 */
-    box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
-  }
-
   .dropdown {
+   display:none;
    position: relative;
    display: grid;
    padding: 25px 0px;
