@@ -109,6 +109,12 @@ header.hidden {
     width: auto;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .nav-right {
   display: flex;
   align-items: center; /* 修改此处 */
@@ -608,6 +614,17 @@ button {
     align-items: center;
   }
 
+   nav {
+    display: none; /* 在手机端隐藏导航栏 */
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    width: 80%;
+    height:100vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+   
   .dropdown {
    display:none;
    position: relative;
