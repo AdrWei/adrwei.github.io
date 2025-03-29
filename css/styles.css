@@ -171,12 +171,10 @@ display: block; /* 鼠标悬停时显示图片 */
 }
 
 .dropbtn {
-  background-color: transparent;
-  color: black;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+  color: var(--VI-bright);;
+  text-decoration: none;
+  margin: 0 15px;
+  white-space: nowrap; /* 防止链接换行 */
 }
 
 .dropdown-content {
