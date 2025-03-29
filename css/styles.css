@@ -617,11 +617,12 @@ button {
     display: none; /* 在手机端隐藏导航栏 */
     flex-direction: column;
     position: absolute;
-    top: var(--header-height);
-    right: 0;
+    top: 0;
+    right: -80vw;
     width: 80%;
-    height:calc(100vh - var(--header-height));
+    height:100vh;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
   }
    
   .dropdown {
@@ -656,6 +657,7 @@ button {
     display: block; /* 在手机端显示导航切换按钮 */
     font-size: 24px;
    cursor: pointer;
+    z-index:5;
   }
 
    .mobile-nav-toggle::before {
@@ -672,6 +674,7 @@ button {
     justify-content: center;
     background-color:var(--VI-dark);
     gap:4vh;
+    transform: translateX(80vw); /* 移动到屏幕可见区域 */
   }
    
   .pc-banner {
