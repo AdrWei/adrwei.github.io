@@ -101,11 +101,12 @@ header.hidden {
 
 .logo{
    display:block;
-   padding-right: 20px; 
+   padding-left: 20px; 
 }
 
 .logo img {
     max-height: 100%;
+   width:auto;
 }
 
 nav {
@@ -611,7 +612,7 @@ button {
   }
    
    .logo{
-   display:content;
+   display:contents;
    }
 
    nav {
