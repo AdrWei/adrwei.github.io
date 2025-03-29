@@ -158,8 +158,6 @@ display: block; /* 鼠标悬停时显示图片 */
 
 .mobile-nav-toggle {
   display: none; /* 默认情况下，手机导航切换按钮隐藏 */
-  font-size: 24px;
-  cursor: pointer;
 }
 
 /* 下拉菜单样式 */
@@ -653,11 +651,29 @@ button {
     max-width:33%;
      padding-top:30px;
   }
-  
+
+   
   .mobile-nav-toggle {
     display: block; /* 在手机端显示导航切换按钮 */
+    font-size: 24px;
+     cursor: pointer;
   }
 
+   .mobile-nav-toggle::before {
+       content: '☰'; /* 默认显示 ☰ */
+   }
+   
+   .mobile-nav-toggle.active::before {
+       content: 'x';
+       position: absolute; /* 添加绝对定位 */
+       top: 0;
+       left: 0;
+   }
+
+   .mobile-nav-toggle.active {
+    text-indent: -9999px; /* 隐藏原本的 ☰ */
+}
+   
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
     display: flex; /* 修改此处：显示导航栏 */
@@ -665,11 +681,7 @@ button {
     background-color:var(--VI-dark);
     gap:4vh;
   }
-
-   .mobile-nav-toggle.active::before {
-       content: 'x';
-   }
-
+   
   .pc-banner {
     display: none; /* 在手机端隐藏 PC 端图片 */
   }
