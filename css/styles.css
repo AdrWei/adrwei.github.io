@@ -177,6 +177,10 @@ display: block; /* 鼠标悬停时显示图片 */
   white-space: nowrap; /* 防止链接换行 */
 }
 
+.dropbtn:hover .dropdown-content {
+  display: block;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
