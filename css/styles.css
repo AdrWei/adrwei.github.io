@@ -100,12 +100,12 @@ header.hidden {
 }
 
 .logo{
-   display:contents;
+   display:block;
+   padding-right: 20px; 
 }
 
 .logo img {
     max-height: 100%;
-    width: auto;
 }
 
 nav {
@@ -126,8 +126,7 @@ nav {
 
 .nav-right img {
   height: 24px; /* 设置图标大小 */
-  width: auto;
-  max-width: 100%; /* 防止图标超出容器 */
+  padding-right: 20px;
 }
 
 .hover-container {
@@ -610,6 +609,10 @@ button {
     justify-content:space-between;
     align-items: center;
   }
+   
+   .logo{
+   display:content;
+   }
 
    nav {
     display: none; /* 在手机端隐藏导航栏 */
