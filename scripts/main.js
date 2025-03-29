@@ -46,6 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
           header.querySelector('.toggle-icon').textContent = content.classList.contains('active') ? '-' : '+';
         });
       });
+      
+      // 添加关闭 nav 的代码
+      if (closeNav) {
+          closeNav.addEventListener('click', () => {
+              nav.classList.remove('active');
+          });
+      }
 
       // 添加下拉菜单的代码
       const dropbtn = document.querySelector('.dropbtn');
