@@ -622,7 +622,7 @@ button {
     top: var(--header-height);
     right: 0;
     width: 80%;
-    height:100vh;
+    height:calc(100vh - var(--header-height));
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
    
