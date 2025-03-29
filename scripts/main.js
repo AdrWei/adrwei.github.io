@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // 添加滚动隐藏 header 的代码
+  if (window.innerWidth >= 768) { // 只在电脑端应用
       let lastScrollTop = 0;
 
       window.addEventListener('scroll', () => {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         lastScrollTop = scrollTop;
       });
+  }
 
       // 添加 toggle 效果的代码 (修改部分)
       const toggleHeaders = document.querySelectorAll('.toggle-header');
