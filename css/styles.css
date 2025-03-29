@@ -651,23 +651,26 @@ button {
     max-width:33%;
      padding-top:30px;
   }
-
    
   .mobile-nav-toggle {
     display: block; /* 在手机端显示导航切换按钮 */
     font-size: 24px;
    cursor: pointer;
-   position: relative; /* 添加相对定位，以便 close-icon 使用绝对定位 */
-
   }
 
-   .mobile-nav-toggle.active::before {
-   content: 'x'; /* nav 激活时显示 x */
-   }
-   
-   .mobile-nav-toggle.active {
-   text-indent: -9999px; /* 隐藏原本的 ☰ */
-   }
+   .mobile-nav-toggle-close {
+    display: none; /* 默认隐藏 close 图标 */
+    font-size: 24px;
+    position: absolute;
+}
+
+.mobile-nav-toggle.active .mobile-nav-toggle {
+    display: none; /* active 时隐藏 open 图标 */
+}
+
+.mobile-nav-toggle.active .mobile-nav-toggle-close {
+    display: block; /* active 时显示 close 图标 */
+}
    
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
