@@ -182,7 +182,7 @@ display: block; /* 鼠标悬停时显示图片 */
   padding-bottom: 25px;
 }
 
-.dropdown-toggle::after {
+.dropbtn::after {
     content: ""; /* 清空 content 属性 */
     position: absolute;
     top: 50%;
