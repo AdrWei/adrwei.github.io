@@ -44,14 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // 添加下拉菜单的代码（PC 端鼠标悬停显示）
-  const dropdowns = document.querySelectorAll('.dropdown');
+    // 添加嵌套下拉菜单的代码 (保持不变)
+    const dropdowns = document.querySelectorAll('.dropdown');
 
   dropdowns.forEach(dropdown => {
     const dropbtn = dropdown.querySelector('.dropbtn');
     const dropdownContent = dropdown.querySelector('.dropdown-content');
 
-    if (dropbtn && dropdownContent) { // 确保 dropbtn 和 dropdownContent 都存在
+    if (dropbtn && dropdownContent) {
       dropbtn.addEventListener('mouseenter', () => {
         dropdownContent.style.display = 'block';
       });
@@ -61,6 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // 添加手机端导航栏切换功能
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const nav = document.querySelector('nav');
+
+  if (mobileNavToggle && nav) {
+    mobileNavToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  }
 });
 
       // 手机端点击“服务”栏目显示子栏目
