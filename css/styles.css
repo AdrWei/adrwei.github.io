@@ -175,6 +175,7 @@ display: block; /* 鼠标悬停时显示图片 */
   text-decoration: none;
   margin: 0 15px;
   white-space: nowrap; /* 防止链接换行 */
+  padding-bottom: 25px;
 }
 
 .nav-item:hover .dropdown-content {
@@ -659,6 +660,7 @@ button {
     display: flex; /* 修改此处：显示导航栏 */
     justify-content: center;
     background-color:var(--VI-dark);
+    gap:4vh;
   }
 
   .pc-banner {
