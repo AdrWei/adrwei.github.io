@@ -637,16 +637,7 @@ button {
    border-bottom: 1px solid #eee;
    width: 100%; /* 可选：使导航项宽度占满容器 */
    box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
-   }   
-
-   .dropbtn {
-   margin: 10px 0; /* 修改此处：添加垂直间距 */
-   padding: 10px;
-   text-align: center;
-   border-bottom: 1px solid #eee;
-   width: 100%; /* 可选：使导航项宽度占满容器 */
-   box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
-   }   
+   }
    
   .nav-right {
     /* 隐藏原始内容 */
@@ -668,10 +659,6 @@ button {
     display: flex; /* 修改此处：显示导航栏 */
     justify-content: center;
     background-color:var(--VI-dark);
-  }
-
-  nav.active > * { /* 选择容器的所有子元素 */
-    transform: translateY(-30%); /* 将子元素向上移动 30% */
   }
 
   .pc-banner {
