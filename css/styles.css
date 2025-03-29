@@ -658,19 +658,13 @@ button {
    cursor: pointer;
   }
 
-   .mobile-nav-toggle-close {
-    display: none; /* 默认隐藏 close 图标 */
-    font-size: 24px;
-    position: absolute;
-}
-
-.mobile-nav-toggle.active .mobile-nav-toggle {
-    display: none; /* active 时隐藏 open 图标 */
-}
-
-.mobile-nav-toggle.active .mobile-nav-toggle-close {
-    display: block; /* active 时显示 close 图标 */
-}
+   .mobile-nav-toggle::before {
+       content: '☰'; 
+   }
+   
+   .mobile-nav-toggle.active::before {
+       content: 'x'; 
+   }
    
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
