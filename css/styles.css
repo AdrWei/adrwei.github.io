@@ -661,9 +661,13 @@ button {
 
   }
 
-.mobile-nav-toggle.active::before {
-    content: 'x'; /* nav 激活时显示 x */
-}
+   .mobile-nav-toggle.active::before {
+   content: 'x'; /* nav 激活时显示 x */
+   }
+   
+   .mobile-nav-toggle.active {
+   text-indent: -9999px; /* 隐藏原本的 ☰ */
+   }
    
   /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
