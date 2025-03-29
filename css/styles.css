@@ -192,14 +192,6 @@ display: block; /* 鼠标悬停时显示图片 */
   cursor: pointer;
 }
 
-/* 下拉菜单箭头样式 */
-.dropbtn::after {
-   font-family: 'Material Icons'; /* 应用 Material Icons 字体 */
-   content: '\e859';
-   margin-left: 5px; /* 调整箭头与文字的间距 */
-   font-size: 12px; /* 调整箭头大小 */
-}
-
 .dropdown-content {
   display: none;
   position: absolute;
