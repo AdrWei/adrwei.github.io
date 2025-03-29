@@ -45,23 +45,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // 添加下拉菜单的代码（PC 端鼠标悬停显示）
-      const dropdowns = document.querySelectorAll('.dropdown');
+  const dropdowns = document.querySelectorAll('.dropdown');
 
-      dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('mouseenter', () => {
-          const dropdownContent = dropdown.querySelector('.dropdown-content');
-          if (dropdownContent) {
-            dropdownContent.style.display = 'block';
-          }
-        });
+  dropdowns.forEach(dropdown => {
+    const dropbtn = dropdown.querySelector('.dropbtn');
+    const dropdownContent = dropdown.querySelector('.dropdown-content');
 
-        dropdown.addEventListener('mouseleave', () => {
-          const dropdownContent = dropdown.querySelector('.dropdown-content');
-          if (dropdownContent) {
-            dropdownContent.style.display = 'none';
-          }
-        });
+    if (dropbtn) { // 只检查 dropbtn 是否存在
+      dropbtn.addEventListener('mouseenter', () => {
+        if (dropdownContent) { // 如果 dropdownContent 存在，则显示
+          dropdownContent.style.display = 'block';
+        }
       });
+
+      dropbtn.addEventListener('mouseleave', () => {
+        if (dropdownContent) { // 如果 dropdownContent 存在，则隐藏
+          dropdownContent.style.display = 'none';
+        }
+      });
+    }
+  });
 
       // 手机端点击“服务”栏目显示子栏目
       if (window.innerWidth <= 768) {
