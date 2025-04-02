@@ -47,23 +47,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // 添加下拉菜单的代码
-      const dropbtn = document.querySelector('.dropbtn');
+    document.addEventListener('DOMContentLoaded', function() {
+      const navItem = document.querySelector('.nav-item'); // 获取包含 .dropbtn 和 .dropdown-content 的父元素
       const dropdownContent = document.querySelector('.dropdown-content');
-
-      if (dropbtn && dropdownContent) {
-        dropbtn.addEventListener('click', (event) => {
-          event.stopPropagation(); // 阻止事件冒泡
-          dropdownContent.classList.toggle('show');
+    
+      if (navItem && dropdownContent) {
+        navItem.addEventListener('click', function(event) {
+          if (event.target.classList.contains('dropbtn')) { // 使用事件委托
+            event.preventDefault(); // 阻止默认行为
+            dropdownContent.classList.toggle('show');
+          }
         });
-
-        window.addEventListener('click', (event) => {
-          if (!event.target.matches('.dropbtn')) {
+    
+        window.addEventListener('click', function(event) {
+          if (!event.target.classList.contains('dropbtn')) { // 使用事件委托
             if (dropdownContent.classList.contains('show')) {
               dropdownContent.classList.remove('show');
             }
           }
         });
       }
+    });
 
       // 添加嵌套下拉菜单的代码
       const nestedDropbtn = document.querySelector('.nested-dropbtn');
