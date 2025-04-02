@@ -47,27 +47,30 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // 添加下拉菜单的代码
-    document.addEventListener('DOMContentLoaded', function() {
-      const navItem = document.querySelector('.nav-item'); // 获取包含 .dropbtn 和 .dropdown-content 的父元素
-      const dropdownContent = document.querySelector('.dropdown-content');
-    
-      if (navItem && dropdownContent) {
-        navItem.addEventListener('click', function(event) {
-          if (event.target.classList.contains('dropbtn')) { // 使用事件委托
-            event.preventDefault(); // 阻止默认行为
-            dropdownContent.classList.toggle('show');
+      document.addEventListener('DOMContentLoaded', function() {
+        const navItems = document.querySelectorAll('.nav-item');
+      
+        navItems.forEach(function(navItem) {
+          const dropbtn = navItem.querySelector('.dropbtn');
+          const dropdownContent = navItem.querySelector('.dropdown-content');
+      
+          if (dropbtn && dropdownContent) {
+            dropbtn.addEventListener('click', function(event) {
+              event.preventDefault(); // 阻止默认跳转
+              dropdownContent.classList.toggle('show');
+            });
           }
         });
-    
+      
         window.addEventListener('click', function(event) {
-          if (!event.target.classList.contains('dropbtn')) { // 使用事件委托
-            if (dropdownContent.classList.contains('show')) {
+          navItems.forEach(function(navItem) {
+            const dropdownContent = navItem.querySelector('.dropdown-content');
+            if (dropdownContent && event.target !== navItem.querySelector('.dropbtn')) {
               dropdownContent.classList.remove('show');
             }
-          }
+          });
         });
-      }
-    });
+      });
 
       // 添加嵌套下拉菜单的代码
       const nestedDropbtn = document.querySelector('.nested-dropbtn');
