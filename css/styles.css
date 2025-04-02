@@ -174,7 +174,6 @@ display: block; /* 鼠标悬停时显示图片 */
   margin: 0 15px;
   white-space: nowrap; /* 防止链接换行 */
   padding-bottom: 25px;
-  touch-action: manipulation; /* 确保响应触摸事件 */
 }
 
 .nav-item:hover .dropdown-content {
@@ -675,10 +674,6 @@ button {
    border-bottom: 1px solid #eee;
    width: 100%; /* 可选：使导航项宽度占满容器 */
    box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
-   }
-
-   .dropdown-content.show {
-  display: block; /* 添加 show 类时显示 */
    }
    
   .nav-right {
