@@ -47,46 +47,43 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // 添加下拉菜单的代码
-        const navItems = document.querySelectorAll('.nav-item');
+      const dropbtn = document.querySelector('.dropbtn');
+      const dropdownContent = document.querySelector('.dropdown-content');
 
-  navItems.forEach(function(navItem) {
-    const dropbtn = navItem.querySelector('.dropbtn');
-    const dropdownContent = navItem.querySelector('.dropdown-content');
-
-    if (dropbtn && dropdownContent) {
-      if (window.innerWidth >= 768) {
-        // PC 端 hover 事件
-        navItem.addEventListener('mouseenter', () => {
-          dropdownContent.style.display = 'block';
-        });
-
-        navItem.addEventListener('mouseleave', () => {
-          dropdownContent.style.display = 'none';
-        });
-      } else {
-        // 手机端点击事件
-        dropbtn.addEventListener('click', function(event) {
-          event.preventDefault();
+      if (dropbtn && dropdownContent) {
+        dropbtn.addEventListener('click', (event) => {
+          event.stopPropagation(); // 阻止事件冒泡
           dropdownContent.classList.toggle('show');
-          console.log('dropbtn clicked', event.target);
+        });
+
+        window.addEventListener('click', (event) => {
+          if (!event.target.matches('.dropbtn')) {
+            if (dropdownContent.classList.contains('show')) {
+              dropdownContent.classList.remove('show');
+            }
+          }
         });
       }
-    }
-  });
 
-  window.addEventListener('click', function(event) {
-    navItems.forEach(function(navItem) {
-      const dropdownContent = navItem.querySelector('.dropdown-content');
-      if (
-        window.innerWidth < 768 &&
-        dropdownContent &&
-        event.target !== navItem.querySelector('.dropbtn')
-      ) {
-        dropdownContent.classList.remove('show');
+      // 添加嵌套下拉菜单的代码
+      const nestedDropbtn = document.querySelector('.nested-dropbtn');
+      const nestedDropdownContent = document.querySelector('.nested-dropdown-content');
+
+      if (nestedDropbtn && nestedDropdownContent) {
+        nestedDropbtn.addEventListener('click', (event) => {
+          event.stopPropagation(); // 阻止事件冒泡
+          nestedDropdownContent.classList.toggle('show');
+        });
+
+        window.addEventListener('click', (event) => {
+          if (!event.target.matches('.nested-dropbtn')) {
+            if (nestedDropdownContent.classList.contains('show')) {
+              nestedDropdownContent.classList.remove('show');
+            }
+          }
+        });
       }
-      console.log('window clicked', event.target);
     });
-  });
 
   // 加载 footer
   fetch('/footer.html')
