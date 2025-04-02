@@ -34,7 +34,20 @@ function displayImages(page) {
     pageImages.forEach(url => {
         const img = document.createElement('img');
         img.src = url;
+        img.style.cursor = 'pointer'; // 添加鼠标悬停效果
+
+        // 添加点击事件
+        img.addEventListener('click', () => {
+            window.location.href = url; // 跳转到图片链接
+        });
+
         imageContainer.appendChild(img);
+
+        // 添加文件名
+        const fileName = url.substring(url.lastIndexOf('/') + 1); // 从 URL 中提取文件名
+        const fileNameDiv = document.createElement('div');
+        fileNameDiv.textContent = fileName;
+        imageContainer.appendChild(fileNameDiv);
     });
 
     pageNumberDisplay.textContent = page;
