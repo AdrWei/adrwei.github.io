@@ -1,6 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>橡树工作室 - 助力品牌出海</title>
+  <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/css/styles.css">
     <title>图片分页展示</title>
     <style>
         #image-container img {
@@ -17,13 +23,16 @@
     </style>
 </head>
 <body>
+  <!-- header占位 -->
+  <div id="header"></div> 
     <div id="image-container"></div>
     <div class="pagination">
         <button id="prev-page">上一页</button>
         <span id="page-number">1</span>
         <button id="next-page">下一页</button>
     </div>
-
-    <script src="showIMG.js"></script>
+    <div id="footer"></div>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/showIMG.js"></script>
 </body>
 </html>
