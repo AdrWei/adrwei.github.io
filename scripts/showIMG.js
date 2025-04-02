@@ -6,7 +6,7 @@ const perPage = 50; // 每页显示的图片数量
 let currentPage = 1;
 let imageUrls = [];
 
-const imageContainer = document.getElementById('image-container');
+const imageContainer = document.getElementById('showimg-container');
 const pageNumberDisplay = document.getElementById('page-number');
 const prevPageButton = document.getElementById('prev-page');
 const nextPageButton = document.getElementById('next-page');
