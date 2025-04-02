@@ -17,7 +17,7 @@ async function getImagesFromGitHub(owner, repo, path) {
         const response = await fetch(apiUrl);
         const data = await response.json();
         return data
-            .filter(item => item.type === 'file' && /\.(jpg|jpeg|png|gif|svg)$/i.test(item.name)) // 修改了正则表达式
+            .filter(item => item.type === 'file' && /\.(jpg|jpeg|png|gif|svg|webp)$/i.test(item.name)) // 修改了正则表达式
             .map(item => item.download_url);
     } catch (error) {
         console.error('Error fetching images:', error);
