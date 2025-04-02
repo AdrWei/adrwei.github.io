@@ -336,6 +336,7 @@ button {
 .section-dark {
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);  /* 仍需要添加 */
   background-color: var(--VI-light);
+  max-width: var(--section-max-width);
 }
 
 /* 标题和描述 */
