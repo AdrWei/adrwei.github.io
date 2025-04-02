@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (dropbtn && dropdownContent) {
         dropbtn.addEventListener('click', (event) => {
           event.stopPropagation(); // 阻止事件冒泡
+          event.preventDefault(); // 阻止默认跳转行为
           dropdownContent.classList.toggle('show');
         });
 
