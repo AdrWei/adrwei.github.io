@@ -1,6 +1,6 @@
 const owner = 'AdrWei'; // 替换为你的 GitHub 用户名
 const repo = 'adrwei.github.io'; // 替换为你的 GitHub 仓库名
-const path = '/media/vectors/'; // 替换为你的图片路径
+const path = '/media/'; // 替换为你的图片路径
 const perPage = 50; // 每页显示的图片数量
 
 let currentPage = 1;
