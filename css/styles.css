@@ -284,21 +284,6 @@ button {
   object-fit: cover; /* 确保图片覆盖整个区域 */
 }
 
-.content-banner{
-  display: flex; /* 使用 Flexbox 布局 */
-  align-items: center; /* 垂直居中对齐 */
-  justify-content: space-between; /* 两端对齐，使图片和文字分别在左右两侧 */
-  max-width: 100vw; /* 覆盖整个视口宽度 */
-  height: 45vh; /* 根据图片高度调整 */
-  overflow: hidden; /* 隐藏超出部分 */ 
-  background: linear-gradient(to right, #17A2B8, #4EC4D7);
-}
-
-.content-banner img{
-  max-width: 50%; /* 图片最大宽度为容器一半 */
-  height: 50%;
-}
-
 .mobile-banner {
   display: none; /* 默认情况下隐藏手机端图片 */
 }
@@ -311,6 +296,31 @@ button {
   text-align: left;
   color: var(--VI-bright); /* 文字颜色 */
   padding: 20px;
+}
+
+.content-banner{
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: flex-end;
+  max-width: 100vw; /* 覆盖整个视口宽度 */
+  height: 45vh; /* 根据图片高度调整 */
+  overflow: hidden; /* 隐藏超出部分 */ 
+  background: linear-gradient(to right, #17A2B8, #4EC4D7);
+}
+
+.content-banner-text {
+  position: absolute;
+  top: 25%; /* 垂直居中 */
+  left: 25%; /* 水平居中 */
+  transform: translate(-50%, -50%); /* 精确居中 */
+  text-align: left;
+  color: var(--VI-bright); /* 文字颜色 */
+  padding: 20px;
+}
+
+.content-banner img{
+  max-width: 50%; /* 图片最大宽度为容器一半 */
+  height: 50%;
 }
 
 /* 图片网格布局 */
