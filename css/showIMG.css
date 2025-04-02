@@ -1,36 +1,36 @@
-#image-container {
+#showimg-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
 }
 
-#image-container figure {
+#showimg-container figure {
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#image-container img {
+#showimg-container img {
     height: 100%;
     background-color: var(--VI-dark);
     aspect-ratio: 16 / 9;
     object-fit: contain;
 }
 
-#image-container figcaption {
+#showimg-container figcaption {
     text-align: center;
     margin-top: 5px;
     font-size: 14px;
     color: #555;
 }
 
-.pagination {
+.showimg-pagination {
     margin: 20px 0;
     text-align: center;
 }
 
-.pagination button {
+.showimg-pagination button {
     padding: 5px 10px;
     margin: 0 5px;
 }
