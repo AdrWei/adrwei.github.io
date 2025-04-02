@@ -317,17 +317,15 @@ button {
   text-align: left;
   color: var(--VI-bright); /* 文字颜色 */
   padding: 20px;
-}
 
-.content-banner-box {
-   height: 100%;
-   position: absolute;
-   top: 40%;
-   right: 25%;
-   transform: translate(50%, -25%);
-}
 
 .content-banner img{
+   height: 30vh;
+   position: absolute;
+   top: 18%;
+   right: 25%;
+   transform: translate(50%, -25%);
+   width: auto;
 }
 
 /* 图片网格布局 */
