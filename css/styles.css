@@ -285,12 +285,18 @@ button {
 }
 
 .content-banner{
-  text-align: center;
-  position: relative;
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: space-between; /* 两端对齐，使图片和文字分别在左右两侧 */
   max-width: 100vw; /* 覆盖整个视口宽度 */
   height: 45vh; /* 根据图片高度调整 */
   overflow: hidden; /* 隐藏超出部分 */ 
   background: linear-gradient(to right, #17A2B8, #4EC4D7);
+}
+
+.content-banner img{
+  max-width: 50%; /* 图片最大宽度为容器一半 */
+  height: 50%;
 }
 
 .mobile-banner {
