@@ -7,24 +7,22 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>图片分页展示</title>
     <style>
-        #image-container table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        #image-container th, #image-container td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        #image-container th {
-            background-color: #f2f2f2;
+        #image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 自动适应列数 */
+            gap: 10px; /* 列和行之间的间距 */
         }
 
         #image-container img {
-            max-width: 200px;
+            max-width: 100%;
             height: auto;
+        }
+
+        #image-container div {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
         }
 
         .pagination {
@@ -41,18 +39,7 @@
 <body>
     <div id="header"></div>
     <h3>图片展示示例</h3>
-    <div id="image-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>图片</th>
-                    <th>文件名</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+    <div id="image-container"></div>
     <div class="pagination">
         <button id="prev-page">上一页</button>
         <span id="page-number">1</span>
