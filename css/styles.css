@@ -10,7 +10,7 @@
   --section-padding-vertical: 4vw;  
   --section-padding-horizontal: 3vh;
   /* 可选：其他样式变量（如背景色） */
-  --section-max-width:1400px;
+  --layout-max-width:1400px;
     
   /* 定义颜色变量 */
   --heading-color: #333;    /* 标题颜色 */
@@ -329,14 +329,12 @@ button {
 .section {
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
   background-color: var(VI-bright);
-  max-width: var(--section-max-width);
   margin: 0 auto; /* 水平居中 */
 }
 
 .section-dark {
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);  /* 仍需要添加 */
   background-color: var(--VI-light);
-  max-width: var(--section-max-width);
 }
 
 /* 标题和描述 */
@@ -389,6 +387,7 @@ button {
   gap: 3vw;               /* 两列之间的间距 */
   align-items: center;     /* 垂直居中（可选） */
   margin: 0 auto;
+  max-width: var(--layout-max-width);
 }
 
 .column-layout {
@@ -396,6 +395,7 @@ button {
   gap: 6vw;               /* 两列之间的间距 */
   align-items: center;     /* 垂直居中（可选） */
   margin: 0 auto;
+  max-width: var(--layout-max-width);
 }
 
 /* 左侧文字区域 */
