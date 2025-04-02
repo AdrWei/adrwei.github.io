@@ -320,23 +320,14 @@ button {
 }
 
 .content-banner-box {
-   max-width: fit-content;
-   height: 40%;
+   height: 100%;
    position: absolute;
-   top: 15%;
+   top: 40%;
    right: 25%;
    transform: translate(50%, -25%);
-   padding: 20px;
 }
 
 .content-banner img{
-   max-width: fit-content;
-   height: 40%;
-   position: absolute;
-   top: 15%;
-   right: 25%;
-   transform: translate(50%, -25%);
-   padding: 20px;
 }
 
 /* 图片网格布局 */
