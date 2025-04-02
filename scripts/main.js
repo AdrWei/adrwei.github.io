@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
           event.stopPropagation(); // 阻止事件冒泡
           dropdownContent.classList.toggle('show');
         });
-
+      }
 
       // 添加嵌套下拉菜单的代码
       const nestedDropbtn = document.querySelector('.nested-dropbtn');
