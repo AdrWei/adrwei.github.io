@@ -676,6 +676,10 @@ button {
    width: 100%; /* 可选：使导航项宽度占满容器 */
    box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
    }
+
+   .dropdown-content.show {
+  display: block; /* 添加 show 类时显示 */
+   }
    
   .nav-right {
     /* 隐藏原始内容 */
