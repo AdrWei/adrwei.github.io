@@ -698,20 +698,16 @@ button {
    .mobile-nav-toggle.active::before {
        content: '×'; 
    }
-   
-  .pc-banner {
-    display: none; /* 在手机端隐藏 PC 端图片 */
-  }
 
   .mobile-banner {
     display: block; /* 在手机端显示手机端图片 */
   }
 
-  .banner {
-    height: 50vh; /* 在手机端调整 banner 高度 */
-  }
+   .banner, .content-banner {
+     height: 50vh; /* 同时设置 banner 和 content-banner 的高度 */
+   }
 
-  .banner-text {
+   .pc-banner, .banner-text, .content-banner-text  {
     display: none; /* 在手机端隐藏 banner 文本 */
   }
 
