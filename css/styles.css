@@ -350,6 +350,7 @@ button {
     height: 100%;
     display: flex;
     background-color: var(--VI-bright);
+   object-fit:contain;
 }
 
 .image-card p {
