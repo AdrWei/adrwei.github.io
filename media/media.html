@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>图片分页展示</title>
+    <style>
+        #image-container img {
+            width: 200px; /* 设置图片宽度 */
+            margin: 10px;
+        }
+        .pagination {
+            margin-top: 20px;
+        }
+        .pagination button {
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container"></div>
+    <div class="pagination">
+        <button id="prev-page">上一页</button>
+        <span id="page-number">1</span>
+        <button id="next-page">下一页</button>
+    </div>
 
+    <script src="showIMG.js"></script>
+</body>
+</html>
