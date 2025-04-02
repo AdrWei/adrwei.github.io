@@ -598,12 +598,11 @@ button {
 .qrcode-section {
   display: flex;
   gap: 40px; /* 两栏间距 */
-  padding-top: 15px;
 }
 
 .qrcode-column {
   text-align: center;
-  max-width:20%
+  max-width:50%
 }
 
 /* 版权信息 */
