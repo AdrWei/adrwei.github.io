@@ -319,8 +319,9 @@ button {
 }
 
 .content-banner img{
-  max-width: 50%; /* 图片最大宽度为容器一半 */
-  height: 50%;
+  max-width: fit-content; /* 图片最大宽度为容器一半 */
+  height: 75%;
+   padding-top:var(--header-height);
 }
 
 /* 图片网格布局 */
