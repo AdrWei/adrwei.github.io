@@ -32,6 +32,7 @@ function displayImages(page) {
     const pageImages = imageUrls.slice(startIndex, endIndex);
 
     pageImages.forEach(url => {
+        const figure = document.createElement('figure');
         const img = document.createElement('img');
         img.src = url;
         img.style.cursor = 'pointer';
@@ -40,12 +41,14 @@ function displayImages(page) {
             window.location.href = url;
         });
 
-        imageContainer.appendChild(img);
+        figure.appendChild(img);
 
         const fileName = url.substring(url.lastIndexOf('/') + 1);
-        const fileNameDiv = document.createElement('div');
-        fileNameDiv.textContent = fileName;
-        imageContainer.appendChild(fileNameDiv);
+        const figcaption = document.createElement('figcaption');
+        figcaption.textContent = fileName;
+        figure.appendChild(figcaption);
+
+        imageContainer.appendChild(figure);
     });
 
     pageNumberDisplay.textContent = page;
