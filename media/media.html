@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
-  <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>图片分页展示</title>
     <style>
-        #image-container img {
-            width: 200px; /* 设置图片宽度 */
-            margin: 10px;
+        #image-container table {
+            width: 100%;
+            border-collapse: collapse;
         }
+
+        #image-container th, #image-container td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #image-container th {
+            background-color: #f2f2f2;
+        }
+
+        #image-container img {
+            max-width: 200px;
+            height: auto;
+        }
+
         .pagination {
             margin-top: 20px;
+            text-align: center;
         }
+
         .pagination button {
             padding: 5px 10px;
             margin: 0 5px;
@@ -21,10 +39,20 @@
     </style>
 </head>
 <body>
-  <!-- header占位 -->
-  <div id="header"></div> 
+    <div id="header"></div>
     <h3>图片展示示例</h3>
-    <div id="image-container"></div>
+    <div id="image-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>图片</th>
+                    <th>文件名</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
     <div class="pagination">
         <button id="prev-page">上一页</button>
         <span id="page-number">1</span>
