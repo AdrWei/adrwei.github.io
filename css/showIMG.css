@@ -1,0 +1,34 @@
+#image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+#image-container figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+#image-container figcaption {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+}
