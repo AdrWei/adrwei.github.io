@@ -707,9 +707,17 @@ button {
     display: block; /* 在手机端显示手机端图片 */
   }
 
+a:hover{color:white;
+}
+   
+  .nav-item:hover .dropdown-content {
+  display: contents;
+}
+
    .dropdown-content.show {
     display: contents;
     position: relative; /* 固定定位，全屏显示 */
+    text-align: center;
 }
 
    .dropdown-content a {
