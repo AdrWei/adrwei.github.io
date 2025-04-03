@@ -647,7 +647,6 @@ button {
     display: flex; /* 修改此处：显示导航栏 */
     justify-content: center;
     background-color:var(--VI-dark);
-    gap:4vh;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -673,9 +672,6 @@ button {
    margin: 10px 0; /* 修改此处：添加垂直间距 */
    padding: 10px;
    text-align: center;
-   border-bottom: 1px solid #eee;
-   width: 100%; /* 可选：使导航项宽度占满容器 */
-   box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
    }
    
   .nav-right {
