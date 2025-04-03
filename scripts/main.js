@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      
       // 修改后的手机下拉代码
       const dropbtns = document.querySelectorAll('.dropbtn'); // 选择所有下拉按钮
       
@@ -69,6 +68,26 @@ document.addEventListener('DOMContentLoaded', () => {
               });
           }
       });
+
+      // 添加嵌套下拉菜单的代码
+      const nestedDropbtn = document.querySelector('.nested-dropbtn');
+      const nestedDropdownContent = document.querySelector('.nested-dropdown-content');
+
+      if (nestedDropbtn && nestedDropdownContent) {
+        nestedDropbtn.addEventListener('click', (event) => {
+          event.stopPropagation(); // 阻止事件冒泡
+          nestedDropdownContent.classList.toggle('show');
+        });
+
+        window.addEventListener('click', (event) => {
+          if (!event.target.matches('.nested-dropbtn')) {
+            if (nestedDropdownContent.classList.contains('show')) {
+              nestedDropdownContent.classList.remove('show');
+            }
+          }
+        });
+      }
+    });
 
   // 加载 footer
   fetch('/footer.html')
