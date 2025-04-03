@@ -46,6 +46,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
+    // 检测是否为移动端
+    const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+    
+    // 仅针对移动端绑定点击事件
+    if (isMobile()) {
+        const dropbtns = document.querySelectorAll('.dropbtn');
+        
+        dropbtns.forEach(dropbtn => {
+            const dropdownContent = dropbtn.nextElementSibling;
+            
+            if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
+                // 点击按钮切换菜单
+                dropbtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    dropdownContent.classList.toggle('show');
+                });
+                
+                // 点击菜单内链接不关闭菜单
+                dropdownContent.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            }
+        });
+        
+        // 点击页面其他区域关闭所有菜单
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-content.show').forEach(menu => {
+                menu.classList.remove('show');
+            });
+        });
+    }
       
     });
 
