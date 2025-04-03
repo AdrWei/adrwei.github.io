@@ -46,6 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
+// 先定义 isMobile 函数
+const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
+// 然后使用它
 if (isMobile()) {
     const dropbtns = document.querySelectorAll('.dropbtn');
     
