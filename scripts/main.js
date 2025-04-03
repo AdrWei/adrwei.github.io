@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // 修改后的手机下拉代码
+// 修改后的手机下拉代码
 const dropbtns = document.querySelectorAll('.dropbtn'); // 选择所有下拉按钮
 
 dropbtns.forEach(dropbtn => {
@@ -56,15 +56,11 @@ dropbtns.forEach(dropbtn => {
         dropbtn.addEventListener('click', (event) => {
             event.stopPropagation(); // 阻止事件冒泡
 
-            // 延迟执行关闭其他下拉菜单的代码
-            setTimeout(() => {
-                dropbtns.forEach(otherDropbtn => {
-                    const otherDropdownContent = otherDropbtn.nextElementSibling;
-                    if (otherDropdownContent && otherDropdownContent.classList.contains('dropdown-content') && otherDropdownContent !== dropdownContent) {
-                        otherDropdownContent.classList.remove('show');
-                    }
-                });
-            }, 0); // 使用 setTimeout 延迟执行
+            // 关闭当前显示的下拉菜单
+            const currentShown = document.querySelector('.dropdown-content.show');
+            if (currentShown && currentShown !== dropdownContent) {
+                currentShown.classList.remove('show');
+            }
 
             // 切换当前下拉菜单的显示状态
             dropdownContent.classList.toggle('show');
