@@ -45,20 +45,44 @@ document.addEventListener('DOMContentLoaded', () => {
           header.querySelector('.toggle-icon').textContent = content.classList.contains('active') ? '-' : '+';
         });
       });
-      
-      // 移动端才需要绑定点击事件（保持PC端hover不变）
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        const dropbtns = document.querySelectorAll('.dropbtn');
-        
-        dropbtns.forEach(dropbtn => {
-          dropbtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // 阻止事件冒泡
-            const dropdownContent = dropbtn.nextElementSibling;
-            dropdownContent.classList.toggle('show'); // 你的核心逻辑
-          });
+
+      // 添加下拉菜单的代码
+      const dropbtn = document.querySelector('.dropbtn');
+      const dropdownContent = document.querySelector('.dropdown-content');
+
+      if (dropbtn && dropdownContent) {
+        dropbtn.addEventListener('click', (event) => {
+          event.stopPropagation(); // 阻止事件冒泡
+          dropdownContent.classList.toggle('show');
+        });
+
+        window.addEventListener('click', (event) => {
+          if (!event.target.matches('.dropbtn')) {
+            if (dropdownContent.classList.contains('show')) {
+              dropdownContent.classList.remove('show');
+            }
+          }
         });
       }
-            
+
+      // 添加嵌套下拉菜单的代码
+      const nestedDropbtn = document.querySelector('.nested-dropbtn');
+      const nestedDropdownContent = document.querySelector('.nested-dropdown-content');
+
+      if (nestedDropbtn && nestedDropdownContent) {
+        nestedDropbtn.addEventListener('click', (event) => {
+          event.stopPropagation(); // 阻止事件冒泡
+          nestedDropdownContent.classList.toggle('show');
+        });
+
+        window.addEventListener('click', (event) => {
+          if (!event.target.matches('.nested-dropbtn')) {
+            if (nestedDropdownContent.classList.contains('show')) {
+              nestedDropdownContent.classList.remove('show');
+            }
+          }
+        });
+      }
     });
 
   // 加载 footer
