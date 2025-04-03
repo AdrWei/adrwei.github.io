@@ -707,13 +707,18 @@ button {
     display: block; /* 在手机端显示手机端图片 */
   }
 
+/* 禁用 hover 效果 */
   .nav-item:hover .dropdown-content {
-    display: none; /* 禁用 hover 效果 */
+    display: none; 
   }
    
    .dropdown-content.show {
     display: contents;
     position: relative; /* 固定定位，全屏显示 */
+}
+
+   a:hover, .dropdown-content a {
+   color:white;
 }
 
    .banner, .content-banner {
