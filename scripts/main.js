@@ -46,29 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-// 检测移动端
-    if (isMobile()) {
-        const dropbtns = document.querySelectorAll('.dropbtn');
-        
-        dropbtns.forEach(dropbtn => {
-            const dropdownContent = dropbtn.nextElementSibling;
-            
-            dropbtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                
-                // 手动同步显示状态
-                const isShowing = dropdownContent.classList.contains('show');
-                document.querySelectorAll('.dropdown-content').forEach(el => {
-                    el.style.display = 'none'; // 强制清除其他菜单
-                });
-                
-                dropdownContent.style.display = isShowing ? 'none' : 'block';
-                dropdownContent.classList.toggle('show');
-            });
-        });
+if (isMobile()) {
+    const dropbtns = document.querySelectorAll('.dropbtn');
     
-        // 移除所有全局点击监听
-    }
+    dropbtns.forEach(dropbtn => {
+        const dropdownContent = dropbtn.nextElementSibling;
+        
+        dropbtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            // 先移除所有菜单的show类
+            document.querySelectorAll('.dropdown-content').forEach(el => {
+                el.classList.remove('show');
+            });
+            
+            // 切换当前菜单（仅通过class控制）
+            dropdownContent.classList.toggle('show');
+        });
+    });
+}
       
     });
 
