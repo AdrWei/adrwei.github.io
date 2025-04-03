@@ -46,27 +46,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-// 修改后的手机下拉代码
-const dropbtns = document.querySelectorAll('.dropbtn'); // 选择所有下拉按钮
-
-dropbtns.forEach(dropbtn => {
-    const dropdownContent = dropbtn.nextElementSibling; // 获取下拉菜单内容
-
-    if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) { // 确保内容存在且是下拉菜单
-        dropbtn.addEventListener('click', (event) => {
-            event.stopPropagation(); // 阻止事件冒泡
-
-            // 关闭当前显示的下拉菜单
-            const currentShown = document.querySelector('.dropdown-content.show');
-            if (currentShown && currentShown !== dropdownContent) {
-                currentShown.classList.remove('show');
-            }
-
-            // 切换当前下拉菜单的显示状态
-            dropdownContent.classList.toggle('show');
-        });
-    }
-});
+    const dropbtns = document.querySelectorAll('.dropbtn');
+    
+    // 存储当前打开的下拉菜单
+    let currentOpenMenu = null;
+    
+    dropbtns.forEach(dropbtn => {
+        const dropdownContent = dropbtn.nextElementSibling;
+        
+        if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
+            dropbtn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                
+                // 如果点击的是已打开的菜单按钮，则关闭它
+                if (currentOpenMenu === dropdownContent) {
+                    dropdownContent.classList.remove('show');
+                    currentOpenMenu = null;
+                } 
+                // 否则关闭其他菜单并打开当前菜单
+                else {
+                    // 关闭之前打开的菜单
+                    if (currentOpenMenu) {
+                        currentOpenMenu.classList.remove('show');
+                    }
+                    
+                    // 打开当前菜单
+                    dropdownContent.classList.add('show');
+                    currentOpenMenu = dropdownContent;
+                }
+            });
+        }
+    });
+      
     });
 
   // 加载 footer
