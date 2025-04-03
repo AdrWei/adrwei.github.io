@@ -621,6 +621,7 @@ button {
 }
 
 /* 媒体查询：针对小屏幕（例如手机） */
+@media (max-width: 768px) {
   :root {
     --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
      --h1-size: 6vw;
@@ -712,9 +713,13 @@ button {
       display:grid
    }
 
-  .dropdown-content.show{
-    display: contents;!important;
-  }
+   .nav-item:hover .dropdown-content {
+   display: none;
+   }
+   
+   .dropdown-content.show{
+   display: contents;
+   }
    
    .dropdown-content.show a {
    color:white;
