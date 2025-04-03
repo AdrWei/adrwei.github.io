@@ -668,7 +668,7 @@ button {
    padding: 25px 0px;
    }
    
-   .nav-item.dropbtn {
+   .nav-item .dropbtn {
    margin: 10px 0; /* 修改此处：添加垂直间距 */
    padding: 10px;
    text-align: center;
