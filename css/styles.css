@@ -622,6 +622,10 @@ button {
 
 /* 媒体查询：针对小屏幕（例如手机） */
 @media (max-width: 768px) {
+  *:hover {
+    all: unset !important; /* 彻底清除hover样式 */
+  }
+   
   :root {
     --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
      --h1-size: 6vw;
