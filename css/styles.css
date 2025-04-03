@@ -712,10 +712,6 @@ button {
    .nav-item{
       display:grid
    }
-
-   .nav-item:hover .dropdown-content {
-   display: none;
-   }
    
    .dropdown-content.show{
    display: contents;
