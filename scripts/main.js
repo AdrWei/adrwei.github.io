@@ -46,48 +46,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // 修改后的手机下拉代码
-      const dropbtns = document.querySelectorAll('.dropbtn'); // 选择所有下拉按钮
-      
-      dropbtns.forEach(dropbtn => {
-          const dropdownContent = dropbtn.nextElementSibling; // 获取下拉菜单内容
-      
-          if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) { // 确保内容存在且是下拉菜单
-              dropbtn.addEventListener('click', (event) => {
-                  event.stopPropagation(); // 阻止事件冒泡
-                  dropdownContent.classList.toggle('show'); // 切换下拉菜单的显示状态
-              });
-          }
-      });
-      
-      window.addEventListener('click', (event) => {
-          const isDropbtnClick = Array.from(dropbtns).some(dropbtn => dropbtn.contains(event.target)); //检查点击事件是否发生在任何dropbtn内。
-          if (!isDropbtnClick) {
-              document.querySelectorAll('.dropdown-content.show').forEach(content => {
-                  content.classList.remove('show');
-              });
-          }
-      });
-
-      // 添加嵌套下拉菜单的代码
-      const nestedDropbtn = document.querySelector('.nested-dropbtn');
-      const nestedDropdownContent = document.querySelector('.nested-dropdown-content');
-
-      if (nestedDropbtn && nestedDropdownContent) {
-        nestedDropbtn.addEventListener('click', (event) => {
-          event.stopPropagation(); // 阻止事件冒泡
-          nestedDropdownContent.classList.toggle('show');
-        });
-
-        window.addEventListener('click', (event) => {
-          if (!event.target.matches('.nested-dropbtn')) {
-            if (nestedDropdownContent.classList.contains('show')) {
-              nestedDropdownContent.classList.remove('show');
+        // 修改后的手机下拉代码
+        const dropbtns = document.querySelectorAll('.dropbtn'); // 选择所有下拉按钮
+        
+        dropbtns.forEach(dropbtn => {
+            const dropdownContent = dropbtn.nextElementSibling; // 获取下拉菜单内容
+        
+            if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) { // 确保内容存在且是下拉菜单
+                dropbtn.addEventListener('click', (event) => {
+                    event.stopPropagation(); // 阻止事件冒泡
+        
+                    // 关闭其他下拉菜单
+                    dropbtns.forEach(otherDropbtn => {
+                        const otherDropdownContent = otherDropbtn.nextElementSibling;
+                        if (otherDropdownContent && otherDropdownContent.classList.contains('dropdown-content') && otherDropdownContent !== dropdownContent) {
+                            otherDropdownContent.classList.remove('show');
+                        }
+                    });
+        
+                    // 切换当前下拉菜单的显示状态
+                    dropdownContent.classList.toggle('show');
+                });
             }
-          }
         });
-      }
-    });
 
   // 加载 footer
   fetch('/footer.html')
