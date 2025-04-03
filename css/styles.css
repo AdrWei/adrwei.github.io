@@ -712,8 +712,8 @@ button {
       display:grid
    }
 
-   .dropdown-content.show {
-    display: contents;
+   .nav-item:hover .dropdown-content.show{
+          display: contents;
    }
    
    .dropdown-content.show a {
