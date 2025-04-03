@@ -46,37 +46,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-    // 检测是否为移动端
-    const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
-    
-    // 仅针对移动端绑定点击事件
-    if (isMobile()) {
-        const dropbtns = document.querySelectorAll('.dropbtn');
-        
-        dropbtns.forEach(dropbtn => {
-            const dropdownContent = dropbtn.nextElementSibling;
-            
-            if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
-                // 点击按钮切换菜单
-                dropbtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    dropdownContent.classList.toggle('show');
-                });
+// 检测移动端
+const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
+if (isMobile()) {
+    const dropbtns = document.querySelectorAll('.dropbtn');
+    let currentOpenMenu = null; // 跟踪当前打开的菜单
+
+    dropbtns.forEach(dropbtn => {
+        const dropdownContent = dropbtn.nextElementSibling;
+
+        if (dropdownContent?.classList.contains('dropdown-content')) {
+            // 点击按钮：切换当前菜单
+            dropbtn.addEventListener('click', (e) => {
+                e.stopPropagation();
                 
-                // 点击菜单内链接不关闭菜单
-                dropdownContent.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-            }
-        });
-        
-        // 点击页面其他区域关闭所有菜单
-        document.addEventListener('click', () => {
-            document.querySelectorAll('.dropdown-content.show').forEach(menu => {
-                menu.classList.remove('show');
+                // 关闭其他菜单（如果需要）
+                if (currentOpenMenu && currentOpenMenu !== dropdownContent) {
+                    currentOpenMenu.classList.remove('show');
+                }
+                
+                // 切换当前菜单
+                dropdownContent.classList.toggle('show');
+                currentOpenMenu = dropdownContent.classList.contains('show') 
+                    ? dropdownContent 
+                    : null;
             });
-        });
-    }
+
+            // 菜单内部点击：完全阻止任何关闭行为
+            dropdownContent.addEventListener('click', (e) => {
+                e.stopPropagation(); // 阻止冒泡到document
+                return false;       // 额外保险
+            });
+        }
+    });
+
+    // 禁用全局点击关闭（关键改动！）
+    // 无 document.addEventListener 逻辑！
+}
       
     });
 
