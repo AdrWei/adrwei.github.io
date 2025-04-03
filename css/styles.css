@@ -713,7 +713,7 @@ button {
   }
    
    .dropdown-content.show {
-    display: contents;
+    display: contents!important;
     position: relative; /* 固定定位，全屏显示 */
 }
 
