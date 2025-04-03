@@ -619,12 +619,22 @@ button {
   margin: 0 10px;
 }
 
+/* 手机端禁用hover */
+@media (hover: none) {
+    .nav-item:hover .dropdown-content,
+    .dropdown-content a:hover,
+    .hover-container:hover .hover-image,
+    .footer-links a:hover,
+    button:hover,
+    .button-box:hover {
+        /* 禁用 hover 样式，但不禁用点击事件 */
+        /* 例如： */
+        background-color: transparent;
+    }
+}
+
 /* 媒体查询：针对小屏幕（例如手机） */
 @media (max-width: 768px) {
-   *:hover {
-        pointer-events: none;
-   }
-   
   :root {
     --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
      --h1-size: 6vw;
