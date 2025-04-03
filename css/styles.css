@@ -622,6 +622,23 @@ button {
 
 /* 媒体查询：针对小屏幕（例如手机） */
 @media (max-width: 768px) {
+
+    /* 禁用所有 hover 效果 */
+    a:hover,
+    button:hover,
+    .button-box:hover,
+    .nav-item:hover .dropdown-content,
+    .dropdown-content a:hover,
+    .hover-container:hover .hover-image,
+    .footer-links a:hover,
+    .nested-dropdown-content a:hover,
+    .nested-dropdown:hover .nested-dropdown-content {
+        background-color: initial !important; /* 恢复默认背景色 */
+        color: initial !important; /* 恢复默认文本颜色 */
+        text-decoration: none !important; /* 移除文本装饰 */
+        /* 添加您可能需要恢复的任何其他样式 */
+    }
+
   :root {
     --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
      --h1-size: 6vw;
@@ -710,6 +727,10 @@ button {
 
    .nav-item{
       display:grid
+   }
+
+   .dropdown-content.show {
+    display: contents;
    }
    
    .dropdown-content.show a {
