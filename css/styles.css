@@ -177,6 +177,10 @@ display: block; /* 鼠标悬停时显示图片 */
   padding-bottom: 25px;
 }
 
+.nav-item:hover .dropdown-content {
+  display: block;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -706,14 +710,6 @@ button {
 
    .nav-item{
       display:grid
-   }
-   
-   .nav-item:hover .dropdown-content {
-       display: contents;
-   }
-
-   a:hover {
-    color: var(--VI-bright);
    }
    
    .dropdown-content.show a {
