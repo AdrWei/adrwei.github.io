@@ -46,37 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-    const dropbtns = document.querySelectorAll('.dropbtn');
-    
-    // 存储当前打开的下拉菜单
-    let currentOpenMenu = null;
-    
-    dropbtns.forEach(dropbtn => {
-        const dropdownContent = dropbtn.nextElementSibling;
-        
-        if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
-            dropbtn.addEventListener('click', (event) => {
-                event.stopPropagation();
-                
-                // 如果点击的是已打开的菜单按钮，则关闭它
-                if (currentOpenMenu === dropdownContent) {
-                    dropdownContent.classList.remove('show');
-                    currentOpenMenu = null;
-                } 
-                // 否则关闭其他菜单并打开当前菜单
-                else {
-                    // 关闭之前打开的菜单
-                    if (currentOpenMenu) {
-                        currentOpenMenu.classList.remove('show');
-                    }
-                    
-                    // 打开当前菜单
-                    dropdownContent.classList.add('show');
-                    currentOpenMenu = dropdownContent;
-                }
-            });
-        }
-    });
       
     });
 
