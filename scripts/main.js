@@ -46,30 +46,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-// 先定义 isMobile 函数
-const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+      // 添加下拉菜单的代码
+      const dropbtn = document.querySelector('.dropbtn');
+      const dropdownContent = document.querySelector('.dropdown-content');
 
-// 然后使用它
-if (isMobile()) {
-    const dropbtns = document.querySelectorAll('.dropbtn');
-    
-    dropbtns.forEach(dropbtn => {
-        const dropdownContent = dropbtn.nextElementSibling;
-        
-        dropbtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            
-            // 先移除所有菜单的show类
-            document.querySelectorAll('.dropdown-content').forEach(el => {
-                el.classList.remove('show');
-            });
-            
-            // 切换当前菜单（仅通过class控制）
-            dropdownContent.classList.toggle('show');
+      if (dropbtn && dropdownContent) {
+        dropbtn.addEventListener('click', (event) => {
+          event.stopPropagation(); // 阻止事件冒泡
+          dropdownContent.classList.toggle('show');
         });
-    });
-}
-      
+
+        window.addEventListener('click', (event) => {
+          if (!event.target.matches('.dropbtn')) {
+            if (dropdownContent.classList.contains('show')) {
+              dropdownContent.classList.remove('show');
+            }
+          }
+        });
+      }
     });
 
   // 加载 footer
