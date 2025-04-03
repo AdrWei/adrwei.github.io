@@ -675,7 +675,7 @@ button {
    border-bottom: 1px solid #eee;
    width: 100%; /* 可选：使导航项宽度占满容器 */
    box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
-   
+   color: white;
    }
    
   .nav-right {
