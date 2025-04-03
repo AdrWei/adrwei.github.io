@@ -707,17 +707,13 @@ button {
     display: block; /* 在手机端显示手机端图片 */
   }
 
+  .nav-item:hover .dropdown-content {
+    display: none; /* 禁用 hover 效果 */
+  }
+   
    .dropdown-content.show {
-    display: block;
-    position: fixed; /* 固定定位，全屏显示 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景，可调整透明度 */
-    z-index: 1000; /* 确保层叠在所有其他元素之上 */
-    padding: 20px; /* 添加内边距，使内容不紧贴屏幕边缘 */
-    box-sizing: border-box; /* 包含内边距在宽度和高度内 */
+    display: contents;
+    position: relative; /* 固定定位，全屏显示 */
 }
 
    .banner, .content-banner {
