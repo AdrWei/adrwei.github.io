@@ -174,7 +174,6 @@ display: block; /* 鼠标悬停时显示图片 */
   margin: 0 15px;
   white-space: nowrap; /* 防止链接换行 */
   padding-bottom: 25px;
-   display:block;
 }
 
 .nav-item:hover .dropdown-content {
@@ -673,6 +672,7 @@ button {
    padding: 10px;
    text-align: center;
    border-bottom: 1px solid;
+   display:block;
    }
    
   .nav-right {
