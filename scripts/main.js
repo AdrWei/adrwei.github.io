@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 加载 header
-  fetch('/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header').innerHTML = data;
+    // 加载 header
+    fetch('/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
 
       // 在 header 加载完成后，添加切换导航栏的代码
       const nav = document.querySelector('nav');
@@ -46,19 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-    // 移动端才需要绑定点击事件（保持PC端hover不变）
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      const dropbtns = document.querySelectorAll('.dropbtn');
-      
-      dropbtns.forEach(dropbtn => {
-        dropbtn.addEventListener('click', (e) => {
-          e.stopPropagation(); // 阻止事件冒泡
-          const dropdownContent = dropbtn.nextElementSibling;
-          dropdownContent.classList.toggle('show'); // 你的核心逻辑
+            // 移动端才需要绑定点击事件（保持PC端hover不变）
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                const dropbtns = document.querySelectorAll('.dropbtn');
+
+                dropbtns.forEach(dropbtn => {
+                    dropbtn.addEventListener('click', (e) => {
+                        e.stopPropagation(); // 阻止事件冒泡
+                        const dropdownContent = dropbtn.nextElementSibling;
+                        setTimeout(() => {
+                            dropdownContent.classList.toggle('show'); // 延迟切换显示状态
+                        }, 0);
+                    });
+                });
+            }
         });
-      });
-    }
-    });
 
   // 加载 footer
   fetch('/footer.html')
