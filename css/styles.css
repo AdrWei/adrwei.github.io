@@ -621,6 +621,10 @@ button {
 
 /* 媒体查询：针对小屏幕（例如手机） */
 @media (max-width: 768px) {
+   *:hover {
+        pointer-events: none;
+   }
+   
   :root {
     --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
      --h1-size: 6vw;
@@ -719,10 +723,6 @@ button {
    color:white;
       text-align:center;
    }
-
-   a.hover{
-      color:var(--VI-light);
-         }
 
    .banner, .content-banner {
      height: 50vh; /* 同时设置 banner 和 content-banner 的高度 */
