@@ -714,7 +714,11 @@ button {
    }
 
    .nav-item:hover .dropdown-content.show{
-          display: contents;
+        display: block !important;  /* 强制显示 */
+        opacity: 1 !important;
+        visibility: visible !important;
+        height: auto !important;
+        transform: none !important;
    }
    
    .dropdown-content.show a {
