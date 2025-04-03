@@ -713,9 +713,9 @@ button {
       display:grid
    }
 
-   .nav-item:hover .dropdown-content.show{
-display:contents;
-   }
+  .dropdown-content.show{
+    display: contents;!important;
+  }
    
    .dropdown-content.show a {
    color:white;
