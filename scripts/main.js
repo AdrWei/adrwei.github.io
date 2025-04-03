@@ -48,22 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 添加下拉菜单的代码
       const dropbtn = document.querySelector('.dropbtn');
-      const dropdownContent = document.querySelector('.dropdown-content');
-
-      if (dropbtn && dropdownContent) {
-        dropbtn.addEventListener('click', (event) => {
-          event.stopPropagation(); // 阻止事件冒泡
-          dropdownContent.classList.toggle('show');
+      toggleHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          content.classList.toggle('show');
         });
-
-        window.addEventListener('click', (event) => {
-          if (!event.target.matches('.dropbtn')) {
-            if (dropdownContent.classList.contains('show')) {
-              dropdownContent.classList.remove('show');
-            }
-          }
-        });
-      }
+      });
+      
     });
 
   // 加载 footer
