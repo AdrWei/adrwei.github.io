@@ -60,7 +60,6 @@ a {
   color: var(--VI-bright);
   text-decoration: none;
 }
-
 a:hover {
   color: var(--VI-dark);
 }
@@ -668,14 +667,13 @@ button {
    padding: 25px 0px;
    }
    
-   .nav-item .dropbtn {
+   .dropbtn {
    margin: 10px 0; /* 修改此处：添加垂直间距 */
    padding: 10px;
    text-align: center;
    border-bottom: 1px solid #eee;
    width: 100%; /* 可选：使导航项宽度占满容器 */
    box-sizing: border-box; /* 可选：确保 padding 包含在宽度内 */
-   color: white;
    }
    
   .nav-right {
@@ -709,18 +707,18 @@ button {
     display: block; /* 在手机端显示手机端图片 */
   }
 
-   .nav-item{
-      display:grid
-   }
-   
-   .dropdown-content.show{
-   display: contents;
-   }
-   
-   .dropdown-content.show a {
-   color:white;
-      text-align:center;
-   }
+   .dropdown-content.show {
+    display: block;
+    position: fixed; /* 固定定位，全屏显示 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景，可调整透明度 */
+    z-index: 1000; /* 确保层叠在所有其他元素之上 */
+    padding: 20px; /* 添加内边距，使内容不紧贴屏幕边缘 */
+    box-sizing: border-box; /* 包含内边距在宽度和高度内 */
+}
 
    .banner, .content-banner {
      height: 50vh; /* 同时设置 banner 和 content-banner 的高度 */
