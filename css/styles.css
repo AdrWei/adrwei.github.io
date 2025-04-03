@@ -715,6 +715,15 @@ button {
     display: contents;
 }
 
+   .dropdown-content.show a {
+   color:white;
+      text-align:center;
+   }
+
+   a.hover{
+      color:var(--VI-light);
+         }
+
    .banner, .content-banner {
      height: 50vh; /* 同时设置 banner 和 content-banner 的高度 */
    }
