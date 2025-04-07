@@ -7,7 +7,7 @@ let allPosts = []; // 保存所有文章数据
 async function fetchPosts() {
     try {
         // 1. 读取 posts.json 文件
-        const response = await fetch('/posts.json');
+        const response = await fetch('posts/articleList.json');
         const postFiles = await response.json();
 
         // 2. 读取每篇文章的内容
