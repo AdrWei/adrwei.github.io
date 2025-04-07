@@ -1,8 +1,8 @@
 // blog.js
 
-const owner = 'AdrWei'; // 替换为你的 GitHub 用户名
-const repo = 'adrwei.github.io'; // 替换为你的 GitHub 仓库名
-const postsPath = 'posts'; // post 文件夹路径
+const owner = 'AdrWei';
+const repo = 'adrwei.github.io';
+const postsPath = 'posts';
 
 async function fetchPostData(filename) {
     try {
@@ -37,7 +37,7 @@ async function getPostFiles() {
 
 async function displayPosts() {
     const postList = document.getElementById('post-list');
-    postList.innerHTML = ''; // 清空内容
+    postList.innerHTML = '';
 
     try {
         const postFiles = await getPostFiles();
