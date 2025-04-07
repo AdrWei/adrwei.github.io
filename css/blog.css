@@ -76,6 +76,6 @@
         grid-template-columns: 100%; /* 在小屏幕上，堆叠显示 */
     }
     .sidebar {
-        order: -1; /* 将侧边栏移动到顶部 */
+        display:none;
     }
 }
