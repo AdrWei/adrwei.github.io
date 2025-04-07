@@ -1,0 +1,32 @@
+.blog-container {
+    display: grid;
+    grid-template-columns: 70% 30%; /* 左右分栏比例 */
+    gap: 20px; /* 栏之间的间距 */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.sidebar {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.post {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 100%; /* 在小屏幕上，堆叠显示 */
+    }
+    .sidebar {
+        order: -1; /* 将侧边栏移动到顶部 */
+    }
+}
