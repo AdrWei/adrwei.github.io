@@ -1,62 +1,44 @@
-// blog.js
-
 const owner = 'AdrWei';
 const repo = 'adrwei.github.io';
 const postsPath = 'posts';
+const baseUrl = 'https://adrwei.github.io';
 
 async function fetchPostData(filename) {
+    const postUrl = `${baseUrl}/${postsPath}/${filename.replace(`${postsPath}/`, '')}`;
+    console.log(`Fetching: ${postUrl}`);
+    
     try {
-        const response = await fetch(`${postsPath}/${filename}`);
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-
-        const title = doc.querySelector('title').textContent;
-        const description = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '暂无描述';
-
-        return { filename, title, description };
+        const response = await fetch(postUrl);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        return await response.text();
     } catch (error) {
-        console.error(`Error fetching post data for ${filename}:`, error);
+        console.error(`Failed to fetch ${postUrl}:`, error);
         return null;
     }
 }
 
 async function getPostFiles() {
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${postsPath}`;
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${postsPath}?ref=main`;
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
         return data
-            .filter(item => item.type === 'file' && item.name.endsWith('.html'))
-            .map(item => item.name);
+            .filter(file => file.type === 'file' && file.name.endsWith('.html'))
+            .map(file => file.name);
     } catch (error) {
-        console.error('Error fetching post files:', error);
+        console.error('API请求失败:', error);
         return [];
     }
 }
 
-async function displayPosts() {
-    const postList = document.getElementById('post-list');
-    postList.innerHTML = '';
-
-    try {
-        const postFiles = await getPostFiles();
-        const postData = await Promise.all(postFiles.map(fetchPostData));
-
-        postData.forEach(post => {
-            if (post) {
-                const article = document.createElement('article');
-                article.innerHTML = `
-                    <h2><a href="${postsPath}/${post.filename}">${post.title}</a></h2>
-                    <p>${post.description}</p>
-                `;
-                postList.appendChild(article);
+// 使用示例
+getPostFiles().then(files => {
+    files.forEach(file => {
+        fetchPostData(file).then(html => {
+            if (html) {
+                console.log(`成功加载: ${file}`);
+                // 处理HTML内容...
             }
         });
-    } catch (error) {
-        console.error('Error displaying posts:', error);
-        postList.textContent = '无法加载文章列表。';
-    }
-}
-
-displayPosts();
+    });
+});
