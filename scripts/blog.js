@@ -1,28 +1,53 @@
 // blog.js
 
-async function displayPosts() {
-    const postList = document.getElementById('post-list');
-    postList.innerHTML = '';
+const owner = 'AdrWei'; // 替换为你的 GitHub 用户名
+const repo = 'adrwei.github.io'; // 替换为你的 GitHub 仓库名
+const postsPath = 'posts'; // post 文件夹路径
 
+async function fetchPostData(filename) {
     try {
-        const response = await fetch('posts/');
+        const response = await fetch(`${postsPath}/${filename}`);
         const html = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
-        const links = doc.querySelectorAll('a');
 
-        const postFiles = Array.from(links)
-            .map(link => link.href)
-            .filter(href => href.endsWith('.html'))
-            .map(href => href.split('/').pop());
+        const title = doc.querySelector('title').textContent;
+        const description = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '暂无描述';
 
+        return { filename, title, description };
+    } catch (error) {
+        console.error(`Error fetching post data for ${filename}:`, error);
+        return null;
+    }
+}
+
+async function getPostFiles() {
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${postsPath}`;
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        return data
+            .filter(item => item.type === 'file' && item.name.endsWith('.html'))
+            .map(item => item.name);
+    } catch (error) {
+        console.error('Error fetching post files:', error);
+        return [];
+    }
+}
+
+async function displayPosts() {
+    const postList = document.getElementById('post-list');
+    postList.innerHTML = ''; // 清空内容
+
+    try {
+        const postFiles = await getPostFiles();
         const postData = await Promise.all(postFiles.map(fetchPostData));
 
         postData.forEach(post => {
             if (post) {
                 const article = document.createElement('article');
                 article.innerHTML = `
-                    <h2><a href="posts/${post.filename}">${post.title}</a></h2>
+                    <h2><a href="${postsPath}/${post.filename}">${post.title}</a></h2>
                     <p>${post.description}</p>
                 `;
                 postList.appendChild(article);
