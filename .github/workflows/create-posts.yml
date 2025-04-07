@@ -19,47 +19,47 @@ jobs:
       - name: Convert Markdown to HTML
         run: |
           set -e # 在任何命令失败时停止
-          for file in articles/*.md; do
+          for file in _articles/*.md; do
             filename=$(basename "$file" .md)
 
             # 生成符合规格的HTML文件
             cat << 'EOF' > "posts/${filename}.html"
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>橡树工作室 - 助力品牌出海</title>
-  <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/blog.css">
-</head>
-<body>
-  <div id="header"></div>
-  <div class="blog-container">
-    <main class="blog-content">
-      <div id="post-content">
-        $(pandoc "$file" -t html)
-      </div>
-    </main>
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="#">分类 1</a></li>
-          <li><a href="#">分类 2</a></li>
-          <li><a href="#">最新文章</a></li>
-          <li><a href="#">热门文章</a></li>
-          <li><a href="#">关于我</a></li>
-        </ul>
-      </nav>
-    </aside>
-  </div>
-  <div id="footer"></div>
-  <script src="/scripts/main.js"></script>
-  <script src="/scripts/blog.js"></script>
-</body>
-</html>
-EOF
+            <!DOCTYPE html>
+            <html lang="zh-CN">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>橡树工作室 - 助力品牌出海</title>
+              <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
+              <link rel="stylesheet" href="/css/styles.css">
+              <link rel="stylesheet" href="/css/blog.css">
+            </head>
+            <body>
+              <div id="header"></div>
+              <div class="blog-container">
+                <main class="blog-content">
+                  <div id="post-content">
+                    $(pandoc "$file" -t html)
+                  </div>
+                </main>
+                <aside class="sidebar">
+                  <nav>
+                    <ul>
+                      <li><a href="#">分类 1</a></li>
+                      <li><a href="#">分类 2</a></li>
+                      <li><a href="#">最新文章</a></li>
+                      <li><a href="#">热门文章</a></li>
+                      <li><a href="#">关于我</a></li>
+                    </ul>
+                  </nav>
+                </aside>
+              </div>
+              <div id="footer"></div>
+              <script src="/scripts/main.js"></script>
+              <script src="/scripts/blog.js"></script>
+            </body>
+            </html>
+            EOF
           done
 
       - name: Commit and Push Changes
@@ -67,5 +67,5 @@ EOF
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add posts/
-          git commit -m "Auto-generated HTML from articles" || echo "No changes to commit"
+          git commit -m "Auto-generated HTML from _articles" || echo "No changes to commit"
           git push origin HEAD:main # 指定分支
