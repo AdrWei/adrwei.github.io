@@ -1,4 +1,5 @@
 ---
+dummy: true
 title: Markdown 高级特性示例
 date: 2023-10-28
 author: 橡树工作室
