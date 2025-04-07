@@ -1,5 +1,6 @@
 name: Build Articles to Posts
-on: [push, pull_request]
+on: 
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   convert-md:
@@ -24,7 +25,7 @@ jobs:
           awk -v content="$(cat posts/${filename}.tmp.html)" '
             BEGIN { RS="^$"; ORS="" }
             { gsub("{{CONTENT}}", content); print }
-          ' .github/templates/post.html > "posts/${filename}.html"
+          ' .github/templates/blog-template.html > "posts/${filename}.html"
           
           rm "posts/${filename}.tmp.html"
         done
