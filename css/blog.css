@@ -3,7 +3,7 @@
     grid-template-columns: 70% 30%; /* 左右分栏比例 */
     gap: 20px; /* 栏之间的间距 */
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: calc(var(--header-height) + 20px) 0 20px 20px;
 }
 
