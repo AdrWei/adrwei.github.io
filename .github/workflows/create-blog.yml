@@ -1,6 +1,5 @@
 name: Build Articles to Posts
-on:
-  workflow_dispatch:  # 允许手动触发
+on: [push, pull_request]
 
 jobs:
   convert-md:
@@ -18,14 +17,16 @@ jobs:
         for file in articles/*.md; do
           filename=$(basename "$file" .md)
           
-          # 转换Markdown为HTML片段
-          CONTENT=$(pandoc "$file" -t html)
+          # 安全转换Markdown为HTML
+          pandoc "$file" -o "posts/${filename}.tmp.html" -t html
           
-          # 替换模板中的占位符
-          sed "s|{{CONTENT}}|$CONTENT|" .github/templates/post.html > "posts/${filename}.html"
+          # 使用awk处理模板替换（更安全的方式）
+          awk -v content="$(cat posts/${filename}.tmp.html)" '
+            BEGIN { RS="^$"; ORS="" }
+            { gsub("{{CONTENT}}", content); print }
+          ' .github/templates/post.html > "posts/${filename}.html"
           
-          # 处理特殊字符（如需）
-          sed -i 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' "posts/${filename}.html"
+          rm "posts/${filename}.tmp.html"
         done
 
     - name: Commit changes
