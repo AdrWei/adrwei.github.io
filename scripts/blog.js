@@ -1,7 +1,7 @@
 // blog.js
 async function fetchPosts() {
     try {
-        const filenames = ['/posts/testArticle.md', '/posts/testArticle2.md']; // 修改路径
+        const filenames = ['/articles/testArticle.md']; // 修改路径
 
         for (const filename of filenames) {
             const response = await fetch(filename);
