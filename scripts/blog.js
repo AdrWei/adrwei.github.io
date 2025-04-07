@@ -3,7 +3,7 @@ async function displayPosts() {
     postList.innerHTML = ''; // 清空内容
 
     try {
-        const filenames = ['posts/test1.md', 'posts/test2.md']; // 文章文件名
+        const filenames = ['posts/testArticle.md', 'posts/testArticle2.md']; // 文章文件名
 
         for (const filename of filenames) {
             const response = await fetch(filename);
