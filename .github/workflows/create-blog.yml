@@ -1,0 +1,37 @@
+name: Build Articles to Posts
+on:
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  convert-md:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up environment
+      run: |
+        sudo apt-get install -y pandoc
+        mkdir -p posts
+
+    - name: Process Markdown files
+      run: |
+        for file in _articles/*.md; do
+          filename=$(basename "$file" .md)
+          
+          # 转换Markdown为HTML片段
+          CONTENT=$(pandoc "$file" -t html)
+          
+          # 替换模板中的占位符
+          sed "s|{{CONTENT}}|$CONTENT|" .github/templates/post.html > "posts/${filename}.html"
+          
+          # 处理特殊字符（如需）
+          sed -i 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' "posts/${filename}.html"
+        done
+
+    - name: Commit changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add posts/
+        git commit -m "Auto-generated HTML from _articles [skip ci]" || echo "No changes to commit"
+        git push
