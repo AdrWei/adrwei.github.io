@@ -1,39 +1,55 @@
-name: Build Articles to Posts
-on: 
-  workflow_dispatch:  # 允许手动触发
+name: Build Articles
+on: [push, pull_request]
 
 jobs:
-  convert-md:
+  convert:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up environment
-      run: |
-        sudo apt-get install -y pandoc
-        mkdir -p posts
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 确保检出所有历史
 
-    - name: Process Markdown files
-      run: |
-        for file in articles/*.md; do
-          filename=$(basename "$file" .md)
-          
-          # 安全转换Markdown为HTML
-          pandoc "$file" -o "posts/${filename}.tmp.html" -t html
-          
-          # 使用awk处理模板替换（更安全的方式）
-          awk -v content="$(cat posts/${filename}.tmp.html)" '
-            BEGIN { RS="^$"; ORS="" }
-            { gsub("{{CONTENT}}", content); print }
-          ' .github/.templates/blog-template.html > "posts/${filename}.html"
-          
-          rm "posts/${filename}.tmp.html"
-        done
+      - name: Debug template location
+        run: |
+          echo "当前工作目录: $(pwd)"
+          echo "模板文件存在性检查:"
+          ls -la .github/.templates/ || true
+          [ -f .github/.templates/blog-template.html ] || { echo "ERROR: 模板文件未找到"; exit 1; }
 
-    - name: Commit changes
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add posts/
-        git commit -m "Auto-generated HTML from articles [skip ci]" || echo "No changes to commit"
-        git push
+      - name: Setup environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc gettext
+          mkdir -p posts
+
+      - name: Process articles
+        run: |
+          # 获取模板绝对路径（关键修复！）
+          TEMPLATE="$(pwd)/.github/.templates/blog-template.html"
+          echo "模板绝对路径: $TEMPLATE"
+          
+          for file in articles/*.md; do
+            echo "正在处理: $file"
+            filename=$(basename "$file" .md)
+            
+            # 方法1：使用envsubst（推荐）
+            export CONTENT=$(pandoc "$file" -t html)
+            envsubst < "$TEMPLATE" > "posts/$filename.html"
+            
+            # 方法2：备用方案（如果envsubst失败）
+            # pandoc "$file" -o "posts/$filename.tmp" -t html
+            # awk -v cnt="$(cat posts/$filename.tmp)" '
+            #   BEGIN {RS="^$"; ORS=""}
+            #   {gsub("{{CONTENT}}", cnt); print}
+            # ' "$TEMPLATE" > "posts/$filename.html"
+            # rm "posts/$filename.tmp"
+            
+            echo "已生成: posts/$filename.html"
+          done
+
+      - name: Deploy
+        run: |
+          git config --global user.name "GitHub Actions"
+          git add posts/
+          git commit -m "自动生成HTML [skip ci]" || echo "无变更可提交"
+          git push
