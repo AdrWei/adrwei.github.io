@@ -1,9 +1,7 @@
-async function displayPosts() {
-    const postList = document.getElementById('post-list');
-    postList.innerHTML = ''; // 清空内容
-
+// blog.js
+async function fetchPosts() {
     try {
-        const filenames = ['posts/testArticle.md', 'posts/testArticle2.md']; // 文章文件名
+        const filenames = ['/posts/testArticle.md', '/posts/testArticle2.md']; // 修改路径
 
         for (const filename of filenames) {
             const response = await fetch(filename);
@@ -11,22 +9,20 @@ async function displayPosts() {
                 throw new Error(`无法读取文件: ${filename}`);
             }
             const markdown = await response.text();
-            const html = marked.parse(markdown);
+            const html = marked.parse(markdown); // 使用 marked.js 转换 Markdown
 
-            // 提取标题
-            const titleMatch = html.match(/<h1>(.*?)<\/h1>/);
+            const titleMatch = html.match(/<h1>(.*?)<\/h1>/); // 提取标题
             const title = titleMatch ? titleMatch[1] : '无标题';
 
-            // 创建文章标题元素
             const article = document.createElement('article');
             article.innerHTML = `<h2>${title}</h2>`;
 
-            postList.appendChild(article);
+            document.getElementById('post-list').appendChild(article);
         }
     } catch (error) {
         console.error('错误:', error);
-        postList.textContent = '无法加载文章。';
+        document.getElementById('post-list').textContent = '无法加载文章。';
     }
 }
 
-displayPosts();
+fetchPosts();
