@@ -1,28 +1,55 @@
 // blog.js
-async function fetchPosts() {
+
+async function fetchPostData(filename) {
     try {
-        const filenames = ['/posts/testArticle.md']; // 修改路径
+        const response = await fetch(`posts/${filename}`);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
 
-        for (const filename of filenames) {
-            const response = await fetch(filename);
-            if (!response.ok) {
-                throw new Error(`无法读取文件: ${filename}`);
-            }
-            const markdown = await response.text();
-            const html = marked.parse(markdown); // 使用 marked.js 转换 Markdown
+        const title = doc.querySelector('title').textContent;
+        const description = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '暂无描述';
 
-            const titleMatch = html.match(/<h1>(.*?)<\/h1>/); // 提取标题
-            const title = titleMatch ? titleMatch[1] : '无标题';
-
-            const article = document.createElement('article');
-            article.innerHTML = `<h2>${title}</h2>`;
-
-            document.getElementById('post-list').appendChild(article);
-        }
+        return { filename, title, description };
     } catch (error) {
-        console.error('错误:', error);
-        document.getElementById('post-list').textContent = '无法加载文章。';
+        console.error(`Error fetching post data for ${filename}:`, error);
+        return null;
     }
 }
 
-fetchPosts();
+async function displayPosts() {
+    const postList = document.getElementById('post-list');
+    postList.innerHTML = ''; // 清空内容
+
+    try {
+        // 获取 posts 目录下所有 HTML 文件名
+        const response = await fetch('posts/');
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const links = doc.querySelectorAll('a');
+
+        const postFiles = Array.from(links)
+            .map(link => link.href)
+            .filter(href => href.endsWith('.html'))
+            .map(href => href.split('/').pop());
+
+        const postData = await Promise.all(postFiles.map(fetchPostData));
+
+        postData.forEach(post => {
+            if (post) {
+                const article = document.createElement('article');
+                article.innerHTML = `
+                    <h2><a href="posts/${post.filename}">${post.title}</a></h2>
+                    <p>${post.description}</p>
+                `;
+                postList.appendChild(article);
+            }
+        });
+    } catch (error) {
+        console.error('Error displaying posts:', error);
+        postList.textContent = '无法加载文章列表。';
+    }
+}
+
+displayPosts();
