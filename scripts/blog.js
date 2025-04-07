@@ -39,7 +39,7 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString('zh-CN', options);
 }
 
-// 5. 渲染文章列表
+// 修改后的 renderPostList 函数
 async function renderPostList() {
     const postList = document.getElementById('post-list');
     if (!postList) return;
@@ -54,13 +54,22 @@ async function renderPostList() {
         }
 
         const posts = await Promise.all(files.map(async file => {
-            const html = await fetchPostData(file);
-            if (!html) return null;
-            return {
-                url: `${baseUrl}/${postsPath}/${file}`,
-                filename: file,
-                ...await extractPostMetadata(html)
-            };
+            try {
+                // 修正1：使用 fetch 替代未定义的 fetchPostData
+                const response = await fetch(`${postsPath}/${file}`);
+                if (!response.ok) return null;
+                const html = await response.text();
+                
+                return {
+                    // 修正2：使用正确的相对路径
+                    url: `${postsPath}/${file}`,
+                    filename: file,
+                    ...await extractPostMetadata(html)
+                };
+            } catch (error) {
+                console.error(`加载文章 ${file} 失败:`, error);
+                return null;
+            }
         }));
 
         const validPosts = posts.filter(Boolean).sort((a, b) => {
