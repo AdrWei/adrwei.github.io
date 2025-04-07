@@ -1,30 +1,18 @@
-const owner = 'AdrWei';
-const repo = 'adrwei.github.io';
-const postsPath = 'posts';
-const baseUrl = 'https://adrwei.github.io';
+const postsPath = '/posts';
 
-// 1. 获取文章内容
-async function fetchPostData(filename) {
-    const postUrl = `${baseUrl}/${postsPath}/${filename}`;
-    try {
-        const response = await fetch(postUrl);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return await response.text();
-    } catch (error) {
-        console.error(`加载文章失败: ${filename}`, error);
-        return null;
-    }
-}
-
-// 2. 获取文章列表
 async function getPostFiles() {
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${postsPath}?ref=main`;
     try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        return data
-            .filter(file => file.type === 'file' && file.name.endsWith('.html'))
-            .map(file => file.name);
+        // 方法1：获取预生成的 index.json
+        const response = await fetch(`${postsPath}/index.json`);
+        if (!response.ok) throw new Error('目录索引不存在');
+        return await response.json();
+
+        /* 方法2：如果服务器支持目录列表
+        const html = await fetch(postsPath).then(r => r.text());
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        return Array.from(doc.querySelectorAll('a[href$=".html"]'))
+            .map(a => a.getAttribute('href')); */
     } catch (error) {
         console.error('获取文章列表失败:', error);
         return [];
