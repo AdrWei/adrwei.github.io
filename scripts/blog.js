@@ -6,20 +6,15 @@ let allPosts = []; // 保存所有文章数据
 // 获取文章列表
 async function fetchPosts() {
     try {
-        const response = await fetch('/posts/'); // 读取 /post 目录下的文件
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const links = doc.querySelectorAll('a');
-        const postFiles = Array.from(links)
-            .map(link => link.href)
-            .filter(href => href.endsWith('.md'))
-            .map(href => href.split('/').pop());
+        // 1. 读取 posts.json 文件
+        const response = await fetch('/posts.json');
+        const postFiles = await response.json();
 
-        // 读取每篇文章的内容
+        // 2. 读取每篇文章的内容
         allPosts = await Promise.all(
             postFiles.map(async filename => {
-                const postResponse = await fetch(`/post/${filename}`);
+                // 3. 使用正确的文章路径 /posts/${filename}
+                const postResponse = await fetch(`/posts/${filename}`);
                 const markdown = await postResponse.text();
                 const html = marked.parse(markdown);
                 return { filename, html };
