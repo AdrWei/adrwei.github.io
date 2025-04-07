@@ -1,4 +1,5 @@
 ---
+dummy: true
 title: 我的样板文章
 date: 2023-10-27
 author: 橡树工作室
