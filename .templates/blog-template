@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橡树工作室 - 助力品牌出海</title>
+    <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <div id="header"></div>
+    <div class="blog-container">
+        <main class="blog-content">
+            <div id="post-content">
+                {{CONTENT}}
+            </div>
+        </main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">分类 1</a></li>
+                    <li><a href="#">分类 2</a></li>
+                    <li><a href="#">最新文章</a></li>
+                    <li><a href="#">热门文章</a></li>
+                    <li><a href="#">关于我</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+    <div id="footer"></div>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/blog.js"></script>
+</body>
+</html>
