@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>橡树工作室 - 助力品牌出海</title>
-  <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/blog.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橡树工作室 - 助力品牌出海</title>
+    <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
 <body>
-  <!-- header占位 -->
-  <div id="header"></div> 
-      <div class="blog-container">
+    <div id="header"></div>
+    <div class="blog-container">
         <main class="blog-content">
-            <article class="post">
-                <h2>文章标题 1</h2>
-                <p>文章内容 1...</p>
-            </article>
-            <article class="post">
-                <h2>文章标题 2</h2>
-                <p>文章内容 2...</p>
-            </article>
-            </main>
+            <div id="post-list">
+                </div>
+            <div id="pagination">
+                </div>
+        </main>
         <aside class="sidebar">
             <nav>
                 <ul>
@@ -34,8 +29,9 @@
             </nav>
         </aside>
     </div>
-    <!-- footer占位 -->
     <div id="footer"></div>
     <script src="/scripts/main.js"></script>
+    <script src="/scripts/blog.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
