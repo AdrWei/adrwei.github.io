@@ -25,7 +25,7 @@ jobs:
           awk -v content="$(cat posts/${filename}.tmp.html)" '
             BEGIN { RS="^$"; ORS="" }
             { gsub("{{CONTENT}}", content); print }
-          ' .github/templates/blog-template.html > "posts/${filename}.html"
+          ' .github/.templates/blog-template.html > "posts/${filename}.html"
           
           rm "posts/${filename}.tmp.html"
         done
