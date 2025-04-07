@@ -3,7 +3,20 @@ const repo = 'adrwei.github.io';
 const postsPath = 'posts';
 const baseUrl = 'https://adrwei.github.io';
 
-// 1. 获取文章列表
+// 1. 获取文章内容
+async function fetchPostData(filename) {
+    const postUrl = `${baseUrl}/${postsPath}/${filename}`;
+    try {
+        const response = await fetch(postUrl);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return await response.text();
+    } catch (error) {
+        console.error(`加载文章失败: ${filename}`, error);
+        return null;
+    }
+}
+
+// 2. 获取文章列表
 async function getPostFiles() {
     const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${postsPath}?ref=main`;
     try {
@@ -18,7 +31,7 @@ async function getPostFiles() {
     }
 }
 
-// 2. 提取文章标题和元数据
+// 3. 提取文章元数据
 async function extractPostMetadata(html) {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     return {
@@ -31,7 +44,14 @@ async function extractPostMetadata(html) {
     };
 }
 
-// 3. 渲染文章列表
+// 4. 格式化日期
+function formatDate(dateString) {
+    if (dateString === '未知日期') return dateString;
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('zh-CN', options);
+}
+
+// 5. 渲染文章列表
 async function renderPostList() {
     const postList = document.getElementById('post-list');
     if (!postList) return;
@@ -45,25 +65,20 @@ async function renderPostList() {
             return;
         }
 
-        // 并行加载所有文章元数据
         const posts = await Promise.all(files.map(async file => {
             const html = await fetchPostData(file);
             if (!html) return null;
-            
-            const metadata = await extractPostMetadata(html);
             return {
                 url: `${baseUrl}/${postsPath}/${file}`,
                 filename: file,
-                ...metadata
+                ...await extractPostMetadata(html)
             };
         }));
 
-        // 过滤无效文章并按日期排序（如果有）
         const validPosts = posts.filter(Boolean).sort((a, b) => {
             return new Date(b.date) - new Date(a.date);
         });
 
-        // 生成HTML
         postList.innerHTML = validPosts.map(post => `
             <article class="post-item">
                 <h2><a href="${post.url}">${post.title}</a></h2>
@@ -76,15 +91,9 @@ async function renderPostList() {
 
     } catch (error) {
         console.error('渲染文章列表失败:', error);
-        postList.innerHTML = '<p>加载文章失败，请刷新重试</p>';
+        postList.innerHTML = '<p class="error">加载文章失败，请刷新重试或检查控制台</p>';
     }
 }
 
-// 辅助函数：格式化日期
-function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('zh-CN', options);
-}
-
-// 4. 初始化执行
+// 6. 页面加载后执行
 document.addEventListener('DOMContentLoaded', renderPostList);
