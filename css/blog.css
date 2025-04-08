@@ -65,10 +65,10 @@
 
 .post-excerpt {
     color: #34495e;
-    margin: 20px 0;
+    margin: 10px 0;
     line-height: 1.6;
     border-bottom:1px solid #eaeaea;
-    padding-bottom:5px;
+    padding-bottom:20px;
 }
 
 .author-avatar {
@@ -112,6 +112,10 @@
 
 .filter-drawer.active {
   left: 0; /* 点击筛选按钮时显示 */
+}
+
+time {
+    padding-left:10px;
 }
 
 /* 响应式设计 */
