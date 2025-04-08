@@ -43,10 +43,13 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString('zh-CN', options);
 }
 
-// 获取查询参数
-function getQueryParam(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
+// 获取选中的类别和标签
+function getSelectedFilters() {
+    const selectedCategories = Array.from(document.querySelectorAll('input[data-category]:checked'))
+        .map(checkbox => checkbox.dataset.category);
+    const selectedTags = Array.from(document.querySelectorAll('input[data-tag]:checked'))
+        .map(checkbox => checkbox.dataset.tag);
+    return { selectedCategories, selectedTags };
 }
 
 // 修改后的 renderPostList 函数
@@ -83,17 +86,16 @@ async function renderPostList() {
             return new Date(b.date) - new Date(a.date);
         });
 
-        // 根据查询参数筛选文章
-        const category = getQueryParam('category');
-        const tag = getQueryParam('tag');
+        // 根据选中的类别和标签筛选文章
+        const { selectedCategories, selectedTags } = getSelectedFilters();
         let filteredPosts = validPosts;
 
-        if (category) {
-            filteredPosts = filteredPosts.filter(post => post.categories === category);
+        if (selectedCategories.length > 0) {
+            filteredPosts = filteredPosts.filter(post => selectedCategories.includes(post.categories));
         }
 
-        if (tag) {
-            filteredPosts = filteredPosts.filter(post => post.tags.includes(tag));
+        if (selectedTags.length > 0) {
+            filteredPosts = filteredPosts.filter(post => selectedTags.some(tag => post.tags.includes(tag)));
         }
 
         postList.innerHTML = filteredPosts.map(post => `
@@ -120,5 +122,11 @@ async function renderPostList() {
     }
 }
 
-// 6. 页面加载后执行
-document.addEventListener('DOMContentLoaded', renderPostList);
+// 添加复选框的 change 事件监听器
+document.addEventListener('DOMContentLoaded', function() {
+    const filterCheckboxes = document.querySelectorAll('input[data-category], input[data-tag]');
+    filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', renderPostList);
+    });
+    renderPostList();
+});
