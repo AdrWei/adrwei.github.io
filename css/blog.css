@@ -22,7 +22,7 @@
     border-bottom: 1px solid #eee;
 }
 
-.post-list{
+#post-list{
     display: flex;
     gap: 20px;
 }
@@ -103,6 +103,17 @@
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+.tag-box{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: var(--VI-dark);
+    font-size: calc(var(--p-size) / 1.2);
+    cursor: default;
+    margin: 5px;
+    background-color: #FFE4B5;
 }
 
 /* 响应式设计 */
