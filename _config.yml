@@ -14,3 +14,9 @@ defaults:
       type: pages    # 明确指定页面类型
     values:
       layout: default
+
+# 启用_pages目录
+collections:
+  pages:
+    output: true
+    permalink: /:path/
