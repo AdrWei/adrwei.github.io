@@ -37,9 +37,6 @@
 
 /* 文章列表样式 */
 .post-item {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #eaeaea;
 }
 
 .post-item h2 {
@@ -60,7 +57,6 @@
 .post-meta {
     color: #7f8c8d;
     font-size: 0.9rem;
-    margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -68,7 +64,7 @@
 
 .post-excerpt {
     color: #34495e;
-    margin: 0;
+    margin: 20px 0;
     line-height: 1.6;
 }
 
@@ -76,7 +72,6 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    margin-left: 10px;
 }
 
 .card {
@@ -93,7 +88,6 @@
     border-radius: 5px;
     color: var(--VI-dark);
     cursor: default;
-    margin: 5px;
     background-color: #FFE4B5;
     font-size:0.9rem;
 }
