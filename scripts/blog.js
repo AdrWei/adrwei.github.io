@@ -99,21 +99,23 @@ async function renderPostList() {
         }
 
         postList.innerHTML = filteredPosts.map(post => `
-            <article class="post-item">
-                <h2><a href="${post.url}">${post.title}</a></h2>
-                <p class="post-excerpt">${post.excerpt}</p>
-                <div class="post-meta">
-                    ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
-                    <span>作者：${post.author}</span>
-                    <img src="${post.authorAvatar}" alt="${post.author}头像" class="author-avatar">
-                </div>
-                <div class="post-categories">
-                    分类：${post.categories}
-                </div>
-                <div class="post-tags">
-                    标签：${post.tags}
-                </div>
-            </article>
+            <div class="card">
+                <article class="post-item">
+                    <h2><a href="${post.url}">${post.title}</a></h2>
+                    <p class="post-excerpt">${post.excerpt}</p>
+                    <div class="post-meta">
+                        ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
+                        <span>作者：${post.author}</span>
+                        <img src="${post.authorAvatar}" alt="${post.author}头像" class="author-avatar">
+                    </div>
+                    <div class="post-categories">
+                        分类：${post.categories}
+                    </div>
+                    <div class="post-tags">
+                        标签：${post.tags}
+                    </div>
+                </article>
+            </div>
         `).join('');
 
     } catch (error) {
