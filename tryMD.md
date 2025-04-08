@@ -1,4 +1,3 @@
-# 文件：about.md
 ---
 layout: default
 title: 关于我
