@@ -109,9 +109,11 @@ time {
     .blog-container {
         grid-template-columns: 100%; /* 在小屏幕上，堆叠显示 */
     }
+    
     .sidebar {
         display:none;
     }
+    
     .filter-container {
     display:flex;
       position: relative;
@@ -123,6 +125,10 @@ time {
     }
 
     .filter-dropdown-content {
+        display: none;
+    }
+
+    .filter-dropdown-content show{
         display: block;
         position: absolute;
         right: 0;
