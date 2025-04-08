@@ -2,15 +2,19 @@
 <html>
 <head>
   <title>{{ page.title | default: site.title }}</title>
-  {{ content }}  <!-- 关键：必须包含此标签 -->
+  <!-- 这里只放 head 专属内容（如 meta、CSS 链接等） -->
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
 </head>
 <body>
   {% include header.html %}
   
   <main>
-    {{ content }}  <!-- 如果重复需要删除一个 -->
+    {{ content }}  <!-- 唯一保留的内容注入点 -->
   </main>
 
   {% include footer.html %}
+  
+  <!-- JS 脚本放在 body 末尾 -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
