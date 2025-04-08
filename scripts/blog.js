@@ -39,8 +39,8 @@ async function extractPostMetadata(html) {
 // 4. 格式化日期
 function formatDate(dateString) {
     if (dateString === '未知日期') return dateString;
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('zh-CN', options);
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    return new Date(dateString).toISOString().slice(0, 10);
 }
 
 // 获取选中的类别和标签
