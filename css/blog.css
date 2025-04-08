@@ -100,20 +100,6 @@
   position: relative;
 }
 
-.filter-drawer {
-  position: fixed;
-  top: 0;
-  left: -300px; /* 初始隐藏在屏幕左侧 */
-  width: 300px;
-  height: 100%;
-  background-color: white;
-  transition: left 0.3s ease;
-}
-
-.filter-drawer.active {
-  left: 0; /* 点击筛选按钮时显示 */
-}
-
 time {
     padding-left:10px;
 }
@@ -130,4 +116,29 @@ time {
     display:flex;
       position: relative;
 }
+        .filter-dropdown-button {
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .filter-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .filter-dropdown-content label {
+        display: block;
+        padding: 10px;
+    }
+
+    .filter-dropdown-content.show {
+        display: block;
+    }
 }
+
