@@ -23,12 +23,16 @@ async function getPostFiles() {
 async function extractPostMetadata(html) {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     return {
-        title: doc.querySelector('h1')?.textContent || 
-               doc.title.replace('橡树工作室 - ', '') || 
+        title: doc.querySelector('h1')?.textContent ||
+               doc.title.replace('橡树工作室 - ', '') ||
                '未命名文章',
-        date: doc.querySelector('time')?.datetime || '未知日期',
-        excerpt: doc.querySelector('meta[name="description"]')?.content || 
-                doc.querySelector('article p')?.textContent?.slice(0, 100) + '...'
+        date: doc.querySelector('meta[name="date"]')?.content || '未知日期',
+        author: doc.querySelector('meta[name="author"]')?.content || '佚名',
+        authorAvatar: doc.querySelector('meta[name="author-avatar"]')?.content || '/media/default-avatar.jpg',
+        excerpt: doc.querySelector('meta[name="description"]')?.content ||
+                 doc.querySelector('article p')?.textContent?.slice(0, 100) + '...',
+        categories: doc.querySelector('meta[name="categories"]')?.content || '未分类',
+        tags: doc.querySelector('meta[name="tags"]')?.content || '无标签'
     };
 }
 
@@ -76,15 +80,23 @@ async function renderPostList() {
             return new Date(b.date) - new Date(a.date);
         });
 
-        postList.innerHTML = validPosts.map(post => `
-            <article class="post-item">
-                <h2><a href="${post.url}">${post.title}</a></h2>
-                <div class="post-meta">
-                    ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
-                </div>
-                <p class="post-excerpt">${post.excerpt}</p>
-            </article>
-        `).join('');
+    postList.innerHTML = validPosts.map(post => `
+        <article class="post-item">
+            <h2><a href="${post.url}">${post.title}</a></h2>
+            <div class="post-meta">
+                ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
+                <span>作者：${post.author}</span>
+                <img src="${post.authorAvatar}" alt="${post.author}头像" class="author-avatar">
+            </div>
+            <div class="post-categories">
+                分类：${post.categories}
+            </div>
+            <div class="post-tags">
+                标签：${post.tags}
+            </div>
+            <p class="post-excerpt">${post.excerpt}</p>
+        </article>
+    `).join('');
 
     } catch (error) {
         console.error('渲染文章列表失败:', error);
