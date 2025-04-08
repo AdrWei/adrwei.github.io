@@ -132,7 +132,7 @@ time {
         display: none;
     }
 
-    .filter-dropdown-content show{
+    .filter-dropdown-content.show{
         display: block;
         position: absolute;
         right: 0;
