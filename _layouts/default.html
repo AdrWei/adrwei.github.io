@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
-  <!-- 这里只放 head 专属内容（如 meta、CSS 链接等） -->
+  <link rel="icon" href="{{ page.favicon | default: '/assets/images/logo-pure-blue.gif' | relative_url }}">
+  {% for meta in page.meta %}
+    <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}content="{{ meta.content }}">
+  {% endfor %}
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
 </head>
 <body>
   {% include header.html %}
   
   <main>
-    {{ content }}  <!-- 唯一保留的内容注入点 -->
+    {{ content }}
   </main>
 
   {% include footer.html %}
   
-  <!-- JS 脚本放在 body 末尾 -->
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
