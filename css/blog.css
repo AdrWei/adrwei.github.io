@@ -67,6 +67,8 @@
     color: #34495e;
     margin: 20px 0;
     line-height: 1.6;
+    border-bottom:1px solid #eaeaea;
+    padding-bottom:5px;
 }
 
 .author-avatar {
