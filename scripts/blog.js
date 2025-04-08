@@ -116,7 +116,7 @@ async function renderPostList() {
                         ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
                     </div>
                     <p class="post-excerpt">${post.excerpt}</p>
-                    <div class="post-meta">
+                    <div class="tag-meta">
                         <div class="tag-box">${post.categories}</div>
                         <div class="tag-box">${post.tags}</div>
                     </div>
