@@ -95,6 +95,25 @@
     font-size:0.9rem;
 }
 
+.filter-container {
+    display:none;
+  position: relative;
+}
+
+.filter-drawer {
+  position: fixed;
+  top: 0;
+  left: -300px; /* 初始隐藏在屏幕左侧 */
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  transition: left 0.3s ease;
+}
+
+.filter-drawer.active {
+  left: 0; /* 点击筛选按钮时显示 */
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .blog-container {
@@ -103,4 +122,8 @@
     .sidebar {
         display:none;
     }
+    .filter-container {
+    display:flex;
+      position: relative;
+}
 }
