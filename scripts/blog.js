@@ -43,6 +43,12 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString('zh-CN', options);
 }
 
+// 获取查询参数
+function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
 // 修改后的 renderPostList 函数
 async function renderPostList() {
     const postList = document.getElementById('post-list');
@@ -59,13 +65,10 @@ async function renderPostList() {
 
         const posts = await Promise.all(files.map(async file => {
             try {
-                // 修正1：使用 fetch 替代未定义的 fetchPostData
                 const response = await fetch(`${postsPath}/${file}`);
                 if (!response.ok) return null;
                 const html = await response.text();
-                
                 return {
-                    // 修正2：使用正确的相对路径
                     url: `${postsPath}/${file}`,
                     filename: file,
                     ...await extractPostMetadata(html)
@@ -80,23 +83,36 @@ async function renderPostList() {
             return new Date(b.date) - new Date(a.date);
         });
 
-    postList.innerHTML = validPosts.map(post => `
-        <article class="post-item">
-            <h2><a href="${post.url}">${post.title}</a></h2>
-            <p class="post-excerpt">${post.excerpt}</p>
-            <div class="post-meta">
-                ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
-                <span>作者：${post.author}</span>
-                <img src="${post.authorAvatar}" alt="${post.author}头像" class="author-avatar">
-            </div>
-            <div class="post-categories">
-                分类：${post.categories}
-            </div>
-            <div class="post-tags">
-                标签：${post.tags}
-            </div>
-        </article>
-    `).join('');
+        // 根据查询参数筛选文章
+        const category = getQueryParam('category');
+        const tag = getQueryParam('tag');
+        let filteredPosts = validPosts;
+
+        if (category) {
+            filteredPosts = filteredPosts.filter(post => post.categories === category);
+        }
+
+        if (tag) {
+            filteredPosts = filteredPosts.filter(post => post.tags.includes(tag));
+        }
+
+        postList.innerHTML = filteredPosts.map(post => `
+            <article class="post-item">
+                <h2><a href="${post.url}">${post.title}</a></h2>
+                <p class="post-excerpt">${post.excerpt}</p>
+                <div class="post-meta">
+                    ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
+                    <span>作者：${post.author}</span>
+                    <img src="${post.authorAvatar}" alt="${post.author}头像" class="author-avatar">
+                </div>
+                <div class="post-categories">
+                    分类：${post.categories}
+                </div>
+                <div class="post-tags">
+                    标签：${post.tags}
+                </div>
+            </article>
+        `).join('');
 
     } catch (error) {
         console.error('渲染文章列表失败:', error);
