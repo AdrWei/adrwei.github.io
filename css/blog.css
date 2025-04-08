@@ -16,10 +16,10 @@
 }
 
 .sidebar {
-    padding: 20px;
     background-color: var(--VI-color);
     border: 1px solid #ddd;
     border-radius: 10px
+    padding: 20px 50px;
 }
 
 .sidebar label{
