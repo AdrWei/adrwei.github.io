@@ -130,13 +130,14 @@ time {
     }
     
     .filter-container {
-    display:flex;
-      position: relative;
+        display:flex;
+        position: relative;
 }
-        .filter-dropdown-button {
+    .filter-dropdown-button {
         background: transparent;
         color: black;
         padding: 0;
+        font-weight:normal;
     }
 
     .filter-dropdown-content {
