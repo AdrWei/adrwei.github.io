@@ -1,43 +1,54 @@
 <footer class="site-footer">
   <div class="footer-container">
+    <!-- 渠道运营列 -->
     <div class="footer-col">
       <h3 class="footer-title">渠道运营</h3>
       <ul class="footer-links">
-        <li><a href="/service/web.html">独立站</a></li>
-        <li><a href="/service/alibaba.html">国际站</a></li>
-        <li><a href="/service/socialmedia.html">海外社媒</a></li>
+        <li><a href="{{ '/service/web.html' | relative_url }}">独立站</a></li>
+        <li><a href="{{ '/service/alibaba.html' | relative_url }}">国际站</a></li>
+        <li><a href="{{ '/service/socialmedia.html' | relative_url }}">海外社媒</a></li>
       </ul>
     </div>
 
+    <!-- 广告投放列 -->
     <div class="footer-col">
       <h3 class="footer-title">广告投放</h3>
       <ul class="footer-links">
-        <li><a href="/service/googleads.html">谷歌广告</a></li>
-        <li><a href="/service/fbads.html">Facebook广告</a></li>
+        <li><a href="{{ '/service/googleads.html' | relative_url }}">谷歌广告</a></li>
+        <li><a href="{{ '/service/fbads.html' | relative_url }}">Facebook广告</a></li>
       </ul>
     </div>
 
+    <!-- 关于我们列 -->
     <div class="footer-col">
       <h3 class="footer-title">关于我们</h3>
       <ul class="footer-links">
-        <li><a href="/about">基本信息</a></li>
-        <li><a href="/community">学习交流</a></li>
+        <li><a href="{{ '/about.html' | relative_url }}">基本信息</a></li>
+        <li><a href="{{ '/community.html' | relative_url }}">学习交流</a></li>
       </ul>
     </div>
-        <div class="footer-col">
-        <h3 class="footer-title">联系我们</h3>
-        <div class="qrcode-section">
-          <div class="qrcode-column">
-            <img src="/icons/WeChat QR.webp" alt="微信二维码"class="qrcode-img">
-            <a class="copyright a">微信咨询</a>
-          </div>
-          <div class="qrcode-column">
-          </div>
-  </div>
+
+    <!-- 联系信息列 -->
+    <div class="footer-col">
+      <h3 class="footer-title">联系我们</h3>
+      <div class="qrcode-section">
+        <div class="qrcode-column">
+          <img 
+            src="{{ '/assets/images/icons/wechat-qr.webp' | relative_url }}" 
+            alt="微信二维码"
+            class="qrcode-img"
+            loading="lazy"
+          >
+          <span class="copyright">微信咨询</span>
+        </div>
+      </div>
     </div>
   </div>
+
   <!-- 版权信息 -->
   <div class="copyright">
-    <a>© 2023 公司名称 版权所有</a> | <a href="#">隐私政策</a> | <a href="#">使用条款</a>
+    <span>© {{ 'now' | date: "%Y" }} 橡树工作室 版权所有</span> | 
+    <a href="{{ '/privacy.html' | relative_url }}">隐私政策</a> | 
+    <a href="{{ '/terms.html' | relative_url }}">使用条款</a>
   </div>
 </footer>
