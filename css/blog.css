@@ -117,19 +117,16 @@ time {
       position: relative;
 }
         .filter-dropdown-button {
-        background-color: #f0f0f0;
-        border: 1px solid #ddd;
-        padding: 10px;
-        cursor: pointer;
+        background: transparent;
+        color: black;
+        padding: 0;
     }
 
     .filter-dropdown-content {
-        display: none;
+        display: block;
         position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        z-index: 1;
+        right: 0;
+        top: 30px;
     }
 
     .filter-dropdown-content label {
