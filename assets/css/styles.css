@@ -644,7 +644,7 @@ button {
    }
 
    nav {
-    display: flex; /* 修改此处：显示导航栏 */
+    display: none; /* 修改此处：显示导航栏 */
     justify-content: center;
     background-color:var(--VI-dark);
     flex-direction: column;
@@ -661,7 +661,7 @@ button {
     transform: translateX(-80vw); /* 移动到屏幕可见区域 */
   }
 
-   nav.active .mobile-nav-right {
+   .mobile-nav-right {
     /* 显示图标 */
     display: block;
     max-width:33%;
