@@ -98,11 +98,7 @@
 
 .tag-meta {
     border-top: 1px solid #eaeaea;
-    color: #7f8c8d;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    padding-top:10px;
 }
 
 .tag-box{
