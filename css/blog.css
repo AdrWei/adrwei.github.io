@@ -63,6 +63,7 @@
     margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
 .post-excerpt {
@@ -88,12 +89,13 @@
 
 .tag-box{
     display: inline-block;
-    padding: 10px 15px;
+    padding: 5px 10px;
     border-radius: 5px;
     color: var(--VI-dark);
     cursor: default;
     margin: 5px;
     background-color: #FFE4B5;
+    font-size:0.9rem;
 }
 
 /* 响应式设计 */
