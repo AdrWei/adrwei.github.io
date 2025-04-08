@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <title>{{ page.title | default: site.title }}</title>
+  {{ content }}  <!-- 关键：必须包含此标签 -->
 </head>
 <body>
   {% include header.html %}
   
   <main>
-    {{ content }} <!-- 子页面内容会插入到这里 -->
+    {{ content }}  <!-- 如果重复需要删除一个 -->
   </main>
 
   {% include footer.html %}
