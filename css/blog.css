@@ -109,6 +109,12 @@
     justify-content: space-between;
 }
 
+.filter-container h5{
+font-size:var(--p-size);
+    margin:0;
+}
+
+
 time {
     padding-left:10px;
 }
@@ -137,13 +143,18 @@ time {
         display: none;
     }
 
+    .filter-dropdown-content li{
+        padding:10px;
+    }
+
     .filter-dropdown-content.show{
         display: block;
         position: absolute;
         right: 0;
-        top: 30px;
+        top: 40px;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         background-color: #f9f9f9;
+        text-align:right;
     }
     
     .filter-dropdown-content label {
