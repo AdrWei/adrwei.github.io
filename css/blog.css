@@ -36,28 +36,6 @@
     cursor: pointer;
 }
 
-/* 文章列表样式 */
-.post-item {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.post-item h2 {
-    margin: 0 0 0.5rem;
-    font-size: 1.4rem;
-}
-
-.post-item h2 a {
-    color: #2c3e50;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.post-item h2 a:hover {
-    color: #0066cc;
-}
-
 .post-meta {
     color: #7f8c8d;
     font-size: 0.9rem;
