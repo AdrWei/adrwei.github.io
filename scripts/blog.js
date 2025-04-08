@@ -130,11 +130,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     renderPostList();
 
-  // 手机端filter功能  
-    const filterButton = document.querySelector('.filter-button');
-    const filterDrawer = document.querySelector('.filter-drawer');
-    
-    filterButton.addEventListener('click', () => {
-    filterDrawer.classList.toggle('active');
+// 下拉菜单控制
+const filterDropdownButton = document.querySelector('.filter-dropdown-button');
+const filterDropdownContent = document.querySelector('.filter-dropdown-content');
+
+filterDropdownButton.addEventListener('click', () => {
+    filterDropdownContent.classList.toggle('show');
 });
+
+window.addEventListener('click', (event) => {
+    if (!event.target.matches('.filter-dropdown-button')) {
+        if (filterDropdownContent.classList.contains('show')) {
+            filterDropdownContent.classList.remove('show');
+        }
+    }
+});
+
+// 修改后的 getSelectedFilters 函数
+function getSelectedFilters() {
+    const selectedCategories = Array.from(document.querySelectorAll('input[data-filter="category"]:checked'))
+        .map(checkbox => checkbox.value);
+    const selectedTags = Array.from(document.querySelectorAll('input[data-filter="tag"]:checked'))
+        .map(checkbox => checkbox.value);
+    return { selectedCategories, selectedTags };
+}
+
 });
