@@ -1,0 +1,15 @@
+title: 我的网站
+description: 欢迎访问我的 GitHub Pages
+baseurl: ""  # 如果你的网站不在根目录（如 /project）
+url: "https://your-username.github.io" 
+
+# 插件配置（GitHub Pages 自动启用部分插件）
+plugins:
+  - jekyll-feed
+
+# 默认模板变量
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default  # 所有页面默认使用 default.html 模板
