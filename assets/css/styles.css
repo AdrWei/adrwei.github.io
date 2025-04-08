@@ -1,4 +1,5 @@
 :root {
+   --mobile-breakpoint: 768px;
    /* 品牌VI */
   --VI-color: #17A2B8;
   --VI-dark: #343A40;
@@ -621,7 +622,7 @@ button {
 }
 
 /* 媒体查询：针对小屏幕（例如手机） */
-@media (max-width: 768px) {
+@media (max-width: var(--mobile-breakpoint)) {
   :root {
     --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
      --h1-size: 6vw;
