@@ -13,6 +13,7 @@
 }
 
 .blog-content {
+    min-height: 35vh;
 }
 
 .sidebar {
