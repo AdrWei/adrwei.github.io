@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  {% include header.html %}
+  
+  <main>
+    {{ content }} <!-- 子页面内容会插入到这里 -->
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>
