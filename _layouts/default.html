@@ -9,6 +9,12 @@
     <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}content="{{ meta.content }}">
   {% endfor %}
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <!-- 额外CSS -->
+  {% if page.extra_css %}
+    {% for css in page.extra_css %}
+      <link rel="stylesheet" href="{{ css | relative_url }}">
+    {% endfor %}
+  {% endif %}
 </head>
 <body>
   {% include header.html %}
@@ -20,5 +26,11 @@
   {% include footer.html %}
   
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <!-- 额外JS -->
+  {% if page.extra_js %}
+    {% for js in page.extra_js %}
+      <script src="{{ js | relative_url }}"></script>
+    {% endfor %}
+  {% endif %}
 </body>
 </html>
