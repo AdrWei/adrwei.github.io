@@ -9,45 +9,47 @@ extra_css:
 extra_js:
   - /assets/js/blog.js
 ---
-    <div class="content-banner">
-    <div class="content-banner-text">
-      <h1>社媒内容运营</h1>
-      <p>渠道媒体建设/运营规划/内容制作培训全面到位<br>
-    </div>
-      <img src="/media/social media.jpg" alt="PC Banner" class="pc-banner">
-  </div>
-    <div class="blog-container">
-            <div class="filter-container">
-            <h4>文章列表</h4>
-            <button class="filter-dropdown-button">筛选</button>
-    <div class="filter-dropdown-content">
-        <li data-category="独立站">独立站</li>
-        <li data-category="国际站">国际站</li>
-        <li data-tag="技术">技术</li>
-        <li data-tag="力量">力量</li>
-    </div>
-            </div>
-        <aside class="sidebar">
-            <nav>
-                <ul>
-                    <li><a>文章类型</a></li>
-                    <li><label><input type="checkbox" data-category="独立站"> 独立站</label></li>
-                    <br>
-                    <li><a>文章类型2</a></li>
-                     <li><label><input type="checkbox" data-tag="技术"> 技术</label></li>
-                    <li><label><input type="checkbox" data-tag="Web开发"> Web开发</label></li>
-                    <br>
-                    <li><a href="#">最新文章</a></li>
-                    <li><a href="#">热门文章</a></li>
-                    <li><a href="#">关于我</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <main class="blog-content">
-            <div id="post-list">
-                </div>
-            <div id="pagination">
-                </div>
-        </main>
-    </div>
 
+<div class="content-banner">
+  <div class="content-banner-text">
+    <h1>社媒内容运营</h1>
+    <p>渠道媒体建设/运营规划/内容制作培训全面到位</p>
+  </div>
+  <!-- 修正图片路径（建议使用Jekyll的图片引用方式） -->
+  <img src="{{ '/media/social-media.jpg' | relative_url }}" alt="PC Banner" class="pc-banner">
+</div>
+
+<div class="blog-container">
+  <div class="filter-container">
+    <h4>文章列表</h4>
+    <button class="filter-dropdown-button">筛选</button>
+    <div class="filter-dropdown-content">
+      <li data-category="独立站">独立站</li>
+      <li data-category="国际站">国际站</li>
+      <li data-tag="技术">技术</li>
+      <li data-tag="力量">力量</li>
+    </div>
+  </div>
+  
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a>文章类型</a></li>
+        <li><label><input type="checkbox" data-category="独立站"> 独立站</label></li>
+        <br>
+        <li><a>文章类型2</a></li>
+        <li><label><input type="checkbox" data-tag="技术"> 技术</label></li>
+        <li><label><input type="checkbox" data-tag="Web开发"> Web开发</label></li>
+        <br>
+        <li><a href="#">最新文章</a></li>
+        <li><a href="#">热门文章</a></li>
+        <li><a href="#">关于我</a></li>
+      </ul>
+    </nav>
+  </aside>
+  
+  <main class="blog-content">
+    <div id="post-list"></div>
+    <div id="pagination"></div>
+  </main>
+</div>
