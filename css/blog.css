@@ -4,7 +4,7 @@
     gap: 20px; /* 栏之间的间距 */
     max-width: 1200px;
     margin: 0 auto;
-    padding: calc(var(--header-height) + 20px) 0 20px 20px;
+    padding: calc(var(--header-height) + 20px) 20px 20px 20px;
     
 }
 
@@ -107,7 +107,7 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-    .container {
+    .blog-container {
         grid-template-columns: 100%; /* 在小屏幕上，堆叠显示 */
     }
     .sidebar {
