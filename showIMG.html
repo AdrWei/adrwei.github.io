@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/showIMG.css">
-    <title>图片分页展示</title>
-</head>
-<body>
-    <div id="header"></div>
-    <h3 style="padding-top: var(--header-height);">图片展示示例</h3>
-    <div id="showimg-container"></div>
-    <div class="showimg-pagination">
-        <button id="prev-page">上一页</button>
-        <span id="page-number">1</span>
-        <button id="next-page">下一页</button>
-    </div>
-    <div id="footer"></div>
-    <script src="/scripts/main.js"></script>
-    <script src="/scripts/showIMG.js"></script>
-</body>
-</html>
+---
+layout: default
+title: 图片展示
+---
+
+<div class="gallery">
+  {% for image in site.static_files %}
+    {% if image.path contains '/assets/images/' %}
+      <div class="gallery-item">
+        <img 
+          src="{{ image.path | relative_url }}" 
+          alt="Gallery image {{ forloop.index }}"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
