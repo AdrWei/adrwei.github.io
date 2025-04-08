@@ -3,15 +3,51 @@ layout: default
 title: 图片展示
 ---
 
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f9f9f9;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  
+  .filename {
+    font-size: 14px;
+    color: #555;
+    word-break: break-all;
+    text-align: center;
+  }
+</style>
+
 <div class="gallery">
   {% for image in site.static_files %}
     {% if image.path contains '/assets/images/' %}
+      {% assign filename = image.path | split: '/' | last %}
       <div class="gallery-item">
         <img 
           src="{{ image.path | relative_url }}" 
-          alt="Gallery image {{ forloop.index }}"
+          alt="{{ filename }}"
           loading="lazy"
         >
+        <div class="filename">{{ filename }}</div>
       </div>
     {% endif %}
   {% endfor %}
