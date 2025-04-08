@@ -160,7 +160,8 @@ time {
     }
 
     .filter-dropdown-content.show{
-        display: block;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
         position: absolute;
         right: 0;
         top: 40px;
