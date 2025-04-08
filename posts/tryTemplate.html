@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的博客</title>
+    <title>第一篇文章</title>
 </head>
 <body>
     <div id="post-container"></div>
     <script src="/scripts/post-template.js"></script>
+    <script>
+        const postData = {
+            title: "第一篇文章的标题",
+            content: "<p>这是第一篇文章的内容。</p>"
+        };
+        renderPost(postData); // 调用 JavaScript 函数渲染文章
+    </script>
 </body>
 </html>
