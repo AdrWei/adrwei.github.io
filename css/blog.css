@@ -109,7 +109,7 @@
     justify-content: space-between;
 }
 
-.filter-container h5{
+.filter-container h4{
 font-size:var(--p-size);
     margin:0;
 }
