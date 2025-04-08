@@ -4,7 +4,7 @@
     gap: 20px; /* 栏之间的间距 */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px 20px;
 }
 
 .blog-content {
@@ -21,13 +21,6 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #eee;
 }
-
-#post-list{
-    display: flex;
-    gap: 20px;
-}
-
-/* 你现有的 blog.css 样式 */
 
 #pagination {
     margin-top: 20px;
@@ -78,18 +71,6 @@
     line-height: 1.6;
 }
 
-.post-categories {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #555;
-}
-
-.post-tags {
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: #555;
-}
-
 .author-avatar {
     width: 30px;
     height: 30px;
@@ -110,7 +91,6 @@
     padding: 10px 15px;
     border-radius: 5px;
     color: var(--VI-dark);
-    font-size: calc(var(--p-size) / 1.2);
     cursor: default;
     margin: 5px;
     background-color: #FFE4B5;
