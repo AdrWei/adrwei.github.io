@@ -1,10 +1,11 @@
 .blog-container {
     display: grid;
-    grid-template-columns: 70% 30%; /* 左右分栏比例 */
+    grid-template-columns: 30% 70%; /* 左右分栏比例 */
     gap: 20px; /* 栏之间的间距 */
     max-width: 1200px;
     margin: 0 auto;
     padding: calc(var(--header-height) + 20px) 0 20px 20px;
+    
 }
 
 .blog-content {
@@ -14,6 +15,8 @@
 .sidebar {
     padding: 20px;
     background-color: var(--VI-color);
+    border: 1px solid #ddd;
+    border-radius: 10px
 }
 
 .post {
