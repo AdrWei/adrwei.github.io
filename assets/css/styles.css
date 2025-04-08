@@ -1,5 +1,4 @@
 :root {
-   --mobile-breakpoint: 768px;
    /* 品牌VI */
   --VI-color: #17A2B8;
   --VI-dark: #343A40;
@@ -622,7 +621,7 @@ button {
 }
 
 /* 媒体查询：针对小屏幕（例如手机） */
-@media (max-width: var(--mobile-breakpoint)) {
+@media (max-width: 768px) {
   :root {
     --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
      --h1-size: 6vw;
@@ -644,7 +643,7 @@ button {
    }
 
    nav {
-    display: none; /* 修改此处：显示导航栏 */
+    display: flex; /* 修改此处：显示导航栏 */
     justify-content: center;
     background-color:var(--VI-dark);
     flex-direction: column;
@@ -659,13 +658,6 @@ button {
     /* 当 mobile-nav-toggle 被点击时，显示导航栏 */
   nav.active {
     transform: translateX(-80vw); /* 移动到屏幕可见区域 */
-  }
-
-   .mobile-nav-right {
-    /* 显示图标 */
-    display: block;
-    max-width:33%;
-    padding-top:30px;
   }
    
   .dropdown {
@@ -686,6 +678,13 @@ button {
   .nav-right {
     /* 隐藏原始内容 */
     display: none;
+  }
+
+  .mobile-nav-right {
+    /* 显示图标 */
+    display: block;
+    max-width:33%;
+     padding-top:30px;
   }
    
   .mobile-nav-toggle {
