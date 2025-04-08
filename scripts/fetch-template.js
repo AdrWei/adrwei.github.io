@@ -1,4 +1,4 @@
-fetch('posts.json')
+fetch('/scripts/post-template.js')
     .then(response => response.json())
     .then(posts => {
         const container = document.body;
