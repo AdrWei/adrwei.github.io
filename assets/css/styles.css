@@ -660,6 +660,13 @@ button {
   nav.active {
     transform: translateX(-80vw); /* 移动到屏幕可见区域 */
   }
+
+   nav.active .mobile-nav-right {
+    /* 显示图标 */
+    display: block;
+    max-width:33%;
+    padding-top:30px;
+  }
    
   .dropdown {
    display:none;
@@ -679,13 +686,6 @@ button {
   .nav-right {
     /* 隐藏原始内容 */
     display: none;
-  }
-
-  .mobile-nav-right {
-    /* 显示图标 */
-    display: block;
-    max-width:33%;
-     padding-top:30px;
   }
    
   .mobile-nav-toggle {
