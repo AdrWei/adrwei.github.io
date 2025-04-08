@@ -109,8 +109,8 @@ async function renderPostList() {
                         ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
                     </div>
                     <div class="post-meta">
-                        类型：${post.categories}
-                        标签：${post.tags}
+                        <div class="tag-box">类型：${post.categories}</div>
+                        <div class="tag-box">标签：${post.tags}</div>
                     </div>
                 </article>
             </div>
