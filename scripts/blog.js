@@ -129,4 +129,12 @@ document.addEventListener('DOMContentLoaded', function() {
         checkbox.addEventListener('change', renderPostList);
     });
     renderPostList();
+
+  // 手机端filter功能  
+    const filterButton = document.querySelector('.filter-button');
+    const filterDrawer = document.querySelector('.filter-drawer');
+    
+    filterButton.addEventListener('click', () => {
+    filterDrawer.classList.toggle('active');
+});
 });
