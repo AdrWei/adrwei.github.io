@@ -5,9 +5,9 @@ function renderPost(postData) {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" type="image/x-icon" href="/media/logo-pure-blue.gif">
             <title>${postData.title}</title> 
             <link rel="stylesheet" href="/css/styles.css">
-            <link rel="stylesheet" href="/css/blog.css">
         </head>
         <body>
             <div id="header"></div>
