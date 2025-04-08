@@ -21,6 +21,7 @@ function renderPost(postData) {
             </div>
             <div id="footer"></div>
         </body>
+        <script src="/scripts/main.js"></script>
         </html>
     `;
 
