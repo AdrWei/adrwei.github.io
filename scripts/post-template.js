@@ -26,7 +26,7 @@ function renderPost(content) {
 }
 
 // 加载和解析 Markdown 文件
-fetch('articles/try.md')
+fetch('fetch('https://raw.githubusercontent.com/AdrWei/adrwei.github.io/main/articles/testArticle.md')')
     .then(response => response.text())
     .then(markdown => {
         const html = marked(markdown);
