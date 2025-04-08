@@ -45,11 +45,19 @@ function formatDate(dateString) {
 
 // 获取选中的类别和标签
 function getSelectedFilters() {
-    const selectedCategories = Array.from(document.querySelectorAll('input[data-category]:checked'))
-        .map(checkbox => checkbox.dataset.category);
-    const selectedTags = Array.from(document.querySelectorAll('input[data-tag]:checked'))
-        .map(checkbox => checkbox.dataset.tag);
-    return { selectedCategories, selectedTags };
+    if (window.innerWidth >= 768) { // PC 端
+        const selectedCategories = Array.from(document.querySelectorAll('input[data-category]:checked'))
+            .map(checkbox => checkbox.dataset.category);
+        const selectedTags = Array.from(document.querySelectorAll('input[data-tag]:checked'))
+            .map(checkbox => checkbox.dataset.tag);
+        return { selectedCategories, selectedTags };
+    } else { // 手机端
+        const selectedCategories = Array.from(document.querySelectorAll('[data-category].selected'))
+            .map(item => item.dataset.category);
+        const selectedTags = Array.from(document.querySelectorAll('[data-tag].selected'))
+            .map(item => item.dataset.tag);
+        return { selectedCategories, selectedTags };
+    }
 }
 
 // 修改后的 renderPostList 函数
@@ -124,26 +132,36 @@ async function renderPostList() {
 
 // 添加复选框的 change 事件监听器
 document.addEventListener('DOMContentLoaded', function() {
-    const filterCheckboxes = document.querySelectorAll('input[data-category], input[data-tag]');
-    filterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', renderPostList);
-    });
-    renderPostList();
+    if (window.innerWidth >= 768) { // PC 端
+        const filterCheckboxes = document.querySelectorAll('input[data-category], input[data-tag]');
+        filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', renderPostList);
+        });
+    } else { // 手机端
+        const filterItems = document.querySelectorAll('[data-category], [data-tag]');
+        filterItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('selected');
+                renderPostList();
+            });
+        });
 
-// 下拉菜单控制
-const filterDropdownButton = document.querySelector('.filter-dropdown-button');
-const filterDropdownContent = document.querySelector('.filter-dropdown-content');
+        // 下拉菜单控制
+        const filterDropdownButton = document.querySelector('.filter-dropdown-button');
+        const filterDropdownContent = document.querySelector('.filter-dropdown-content');
 
-filterDropdownButton.addEventListener('click', () => {
-    filterDropdownContent.classList.toggle('show');
-});
+        filterDropdownButton.addEventListener('click', () => {
+            filterDropdownContent.classList.toggle('show');
+        });
 
-window.addEventListener('click', (event) => {
-    if (!event.target.matches('.filter-dropdown-button')) {
-        if (filterDropdownContent.classList.contains('show')) {
-            filterDropdownContent.classList.remove('show');
-        }
+        window.addEventListener('click', (event) => {
+            if (!event.target.matches('.filter-dropdown-button')) {
+                if (filterDropdownContent.classList.contains('show')) {
+                    filterDropdownContent.classList.remove('show');
+                }
+            }
+        });
     }
-});
 
+    renderPostList();
 });
