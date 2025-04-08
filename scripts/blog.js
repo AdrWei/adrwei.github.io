@@ -83,6 +83,7 @@ async function renderPostList() {
     postList.innerHTML = validPosts.map(post => `
         <article class="post-item">
             <h2><a href="${post.url}">${post.title}</a></h2>
+            <p class="post-excerpt">${post.excerpt}</p>
             <div class="post-meta">
                 ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
                 <span>作者：${post.author}</span>
@@ -94,7 +95,6 @@ async function renderPostList() {
             <div class="post-tags">
                 标签：${post.tags}
             </div>
-            <p class="post-excerpt">${post.excerpt}</p>
         </article>
     `).join('');
 
