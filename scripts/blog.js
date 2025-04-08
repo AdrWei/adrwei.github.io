@@ -104,13 +104,13 @@ async function renderPostList() {
                     <h2><a href="${post.url}">${post.title}</a></h2>
                     <div class="post-meta">
                         <img src="${post.authorAvatar}" alt="${post.author}头像" class="author-avatar">
-                        <span>作者：${post.author}</span>
+                        <span>${post.author}</span>
                         ${post.date !== '未知日期' ? `<time datetime="${post.date}">${formatDate(post.date)}</time>` : ''}
                     </div>
                     <p class="post-excerpt">${post.excerpt}</p>
                     <div class="post-meta">
-                        <div class="tag-box">类型：${post.categories}</div>
-                        <div class="tag-box">标签：${post.tags}</div>
+                        <div class="tag-box">${post.categories}</div>
+                        <div class="tag-box">${post.tags}</div>
                     </div>
                 </article>
             </div>
