@@ -24,6 +24,11 @@
     border-bottom: 1px solid #eee;
 }
 
+.post-list{
+    display: flex;
+    gap: 20px;
+}
+
 /* 你现有的 blog.css 样式 */
 
 #pagination {
