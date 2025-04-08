@@ -146,13 +146,4 @@ window.addEventListener('click', (event) => {
     }
 });
 
-// 修改后的 getSelectedFilters 函数
-function getSelectedFilters() {
-    const selectedCategories = Array.from(document.querySelectorAll('input[data-filter="category"]:checked'))
-        .map(checkbox => checkbox.value);
-    const selectedTags = Array.from(document.querySelectorAll('input[data-filter="tag"]:checked'))
-        .map(checkbox => checkbox.value);
-    return { selectedCategories, selectedTags };
-}
-
 });
