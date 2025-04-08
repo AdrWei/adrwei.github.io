@@ -75,8 +75,11 @@
     color: #34495e;
     margin: 10px 0;
     line-height: 1.6;
-    border-bottom:1px solid #eaeaea;
-    padding-bottom:20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .author-avatar {
@@ -91,6 +94,15 @@
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+.tag-meta {
+    border-top: 1px solid #eaeaea;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .tag-box{
