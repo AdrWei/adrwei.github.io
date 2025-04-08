@@ -52,10 +52,10 @@ function getSelectedFilters() {
             .map(checkbox => checkbox.dataset.tag);
         return { selectedCategories, selectedTags };
     } else { // 手机端
-        const selectedCategories = Array.from(document.querySelectorAll('[data-category].selected'))
-            .map(item => item.dataset.category);
-        const selectedTags = Array.from(document.querySelectorAll('[data-tag].selected'))
-            .map(item => item.dataset.tag);
+        const selectedCategory = document.querySelector('[data-category].selected');
+        const selectedTag = document.querySelector('[data-tag].selected');
+        const selectedCategories = selectedCategory ? [selectedCategory.dataset.category] : [];
+        const selectedTags = selectedTag ? [selectedTag.dataset.tag] : [];
         return { selectedCategories, selectedTags };
     }
 }
@@ -141,6 +141,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const filterItems = document.querySelectorAll('[data-category], [data-tag]');
         filterItems.forEach(item => {
             item.addEventListener('click', () => {
+                // 移除所有已选中的筛选条件
+                filterItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('selected');
+                    }
+                });
+                // 切换当前筛选条件的选中状态
                 item.classList.toggle('selected');
                 renderPostList();
             });
