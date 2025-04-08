@@ -8,6 +8,10 @@
     justify-content: center;
 }
 
+blog-container li{
+    list-style: none; /* 去掉项目符号 */
+}
+
 .blog-content {
 }
 
@@ -134,19 +138,9 @@ time {
         right: 0;
         top: 30px;
     }
-
-    .filter-dropdown-content show li{
-      list-style: none; /* 去掉项目符号 */
-    }
     
-
     .filter-dropdown-content label {
         display: block;
         padding: 10px;
     }
-
-    .filter-dropdown-content.show {
-        display: block;
-    }
-}
 
