@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-blog-container li{
+.blog-container li{
     list-style: none; /* 去掉项目符号 */
 }
 
@@ -20,6 +20,10 @@ blog-container li{
     background-color: var(--VI-color);
     border: 1px solid #ddd;
     border-radius: 10px
+}
+
+.sidebar label{
+    color:var(--VI-bright);
 }
 
 .post {
@@ -102,6 +106,7 @@ blog-container li{
 .filter-container {
     display:none;
   position: relative;
+    justify-content: space-between;
 }
 
 time {
@@ -142,5 +147,6 @@ time {
     .filter-dropdown-content label {
         display: block;
         padding: 10px;
+        color:black;
     }
 
