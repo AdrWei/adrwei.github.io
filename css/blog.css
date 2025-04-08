@@ -135,6 +135,11 @@ time {
         top: 30px;
     }
 
+    .filter-dropdown-content show li{
+      list-style: none; /* 去掉项目符号 */
+    }
+    
+
     .filter-dropdown-content label {
         display: block;
         padding: 10px;
