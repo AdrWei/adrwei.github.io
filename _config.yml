@@ -1,15 +1,16 @@
-title: 我的网站
-description: 欢迎访问我的 GitHub Pages
-baseurl: ""  # 如果你的网站不在根目录（如 /project）
-url: "https://adrwei.github.io"  # 修改为你的实际用户名
+title: 橡树工作室
+description: 助力品牌出海
+baseurl: ""  
+url: "https://adrwei.github.io"
 
-# 插件配置（GitHub Pages 自动启用部分插件）
+# 明确指定包含的插件
 plugins:
   - jekyll-feed
 
-# 默认模板变量
+# 修正默认布局配置
 defaults:
   - scope:
-      path: ""
+      path: ""       # 所有文件
+      type: pages    # 明确指定页面类型
     values:
-      layout: default  # 所有页面默认使用 default.html 模板
+      layout: default
