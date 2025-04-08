@@ -106,6 +106,11 @@ async function renderPostList() {
             filteredPosts = filteredPosts.filter(post => selectedTags.some(tag => post.tags.includes(tag)));
         }
 
+       if (filteredPosts.length === 0) { // 添加此判断
+            postList.innerHTML = '<p>暂无文章</p>';
+            return;
+        }
+
         postList.innerHTML = filteredPosts.map(post => `
             <div class="card">
                 <article class="post-item">
