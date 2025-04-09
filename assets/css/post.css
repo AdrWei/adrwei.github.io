@@ -9,7 +9,15 @@ article.post {
   color: #333; /* 设置文本颜色 */
 }
 
-article.post .breadcrumb {
+.breadcrumb-container{
+    max-width: 100vw;
+    height: 30vh;
+    background: var(--VI-ltgreen);
+    place-content: center;
+    display: flex;
+}
+
+.breadcrumb {
   font-size: calc(var(--p-size)/1.3);
   margin-bottom: 10px;
   color: #777; /* 设置面包屑文本颜色 */
@@ -17,16 +25,16 @@ article.post .breadcrumb {
   gap: 5px;
 }
 
-article.post .breadcrumb a {
+.breadcrumb a {
   text-decoration: none;
   color: #007bff; /* 设置面包屑链接颜色 */
 }
 
-article.post .breadcrumb a:hover {
+.breadcrumb a:hover {
   text-decoration: underline;
 }
 
-article.post .data {
+.data {
   display: flex; /* 使用 flexbox 布局 */
   align-items: center; /* 垂直居中对齐 */
   padding-bottom: 10px;
@@ -34,7 +42,7 @@ article.post .data {
   border-bottom: 1px solid #eee;
 }
 
-article.post .data img {
+.data img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -42,11 +50,11 @@ article.post .data img {
   object-fit: cover;
 }
 
-article.post .data span {
+.data span {
   font-weight: bold; /* 设置作者姓名加粗 */
 }
 
-article.post .data time {
+.data time {
     padding-left:10px;
 }
 
