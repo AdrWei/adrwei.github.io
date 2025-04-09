@@ -19,18 +19,18 @@ extra_js:
 </div>
 
 <div class="blog-container">
-  <div class="filter-container">
-    <h4>文章列表</h4>
-    <button class="filter-dropdown-button">筛选</button>
-    <div class="filter-dropdown-content">
-      {% for category in site.categories %}
-        <li data-category="{{ category | first }}">{{ category | first }}</li>
-      {% endfor %}
-      {% for tag in site.tags %}
-        <li data-tag="{{ tag | first }}">{{ tag | first }}</li>
-      {% endfor %}
+<select id="category-select">
+  <option value="">所有类别</option>
+</select>
+
+<select id="tag-select">
+  <option value="">所有标签</option>
+</select>
+
+<main class="blog-content">
+  <div id="post-list">
     </div>
-  </div>
+</main>
 
 <aside class="sidebar">
     <nav>
