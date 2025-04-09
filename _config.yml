@@ -23,10 +23,10 @@ collections:
     title: 服务项目
   categories:
     output: true
-    permalink: /category/:category/
+    permalink: /categories/:name/
   tags:
     output: true
-    permalink: /tag/:tag/
+    permalink: /tags/:name/
 
 # 需要特别保留的HTML文件
 include:
