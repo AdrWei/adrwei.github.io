@@ -19,34 +19,42 @@ extra_js:
 </div>
 
 <div class="blog-container">
+<!-- 侧边栏部分 -->
 <aside class="sidebar">
     <nav>
         <ul>
-            <li><a>文章类型</a></li>
+            <li class="categories-title"><a>文章类型</a></li>
             {% for category in site.categories %}
-                <li><label><input type="checkbox" data-category="{{ category | first }}"> {{ category | first }}</label></li>
+                <li class="categories">
+                    <label>
+                        <input type="checkbox" data-category="{{ category | first }}">
+                        {{ category | first }}
+                    </label>
+                </li>
             {% endfor %}
             <br>
-            <li><a>文章类型2</a></li>
+            <li class="tags-title"><a>文章类型2</a></li>
             {% for tag in site.tags %}
-                <li><label><input type="checkbox" data-tag="{{ tag | first }}"> {{ tag | first }}</label></li>
+                <li class="tags">
+                    <label>
+                        <input type="checkbox" data-tag="{{ tag | first }}">
+                        {{ tag | first }}
+                    </label>
+                </li>
             {% endfor %}
-            <br>
-            <li><a href="#">最新文章</a></li>
-            <li><a href="#">热门文章</a></li>
-            <li><a href="#">关于我</a></li>
         </ul>
     </nav>
 </aside>
 
+<!-- 下拉菜单部分（保持不变） -->
 <div class="filter-container">
-<h4>文章列表</h4>
-<select id="category-select">
-  <option value="">所有类别</option>
-</select>
-<select id="tag-select">
-  <option value="">所有标签</option>
-</select>
+    <h4>文章列表</h4>
+    <select id="category-select">
+        <option value="">所有类别</option>
+    </select>
+    <select id="tag-select">
+        <option value="">所有标签</option>
+    </select>
 </div>
 
 <main class="blog-content">
