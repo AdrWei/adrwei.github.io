@@ -1,8 +1,10 @@
 ---
 layout: default
-permalink: /category/:name/  # 动态 URL
+permalink: /category/:name/ # 动态 URL
 ---
+
 {% assign category_name = page.url | split: "/" | last %}
+
 {% for category in site.categories %}
   {% if category[0] == category_name %}
     <h1>分类：{{ category_name }}</h1>
