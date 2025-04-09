@@ -5,7 +5,7 @@ layout: default
 <link rel="stylesheet" href="/assets/css/post.css">
 
   <div class="breadcrumb-container">
-  <nav class="breadcrumb">
+  <div class="breadcrumb">
     <a href="/">首页</a> / 
     {% if page.categories %}
       {% for category in page.categories %}
@@ -13,7 +13,7 @@ layout: default
       {% endfor %}
     {% endif %}
     / {{ page.title }}
-  </nav>
+  </div>
 </div>
 
 <article class="post">
