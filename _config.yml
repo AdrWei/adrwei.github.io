@@ -21,9 +21,6 @@ collections:
   pages:
     output: true
     permalink: /:path/
-  category:
-    output: true   # 允许生成分类页
-    permalink: /category/:name/  # 控制URL格式
   blogs:
     output: true   # 允许生成分类页
     permalink: /blogs/:name/  # 控制URL格式
