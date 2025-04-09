@@ -30,22 +30,25 @@ extra_js:
     </div>
   </div>
 
-  <aside class="sidebar">
+<aside class="sidebar">
     <nav>
-      <ul>
-        <li><a>文章类型</a></li>
-        <li><label><input type="checkbox" data-category="独立站"> 独立站</label></li>
-        <br>
-        <li><a>文章类型2</a></li>
-        <li><label><input type="checkbox" data-tag="技术"> 技术</label></li>
-        <li><label><input type="checkbox" data-tag="Web开发"> Web开发</label></li>
-        <br>
-        <li><a href="#">最新文章</a></li>
-        <li><a href="#">热门文章</a></li>
-        <li><a href="#">关于我</a></li>
-      </ul>
+        <ul>
+            <li><a>文章类型</a></li>
+            {% for category in site.categories %}
+                <li><label><input type="checkbox" data-category="{{ category | first }}"> {{ category | first }}</label></li>
+            {% endfor %}
+            <br>
+            <li><a>文章类型2</a></li>
+            {% for tag in site.tags %}
+                <li><label><input type="checkbox" data-tag="{{ tag | first }}"> {{ tag | first }}</label></li>
+            {% endfor %}
+            <br>
+            <li><a href="#">最新文章</a></li>
+            <li><a href="#">热门文章</a></li>
+            <li><a href="#">关于我</a></li>
+        </ul>
     </nav>
-  </aside>
+</aside>
 
   <main class="blog-content">
     <div id="post-list">
