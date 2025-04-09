@@ -5,23 +5,35 @@ document.addEventListener('DOMContentLoaded', function () {
   const filterDropdownButton = document.querySelector('.filter-dropdown-button');
   const filterDropdownContent = document.querySelector('.filter-dropdown-content');
 
-  // 动态生成筛选选项 (手机端)
+  // 动态生成筛选选项 (手机端) - 使用 Set 去重
   function generateFilterOptions() {
-    const categories = [...new Set(Array.from(postItems).map((item) => item.dataset.category.split(',')).flat())];
-    const tags = [...new Set(Array.from(postItems).map((item) => item.dataset.tag.split(',')).flat())];
+    const categories = new Set();
+    const tags = new Set();
+
+    postItems.forEach((item) => {
+      const itemCategories = (item.dataset.category || '').split(',');
+      const itemTags = (item.dataset.tag || '').split(',');
+
+      itemCategories.forEach((category) => categories.add(category));
+      itemTags.forEach((tag) => tags.add(tag));
+    });
 
     categories.forEach((category) => {
-      const option = document.createElement('li');
-      option.textContent = category;
-      option.dataset.category = category;
-      filterDropdownContent.appendChild(option);
+      if (category) { // 检查是否为空字符串
+        const option = document.createElement('li');
+        option.textContent = category;
+        option.dataset.category = category;
+        filterDropdownContent.appendChild(option);
+      }
     });
 
     tags.forEach((tag) => {
-      const option = document.createElement('li');
-      option.textContent = tag;
-      option.dataset.tag = tag;
-      filterDropdownContent.appendChild(option);
+      if (tag) { // 检查是否为空字符串
+        const option = document.createElement('li');
+        option.textContent = tag;
+        option.dataset.tag = tag;
+        filterDropdownContent.appendChild(option);
+      }
     });
   }
 
