@@ -23,12 +23,15 @@ extra_js:
     <h4>文章列表</h4>
     <button class="filter-dropdown-button">筛选</button>
     <div class="filter-dropdown-content">
-      <li data-category="独立站">独立站</li>
-      <li data-category="国际站">国际站</li>
-      <li data-tag="技术">技术</li>
-      <li data-tag="力量">力量</li>
+      {% for category in site.categories %}
+        <li data-category="{{ category | first }}">{{ category | first }}</li>
+      {% endfor %}
+      {% for tag in site.tags %}
+        <li data-tag="{{ tag | first }}">{{ tag | first }}</li>
+      {% endfor %}
     </div>
   </div>
+</div>
 
 <aside class="sidebar">
     <nav>
@@ -50,28 +53,28 @@ extra_js:
     </nav>
 </aside>
 
-  <main class="blog-content">
-    <div id="post-list">
-      {% for post in site.posts %}
-        <div class="card">
-          <article class="post-item">
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <div class="post-meta">
-              <img src="{{ post.authorAvatar }}" alt="{{ post.author }}头像" class="author-avatar">
-              <span>{{ post.author }}</span>
-              {% if post.date %}
-                <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
-              {% endif %}
-            </div>
-            <p class="post-excerpt">{{ post.excerpt }}</p>
-            <div class="tag-meta">
-              <div class="tag-box">{{ post.categories | join: ', ' }}</div>
-              <div class="tag-box">{{ post.tags | join: ', ' }}</div>
-            </div>
-          </article>
-        </div>
-      {% endfor %}
-    </div>
-    <div id="pagination"></div>
-  </main>
+<main class="blog-content">
+  <div id="post-list">
+    {% for post in site.posts %}
+      <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
+        <article class="post-item">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <div class="post-meta">
+            <img src="{{ post.authorAvatar }}" alt="{{ post.author }}头像" class="author-avatar">
+            <span>{{ post.author }}</span>
+            {% if post.date %}
+              <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+            {% endif %}
+          </div>
+          <p class="post-excerpt">{{ post.excerpt }}</p>
+          <div class="tag-meta">
+            <div class="tag-box">{{ post.categories | join: ', ' }}</div>
+            <div class="tag-box">{{ post.tags | join: ', ' }}</div>
+          </div>
+        </article>
+      </div>
+    {% endfor %}
+  </div>
+  <div id="pagination"></div>
+</main>
 </div>
