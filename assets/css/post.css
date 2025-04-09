@@ -1,12 +1,12 @@
 article.post {
-  max-width: 800px; /* 设置文章最大宽度 */
-  margin:  var(--section-padding-vertical) var(--section-padding-horizontal);
+  max-width: 800px;
+  margin: var(--section-padding-vertical) auto;
   padding: 20px 50px;
-  background-color: #fff; /* 设置文章背景颜色 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-  font-family: sans-serif; /* 使用 sans-serif 字体 */
-  line-height: 1.6; /* 设置行高 */
-  color: #333; /* 设置文本颜色 */
+  line-height: 1.6;
+}
+
+article.post h1{
+  text-align:center;
 }
 
 .breadcrumb-container{
