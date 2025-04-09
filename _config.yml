@@ -21,9 +21,6 @@ collections:
   pages:
     output: true
     permalink: /:path/
-  categories:
-    output: true
-    permalink: /category/:category/
 
 # 需要特别保留的HTML文件
 include:
