@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // 动态生成筛选选项 (手机端)
   function generateFilterOptions() {
     // 从侧边栏获取类别和标签
-    const categoryLabels = document.querySelectorAll('.sidebar .categories label');
-    const tagLabels = document.querySelectorAll('.sidebar .tags label');
+    const categoryLabels = document.querySelectorAll('.sidebar li.categories label');
+    const tagLabels = document.querySelectorAll('.sidebar li.tags label');
 
     // 添加类别选项
     categoryLabels.forEach((label) => {
