@@ -162,7 +162,7 @@ time {
     margin-left: 10px; /* 给 tag-select 添加左边距，使其与 category-select 保持一定距离 */
 }
     
-.categoy-posts{
+.category-posts{
     flex-direction:column;
     gap: 0px;
 }
