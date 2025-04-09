@@ -19,8 +19,12 @@
 <body>
   {% include header.html %}
 
-  <article class="post">
+
+  <div class="content-banner">
   <nav class="breadcrumb">
+</div>
+  
+  <article class="post">
     <a href="/">首页</a> / 
     {% if page.categories %}
       {% for category in page.categories %}
