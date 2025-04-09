@@ -1,12 +1,7 @@
-# _data/authors.yml
-Aoke:
-  name: 橡树工作室
-  avatar: /assets/images/logo-pure-blue.gif
-
-Adrian:
-  name: 韦祖欣
-  avatar: /assets/images/AdrW.webp
-
-author3:
-  name: 作者三
-  avatar: /images/author3.jpg
+authors:
+  Aoke:
+    name: 橡树工作室
+    avatar: /assets/images/logo-pure-blue.gif
+  Adrian:
+    name: 韦祖欣
+    avatar: /assets/images/AdrW.webp
