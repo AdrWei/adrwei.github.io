@@ -50,10 +50,23 @@ extra_js:
   <main class="blog-content">
     <div id="post-list">
       {% for post in site.posts %}
-      <div class="post-item" data-category="{{ post.category }}" data-tag="{{ post.tags | join: ',' }}">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt }}</p>
-      </div>
+        <div class="card">
+          <article class="post-item">
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <div class="post-meta">
+              <img src="{{ post.authorAvatar }}" alt="{{ post.author }}头像" class="author-avatar">
+              <span>{{ post.author }}</span>
+              {% if post.date %}
+                <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+              {% endif %}
+            </div>
+            <p class="post-excerpt">{{ post.excerpt }}</p>
+            <div class="tag-meta">
+              <div class="tag-box">{{ post.categories | join: ', ' }}</div>
+              <div class="tag-box">{{ post.tags | join: ', ' }}</div>
+            </div>
+          </article>
+        </div>
       {% endfor %}
     </div>
     <div id="pagination"></div>
