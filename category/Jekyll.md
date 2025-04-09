@@ -2,5 +2,5 @@
 layout: category
 title: 技术文章    # 可选显示名称
 category: tech     # 必须和 _posts 里的分类名一致
-permalink: /category/Jekyll/  # 确保 URL 正确
+permalink: /category/jekyll/  # 确保 URL 正确
 ---
