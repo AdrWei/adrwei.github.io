@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="icon" href="{{ page.favicon | default: '/assets/images/logo-pure-blue.gif' | relative_url }}">
-  {% for meta in page.meta %}
-    <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}content="{{ meta.content }}">
-  {% endfor %}
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}">
-  {% if page.extra_css %}
-    {% for css in page.extra_css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}">
-    {% endfor %}
-  {% endif %}
-</head>
-<body>
-  {% include header.html %}
-
-
+---
+layout: default
+---
   <div class="breadcrumb-container">
   <nav class="breadcrumb">
     <a href="/">首页</a> / 
@@ -31,8 +12,8 @@
     / {{ page.title }}
   </nav>
 </div>
-  
-  <article class="post">
+
+<article class="post">
     <h1>{{ page.title }}</h1>
      <div class="data">
       <img src="{{ site.data.authors[page.author].avatar }}" alt="{{ site.data.authors[page.author].display_name }} 的头像">
@@ -42,15 +23,4 @@
     <div class="content">
       {{ content }}
     </div>
-  </article>
-
-  {% include footer.html %}
-
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-  {% if page.extra_js %}
-    {% for js in page.extra_js %}
-      <script src="{{ js | relative_url }}"></script>
-    {% endfor %}
-  {% endif %}
-</body>
-</html>
+</article>
