@@ -1,19 +1,12 @@
 article.post {
   max-width: 800px; /* 设置文章最大宽度 */
   margin: 20px auto; /* 居中显示 */
-  padding: 20px;
+  padding-top:var(--header-height);
   background-color: #fff; /* 设置文章背景颜色 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
   font-family: sans-serif; /* 使用 sans-serif 字体 */
   line-height: 1.6; /* 设置行高 */
   color: #333; /* 设置文本颜色 */
-}
-
-article.post h1 {
-  font-size: 2.5em; /* 设置标题字体大小 */
-  margin-bottom: 20px;
-  border-bottom: 1px solid #eee; /* 添加标题下划线 */
-  padding-bottom: 10px;
 }
 
 article.post .breadcrumb {
@@ -31,21 +24,27 @@ article.post .breadcrumb a:hover {
   text-decoration: underline;
 }
 
-article.post .author {
+article.post .meta {
   display: flex; /* 使用 flexbox 布局 */
   align-items: center; /* 垂直居中对齐 */
-  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
-article.post .author img {
-  width: 50px; /* 设置头像宽度 */
-  height: 50px; /* 设置头像高度 */
-  border-radius: 50%; /* 设置头像为圆形 */
+article.post .data img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   margin-right: 10px;
+  object-fit: cover;
 }
 
-article.post .author span {
+article.post .data span {
   font-weight: bold; /* 设置作者姓名加粗 */
+}
+
+article.post .data time {
+    padding-left:10px;
 }
 
 article.post .content {
