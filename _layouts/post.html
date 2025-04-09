@@ -20,14 +20,12 @@
   {% include header.html %}
 
 
-<div class="breadcrumb-container">
+  <div class="breadcrumb-container">
   <nav class="breadcrumb">
     <a href="/">首页</a> / 
     {% if page.categories %}
       {% for category in page.categories %}
-        <!-- 修改链接为带参数的URL -->
-        <a href="/blog/?category={{ category | slugify }}">{{ category }}</a>
-        {% unless forloop.last %}/{% endunless %}
+        <a href="/category/{{ category | slugify }}/">{{ category }}</a> {% unless forloop.last %}/ {% endunless %}
       {% endfor %}
     {% endif %}
     / {{ page.title }}
