@@ -1,9 +1,9 @@
 title: 橡树工作室
 description: 助力品牌出海
-baseurl: ""  
+baseurl: ""
 url: "https://adrwei.github.io"
 
-# 插件配置（GitHub Pages默认启用这些插件）
+# 插件配置
 plugins:
   - jekyll-feed
   - jekyll-paginate
@@ -11,18 +11,22 @@ plugins:
 # 默认布局设置
 defaults:
   - scope:
-      path: "" # 应用到所有文件
+      path: ""
     values:
       layout: default
 
-# 集合配置（对应您的/pages/目录）
+# 集合配置
 collections:
   pages:
     output: true
-    permalink: /:path/  # 保持与现有URL结构一致
+    permalink: /:path/
     title: 服务项目
+
+# 分类和标签页面设置
+permalink: /category/:category/
+permalink: /tag/:tag/
 
 # 需要特别保留的HTML文件
 include:
-  - CNAME # 如果有自定义域名
+  - CNAME
   - .nojekyll
