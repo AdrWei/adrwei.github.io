@@ -1,0 +1,12 @@
+# _data/authors.yml
+author1:
+  name: 作者一
+  avatar: /images/author1.jpg
+
+author2:
+  name: 作者二
+  avatar: /images/author2.jpg
+
+author3:
+  name: 作者三
+  avatar: /images/author3.jpg
