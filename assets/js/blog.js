@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const postItems = document.querySelectorAll('.blog-content #post-list .card');
   const categoryCheckboxes = document.querySelectorAll('input[data-category]');
   const tagCheckboxes = document.querySelectorAll('input[data-tag]');
-  const filterDropdownButton = document.querySelector('.filter-dropdown-button');
-  const filterDropdownContent = document.querySelector('.filter-dropdown-content');
+  const categorySelect = document.getElementById('category-select');
+  const tagSelect = document.getElementById('tag-select');
 
   // 动态生成筛选选项 (手机端)
   function generateFilterOptions() {
@@ -11,17 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const tags = [...new Set(Array.from(postItems).map((item) => item.dataset.tag.split(',')).flat())];
 
     categories.forEach((category) => {
-      const option = document.createElement('li');
+      const option = document.createElement('option');
+      option.value = category;
       option.textContent = category;
-      option.dataset.category = category;
-      filterDropdownContent.appendChild(option);
+      categorySelect.appendChild(option);
     });
 
     tags.forEach((tag) => {
-      const option = document.createElement('li');
+      const option = document.createElement('option');
+      option.value = tag;
       option.textContent = tag;
-      option.dataset.tag = tag;
-      filterDropdownContent.appendChild(option);
+      tagSelect.appendChild(option);
     });
   }
 
@@ -56,24 +56,12 @@ document.addEventListener('DOMContentLoaded', function () {
       // 手机端
       generateFilterOptions();
 
-      filterDropdownContent.addEventListener('click', (event) => {
-        const selectedCategory = event.target.dataset.category;
-        const selectedTag = event.target.dataset.tag;
-
-        updatePostVisibility(selectedCategory, selectedTag, true);
-        filterDropdownContent.classList.remove('show');
+      categorySelect.addEventListener('change', () => {
+        updatePostVisibility(categorySelect.value, tagSelect.value, true);
       });
 
-      filterDropdownButton.addEventListener('click', () => {
-        filterDropdownContent.classList.toggle('show');
-      });
-
-      window.addEventListener('click', (event) => {
-        if (!event.target.matches('.filter-dropdown-button')) {
-          if (filterDropdownContent.classList.contains('show')) {
-            filterDropdownContent.classList.remove('show');
-          }
-        }
+      tagSelect.addEventListener('change', () => {
+        updatePostVisibility(categorySelect.value, tagSelect.value, true);
       });
     } else {
       // PC 端
