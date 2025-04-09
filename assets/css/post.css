@@ -9,7 +9,7 @@ article.post h1{
   text-align:center;
 }
 
-.breadcrumb-container{
+nav .breadcrumb-container{
     max-width: 100vw;
     height: 30vh;
     background: var(--VI-ltgreen);
