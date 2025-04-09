@@ -4,7 +4,7 @@ title: "测试文章：Jekyll 功能验证"
 date: 2024-01-01 08:00:00 +0800
 categories: [测试]
 tags: [demo]
-author:Adrian
+author: Adrian
 ---
 
 # 这是一篇测试文章
