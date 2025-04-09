@@ -64,8 +64,8 @@ extra_js:
         <article class="post-item">
           <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
           <div class="post-meta">
-            <img src="{{ post.authorAvatar }}" alt="{{ post.author }}头像" class="author-avatar">
-            <span>{{ post.author }}</span>
+            <img src="{{ site.data.authors[page.author].avatar }}" alt="{{ site.data.authors[page.author].display_name }} 的头像" class="author-avatar">
+            <span>{{ site.data.authors[page.author].display_name }}</span>
             {% if post.date %}
               <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
             {% endif %}
