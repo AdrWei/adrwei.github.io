@@ -143,7 +143,11 @@ time {
         position: relative;
 }
 
-.filter-container select {
-    margin-left: auto; /* 将 select 元素推到右侧 */
+#category-select {
+    margin-left: auto; /* 将 category-select 推到右侧 */
+}
+
+#tag-select {
+    margin-left: 10px; /* 给 tag-select 添加左边距，使其与 category-select 保持一定距离 */
 }
 
