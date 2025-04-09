@@ -7,6 +7,7 @@ url: "https://adrwei.github.io"
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-redirect-from
 
 # 默认布局设置
 defaults:
