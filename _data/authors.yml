@@ -1,11 +1,11 @@
 # _data/authors.yml
-author1:
-  name: 作者一
-  avatar: /images/author1.jpg
+Aoke:
+  name: 橡树工作室
+  avatar: /assets/images/logo-pure-blue.gif
 
-author2:
-  name: 作者二
-  avatar: /images/author2.jpg
+Adrian:
+  name: 韦祖欣
+  avatar: /assets/images/AdrW.webp
 
 author3:
   name: 作者三
