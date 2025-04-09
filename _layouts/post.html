@@ -31,15 +31,14 @@
     / {{ page.title }}
   </nav>
 </div>
-
-    <div class="data">
-      <img src="{{ site.data.authors[page.author].avatar }}" alt="{{ site.data.authors[page.author].display_name }} 的头像">
-      <span>{{ site.data.authors[page.author].display_name }}</span>
-    </div>
   
   <article class="post">
     <h1>{{ page.title }}</h1>
-    <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y-%m-%d' }}</time>
+     <div class="data">
+      <img src="{{ site.data.authors[page.author].avatar }}" alt="{{ site.data.authors[page.author].display_name }} 的头像">
+      <span>{{ site.data.authors[page.author].display_name }}</span>
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y-%m-%d' }}</time>
+    </div>
     <div class="content">
       {{ content }}
     </div>
