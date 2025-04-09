@@ -1,18 +1,85 @@
 ---
 layout: default
 permalink: /category/
+title: 橡树工作室 - 助力品牌出海
+meta:
+  - name: description
+    content: 定制全球品牌营销，0-1内容体系深耕建设
+extra_css:
+  - /assets/css/blog.css
+extra_js:
+  - /assets/js/blog.js
 ---
 
-<h1>所有分类</h1>
+<div class="content-banner">
+  <div class="content-banner-text">
+    <h1>博文板块</h1>
+    <p>这里你能获得新的知识与力量</p>
+  </div>
+  <img src="{{ '/assets/images/social-media.jpg' | relative_url }}" alt="PC Banner" class="pc-banner">
+</div>
 
-{% for category in site.categories %}
-  <h2>{{ category[0] }}</h2>
-  <ul>
-    {% for post in category[1] %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-      </li>
+<div class="blog-container">
+<!-- 侧边栏部分 -->
+<aside class="sidebar">
+    <nav>
+        <ul>
+            <li class="categories-title"><a>文章类型</a></li>
+            {% for category in site.categories %}
+                <li class="categories">
+                    <label>
+                        <input type="checkbox" data-category="{{ category | first }}">
+                        {{ category | first }}
+                    </label>
+                </li>
+            {% endfor %}
+            <br>
+            <li class="tags-title"><a>文章类型2</a></li>
+            {% for tag in site.tags %}
+                <li class="tags">
+                    <label>
+                        <input type="checkbox" data-tag="{{ tag | first }}">
+                        {{ tag | first }}
+                    </label>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</aside>
+
+<!-- 下拉菜单部分（保持不变） -->
+<div class="filter-container">
+    <h4>文章列表</h4>
+    <select id="category-select">
+        <option value="">类别</option>
+    </select>
+    <select id="tag-select">
+        <option value="">标签</option>
+    </select>
+</div>
+
+<main class="blog-content">
+  <div id="post-list">
+    {% for post in site.posts %}
+      <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
+        <article class="post-item">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <div class="post-meta">
+            <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
+            <span>{{ site.data.authors[post.author].display_name }}</span>
+            {% if post.date %}
+              <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+            {% endif %}
+          </div>
+          <p class="post-excerpt">{{ post.excerpt }}</p>
+          <div class="tag-meta">
+            <div class="tag-box">{{ post.categories | join: ', ' }}</div>
+            <div class="tag-box">{{ post.tags | join: ', ' }}</div>
+          </div>
+        </article>
+      </div>
     {% endfor %}
-  </ul>
-{% endfor %}
+  </div>
+  <div id="pagination"></div>
+</main>
+</div>
