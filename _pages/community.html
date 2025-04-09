@@ -15,7 +15,6 @@ extra_js:
     <h1>社媒内容运营</h1>
     <p>渠道媒体建设/运营规划/内容制作培训全面到位</p>
   </div>
-  <!-- 修正图片路径（建议使用Jekyll的图片引用方式） -->
   <img src="{{ '/media/social-media.jpg' | relative_url }}" alt="PC Banner" class="pc-banner">
 </div>
 
@@ -30,7 +29,7 @@ extra_js:
       <li data-tag="力量">力量</li>
     </div>
   </div>
-  
+
   <aside class="sidebar">
     <nav>
       <ul>
@@ -47,9 +46,16 @@ extra_js:
       </ul>
     </nav>
   </aside>
-  
+
   <main class="blog-content">
-    <div id="post-list"></div>
+    <div id="post-list">
+      {% for post in site.posts %}
+      <div class="post-item" data-category="{{ post.category }}" data-tag="{{ post.tags | join: ',' }}">
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt }}</p>
+      </div>
+      {% endfor %}
+    </div>
     <div id="pagination"></div>
   </main>
 </div>
