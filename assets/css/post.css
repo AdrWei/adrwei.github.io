@@ -22,6 +22,8 @@ article.post h1{
     color: #777;
     gap: 5px;
     margin-top: var(--header-height);
+    place-items: center;
+    display: flex;
 }
 
 .breadcrumb a {
