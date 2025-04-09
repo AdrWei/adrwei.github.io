@@ -13,8 +13,9 @@ article.post h1{
     max-width: 100vw;
     height: 30vh;
     background: var(--VI-ltgreen);
-    place-content: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .breadcrumb {
