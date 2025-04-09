@@ -13,7 +13,7 @@ layout: default
 </div>
 
 <main class="blog-content">
-  <div id="post-list">
+  <div id="category-posts">
   {% for post in site.categories[page.category] %}
       <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
         <article class="post-item">
