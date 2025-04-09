@@ -1,6 +1,6 @@
 article.post {
   max-width: 800px; /* 设置文章最大宽度 */
-  margin: 20px auto;
+  margin:  var(--section-padding-vertical) var(--section-padding-horizontal);
   padding: 20px 50px;
   background-color: #fff; /* 设置文章背景颜色 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
