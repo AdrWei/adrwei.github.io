@@ -23,6 +23,9 @@ collections:
     permalink: /:path/
   category:
     output: true   # 允许生成分类页
+    permalink: /category/:name/  # 控制URL格式
+  blogs:
+    output: true   # 允许生成分类页
     permalink: /blogs/:name/  # 控制URL格式
 
 # 需要特别保留的HTML文件
