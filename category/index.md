@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /category/:name/ # 动态 URL
+permalink: /category # 动态 URL
 ---
 
 {% assign category_name = page.url | split: "/" | last %}
