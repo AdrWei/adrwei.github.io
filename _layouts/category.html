@@ -25,7 +25,14 @@ layout: default
               <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
             {% endif %}
           </div>
-          <p class="post-excerpt">{{ post.excerpt }}</p>
+          <p class="post-excerpt">    
+            {% if post.excerpt %}
+              {{ post.excerpt }}
+            {% else %}
+              {% assign first_paragraph = post.content | split: '<p>' | last | split: '</p>' | first %}
+              {{ first_paragraph | strip_html | truncatewords: 50 }}
+            {% endif %}
+          </p>
           <div class="tag-meta">
             <div class="tag-box">{{ post.categories | join: ', ' }}</div>
             <div class="tag-box">{{ post.tags | join: ', ' }}</div>
