@@ -26,7 +26,7 @@ article.post .breadcrumb a:hover {
   text-decoration: underline;
 }
 
-article.post .meta {
+article.post .data {
   display: flex; /* 使用 flexbox 布局 */
   align-items: center; /* 垂直居中对齐 */
   padding-bottom: 10px;
