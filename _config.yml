@@ -20,7 +20,6 @@ collections:
   pages:
     output: true
     permalink: /:path/
-    title: 服务项目
   categories:
     output: true
     permalink: /category/:category/
