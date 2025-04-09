@@ -7,17 +7,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 动态生成筛选选项 (手机端)
   function generateFilterOptions() {
-    const categories = [...new Set(Array.from(postItems).map((item) => item.dataset.category.split(',')).flat())];
-    const tags = [...new Set(Array.from(postItems).map((item) => item.dataset.tag.split(',')).flat())];
+    // 从侧边栏获取类别和标签
+    const categoryLabels = document.querySelectorAll('.sidebar .categories label');
+    const tagLabels = document.querySelectorAll('.sidebar .tags label');
 
-    categories.forEach((category) => {
+    // 添加类别选项
+    categoryLabels.forEach((label) => {
+      const category = label.textContent.trim();
       const option = document.createElement('option');
       option.value = category;
       option.textContent = category;
       categorySelect.appendChild(option);
     });
 
-    tags.forEach((tag) => {
+    // 添加标签选项
+    tagLabels.forEach((label) => {
+      const tag = label.textContent.trim();
       const option = document.createElement('option');
       option.value = tag;
       option.textContent = tag;
