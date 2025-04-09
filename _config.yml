@@ -29,3 +29,6 @@ collections:
 include:
   - CNAME
   - .nojekyll
+
+# 添加permalink设置
+permalink: /blogs/category/:categories/:title/
