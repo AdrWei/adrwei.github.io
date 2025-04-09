@@ -1,7 +1,7 @@
 article.post {
   max-width: 800px;
-  margin: var(--section-padding-vertical) auto;
-  padding: 20px 50px;
+  margin:0 auto;
+  padding: 30px 50px;
   line-height: 1.6;
 }
 
@@ -39,11 +39,12 @@ article.post h1{
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #eee;
+  place-content: center;
 }
 
 .data img {
   width: 30px;
-  aspect-ration:1/1
+  aspect-ration:1/1;
   border-radius: 50%;
   margin-right: 10px;
   object-fit: cover;
