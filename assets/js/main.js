@@ -1,69 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. 确保header/footer已存在（兼容Jekyll include和JS加载）
-  const initComponents = () => {
-    // 移动端导航切换
-    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-    if (mobileNavToggle) {
-      mobileNavToggle.addEventListener('click', () => {
-        const nav = document.querySelector('nav');
-        nav?.classList.toggle('active');
-        mobileNavToggle.classList.toggle('active');
-        document.body.style.overflow = nav?.classList.contains('active') ? 'hidden' : '';
-      });
-    }
+  // 在 header 加载完成后，添加切换导航栏的代码
+  const nav = document.querySelector('nav');
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 
-    // PC端滚动隐藏header
-    const handleScroll = () => {
-      if (window.innerWidth >= 768) {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const header = document.querySelector('header');
-        if (scrollTop > 100) { // 添加阈值防止误判
-          header?.classList.toggle('hidden', scrollTop > lastScrollTop);
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 修复顶部反弹
-      }
-    };
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      mobileNavToggle.classList.toggle('active');
+    });
+  }
+
+  // PC端添加滚动隐藏 header 的代码
+  if (window.innerWidth >= 768) { // 只在电脑端应用
     let lastScrollTop = 0;
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const header = document.querySelector('header');
 
-    // Toggle面板（兼容新旧版本）
-    document.querySelectorAll('.toggle-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        header.classList.toggle('active');
-        content?.classList.toggle('active');
-        const icon = header.querySelector('.toggle-icon');
-        if (icon) icon.textContent = content?.classList.contains('active') ? '-' : '+';
+      if (scrollTop > lastScrollTop) {
+        // 向下滚动
+        header.classList.add('hidden');
+      } else {
+        // 向上滚动
+        header.classList.remove('hidden');
+      }
+      lastScrollTop = scrollTop;
+    });
+  }
+
+  // 添加 toggle 效果的代码 (修改部分)
+  const toggleHeaders = document.querySelectorAll('.toggle-header');
+
+  toggleHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      header.classList.toggle('active');
+      content.classList.toggle('active');
+      header.querySelector('.toggle-icon').textContent = content.classList.contains('active') ? '-' : '+';
+    });
+  });
+
+  // 移动端才需要绑定点击事件（保持PC端hover不变）
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    const dropbtns = document.querySelectorAll('.dropbtn');
+    
+    dropbtns.forEach(dropbtn => {
+      dropbtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // 阻止事件冒泡
+        const dropdownContent = dropbtn.nextElementSibling;
+        dropdownContent.classList.toggle('show'); // 你的核心逻辑
       });
     });
-
-    // 响应式检测（处理设备旋转）
-    const checkMobile = () => {
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        document.querySelectorAll('.dropbtn').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            btn.nextElementSibling?.classList.toggle('show');
-          });
-        });
-      }
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-  };
-
-  // 2. 兼容两种加载方式
-  if (document.querySelector('#header')) {
-    // JS加载模式
-    fetch('/header.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('header').innerHTML = html;
-        initComponents();
-      });
-  } else {
-    // Jekyll include模式
-    initComponents();
   }
 });
