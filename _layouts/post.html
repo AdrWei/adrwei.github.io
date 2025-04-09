@@ -22,9 +22,6 @@
 
   <div class="content-banner">
   <nav class="breadcrumb">
-</div>
-  
-  <article class="post">
     <a href="/">首页</a> / 
     {% if page.categories %}
       {% for category in page.categories %}
@@ -33,8 +30,10 @@
     {% endif %}
     / {{ page.title }}
   </nav>
+</div>
+  
+  <article class="post">
     <h1>{{ page.title }}</h1>
-
     <div class="data">
       <img src="{{ site.data.authors[page.author].avatar }}" alt="{{ site.data.authors[page.author].display_name }} 的头像">
       <span>{{ site.data.authors[page.author].display_name }}</span>
