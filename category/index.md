@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: /category/
 title: 橡树工作室 - 助力品牌出海
 meta:
   - name: description
