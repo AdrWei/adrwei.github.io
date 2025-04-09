@@ -4,6 +4,8 @@ layout: default
 
 <link rel="stylesheet" href="/assets/css/blog.css">
 
+<h1>类别：{{ page.category }}</h1>
+
 <main class="blog-content">
   <div id="post-list">
   {% for post in site.categories[page.category] %}
@@ -29,4 +31,3 @@ layout: default
   <div id="pagination"></div>
 </main>
 
-<h1>类别：{{ page.category }}</h1>
