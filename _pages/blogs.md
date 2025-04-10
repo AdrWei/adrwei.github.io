@@ -29,7 +29,7 @@ extra_js:
   </div>
 
 <main class="blog-content">
-  {% assign ordered_categories = "jekyll, 测试" | split: ", " %}
+  {% assign ordered_categories = site.data.category_order.ordered_categories %}
 
   {% for category in ordered_categories %}
     <h2>{{ category }}</h2>
@@ -61,7 +61,3 @@ extra_js:
 
   <div id="pagination"></div>
 </main>
-
-  <div id="pagination"></div>
-</main>
-</div>
