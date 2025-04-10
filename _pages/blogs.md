@@ -40,7 +40,7 @@ extra_js:
         {% if post.categories contains category %}
           <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
             <article class="post-item">
-              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
               <div class="post-meta">
                 <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
                 <span>{{ site.data.authors[post.author].display_name }}</span>
