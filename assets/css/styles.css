@@ -360,7 +360,7 @@ button {
 
 .section {
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
-  background-color: var(VI-bright);
+  background-color: var(--VI-bright);
   margin: 0 auto; /* 水平居中 */
 }
 
@@ -721,7 +721,8 @@ button {
 }
 
    .banner, .content-banner {
-     height: 50vh; /* 同时设置 banner 和 content-banner 的高度 */
+     height: 30vh; /* 同时设置 banner 和 content-banner 的高度 */
+     justify-content: center;
    }
 
    .pc-banner{
@@ -732,7 +733,8 @@ button {
     justify-items: center;
     top: unset;
     left: unset;
-    transform: unset;
+    transform: translateY(20%);
+    max-width: 80%;
    }
 
   .section-header, .content-header, .content-header-left{
