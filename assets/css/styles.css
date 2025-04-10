@@ -724,9 +724,16 @@ button {
      height: 50vh; /* 同时设置 banner 和 content-banner 的高度 */
    }
 
-   .pc-banner, .banner-text, .content-banner-text  {
+   .pc-banner{
     display: none; /* 在手机端隐藏 banner 文本 */
   }
+   
+   .banner-text, .content-banner-text  {
+    justify-items: center;
+    top: unset;
+    left: unset;
+    transform: unset;
+   }
 
   .section-header, .content-header, .content-header-left{
   margin-bottom:0px;
