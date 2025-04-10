@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 橡树工作室 - 助力品牌出海
+title: 博客
 meta:
   - name: description
     content: 定制全球品牌营销，0-1内容体系深耕建设
@@ -37,29 +37,27 @@ extra_js:
 {% for category in ordered_categories %}
   <h2>{{ category }}</h2>
 
-  <div class="post-list-container">
-    <div class="post-list"> 
-      {% assign category_posts = site.posts | where: "categories", category | sort: "date" | reverse | limit: 6 %}
-      {% for post in category_posts %}
-        <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
-          <article class="post-item">
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p class="post-excerpt">{{ post.excerpt }}</p>
-          </article>
-          <div class="tag-meta">
-            <div class="tag-box">{{ post.categories | join: ', ' }}</div>
-            <div class="tag-box">{{ post.tags | join: ', ' }}</div>
-          </div>
-          <div class="post-meta">
-            <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
-            <span>{{ site.data.authors[post.author].display_name }}</span>
-            {% if post.date %}
-              <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
-            {% endif %}
-          </div>
+  <div class="post-list"> 
+    {% assign category_posts = site.posts | where: "categories", category | sort: "date" | reverse | limit: 6 %}
+    {% for post in category_posts %}
+      <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
+        <article class="post-item">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-excerpt">{{ post.excerpt }}</p>
+        </article>
+        <div class="tag-meta">
+          <div class="tag-box">{{ post.categories | join: ', ' }}</div>
+          <div class="tag-box">{{ post.tags | join: ', ' }}</div>
         </div>
-      {% endfor %}
-    </div>
+        <div class="post-meta">
+          <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
+          <span>{{ site.data.authors[post.author].display_name }}</span>
+          {% if post.date %}
+            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
   </div>
 {% endfor %}
 
