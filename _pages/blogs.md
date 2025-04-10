@@ -18,33 +18,6 @@ extra_js:
   <img src="{{ '/assets/images/social-media.jpg' | relative_url }}" alt="PC Banner" class="pc-banner">
 </div>
 
-<div class="blog-container">
-  <aside class="sidebar">
-    <nav>
-      <ul>
-        <li class="categories-title"><a>文章类型</a></li>
-        {% for category in site.categories %}
-          <li class="categories">
-            <label>
-              <input type="checkbox" data-category="{{ category | first }}">
-              {{ category | first }}
-            </label>
-          </li>
-        {% endfor %}
-        <br>
-        <li class="tags-title"><a>文章类型2</a></li>
-        {% for tag in site.tags %}
-          <li class="tags">
-            <label>
-              <input type="checkbox" data-tag="{{ tag | first }}">
-              {{ tag | first }}
-            </label>
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </aside>
-
   <div class="filter-container">
     <h4>文章列表</h4>
     <select id="category-select">
@@ -55,28 +28,37 @@ extra_js:
     </select>
   </div>
 
-  <main class="blog-content">
+<main class="blog-content">
+  {% assign categories = site.posts | map: 'categories' | flatten | uniq %}
+
+  {% for category in categories %}
+    <h2>{{ category }}</h2>
+
     <div id="post-list">
       {% for post in site.posts %}
-        <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
-          <article class="post-item">
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <div class="post-meta">
-              <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
-              <span>{{ site.data.authors[post.author].display_name }}</span>
-              {% if post.date %}
-                <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
-              {% endif %}
-            </div>
-            <p class="post-excerpt">{{ post.excerpt }}</p>
-            <div class="tag-meta">
-              <div class="tag-box">{{ post.categories | join: ', ' }}</div>
-              <div class="tag-box">{{ post.tags | join: ', ' }}</div>
-            </div>
-          </article>
-        </div>
+        {% if post.categories contains category %}
+          <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
+            <article class="post-item">
+              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+              <div class="post-meta">
+                <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
+                <span>{{ site.data.authors[post.author].display_name }}</span>
+                {% if post.date %}
+                  <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+                {% endif %}
+              </div>
+              <p class="post-excerpt">{{ post.excerpt }}</p>
+              <div class="tag-meta">
+                <div class="tag-box">{{ post.categories | join: ', ' }}</div>
+                <div class="tag-box">{{ post.tags | join: ', ' }}</div>
+              </div>
+            </article>
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
-    <div id="pagination"></div>
-  </main>
+  {% endfor %}
+
+  <div id="pagination"></div>
+</main>
 </div>
