@@ -5,13 +5,13 @@ title: 图片展示
 
 <style>
   .gallery {
-    padding-top:var(--header-height);
+    padding-top: var(--header-height);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
   }
-  
+
   .gallery-item {
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@ title: 图片展示
     background: #f9f9f9;
     aspect-ratio: 16/9;
   }
-  
+
   .gallery-item img {
     width: auto;
     height: 100%;
@@ -30,7 +30,7 @@ title: 图片展示
     border-radius: 3px;
     margin-bottom: 10px;
   }
-  
+
   .filename {
     font-size: 14px;
     color: #555;
@@ -40,12 +40,13 @@ title: 图片展示
 </style>
 
 <div class="gallery">
+  {% assign subfolder_path = '/assets/images/subfolder/' %}
   {% for image in site.static_files %}
-    {% if image.path contains '/assets/images/' %}
+    {% if image.path contains subfolder_path %}
       {% assign filename = image.path | split: '/' | last %}
       <div class="gallery-item">
-        <img 
-          src="{{ image.path | relative_url }}" 
+        <img
+          src="{{ image.path | relative_url }}"
           alt="{{ filename }}"
           loading="lazy"
         >
