@@ -20,10 +20,10 @@ extra_js:
 
 <main class="blog-content">
   <div class="filter-container">
-    <div class="breadcrumb">
-      <a href="/">首页</a> /
-      {{ page.title }}
-    </div>
+   <div class="breadcrumb">
+    <a href="/">首页</a> / 
+    {{ page.title }}
+  </div>
     <select id="category-select">
       <option value="">类别</option>
     </select>
@@ -31,19 +31,13 @@ extra_js:
       <option value="">标签</option>
     </select>
   </div>
+  
+{% assign ordered_categories = site.data.category_order.ordered_categories %}
 
-{% assign blog_categories = site.pages | where: "path", "_blogs" | map: 'categories' | flatten | uniq %}
-
-{% for category in blog_categories %}
-  {% assign category_page = site.pages | where: "path", "_blogs" | where: "categories", category | first %}
-
+{% for category in ordered_categories %}
   <h2>{{ category }}</h2>
 
-  {% if category_page.excerpt %}
-    <p>{{ category_page.excerpt }}</p>
-  {% endif %}
-
-  <div class="post-list">
+  <div class="post-list"> 
     {% assign category_posts = site.posts | where: "categories", category | sort: "date" | reverse | limit: 6 %}
     {% for post in category_posts %}
       <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
@@ -67,5 +61,5 @@ extra_js:
   </div>
 {% endfor %}
 
-  <div id="pagination"></div>
+<div id="pagination"></div>
 </main>
