@@ -42,6 +42,7 @@ extra_js:
             <article class="post-item">
               <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
               <p class="post-excerpt">{{ post.excerpt }}</p>
+            </article>
               <div class="tag-meta">
                 <div class="tag-box">{{ post.categories | join: ', ' }}</div>
                 <div class="tag-box">{{ post.tags | join: ', ' }}</div>
@@ -53,7 +54,6 @@ extra_js:
                   <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
                 {% endif %}
               </div>
-            </article>
           </div>
         {% endif %}
       {% endfor %}
