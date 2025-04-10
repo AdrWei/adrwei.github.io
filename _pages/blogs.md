@@ -32,17 +32,15 @@ extra_js:
     </select>
   </div>
 
-{% assign ordered_categories = site.data.category_order.ordered_categories %}
+{% assign blog_pages = site.pages | where: "path", "_blogs" %}
 
-{% for category in ordered_categories %}
-  {% assign category_file = site.pages | where: "title", category | where: "path", "_blogs" | first %}
-
+{% for page in blog_pages %}
   <h2>
-    <a href="/blogs/{{ category | slugify }}/">{{ category }}</a>
+    <a href="/blogs/{{ page.title | slugify }}/">{{ page.title }}</a>
   </h2>
 
-  {% if category_file %}
-    <p>{{ category_file.excerpt }}</p>
+  {% if page.excerpt %}
+    <p>{{ page.excerpt }}</p>
   {% endif %}
 
     <div class="post-list">
