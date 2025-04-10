@@ -48,34 +48,37 @@ document.addEventListener('DOMContentLoaded', function() {
   updateFilters();
 
   // 点击卡片拖动
-  const container = document.querySelector('.category-posts');
-  let isDragging = false;
-  let startX = 0;
-  let scrollLeft = 0;
+  const containers = document.querySelectorAll('.post-list'); // 修改选择器
+  
+  containers.forEach(container => {
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
 
-  container.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-    container.classList.add('dragging');
-  });
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+      container.classList.add('dragging');
+    });
 
-  container.addEventListener('mouseleave', () => {
-    isDragging = false;
-    container.classList.remove('dragging');
-  });
+    container.addEventListener('mouseleave', () => {
+      isDragging = false;
+      container.classList.remove('dragging');
+    });
 
-  container.addEventListener('mouseup', () => {
-    isDragging = false;
-    container.classList.remove('dragging');
-  });
+    container.addEventListener('mouseup', () => {
+      isDragging = false;
+      container.classList.remove('dragging');
+    });
 
-  container.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 2; // 调整滚动速度
-    container.scrollLeft = scrollLeft - walk;
+    container.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 2;
+      container.scrollLeft = scrollLeft - walk;
+    });
   });
   
 });
