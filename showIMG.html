@@ -37,20 +37,38 @@ title: 图片展示
     word-break: break-all;
     text-align: center;
   }
+
+  .subfolder-link {
+    text-align: center;
+    margin-top: 20px;
+  }
 </style>
 
 <div class="gallery">
-  {% assign subfolder_path = '/assets/images/subfolder/' %}
+  {% assign image_folder = '/assets/images/' %}
+  {% assign subfolders = site.static_files | where_exp: 'file', 'file.path contains image_folder and file.path != image_folder' | map: 'path' | uniq %}
+
   {% for image in site.static_files %}
-    {% if image.path contains subfolder_path %}
+    {% if image.path contains image_folder and image.path != image_folder %}
       {% assign filename = image.path | split: '/' | last %}
-      <div class="gallery-item">
-        <img
-          src="{{ image.path | relative_url }}"
-          alt="{{ filename }}"
-          loading="lazy"
-        >
-        <div class="filename">{{ filename }}</div>
+      {% unless image.path contains '/' %}
+        <div class="gallery-item">
+          <img
+            src="{{ image.path | relative_url }}"
+            alt="{{ filename }}"
+            loading="lazy"
+          >
+          <div class="filename">{{ filename }}</div>
+        </div>
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
+  {% for subfolder in subfolders %}
+    {% if subfolder contains '/' %}
+      {% assign subfolder_name = subfolder | split: '/' | last %}
+      <div class="subfolder-link">
+        <a href="{{ subfolder | relative_url }}">进入 {{ subfolder_name }} 文件夹</a>
       </div>
     {% endif %}
   {% endfor %}
