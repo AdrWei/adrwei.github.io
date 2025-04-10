@@ -173,11 +173,6 @@ time {
     flex-wrap: wrap;
 }
 
-/* 移除每行最后一个卡片的右边距 */
-.category-posts .card:nth-child(3n) { /* 假设一行最多显示 3 个卡片 */
-  margin-right: 0;
-}
-
 .breadcrumb {
     font-size: calc(var(--p-size) / 1.3);
     color: #777;
