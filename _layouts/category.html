@@ -1,5 +1,7 @@
 ---
 layout: default
+extra_js:
+  - /assets/js/blog.js
 ---
 
 <link rel="stylesheet" href="/assets/css/blog.css">
@@ -13,10 +15,19 @@ layout: default
 </div>
 
 <main class="category-content">
-  <div class="breadcrumb">
+<main class="blog-content">
+  <div class="filter-container">
+    <div class="breadcrumb">
     <a href="/">首页</a> / 
     <a href="/blogs/">博客</a> / 
     {{ page.title }}
+    </div>
+    <select id="category-select">
+      <option value="">类别</option>
+    </select>
+    <select id="tag-select">
+      <option value="">标签</option>
+    </select>
   </div>
   <div class="category-posts">
   {% for post in site.categories[page.category] %}
