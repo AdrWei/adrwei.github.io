@@ -43,13 +43,14 @@ title: 图片展示
   {% assign sorted_images = image_files | sort: 'modified_time' | reverse %}
 
   {% for image in sorted_images %}
+    {% assign filename = image.path | split: '/' | last %}
     <div class="gallery-item">
       <img
         src="{{ image.path | relative_url }}"
-        alt="{{ image.path }}"
+        alt="{{ filename }}"
         loading="lazy"
       >
-      <div class="filepath">{{ image.path | relative_url }}</div>
+      <div class="filename">{{ filename }}</div>
     </div>
   {% endfor %}
 </div>
