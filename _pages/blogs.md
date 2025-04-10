@@ -35,9 +35,16 @@ extra_js:
 {% assign ordered_categories = site.data.category_order.ordered_categories %}
 
 {% for category in ordered_categories %}
-  <h2>{{ category }}</h2>
+  <h2>
+    <a href="/blogs/{{ category | slugify }}/">{{ category }}</a>
+  </h2>
 
-  <div class="post-list"> 
+  {% assign category_file = site.categories | where: "title", category | first %}
+  {% if category_file %}
+    <p>{{ category_file.excerpt }}</p>
+  {% endif %}
+
+  <div class="post-list">
     {% assign category_posts = site.posts | where: "categories", category | sort: "date" | reverse | limit: 6 %}
     {% for post in category_posts %}
       <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
