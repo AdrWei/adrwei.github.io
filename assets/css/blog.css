@@ -35,7 +35,7 @@
 .post-list{
     gap: 20px;
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     cursor: grab;
     -webkit-user-select: none;
 }
