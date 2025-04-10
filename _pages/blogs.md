@@ -18,6 +18,8 @@ extra_js:
   <img src="{{ '/assets/images/social-media.jpg' | relative_url }}" alt="PC Banner" class="pc-banner">
 </div>
 
+
+<main class="blog-content">
   <div class="filter-container">
     <h4>文章列表</h4>
     <select id="category-select">
@@ -27,8 +29,7 @@ extra_js:
       <option value="">标签</option>
     </select>
   </div>
-
-<main class="blog-content">
+  
   {% assign ordered_categories = site.data.category_order.ordered_categories %}
 
   {% for category in ordered_categories %}
