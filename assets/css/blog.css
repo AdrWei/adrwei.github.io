@@ -70,6 +70,7 @@
 .post-item h2 {
     margin: 0 0 0.5rem;
     font-size: 1.4rem;
+    padding: 0;
 }
 
 .post-item h2 a {
