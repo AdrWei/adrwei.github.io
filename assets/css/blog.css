@@ -120,7 +120,7 @@
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-    max-width: 325px;
+    max-width: 27%;
 }
 
 .tag-meta {
@@ -168,9 +168,9 @@ time {
 
 .category-posts{
     display: flex;
-    gap: 20px;
     padding: 20px 0;
     flex-wrap: wrap;
+    gap: 2%;
 }
 
 .breadcrumb {
