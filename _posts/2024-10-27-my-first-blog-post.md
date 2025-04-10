@@ -5,6 +5,7 @@ date: 2024-01-01 08:00:00 +0800
 categories: [测试, jekyll]
 tags: [demo, 教程]
 author: Aoke
+excerpt: 这是一篇测试文章的摘要，用于在文章列表中显示。
 ---
 
 # 这是一篇测试文章
