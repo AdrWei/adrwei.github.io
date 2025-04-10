@@ -20,26 +20,16 @@
 }
 
 .blog-content h2{
-    padding: 25px 0 10px 0;
+    padding: 20px 0 10px 0;
 }
 
 .blog-content a {
     color: var(--VI-dark);
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.post-list-container {
-  overflow-x: auto; /* 启用水平滚动 */
-  white-space: nowrap; /* 防止卡片换行 */
-  padding-bottom: 10px; /* 增加底部内边距，防止滚动条遮挡内容 */
-}
-
-.post-list::-webkit-scrollbar {
-    display:none;
 }
 
 .post-list{
