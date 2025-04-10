@@ -728,8 +728,12 @@ button {
    .pc-banner{
     display: none; /* 在手机端隐藏 banner 文本 */
   }
+
+   .banner-text{
+      display:none
+   }
    
-   .banner-text, .content-banner-text  {
+   .content-banner-text  {
     justify-items: center;
     top: unset;
     left: unset;
