@@ -49,7 +49,6 @@
 }
 
 #post-list{
-    display:flex;
     gap:20px;
     display: flex; /* 使用 flexbox 布局 */
     flex-wrap: nowrap; /* 防止 flex 项换行 */
