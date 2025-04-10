@@ -142,6 +142,7 @@
   display: flex;
   position: relative;
   justify-content: space-between;
+  border-bottom: 1px solid #eaeaea;
 }
 
 #category-select {
@@ -153,7 +154,6 @@
 }
 
 .filter-container h4{
-font-size:var(--p-size);
     margin:0;
 }
 
