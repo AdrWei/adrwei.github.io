@@ -64,6 +64,11 @@
     overflow-x: auto; /* 启用内部水平滚动 */
     -webkit-overflow-scrolling: touch; /* 启用 iOS 平滑滚动 */
     -ms-overflow-style: -ms-autohiding-scrollbar; /* 隐藏 IE 滚动条 */
+    cursor: grab; /* 设置鼠标指针为抓取状态 */
+}
+
+.post-list.dragging {
+  cursor: grabbing; /* 设置鼠标指针为抓取中状态 */
 }
 
 .post {
