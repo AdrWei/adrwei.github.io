@@ -6,8 +6,6 @@ meta:
     content: 定制全球品牌营销，0-1内容体系深耕建设
 extra_css:
   - /assets/css/blog.css
-extra_js:
-  - /assets/js/blog.js
 ---
 
 <div class="content-banner">
