@@ -16,6 +16,7 @@
     min-height: 35vh;
     max-width: 1200px;
     margin: 30px auto;
+    padding: 0 var(--section-padding-horizontal)
 }
 
 .blog-content h2{
