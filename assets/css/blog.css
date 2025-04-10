@@ -32,39 +32,28 @@
     text-overflow: ellipsis;
 }
 
-.sidebar {
-    background-color: var(--VI-color);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px 50px;
-}
-
-.sidebar label{
-    color:var(--VI-bright);
-}
-
 .post-list-container {
   overflow-x: auto; /* 启用水平滚动 */
   white-space: nowrap; /* 防止卡片换行 */
   padding-bottom: 10px; /* 增加底部内边距，防止滚动条遮挡内容 */
 }
 
-.post-list-container::-webkit-scrollbar {
+.post-list::-webkit-scrollbar {
   width: 8px; /* 设置滚动条宽度 */
   height: 8px; /* 设置滚动条高度 */
 }
 
-.post-list-container::-webkit-scrollbar-track {
+.post-list::-webkit-scrollbar-track {
   background: #f1f1f1; /* 设置滚动条轨道背景色 */
   border-radius: 4px; /* 设置滚动条轨道圆角 */
 }
 
-.post-list-container::-webkit-scrollbar-thumb {
+.post-list::-webkit-scrollbar-thumb {
   background: #888; /* 设置滚动条滑块背景色 */
   border-radius: 4px; /* 设置滚动条滑块圆角 */
 }
 
-.post-list-container::-webkit-scrollbar-thumb:hover {
+.post-list::-webkit-scrollbar-thumb:hover {
   background: #555; /* 设置滚动条滑块悬停背景色 */
 }
 
@@ -234,10 +223,6 @@ time {
         grid-template-columns: 100%; /* 在小屏幕上，堆叠显示 */
     }
     
-    .sidebar {
-        display:none;
-    }
-
     .card{
         max-width:100%;
         margin-bottom: 0;
