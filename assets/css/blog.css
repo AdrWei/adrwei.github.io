@@ -18,6 +18,14 @@
     margin: 30px auto;
 }
 
+.blog-content h2{
+    padding: 30px 0 10px 0;
+}
+
+.blog-content a {
+    color: var(--VI-dark);
+}
+
 .sidebar {
     background-color: var(--VI-color);
     border: 1px solid #ddd;
@@ -179,6 +187,10 @@ time {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+    .blog-content {
+        padding: 0 var(--section-padding-horizontal);
+    }
+    
     .blog-container {
         grid-template-columns: 100%; /* 在小屏幕上，堆叠显示 */
     }
@@ -187,6 +199,11 @@ time {
         display:none;
     }
 
+    .card{
+        max-width:100%;
+        margin-bottom: 0;
+    }
+    
 #post-list{
     flex-direction:column;
 }
