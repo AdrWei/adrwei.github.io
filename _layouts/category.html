@@ -38,11 +38,11 @@ layout: default
               {{ first_paragraph | strip_html | truncatewords: 50 }}
             {% endif %}
           </p>
+        </article>
           <div class="tag-meta">
             <div class="tag-box">{{ post.categories | join: ', ' }}</div>
             <div class="tag-box">{{ post.tags | join: ', ' }}</div>
           </div>
-        </article>
       </div>
   {% endfor %}
   </div>
