@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // DOM 元素
-  const postItems = document.querySelectorAll('.blog-content .card');
+  const postItems = document.querySelectorAll('.blog-content .card, .category-posts .card');
   const categorySelect = document.getElementById('category-select');
   const tagSelect = document.getElementById('tag-select');
 
