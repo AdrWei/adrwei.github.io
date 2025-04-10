@@ -174,7 +174,7 @@ time {
 }
 
 /* 移除每行最后一个卡片的右边距 */
-.category-posts .card:nth-child(4n) { /* 假设一行最多显示 4 个卡片 */
+.category-posts .card:nth-child(3n) { /* 假设一行最多显示 3 个卡片 */
   margin-right: 0;
 }
 
