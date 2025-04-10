@@ -32,12 +32,10 @@ extra_js:
     </select>
   </div>
 
-{% assign blog_pages = site.pages | where: "path", "_blogs" %}
+{% assign blog_categories = site.pages | where: "path", "_blogs" | map: 'blogs' | flatten | uniq %}
 
-{% for page in blog_pages %}
-  <h2>
-    <a href="/blogs/{{ page.title | slugify }}/">{{ page.title }}</a>
-  </h2>
+{% for category in blog_categories %}
+  <h2>{{ category }}</h2>
 
   {% if page.excerpt %}
     <p>{{ page.excerpt }}</p>
