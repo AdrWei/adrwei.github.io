@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const showTag = selectedTags.length === 0 ||
         selectedTags.some(tag => itemTags.includes(tag));
 
-      item.style.display = (showCategory && showTag) ? 'block' : 'none';
+      item.style.display = (showCategory && showTag) ? 'flex' : 'none';
     });
   }
 
