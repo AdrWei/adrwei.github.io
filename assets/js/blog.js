@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const showCategory = !selectedCategory || itemCategories.includes(selectedCategory);
       const showTag = !selectedTag || itemTags.includes(selectedTag);
 
-      item.style.display = (showCategory && showTag) ? 'block' : 'none';
+      item.style.display = (showCategory && showTag) ? 'flex' : 'none';
     });
   }
 
