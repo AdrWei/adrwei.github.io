@@ -213,11 +213,23 @@ time {
 #post-list{
     flex-direction:column;
 }
+
+.category-content{    
+    margin: 0 var(--section-padding-horizontal);
+}
     
 .category-posts{
     flex-direction:column;
     gap: 0px;
 }
+
+.content-banner-text {
+        justify-items: center;
+        max-width: 80%;
+        position: unset;
+        transform: unset;
+        padding-top: var(--header-height);
+    }
 }
 
 
