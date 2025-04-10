@@ -29,7 +29,7 @@
     color:var(--VI-bright);
 }
 
-.post-list{
+#post-list{
     display:flex;
     gap:20px;
 }
@@ -183,7 +183,7 @@ time {
         display:none;
     }
 
-.post-list{
+#post-list{
     flex-direction:column;
 }
     
