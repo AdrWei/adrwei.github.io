@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // DOM 元素
-  const postItems = document.querySelectorAll('.blog-content .card, .category-posts .card');
+  const postItems = document.querySelectorAll('.blog-content .card, .category-posts .card, .category-content .card'); // 修改选择器
   const categorySelect = document.getElementById('category-select');
   const tagSelect = document.getElementById('tag-select');
 
@@ -10,8 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const tags = new Set();
 
     postItems.forEach(item => {
-      item.dataset.category.split(',').forEach(cat => categories.add(cat));
-      item.dataset.tag.split(',').forEach(tag => tags.add(tag));
+      if (item.dataset.category) {
+        item.dataset.category.split(',').forEach(cat => categories.add(cat.trim()));
+      }
+      if (item.dataset.tag) {
+        item.dataset.tag.split(',').forEach(tag => tags.add(tag.trim()));
+      }
     });
 
     categories.forEach(cat => {
@@ -29,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedTag = tagSelect.value;
 
     postItems.forEach(item => {
-      const itemCategories = item.dataset.category.split(',');
-      const itemTags = item.dataset.tag.split(',');
+      const itemCategories = item.dataset.category ? item.dataset.category.split(',').map(cat => cat.trim()) : [];
+      const itemTags = item.dataset.tag ? item.dataset.tag.split(',').map(tag => tag.trim()) : [];
 
       const showCategory = !selectedCategory || itemCategories.includes(selectedCategory);
       const showTag = !selectedTag || itemTags.includes(selectedTag);
@@ -49,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 点击卡片拖动
   const containers = document.querySelectorAll('.post-list'); // 修改选择器
-  
+
   containers.forEach(container => {
     let isDragging = false;
     let startX = 0;
@@ -80,7 +84,5 @@ document.addEventListener('DOMContentLoaded', function() {
       container.scrollLeft = scrollLeft - walk;
     });
   });
-  
+
 });
-
-
