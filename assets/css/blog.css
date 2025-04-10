@@ -112,7 +112,6 @@
 }
 
 .card {
-    display: flex;
     flex-direction: column;
     flex: 0 0 auto; /* 防止 flex 项拉伸或收缩 */
     border: 1px solid #ddd;
