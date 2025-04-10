@@ -721,7 +721,7 @@ button {
 }
 
    .banner, .content-banner {
-     height: 30vh; /* 同时设置 banner 和 content-banner 的高度 */
+     height: 50vh; /* 同时设置 banner 和 content-banner 的高度 */
      justify-content: center;
    }
 
@@ -733,7 +733,7 @@ button {
     justify-items: center;
     top: unset;
     left: unset;
-    transform: translateY(20%);
+    transform: unset;
     max-width: 80%;
    }
 
