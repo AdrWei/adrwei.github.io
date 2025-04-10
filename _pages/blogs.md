@@ -18,10 +18,12 @@ extra_js:
   <img src="{{ '/assets/images/social-media.jpg' | relative_url }}" alt="PC Banner" class="pc-banner">
 </div>
 
-
 <main class="blog-content">
   <div class="filter-container">
-    <h4>文章列表</h4>
+   <div class="breadcrumb">
+    <a href="/">首页</a> / 
+    {{ page.title }}
+  </div>
     <select id="category-select">
       <option value="">类别</option>
     </select>
