@@ -20,10 +20,7 @@ excerpt: 刚经手国际站的时候写的稿子，浅谈了一下国际站运�
 
 我们是做家具的，背靠工厂。不知道是不是生产思维的关系，我待过的两家工厂在电商运营上都没有体系，国际站基本是按照“发品数量 + 大词 + 智能推广”的模式在做，以至于我入职的时候店铺数据完全没有参考价值。入职后接手了三件店铺，2家商用+1家民用，铺词，修品，打榜，一人完成。平均每天推广预算用到￥65左右。现在转化率堪堪达到平均水平。下图是做的最好的一家店近几个月的流量数据。
 
-<figure>
-  <img src="/assets/images/posts-media/基本逻辑 (3).webp" alt="国际站流量图">
-  <figcaption>国际站流量图</figcaption>
-</figure>
+![国际站流量图](/assets/images/posts-media/基本逻辑 (3).webp)
 
 ## 基本方法
 
@@ -33,36 +30,26 @@ excerpt: 刚经手国际站的时候写的稿子，浅谈了一下国际站运�
 
 选品的时候，榜单尤为重要。在阿里首页搜索大词，往下拉会有个Popular on Alibaba.com一栏。点进去可以看到对应大词的网站爆款。通常会分为高询盘品和热卖品两栏，据说热卖品会有刷单嫌疑，所以我现在还是以高询盘品作为参考。
 
-<figure>
-  <img src="/assets/images/posts-media/基本逻辑 (2).webp" alt="国际站热门板块">
-  <figcaption>国际站热门板块</figcaption>
-</figure>
+国际站热门板块
+![国际站热门板块](/assets/images/posts-media/基本逻辑 (2).webp)
 
 之后就是对比自己现有款式与网络爆款的区别。以我做过的办公主管桌为例，热卖款都偏漆面反光，直角落地，普通款价格在$150左右，MOQ普遍都是1，还有其他特征等等。选出手头上与之最接近的品来推广是最保险的。
 
-<figure>
-  <img src="/assets/images/posts-media/基本逻辑 (5).webp" alt="国际站热品案例">
-  <figcaption>询盘热品案例</figcaption>
-</figure>
+国际站询盘热品案例
+![国际站询盘热品案例](/assets/images/posts-media/基本逻辑 (5).webp)
 
 另外可以参考热门品的详情逻辑。比如别人在详情里放了色卡，定制说明，或是放了许多款式，而你没有，这时候就可以留个心眼，想一下自己详情缺什么。比如我们做酒店家具就很需要在详情里放上案例，有和没有差别很大，以下是我作为参考的一个别人家的案例详情。
 
-<figure>
-  <img src="/assets/images/posts-media/基本逻辑 (6).webp" alt="国际站热门板块">
-  <figcaption>酒店详情案例</figcaption>
-</figure>
+国际站热门板块
+![国际站热门板块](/assets/images/posts-media/基本逻辑 (6).webp)
 
 也可以多看看别人家的关键词，这个要会一点点的HTML。简单教程如下：按F12打开网站源代码，找到`<head>`打开，往下翻找到`<title>`，里面会有对应产品的标题和关键词。当然此处仅作为参考，你很难知道别人店铺里还铺了多少关键词，或是如何进行的推广。
 
-<figure>
-  <img src="/assets/images/posts-media/基本逻辑 (2).png" alt="html说明#1">
-  <figcaption>按F12点开源代码，找到`<head>`</figcaption>
-</figure>
+按F12点开源代码，找到`<head>`
+![html说明#1](/assets/images/posts-media/基本逻辑 (2).png)
 
-<figure>
-  <img src="/assets/images/posts-media/基本逻辑 (3).png" alt="html说明#2">
-  <figcaption>往下翻找到`<title>`点开</figcaption>
-</figure>
+往下翻找到`<title>`点开
+![html说明#2](/assets/images/posts-media/基本逻辑 (3).png)
 
 至此选品基本就可以完成了。
 
@@ -72,26 +59,20 @@ excerpt: 刚经手国际站的时候写的稿子，浅谈了一下国际站运�
 
 网上有流传一套词库模板，我根据自己的需求修改了一下，大体布局如下。关于使用方法大家可以搜索知乎其他帖子，在这里我就不详述了。
 
-<figure>
-  <img src="/assets/images/posts-media/基本逻辑 (1).webp" alt="词库模板示例">
-  <figcaption>词库模板示例</figcaption>
-</figure>
+词库模板示例
+![词库模板示例](/assets/images/posts-media/基本逻辑 (1).webp)
 
 阿里关键词的使用讲究一个覆盖率，不是发品就可以的，要确保产品覆盖了买家的搜索词。这时候金品诚企的选词参谋就很有用了（没开金品的同学可以参考谷歌词库）。大家发品的时候可以在选词参谋找一找有热度但是却没有覆盖的词，卖家竞争少的词，又或是有增长趋势的词。基本原则是发品点亮T标和K标，如果有高点击率且契合现有产品的词，A标没有点亮，可以考虑将这个词添加进推广计划中进行推广。
 
-<figure>
-  <img src="/assets/images/posts-media/基本逻辑 (4).webp" alt="阿里选词参谋">
-  <figcaption>阿里选词参谋</figcaption>
-</figure>
+阿里选词参谋
+![阿里选词参谋](/assets/images/posts-media/基本逻辑 (4).webp)
 
 我是不用智能推广的。不是说智能推广不能用，只是我实在没有时间去统计屏蔽词。加上自己英语还可以，现在基本是关键词推广+优品抢位。将每个款式分开进行推广，以提高点击率和关键词的针对性。总预算金额会上去，但实际上阿里不会有这么多的流量给你。比如我的这边有22个分开的推广计划，每个计划日预算￥50，但实际每天消耗金额不超过￥100。
 
 选词的话，因为我这里预算有限，主推词热度指数在10~30左右。匹配度高的长尾词和冷门词作为辅助推广。慢慢的调整对特定关键词的出价，人群溢价等 。不要用行业出价，不要开拓展匹配，那会花掉你所有的预算，并且高价匹配你不需要的词，很坑。
 
-<figure>
-  <img src="/assets/images/posts-media/基本逻辑 (1).png" alt="推广计划样板">
-  <figcaption>推广计划样板</figcaption>
-</figure>
+推广计划样板
+![推广计划样板](/assets/images/posts-media/基本逻辑 (1).png)
 
 ## 总结
 
