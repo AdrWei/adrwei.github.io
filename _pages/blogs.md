@@ -20,10 +20,10 @@ extra_js:
 
 <main class="blog-content">
   <div class="filter-container">
-   <div class="breadcrumb">
-    <a href="/">首页</a> / 
-    {{ page.title }}
-  </div>
+    <div class="breadcrumb">
+      <a href="/">首页</a> /
+      {{ page.title }}
+    </div>
     <select id="category-select">
       <option value="">类别</option>
     </select>
@@ -31,35 +31,43 @@ extra_js:
       <option value="">标签</option>
     </select>
   </div>
-  
-{% assign ordered_categories = site.data.category_order.ordered_categories %}
 
-{% for category in ordered_categories %}
-  <h2>{{ category }}</h2>
+  {% assign ordered_categories = site.data.category_order.ordered_categories %}
 
-  <div class="post-list"> 
-    {% assign category_posts = site.posts | where: "categories", category | sort: "date" | reverse | limit: 6 %}
-    {% for post in category_posts %}
-      <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
-        <article class="post-item">
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p class="post-excerpt">{{ post.excerpt }}</p>
-        </article>
-        <div class="tag-meta">
-          <div class="tag-box">{{ post.categories | join: ', ' }}</div>
-          <div class="tag-box">{{ post.tags | join: ', ' }}</div>
+  {% for category in ordered_categories %}
+    {% assign category_file = site.pages | where: "title", category | where: "path", "_blogs" | first %}
+
+    <h2>
+      <a href="/blogs/{{ category | slugify }}/">{{ category }}</a>
+    </h2>
+
+    {% if category_file %}
+      <p>{{ category_file.excerpt }}</p>
+    {% endif %}
+
+    <div class="post-list">
+      {% assign category_posts = site.posts | where: "categories", category | sort: "date" | reverse | limit: 6 %}
+      {% for post in category_posts %}
+        <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
+          <article class="post-item">
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="post-excerpt">{{ post.excerpt }}</p>
+          </article>
+          <div class="tag-meta">
+            <div class="tag-box">{{ post.categories | join: ', ' }}</div>
+            <div class="tag-box">{{ post.tags | join: ', ' }}</div>
+          </div>
+          <div class="post-meta">
+            <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
+            <span>{{ site.data.authors[post.author].display_name }}</span>
+            {% if post.date %}
+              <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+            {% endif %}
+          </div>
         </div>
-        <div class="post-meta">
-          <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
-          <span>{{ site.data.authors[post.author].display_name }}</span>
-          {% if post.date %}
-            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
-          {% endif %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-{% endfor %}
+      {% endfor %}
+    </div>
+  {% endfor %}
 
-<div id="pagination"></div>
+  <div id="pagination"></div>
 </main>
