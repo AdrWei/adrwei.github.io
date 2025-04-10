@@ -39,36 +39,20 @@
 }
 
 .post-list::-webkit-scrollbar {
-  width: 8px; /* 设置滚动条宽度 */
-  height: 8px; /* 设置滚动条高度 */
-}
-
-.post-list::-webkit-scrollbar-track {
-  background: #f1f1f1; /* 设置滚动条轨道背景色 */
-  border-radius: 4px; /* 设置滚动条轨道圆角 */
-}
-
-.post-list::-webkit-scrollbar-thumb {
-  background: #888; /* 设置滚动条滑块背景色 */
-  border-radius: 4px; /* 设置滚动条滑块圆角 */
-}
-
-.post-list::-webkit-scrollbar-thumb:hover {
-  background: #555; /* 设置滚动条滑块悬停背景色 */
+    display:none;
 }
 
 .post-list{
     gap:20px;
-    display: flex; /* 使用 flexbox 布局 */
-    flex-wrap: nowrap; /* 防止 flex 项换行 */
-    overflow-x: auto; /* 启用内部水平滚动 */
-    -webkit-overflow-scrolling: touch; /* 启用 iOS 平滑滚动 */
-    -ms-overflow-style: -ms-autohiding-scrollbar; /* 隐藏 IE 滚动条 */
-    cursor: grab; /* 设置鼠标指针为抓取状态 */
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    cursor: grab; /* 应用到 post-list */
 }
 
 .post-list.dragging {
-  cursor: grabbing; /* 设置鼠标指针为抓取中状态 */
+  cursor: grabbing; /* 应用到 post-list */
 }
 
 .post {
