@@ -36,7 +36,7 @@ extra_js:
   <h2>{{ category }}</h2>
 
   <div class="post-list-container">
-    <div id="post-list-{{ category | slugify }}"> 
+    <div class="post-list"> 
       {% assign category_posts = site.posts | where: "categories", category | sort: "date" | reverse | limit: 6 %}
       {% for post in category_posts %}
         <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
