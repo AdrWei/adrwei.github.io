@@ -30,13 +30,6 @@ extra_js:
     </select>
   </div>
   
-  {% assign ordered_categories = site.data.category_order.ordered_categories %}
-
-  {% for category in ordered_categories %}
-    <h2>{{ category }}</h2>
-
-{% assign ordered_categories = site.data.category_order.ordered_categories %}
-
 {% assign ordered_categories = site.data.category_order.ordered_categories %}
 
 {% for category in ordered_categories %}
