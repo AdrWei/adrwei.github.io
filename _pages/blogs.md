@@ -29,9 +29,9 @@ extra_js:
   </div>
 
 <main class="blog-content">
-  {% assign categories = site.posts | map: 'categories' | flatten | uniq %}
+  {% assign ordered_categories = "jekyll, 测试" | split: ", " %}
 
-  {% for category in categories %}
+  {% for category in ordered_categories %}
     <h2>{{ category }}</h2>
 
     <div id="post-list">
@@ -58,6 +58,9 @@ extra_js:
       {% endfor %}
     </div>
   {% endfor %}
+
+  <div id="pagination"></div>
+</main>
 
   <div id="pagination"></div>
 </main>
