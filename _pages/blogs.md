@@ -43,17 +43,17 @@ extra_js:
               <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
               <p class="post-excerpt">{{ post.excerpt }}</p>
               <div class="tag-meta">
-              <div class="tag-box">{{ post.categories | join: ', ' }}</div>
-              <div class="tag-box">{{ post.tags | join: ', ' }}</div>
+                <div class="tag-box">{{ post.categories | join: ', ' }}</div>
+                <div class="tag-box">{{ post.tags | join: ', ' }}</div>
+              </div>
               <div class="post-meta">
-              <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
-              <span>{{ site.data.authors[post.author].display_name }}</span>
-              {% if post.date %}
-                <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
-              {% endif %}
+                <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
+                <span>{{ site.data.authors[post.author].display_name }}</span>
+                {% if post.date %}
+                  <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+                {% endif %}
+              </div>
             </article>
-              </div>
-              </div>
           </div>
         {% endif %}
       {% endfor %}
