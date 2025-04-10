@@ -14,6 +14,8 @@
 
 .blog-content {
     min-height: 35vh;
+    width: 1200px;
+    margin: 30px auto;
 }
 
 .sidebar {
@@ -25,6 +27,11 @@
 
 .sidebar label{
     color:var(--VI-bright);
+}
+
+.post-list{
+    display:flex;
+    gap:20px;
 }
 
 .post {
@@ -114,9 +121,17 @@
 }
 
 .filter-container {
-    display:none;
+  display: flex;
   position: relative;
-    justify-content: space-between;
+  justify-content: space-between;
+}
+
+#category-select {
+    margin-left: auto; /* 将 category-select 推到右侧 */
+}
+
+#tag-select {
+    margin-left: 10px; /* 给 tag-select 添加左边距，使其与 category-select 保持一定距离 */
 }
 
 .filter-container h4{
@@ -167,18 +182,9 @@ time {
     .sidebar {
         display:none;
     }
-    
-    .filter-container {
-        display:flex;
-        position: relative;
-}
 
-#category-select {
-    margin-left: auto; /* 将 category-select 推到右侧 */
-}
-
-#tag-select {
-    margin-left: 10px; /* 给 tag-select 添加左边距，使其与 category-select 保持一定距离 */
+.post-list{
+    flex-direction:column;
 }
     
 .category-posts{
