@@ -35,8 +35,7 @@ extra_js:
 {% assign ordered_categories = site.data.category_order.ordered_categories %}
 
 {% for category in ordered_categories %}
-  <h2>{{ category.name }}</h2>
-  <p>{{ category.excerpt }}</p>
+  <h2>{{ category }}</h2>
 
   <div class="post-list"> 
     {% assign category_posts = site.posts | where: "categories", category | sort: "date" | reverse | limit: 6 %}
