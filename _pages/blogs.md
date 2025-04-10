@@ -35,7 +35,7 @@ extra_js:
   {% assign ordered_categories = site.data.category_order.ordered_categories %}
 
   {% for category in ordered_categories %}
-    {% assign category_file = site.pages | where: "title", category | where: "path", "_blogs" | first %}
+    {% assign category_file = site.blogs | where: "title", category | first %}
 
     <h2>
       <a href="/blogs/{{ category | slugify }}/">{{ category }}</a>
