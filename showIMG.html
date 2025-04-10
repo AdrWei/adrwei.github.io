@@ -10,7 +10,7 @@ title: 图片展示
     gap: 20px;
     padding: 100px 20px;
   }
-  
+
   .gallery-item {
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ title: 图片展示
     background: #f9f9f9;
     aspect-ratio: 16/9;
   }
-  
+
   .gallery-item img {
     width: 100%;
     height: 100%;
@@ -29,8 +29,8 @@ title: 图片展示
     border-radius: 3px;
     margin-bottom: 10px;
   }
-  
-  .filename {
+
+  .filepath {
     font-size: 14px;
     color: #555;
     word-break: break-all;
@@ -39,17 +39,17 @@ title: 图片展示
 </style>
 
 <div class="gallery">
-  {% for image in site.static_files %}
-    {% if image.path contains '/assets/images/' %}
-      {% assign filename = image.path | split: '/' | last %}
-      <div class="gallery-item">
-        <img 
-          src="{{ image.path | relative_url }}" 
-          alt="{{ filename }}"
-          loading="lazy"
-        >
-        <div class="filename">{{ filename }}</div>
-      </div>
-    {% endif %}
+  {% assign image_files = site.static_files | where_exp: 'file', 'file.path contains "/assets/images/"' %}
+  {% assign sorted_images = image_files | sort: 'modified_time' | reverse %}
+
+  {% for image in sorted_images %}
+    <div class="gallery-item">
+      <img
+        src="{{ image.path | relative_url }}"
+        alt="{{ image.path }}"
+        loading="lazy"
+      >
+      <div class="filepath">{{ image.path | relative_url }}</div>
+    </div>
   {% endfor %}
 </div>
