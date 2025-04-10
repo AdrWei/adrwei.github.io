@@ -92,7 +92,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .post-excerpt {
