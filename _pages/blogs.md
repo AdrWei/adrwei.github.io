@@ -49,11 +49,11 @@ extra_js:
                 {% endif %}
               </div>
               <p class="post-excerpt">{{ post.excerpt }}</p>
-              <div class="tag-meta">
+            </article>
+               <div class="tag-meta">
                 <div class="tag-box">{{ post.categories | join: ', ' }}</div>
                 <div class="tag-box">{{ post.tags | join: ', ' }}</div>
               </div>
-            </article>
           </div>
         {% endif %}
       {% endfor %}
