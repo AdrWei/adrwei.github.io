@@ -49,6 +49,11 @@
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     cursor: grab; /* 应用到 post-list */
+    user-select: none; /* 禁用文本选择 */
+    -webkit-user-select: none; /* 兼容 Safari */
+    -moz-user-select: none; /* 兼容 Firefox */
+    -ms-user-select: none; /* 兼容 IE */
+    draggable: false; /* 禁用拖拽 */
 }
 
 .post-list.dragging {
