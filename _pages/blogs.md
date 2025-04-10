@@ -35,9 +35,8 @@ extra_js:
 {% for category in ordered_categories %}
   <h2>{{ category }}</h2>
 
-  <div class="scroll-container">
-    <button class="scroll-button scroll-left">向左</button>
-    <div class="scroll-content">
+  <div class="post-list-container">
+    <div class="post-list"> 
       {% assign category_posts = site.posts | where: "categories", category | sort: "date" | reverse | limit: 6 %}
       {% for post in category_posts %}
         <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
@@ -59,7 +58,6 @@ extra_js:
         </div>
       {% endfor %}
     </div>
-    <button class="scroll-button scroll-right">向右</button>
   </div>
 {% endfor %}
 
