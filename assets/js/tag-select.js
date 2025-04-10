@@ -1,21 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
   // DOM 元素
-  const postItems = document.querySelectorAll('.blog-content .card'); // 修改选择器
-  const categorySelect = document.getElementById('category-select');
+  const postItems = document.querySelectorAll('.blog-content .card');
   const tagSelect = document.getElementById('tag-select');
 
-  // 填充下拉菜单选项
-  function populateSelectOptions() {
-    const categories = new Set();
+  // 填充标签下拉菜单选项
+  function populateTagOptions() {
     const tags = new Set();
 
     postItems.forEach(item => {
-      item.dataset.category.split(',').forEach(cat => categories.add(cat));
-      item.dataset.tag.split(',').forEach(tag => tags.add(tag));
-    });
-
-    categories.forEach(cat => {
-      categorySelect.add(new Option(cat, cat));
+      if (item.dataset.tag) {
+        item.dataset.tag.split(',').forEach(tag => tags.add(tag.trim()));
+      }
     });
 
     tags.forEach(tag => {
@@ -23,27 +18,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // 更新筛选函数
-  function updateFilters() {
-    const selectedCategory = categorySelect.value;
+  // 更新标签筛选函数
+  function updateTagFilters() {
     const selectedTag = tagSelect.value;
 
     postItems.forEach(item => {
-      const itemCategories = item.dataset.category.split(',');
-      const itemTags = item.dataset.tag.split(',');
+      const itemTags = item.dataset.tag ? item.dataset.tag.split(',').map(tag => tag.trim()) : [];
 
-      const showCategory = !selectedCategory || itemCategories.includes(selectedCategory);
       const showTag = !selectedTag || itemTags.includes(selectedTag);
 
-      item.style.display = (showCategory && showTag) ? 'flex' : 'none';
+      item.style.display = showTag ? 'flex' : 'none';
     });
   }
 
-  // 绑定事件
-  categorySelect.addEventListener('change', updateFilters);
-  tagSelect.addEventListener('change', updateFilters);
+  // 绑定标签选择事件
+  tagSelect.addEventListener('change', updateTagFilters);
 
-  // 初始筛选和填充下拉菜单
-  populateSelectOptions();
-  updateFilters();
+  // 初始填充标签下拉菜单和筛选
+  populateTagOptions();
+  updateTagFilters();
 });
