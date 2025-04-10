@@ -1,3 +1,31 @@
+.scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex; /* 使用 flexbox 布局 */
+  align-items: center; /* 垂直居中按钮和内容 */
+}
+
+.scroll-content {
+  display: inline-flex; /* 使卡片横向排列 */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.card {
+  width: 300px;
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+.scroll-button {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
+}
+
 .blog-container {
     display: grid;
     grid-template-columns: 30% 70%; /* 左右分栏比例 */
