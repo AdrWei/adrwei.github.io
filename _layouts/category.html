@@ -3,9 +3,19 @@ layout: default
 ---
 
 <link rel="stylesheet" href="/assets/css/blog.css">
+<link rel="stylesheet" href="/assets/css/post.css">
 
 <div class="content-banner">
   <div class="content-banner-text">
+    
+  <div class="breadcrumb-container">
+    <div class="breadcrumb">
+      <a href="/">首页</a> / 
+      <a href="/blogs/">博客</a> / 
+      / {{ page.title }}
+    </div>
+  </div>
+    
     <h1>类别：{{ page.category }}</h1>
     <p>这里你能获得新的知识与力量</p>
   </div>
