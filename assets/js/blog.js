@@ -1,6 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // DOM 元素
-  const postItems = document.querySelectorAll('.blog-content .card');
+  // 滚动按钮功能
+  const scrollContainers = document.querySelectorAll('.scroll-container');
+
+  scrollContainers.forEach(container => {
+    const scrollContent = container.querySelector('.scroll-content');
+    const scrollLeftButton = container.querySelector('.scroll-left');
+    const scrollRightButton = container.querySelector('.scroll-right');
+
+    scrollLeftButton.addEventListener('click', () => {
+      scrollContent.scrollBy({
+        left: -310, // 卡片宽度 + 间距
+        behavior: 'smooth',
+      });
+    });
+
+    scrollRightButton.addEventListener('click', () => {
+      scrollContent.scrollBy({
+        left: 310, // 卡片宽度 + 间距
+        behavior: 'smooth',
+      });
+    });
+  });
+
+  // 筛选功能
+  const postItems = document.querySelectorAll('.card'); // 修改选择器
   const categorySelect = document.getElementById('category-select');
   const tagSelect = document.getElementById('tag-select');
 
@@ -35,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const showCategory = !selectedCategory || itemCategories.includes(selectedCategory);
       const showTag = !selectedTag || itemTags.includes(selectedTag);
 
-      item.style.display = (showCategory && showTag) ? 'flex' : 'none';
+      item.style.display = (showCategory && showTag) ? 'flex' : 'none'; // 修改显示方式
     });
   }
 
