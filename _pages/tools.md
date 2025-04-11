@@ -44,9 +44,9 @@ extra_js:
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
                 <div class="card">
-                    <img src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
+                    <img class="author-avatar" src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
                     <h3> {{ project[0] }} </h3><br>
-                    <p class="post-excerpt"></strong> {{ project[1].description }}</p>
+                    <p class="post-excerpt"> {{ project[1].description }} </p>
                 </div>
             {% endif %}
         {% endfor %}
