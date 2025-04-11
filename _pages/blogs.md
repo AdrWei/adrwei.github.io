@@ -42,7 +42,7 @@ extra_js:
     </h2>
 
     {% if category_file %}
-      <p>{{ category_file.excerpt }}</p>
+      <p>{{ category_file.subtitle }}</p>
     {% endif %}
 
     <div class="post-list">
