@@ -27,16 +27,22 @@ extra_js:
     </div>
   </div>
 
-<ul>
-  {% for project in site.data.tools %}
-    <li>
-      <strong>项目名称：</strong> {{ project[0] }}<br>
-      <img src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
-      <strong>类别：</strong> {{ project[1].category }}<br>
-      <strong>描述：</strong> {{ project[1].description }}
-    </li>
-  {% endfor %}
-</ul>
+{% assign categories = site.data.tools | values | map: 'category' | uniq %}
+
+{% for category in categories %}
+  <h2>{{ category }}</h2>
+  <ul>
+    {% for project in site.data.tools %}
+      {% if project[1].category == category %}
+        <li>
+          <strong>项目名称：</strong> {{ project[0] }}<br>
+          <img src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
+          <strong>描述：</strong> {{ project[1].description }}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}
   
   <div id="pagination"></div>
 </main>
