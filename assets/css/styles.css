@@ -4,7 +4,8 @@
   --VI-dark: #343A40;
   --VI-light: #F8F9FA;
   --VI-bright: #fff;
-  --VI-ltgreen:#e0f2f7;
+  --VI-ltgreen: #e0f2f7;
+  --VI-border: #eaeaea;
 
   --header-height: 70px; /* 定义变量 */
   /* 默认section的padding值 */
