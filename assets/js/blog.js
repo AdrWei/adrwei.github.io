@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   // DOM 元素
-  const postItems = document.querySelectorAll('.blog-content .card'); // 修改选择器
+  const postItems = document.querySelectorAll('.blog-content .card');
   const categorySelect = document.getElementById('category-select');
   const tagSelect = document.getElementById('tag-select');
+  const categorySections = document.querySelectorAll('.category-section');
 
   // 填充下拉菜单选项
   function populateSelectOptions() {
@@ -37,6 +38,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
       item.style.display = (showCategory && showTag) ? 'flex' : 'none';
     });
+
+    categorySections.forEach(section => {
+      const category = section.dataset.category;
+      let hasVisiblePosts = false;
+
+      section.querySelectorAll('.card').forEach(post => {
+        if (post.style.display === 'flex') {
+          hasVisiblePosts = true;
+        }
+      });
+
+      if (selectedCategory && category !== selectedCategory) {
+        section.style.display = 'none';
+      } else if (selectedTag && !hasVisiblePosts) {
+        section.style.display = 'none';
+      } else {
+        section.style.display = 'block';
+      }
+    });
   }
 
   // 绑定事件
@@ -48,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
   updateFilters();
 
   // 点击卡片拖动
-  const containers = document.querySelectorAll('.post-list'); // 修改选择器
-  
+  const containers = document.querySelectorAll('.post-list');
+
   containers.forEach(container => {
     let isDragging = false;
     let startX = 0;
@@ -80,5 +100,4 @@ document.addEventListener('DOMContentLoaded', function() {
       container.scrollLeft = scrollLeft - walk;
     });
   });
-  
 });
