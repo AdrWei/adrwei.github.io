@@ -38,13 +38,14 @@
     border-radius: 8px;
     padding: 20px;
     max-width: 150px;
-    justify-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .tool-box{
     flex-grow: 1;
+    text-align: center;
 }
 
 .tool-info {
@@ -89,11 +90,11 @@
     
     .tool-card{
         max-width:100%;
-        display: flex;
+        flex-direction: row;
     }
     
     .tool-container {
-            flex-direction: column;
+        flex-direction: column;
     }
         
     .tool-text{
@@ -101,7 +102,10 @@
         flex-direction:column;
     }
 
-
+    .tool-box{
+    text-align: unset;
+    }
+    
     .tool-icon {
     align-self: center;
     margin-right: 30px;
