@@ -27,12 +27,16 @@ extra_js:
     </div>
   </div>
 
-  {% for project_name, project_data in site.data.tools %}
+<ul>
+  {% for project_name in site.data.tools.keys %}
+    <li>
       <strong>项目名称：</strong> {{ project_name }}<br>
-      <strong>类别：</strong> {{ project_data.category }}<br>
-      <img src="{{ project_data.icon }}" alt="{{ project_data.category }} 图标" width="50" height="50"><br>
-      <strong>描述：</strong> {{ project_data.description }}
+      <img src="{{ site.data.tools[project_name].icon }}" alt="{{ project_name }} 图标" width="50" height="50"><br>
+      <strong>类别：</strong> {{ site.data.tools[project_name].category }}<br>
+      <strong>描述：</strong> {{ site.data.tools[project_name].description }}
+    </li>
   {% endfor %}
+</ul>
   
   <div id="pagination"></div>
 </main>
