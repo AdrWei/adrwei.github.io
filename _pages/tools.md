@@ -27,11 +27,14 @@ extra_js:
     </div>
   </div>
 
-  {% for project in site.data.tools.values %}
-      <img src="{{ project.icon }}" alt="项目图标" width="50" height="50"><br>
-      <strong>类别：</strong> {{ project.category }}<br>
-      <strong>描述：</strong> {{ project.description }}
+<ul>
+  {% for project in site.data.tools %}
+    <li>
+      <img src="{{ project[1].icon }}" alt="{{ project[1].category }}" width="50" height="50">
+      {{ project[1].category }}
+    </li>
   {% endfor %}
+</ul>
   
   <div id="pagination"></div>
 </main>
