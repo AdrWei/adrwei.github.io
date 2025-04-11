@@ -7,6 +7,7 @@
 
 .tool-content h2{
     font-size: var(--h3-size);
+    padding-right:10px;
 }
 
 .tool-content a {
@@ -23,8 +24,9 @@
     flex-direction: row;
     align-items: center;
     border-top: 1px solid var(--VI-border);
-    padding-top: 10px;
-    margin-top: 10px;
+    padding-top: 20px;
+    margin-top: 20px;
+    gap: 20px;
 }
 
 .tool-card {
@@ -32,7 +34,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px;
     max-width: 150px;
     justify-items: center
 }
