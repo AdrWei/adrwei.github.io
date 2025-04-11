@@ -19,10 +19,6 @@
     padding: 0 var(--section-padding-horizontal)
 }
 
-.blog-content h2{
-    padding: 20px 0 0 0;
-}
-
 .blog-content a {
     color: var(--VI-dark);
     display: -webkit-box;
@@ -37,6 +33,7 @@
     align-items: baseline;
     gap: 20px;
     border-top: 1px solid var(--VI-border);
+    padding-top: 20px;
 }
 
 .post-list{
