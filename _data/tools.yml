@@ -1,9 +1,9 @@
-Aoke:
-  display_name: 橡树工作室
-  avatar: /assets/images/logo-pure-blue.gif
-  bio: ""  # 可以添加简介（可选）
+DeepSeek:
+  icon: /assets/images/logo-pure-blue.gif
+  category: ""  # 可以添加简介（可选）
+  description: AI软件
 
-Adrian:
-  display_name: 韦祖欣
-  avatar: /assets/images/AdrW.webp
-  bio: ""  # 可以添加简介（可选）
+SEMRush:
+  icon: /assets/images/logo-pure-blue.gif
+  category: ""  # 可以添加简介（可选）
+  description: AI软件
