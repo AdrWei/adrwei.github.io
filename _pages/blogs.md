@@ -39,7 +39,7 @@ extra_js:
 
     <span class="one-line">
     <h2>{{ category }} </h2>
-    <h5 onclick="location.href='/blogs/{{ category | slugify }}/{{ category }}'">- 查看全部 -</h5>
+    <a href="/blogs/{{ category | slugify }}/{{ category }}">- 查看全部 -</a>
     </span>
     
     {% if category_file %}
