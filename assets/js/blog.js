@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const postItems = document.querySelectorAll('.blog-content .card');
   const categorySelect = document.getElementById('category-select');
   const tagSelect = document.getElementById('tag-select');
-  const categorySections = document.querySelectorAll('.one-line, .post-list'); // 获取类别栏目
+  const categorySections = document.querySelectorAll('.one-line, .post-list');
 
   // 填充下拉菜单选项
   function populateSelectOptions() {
@@ -29,20 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedCategory = categorySelect.value;
     const selectedTag = tagSelect.value;
 
-    // 隐藏或显示类别栏目
-    categorySections.forEach(section => {
-      const categoryTitle = section.previousElementSibling?.querySelector('h2')?.textContent; // 获取类别标题
-      if (categoryTitle) {
-        if (selectedCategory && categoryTitle !== selectedCategory) {
-          section.style.display = 'none'; // 隐藏其他类别栏目
-          section.nextElementSibling.style.display = 'none'; // 隐藏其他类别栏目对应的post-list
-        } else {
-          section.style.display = 'block'; // 显示当前类别栏目
-          section.nextElementSibling.style.display = 'block'; // 显示当前类别栏目对应的post-list
-        }
-      }
-    });
-
     // 隐藏或显示帖子
     postItems.forEach(item => {
       const itemCategories = item.dataset.category.split(',');
@@ -52,6 +38,35 @@ document.addEventListener('DOMContentLoaded', function() {
       const showTag = !selectedTag || itemTags.includes(selectedTag);
 
       item.style.display = (showCategory && showTag) ? 'flex' : 'none';
+    });
+
+    // 隐藏或显示类别栏目
+    categorySections.forEach(section => {
+      const categoryTitle = section.previousElementSibling?.querySelector('h2')?.textContent;
+      if (categoryTitle) {
+        let hasVisiblePosts = false;
+        const currentCategoryPosts = Array.from(postItems).filter(item => {
+          const itemCategories = item.dataset.category.split(',');
+          return itemCategories.includes(categoryTitle);
+        });
+
+        currentCategoryPosts.forEach(post => {
+          if (post.style.display === 'flex') {
+            hasVisiblePosts = true;
+          }
+        });
+
+        if (selectedCategory && categoryTitle !== selectedCategory) {
+          section.style.display = 'none';
+          section.nextElementSibling.style.display = 'none';
+        } else if (selectedTag && !hasVisiblePosts) {
+          section.style.display = 'none';
+          section.nextElementSibling.style.display = 'none';
+        } else {
+          section.style.display = 'block';
+          section.nextElementSibling.style.display = 'block';
+        }
+      }
     });
   }
 
