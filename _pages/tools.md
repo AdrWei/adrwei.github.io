@@ -36,6 +36,7 @@ extra_js:
 
 {% assign categories = categories | uniq %}
 
+<p>调试信息：类别列表：{{ strip | inspect }}</p>
 <p>调试信息：类别列表：{{ categories | inspect }}</p>
 
 {% for category in categories %}
