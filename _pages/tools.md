@@ -29,6 +29,10 @@ extra_js:
 
 {% assign categories = site.data.tools | values | map: 'category' | uniq %}
 
+<h1>按类别显示项目</h1>
+
+{% assign categories = site.data.tools | values | map: 'category' | uniq %}
+
 {% for category in categories %}
   <h2>{{ category }}</h2>
   <ul>
