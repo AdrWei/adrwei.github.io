@@ -39,7 +39,7 @@ extra_css:
     <h2>&lt;{{ category }}&gt;</h2>
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
-               <a href="{{ project[1].url }}" target="_blank">
+               <a href="{{ project[1].url }}" target="_blank" rel="noopener">
                 <div class="tool-card">
                     <img class="tool-icon" src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50">
                     <span class="tool-box">
