@@ -27,10 +27,22 @@ extra_js:
     </div>
   </div>
 
-{% assign categories = site.data.tools | values | map: 'category' | strip | uniq %}
-<p>调试信息：类别列表：{{ categories | inspect }}</p>
+---
+layout: default
+---
 
-{{ site.data.tools | values | map: 'category' | inspect }}
+<h1>按类别显示项目</h1>
+
+{% assign categories = "" | split: "" %}
+
+{% for project in site.data.tools %}
+  {% assign category = project[1].category | strip %}
+  {% assign categories = categories | push: category %}
+{% endfor %}
+
+{% assign categories = categories | uniq %}
+
+<p>调试信息：类别列表：{{ categories | inspect }}</p>
 
 {% for category in categories %}
   <h2>{{ category }}</h2>
