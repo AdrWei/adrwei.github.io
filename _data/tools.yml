@@ -1,29 +1,24 @@
 DeepSeek:
-  icon: /assets/images/logo-pure-blue.gif
+  icon: /assets/images/3rd-party-icons/deepseek.svg
   category: AI软件
-  description: c124211626
+  description: 国产AI大模型，支持长文本分析
 
 SEMRush:
-  icon: /assets/images/logo-pure-blue.gif
+  icon: /assets/images/3rd-party-icons/semrush.svg
   category: 流量监测
-  description: t124211626
+  description: SEO竞品关键词分析工具
 
 谷歌站长:
-  icon: /assets/images/logo-pure-blue.gif
+  icon: /assets/images/3rd-party-icons/search-console.png
   category: 流量监测
-  description: t124211626
+  description: 官方搜索引擎数据监控
 
 谷歌分析师:
-  icon: /assets/images/logo-pure-blue.gif
+  icon: /assets/images/3rd-party-icons/analytics.webp
   category: 流量监测
-  description: t124211626
-
-卖家精灵:
-  icon: /assets/images/logo-pure-blue.gif
-  category: 电商分析
-  description: t124211626
+  description: 网站流量统计分析平台
 
 Gemini:
-  icon: /assets/images/logo-pure-blue.gif
+  icon: /assets/images/3rd-party-icons/gemini.jpg
   category: AI软件
-  description: t124211626
+  description: 谷歌多模态AI助手
