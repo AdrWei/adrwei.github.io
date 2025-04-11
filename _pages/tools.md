@@ -35,7 +35,7 @@ extra_css:
 {% assign categories = categories | uniq %}
 
 {% for category in categories %}
-<div>
+<div class="tool-container">
     <h2><{{ category }}></h2>
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
