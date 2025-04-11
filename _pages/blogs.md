@@ -37,9 +37,9 @@ extra_js:
   {% for category in ordered_categories %}
     {% assign category_file = site.blogs | where: "title", category | first %}
 
-    <span>
+    <span class="one-line">
     <h2>{{ category }} </h2>
-    <button onclick="location.href='/blogs/{{ category | slugify }}/{{ category }}'">查看全部</button>
+    <h5 onclick="location.href='/blogs/{{ category | slugify }}/{{ category }}'">- 查看全部 -</h5>
     </span>
     
     {% if category_file %}
