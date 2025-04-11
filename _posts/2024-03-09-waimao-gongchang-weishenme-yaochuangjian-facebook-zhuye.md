@@ -4,7 +4,7 @@ title: "外贸工厂为什么要创建 Facebook 主页？"
 date: 2024-03-09 8:27:00 +0800
 categories: [海外社媒]
 tags: [学习]
-author: 橡树工作室
+author: Aoke
 excerpt: 创建 Facebook 主页是外贸工厂拓展海外市场、提升品牌知名度和建立客户关系的重要手段。
 ---
 
