@@ -30,7 +30,6 @@ extra_js:
 {% assign categories = "" | split: "" %}
 
 {% for project in site.data.tools %}
-    {% assign category = project[1].category %}
     {% assign categories = categories | push: category %}
 {% endfor %}
 
