@@ -83,3 +83,7 @@
     .tool-card{
         max-width:100%;
     }
+    
+    .tool-container {
+            flex-direction: column;
+    }
