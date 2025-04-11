@@ -6,10 +6,7 @@
 }
 
 .tool-content h2{
-    font-size: var(--h2-size);
-    border-top: 1px solid var(--VI-border);
-    padding-top: 10px;
-    margin-top: 10px;
+    font-size: var(--h3-size);
 }
 
 .tool-content a {
@@ -19,6 +16,15 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.tool-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid var(--VI-border);
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
 .tool-card {
@@ -48,6 +54,8 @@
     height: 30px;
     border-radius: 50%;
     object-fit: cover;
+    padding: 10px;
+    background: var(--VI-border);
 }
 
 .breadcrumb {
