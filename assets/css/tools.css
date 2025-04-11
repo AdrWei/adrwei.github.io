@@ -19,6 +19,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: var(--p-size);
 }
 
 .tool-container{
@@ -51,7 +52,7 @@
 .tool-info {
     color: #34495e;
     line-height: 1.6;
-    font-size: large;
+    font-size: medium;
     margin: 0;
 }
 
@@ -62,7 +63,7 @@
     object-fit: cover;
     padding: 10px;
     background: var(--VI-border);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .breadcrumb {
