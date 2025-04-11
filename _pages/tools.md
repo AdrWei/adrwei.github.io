@@ -41,8 +41,10 @@ extra_css:
             {% if project[1].category == category %}
                 <div class="tool-card">
                     <img class="tool-icon" src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50">
+                    <span class="tool-box">
                     <h3> {{ project[0] }} </h3>
                     <p class="tool-info"> {{ project[1].description }} </p>
+                    </span>
                 </div>
             {% endif %}
         {% endfor %}
