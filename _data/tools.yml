@@ -1,9 +1,11 @@
-DeepSeek:
-  icon: /assets/images/logo-pure-blue.gif
-  category: 分类1
-  description: 工具2 的简介
-
-SEMRush:
-  icon: /assets/images/logo-pure-blue.gif
-  category: 分类2
-  description: 工具1 的简介
+分类1:
+  - name: 工具1
+    icon: /assets/images/tool1.png
+    description: 工具1 的简介
+  - name: 工具3
+    icon: /assets/images/tool3.png
+    description: 工具3 的简介
+分类2:
+  - name: 工具2
+    icon: /assets/images/tool2.png
+    description: 工具2 的简介
