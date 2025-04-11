@@ -30,26 +30,23 @@ extra_js:
 {% assign categories = "" | split: "" %}
 
 {% for project in site.data.tools %}
+    {% assign category = project[1].category %}
     {% assign categories = categories | push: category %}
 {% endfor %}
 
 {% assign categories = categories | uniq %}
 
-<p>调试信息：类别列表：{{ categories | inspect }}</p>
-
 {% for category in categories %}
     <h2>{{ category }}</h2>
-    <ul>
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
-                <li>
+                <div class="card">
                     <strong>项目名称：</strong> {{ project[0] }}<br>
                     <img src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
                     <strong>描述：</strong> {{ project[1].description }}
-                </li>
+                </div>
             {% endif %}
         {% endfor %}
-    </ul>
 {% endfor %}
   
   <div id="pagination"></div>
