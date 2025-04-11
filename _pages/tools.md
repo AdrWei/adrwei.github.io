@@ -17,7 +17,7 @@ extra_css:
   <img src="{{ '/assets/images/social-media.jpg' | relative_url }}" alt="PC Banner" class="pc-banner">
 </div>
 
-<main class="blog-content">
+<main class="tool-content">
   <div class="filter-container">
     <div class="breadcrumb">
       <a href="/">首页</a> /
