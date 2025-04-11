@@ -20,7 +20,7 @@
 }
 
 .blog-content h2{
-    padding: 20px 0 10px 0;
+    padding: 20px 0 0 0;
 }
 
 .blog-content a {
@@ -36,6 +36,7 @@
     display: flex;
     align-items: baseline;
     gap: 20px;
+    border-top: 1px solid var(--VI-border);
 }
 
 .post-list{
@@ -90,7 +91,7 @@
 }
 
 .post-meta {
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid var(--VI-border);
     color: #7f8c8d;
     font-size: 0.9rem;
     display: flex;
@@ -147,7 +148,6 @@
   display: flex;
   position: relative;
   justify-content: space-between;
-  border-bottom: 1px solid #eaeaea;
   padding-bottom: 20px;
 }
 
