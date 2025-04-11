@@ -33,18 +33,16 @@ extra_js:
     </select>
   </div>
 
-{% assign ordered_categories = site.data.category_order.ordered_categories %}
+  {% assign ordered_categories = site.data.category_order.ordered_categories %}
 
-{% for category in ordered_categories %}
-  {% assign category_posts = site.posts | where: "categories", category %}
-
-  {% if category_posts.size > 0 %}
-    <span class="one-line">
-      <h2>{{ category }}</h2>
-      <a href="/blogs/{{ category | slugify }}">▶ 查看全部</a>
-    </span>
-
+  {% for category in ordered_categories %}
     {% assign category_file = site.blogs | where: "title", category | first %}
+
+    <span class="one-line">
+    <h2>{{ category }} </h2>
+    <a href="/blogs/{{ category | slugify }}">▶ 查看全部</a>
+    </span>
+    
     {% if category_file %}
       <p class="section-subheader">{{ category_file.subtitle }}</p>
     {% endif %}
@@ -71,8 +69,7 @@ extra_js:
         </div>
       {% endfor %}
     </div>
-  {% endif %}
-{% endfor %}
+  {% endfor %}
 
   <div id="pagination"></div>
 </main>
