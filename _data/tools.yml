@@ -1,9 +1,29 @@
 DeepSeek:
   icon: /assets/images/logo-pure-blue.gif
-  category: B1软件
+  category: AI软件
   description: c124211626
 
 SEMRush:
+  icon: /assets/images/logo-pure-blue.gif
+  category: 流量监测
+  description: t124211626
+
+谷歌站长:
+  icon: /assets/images/logo-pure-blue.gif
+  category: 流量监测
+  description: t124211626
+
+谷歌分析师:
+  icon: /assets/images/logo-pure-blue.gif
+  category: 流量监测
+  description: t124211626
+
+卖家精灵:
+  icon: /assets/images/logo-pure-blue.gif
+  category: 电商分析
+  description: t124211626
+
+Gemini:
   icon: /assets/images/logo-pure-blue.gif
   category: AI软件
   description: t124211626
