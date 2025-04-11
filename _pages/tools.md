@@ -28,13 +28,14 @@ extra_js:
   </div>
 
 <ul>
-  {% assign sorted_projects = site.data.tools | sort: "1.category" %}
+  {% assign tools_array = site.data.tools | to_array %}
+  {% assign sorted_projects = tools_array | sort: "category" %}
   {% for project in sorted_projects %}
     <li>
-      <strong>项目名称：</strong> {{ project[0] }}<br>
-      <img src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
-      <strong>类别：</strong> {{ project[1].category }}<br>
-      <strong>描述：</strong> {{ project[1].description }}
+      <strong>项目名称：</strong> {{ project.name }}<br>
+      <img src="{{ project.icon }}" alt="{{ project.name }} 图标" width="50" height="50"><br>
+      <strong>类别：</strong> {{ project.category }}<br>
+      <strong>描述：</strong> {{ project.description }}
     </li>
   {% endfor %}
 </ul>
