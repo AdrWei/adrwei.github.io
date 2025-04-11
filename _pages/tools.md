@@ -35,20 +35,16 @@ extra_css:
 {% assign categories = categories | uniq %}
 
 {% for category in categories %}
-    <span class="one-line">
     <h2>{{ category }}</h2>
-    </span>
-    <div class="post-list">
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
-                <div class="card">
-                    <img class="author-avatar" src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
+                <div class="tool-card">
+                    <img class="tool-icon" src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
                     <h3> {{ project[0] }} </h3><br>
-                    <p class="post-excerpt"> {{ project[1].description }} </p>
+                    <p class="tool-info"> {{ project[1].description }} </p>
                 </div>
             {% endif %}
         {% endfor %}
-    </div>
 {% endfor %}
   
   <div id="pagination"></div>
