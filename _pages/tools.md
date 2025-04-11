@@ -42,8 +42,8 @@ extra_js:
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
                 <div class="card">
-                    <strong>项目名称：</strong> {{ project[0] }}<br>
                     <img src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
+                    <strong>项目名称：</strong> {{ project[0] }}<br>
                     <strong>描述：</strong> {{ project[1].description }}
                 </div>
             {% endif %}
