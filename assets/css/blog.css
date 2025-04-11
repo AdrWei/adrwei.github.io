@@ -32,6 +32,12 @@
     text-overflow: ellipsis;
 }
 
+.one-line{
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
 .post-list{
     gap: 20px;
     display: flex;
