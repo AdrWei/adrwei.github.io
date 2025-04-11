@@ -27,20 +27,12 @@ extra_js:
     </div>
   </div>
 
-  <div class="post-list">
-    {% for tool_name, tool_data in site.data.tools %}
-      <div class="card">
-        <article class="post-item">
-          <h3>{{ tool_name }}</h3>
-          <img src="{{ tool_data.icon | relative_url }}" alt="{{ tool_name }} 图标">
-          <p class="post-excerpt">{{ tool_data.description }}</p>
-        </article>
-        <div class="tag-meta">
-          <div class="tag-box">{{ tool_data.category }}</div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-
+  {% for project in site.data.tools %}
+    <li>
+      <img src="{{ project[1].avatar }}" alt="{{ project[1].display_name }}" width="50" height="50">
+      {{ project[1].display_name }}
+    </li>
+  {% endfor %}
+  
   <div id="pagination"></div>
 </main>
