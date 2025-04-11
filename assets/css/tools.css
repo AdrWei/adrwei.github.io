@@ -69,10 +69,10 @@
 }
 
 @media (max-width: 768px) {
-    .blog-content {
+    .tool-content {
         padding: 0 var(--section-padding-horizontal);
     }
     
-    .card{
+    .tool-card{
         max-width:100%;
     }
