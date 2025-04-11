@@ -1,0 +1,34 @@
+.card {
+    flex-direction: column;
+    flex: 0 0 auto; /* 防止 flex 项拉伸或收缩 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    max-width: 27%;
+}
+
+.post-excerpt {
+    color: #34495e;
+    margin: 10px 0;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:1rem;
+}
+
+.author-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .card{
+        max-width:100%;
+    }
