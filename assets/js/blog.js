@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   // DOM 元素
-  const postItems = document.querySelectorAll('.blog-content .card');
+  const postItems = document.querySelectorAll('.blog-content .card'); // 修改选择器
   const categorySelect = document.getElementById('category-select');
   const tagSelect = document.getElementById('tag-select');
-  const categorySections = document.querySelectorAll('.one-line, .post-list');
 
   // 填充下拉菜单选项
   function populateSelectOptions() {
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedCategory = categorySelect.value;
     const selectedTag = tagSelect.value;
 
-    // 隐藏或显示帖子
     postItems.forEach(item => {
       const itemCategories = item.dataset.category.split(',');
       const itemTags = item.dataset.tag.split(',');
@@ -38,35 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const showTag = !selectedTag || itemTags.includes(selectedTag);
 
       item.style.display = (showCategory && showTag) ? 'flex' : 'none';
-    });
-
-    // 隐藏或显示类别栏目
-    categorySections.forEach(section => {
-      const categoryTitle = section.previousElementSibling?.querySelector('h2')?.textContent;
-      if (categoryTitle) {
-        let hasVisiblePosts = false;
-        const currentCategoryPosts = Array.from(postItems).filter(item => {
-          const itemCategories = item.dataset.category.split(',');
-          return itemCategories.includes(categoryTitle);
-        });
-
-        currentCategoryPosts.forEach(post => {
-          if (post.style.display === 'flex') {
-            hasVisiblePosts = true;
-          }
-        });
-
-        if (selectedCategory && categoryTitle !== selectedCategory) {
-          section.style.display = 'none';
-          section.nextElementSibling.style.display = 'none';
-        } else if (selectedTag && !hasVisiblePosts) {
-          section.style.display = 'none';
-          section.nextElementSibling.style.display = 'none';
-        } else {
-          section.style.display = 'block';
-          section.nextElementSibling.style.display = 'block';
-        }
-      }
     });
   }
 
@@ -79,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
   updateFilters();
 
   // 点击卡片拖动
-  const containers = document.querySelectorAll('.post-list');
-
+  const containers = document.querySelectorAll('.post-list'); // 修改选择器
+  
   containers.forEach(container => {
     let isDragging = false;
     let startX = 0;
@@ -111,4 +80,5 @@ document.addEventListener('DOMContentLoaded', function() {
       container.scrollLeft = scrollLeft - walk;
     });
   });
+  
 });
