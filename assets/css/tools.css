@@ -15,10 +15,7 @@
 .tool-content a {
     color: var(--VI-dark);
     display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    flex-grow: 1;
 }
 
 .tool-container{
@@ -39,7 +36,9 @@
     padding: 20px;
     max-width: 150px;
     justify-items: center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .tool-info {
@@ -84,7 +83,6 @@
     
     .tool-card{
         max-width:100%;
-        display: flex;
     }
     
     .tool-container {
