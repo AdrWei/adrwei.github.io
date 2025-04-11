@@ -38,6 +38,7 @@ extra_js:
   {% for category in ordered_categories %}
     {% assign category_file = site.blogs | where: "title", category | first %}
 
+  <div class="post-container>
     <span class="one-line">
     <h2>{{ category }} </h2>
     <a href="/blogs/{{ category | slugify }}">▶ 查看全部</a>
@@ -68,6 +69,7 @@ extra_js:
           </div>
         </div>
       {% endfor %}
+    </div>
     </div>
   {% endfor %}
 
