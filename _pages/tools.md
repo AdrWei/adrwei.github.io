@@ -35,6 +35,7 @@ extra_css:
 {% assign categories = categories | uniq %}
 
 {% for category in categories %}
+<div>
     <h2>{{ category }}</h2>
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
@@ -45,6 +46,7 @@ extra_css:
                 </div>
             {% endif %}
         {% endfor %}
+        </div>
 {% endfor %}
   
   <div id="pagination"></div>
