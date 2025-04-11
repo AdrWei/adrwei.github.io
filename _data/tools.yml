@@ -2,23 +2,28 @@ DeepSeek:
   icon: /assets/images/3rd-party-icons/deepseek.svg
   category: AI软件
   description: 国产AI大模型，支持长文本分析
-
+  url: https://www.deepseek.com
+  
 SEMRush:
   icon: /assets/images/3rd-party-icons/semrush.svg
   category: 流量监测
   description: SEO竞品关键词分析工具
+  url: https://www.semrush.com
 
 谷歌站长:
   icon: /assets/images/3rd-party-icons/search-console.png
   category: 流量监测
   description: 官方搜索引擎数据监控
+  url: https://search.google.com/search-console
 
 谷歌分析师:
   icon: /assets/images/3rd-party-icons/analytics.webp
   category: 流量监测
   description: 网站流量统计分析平台
+  url: https://analytics.google.com
 
 Gemini:
   icon: /assets/images/3rd-party-icons/gemini.jpg
   category: AI软件
   description: 谷歌多模态AI助手
+  url: "https://gemini.google.com
