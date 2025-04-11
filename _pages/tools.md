@@ -27,12 +27,6 @@ extra_js:
     </div>
   </div>
 
----
-layout: default
----
-
-<h1>按类别显示项目</h1>
-
 {% assign categories = "" | split: "" %}
 
 {% for project in site.data.tools %}
