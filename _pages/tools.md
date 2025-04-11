@@ -37,14 +37,16 @@ extra_js:
 {% assign categories = categories | uniq %}
 
 {% for category in categories %}
+    <span class="one-line">
     <h2>{{ category }}</h2>
+    </span>
     <div class="post-list">
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
                 <div class="card">
                     <img src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
-                    <strong>项目名称：</strong> {{ project[0] }}<br>
-                    <strong>描述：</strong> {{ project[1].description }}
+                    <h3> {{ project[0] }} </h3><br>
+                    <p class="post-excerpt"></strong> {{ project[1].description }}</p>
                 </div>
             {% endif %}
         {% endfor %}
