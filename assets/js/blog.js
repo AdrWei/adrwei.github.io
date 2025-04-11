@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   // DOM 元素
-  const postItems = document.querySelectorAll('.blog-content .card'); // 修改选择器
+  const postItems = document.querySelectorAll('.blog-content .card');
   const categorySelect = document.getElementById('category-select');
   const tagSelect = document.getElementById('tag-select');
+  const categorySections = document.querySelectorAll('.one-line, .post-list'); // 获取类别栏目
 
   // 填充下拉菜单选项
   function populateSelectOptions() {
@@ -28,6 +29,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedCategory = categorySelect.value;
     const selectedTag = tagSelect.value;
 
+    // 隐藏或显示类别栏目
+    categorySections.forEach(section => {
+      const categoryTitle = section.previousElementSibling?.querySelector('h2')?.textContent; // 获取类别标题
+      if (categoryTitle) {
+        if (selectedCategory && categoryTitle !== selectedCategory) {
+          section.style.display = 'none'; // 隐藏其他类别栏目
+          section.nextElementSibling.style.display = 'none'; // 隐藏其他类别栏目对应的post-list
+        } else {
+          section.style.display = 'block'; // 显示当前类别栏目
+          section.nextElementSibling.style.display = 'block'; // 显示当前类别栏目对应的post-list
+        }
+      }
+    });
+
+    // 隐藏或显示帖子
     postItems.forEach(item => {
       const itemCategories = item.dataset.category.split(',');
       const itemTags = item.dataset.tag.split(',');
@@ -48,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
   updateFilters();
 
   // 点击卡片拖动
-  const containers = document.querySelectorAll('.post-list'); // 修改选择器
-  
+  const containers = document.querySelectorAll('.post-list');
+
   containers.forEach(container => {
     let isDragging = false;
     let startX = 0;
@@ -80,5 +96,4 @@ document.addEventListener('DOMContentLoaded', function() {
       container.scrollLeft = scrollLeft - walk;
     });
   });
-  
 });
