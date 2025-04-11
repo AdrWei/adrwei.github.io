@@ -40,8 +40,8 @@ extra_css:
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
                 <div class="tool-card">
-                    <img class="tool-icon" src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
-                    <h3> {{ project[0] }} </h3><br>
+                    <img class="tool-icon" src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50">
+                    <h3> {{ project[0] }} </h3>
                     <p class="tool-info"> {{ project[1].description }} </p>
                 </div>
             {% endif %}
