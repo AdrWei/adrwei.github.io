@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 博客
+excerpt: 知识就是力量
 meta:
   - name: description
     content: 定制全球品牌营销，0-1内容体系深耕建设
@@ -12,8 +13,8 @@ extra_js:
 
 <div class="content-banner">
   <div class="content-banner-text">
-    <h1>博文板块</h1>
-    <p>这里你能获得新的知识与力量</p>
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.excerpt }}</p>
   </div>
   <img src="{{ '/assets/images/social-media.jpg' | relative_url }}" alt="PC Banner" class="pc-banner">
 </div>
