@@ -37,10 +37,11 @@ extra_js:
   {% for category in ordered_categories %}
     {% assign category_file = site.blogs | where: "title", category | first %}
 
-    <h2>
-      <a href="/blogs/{{ category | slugify }}/">{{ category }}</a>
-    </h2>
-
+    <span>
+    <h2>{{ category }} </h2>
+    <button onclick="location.href='/blogs/{{ category | slugify }}/{{ category }}'">查看全部</button>
+    </span>
+    
     {% if category_file %}
       <p>{{ category_file.subtitle }}</p>
     {% endif %}
