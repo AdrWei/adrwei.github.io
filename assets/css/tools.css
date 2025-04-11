@@ -96,11 +96,6 @@
     .tool-container {
         flex-direction: column;
     }
-        
-    .tool-text{
-        display:flex;
-        flex-direction:column;
-    }
 
     .tool-box{
     text-align: unset;
