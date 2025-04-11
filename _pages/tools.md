@@ -30,8 +30,10 @@ extra_js:
 <ul>
   {% for project in site.data.tools %}
     <li>
-      <img src="{{ project[1].icon }}" alt="{{ project[1].category }}" width="50" height="50">
-      {{ project[1].category }}
+      <strong>项目名称：</strong> {{ project[0] }}<br>
+      <img src="{{ project[1].icon }}" alt="{{ project[0] }} 图标" width="50" height="50"><br>
+      <strong>类别：</strong> {{ project[1].category }}<br>
+      <strong>描述：</strong> {{ project[1].description }}
     </li>
   {% endfor %}
 </ul>
