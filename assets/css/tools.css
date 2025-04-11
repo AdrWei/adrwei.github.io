@@ -39,7 +39,12 @@
     padding: 20px;
     max-width: 150px;
     justify-items: center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-box{
+    flex-grow: 1;
 }
 
 .tool-info {
