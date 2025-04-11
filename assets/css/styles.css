@@ -610,6 +610,9 @@ button {
   margin-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
   font-size: small;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 /* 媒体查询：针对小屏幕（例如手机） */
