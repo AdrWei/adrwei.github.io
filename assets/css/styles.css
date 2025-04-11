@@ -548,6 +548,8 @@ button {
 /* 各栏目样式 */
 .footer-col {
   margin-bottom: 30px;
+  justify-items: center;
+  text-align: center;
 }
 
 .footer-logo {
@@ -604,15 +606,10 @@ button {
 /* 版权信息 */
 .copyright {
   text-align: center;
-  padding-top: 30px;
-  margin-top: 30px;
+  padding-top: 20px;
+  margin-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.copyright a {
-  font-size: 14px;
-  color: var(--VI-light);
-  margin: 0 10px;
+  font-size: small;
 }
 
 /* 媒体查询：针对小屏幕（例如手机） */
