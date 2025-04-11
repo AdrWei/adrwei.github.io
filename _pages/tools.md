@@ -27,9 +27,10 @@ extra_js:
     </div>
   </div>
 
-{% assign categories = site.data.tools | values | map: 'category' | uniq %}
-
+{% assign categories = site.data.tools | values | map: 'category' | strip | uniq %}
 <p>调试信息：类别列表：{{ categories | inspect }}</p>
+
+{{ site.data.tools | values | map: 'category' | inspect }}
 
 {% for category in categories %}
   <h2>{{ category }}</h2>
