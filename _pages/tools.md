@@ -27,29 +27,20 @@ extra_js:
     </div>
   </div>
 
-{% assign tools_data = site.data.tools %}
-
-{% for category, tools in tools_data %}
-  <span class="one-line">
-    <h2>{{ category }}</h2>
-    <a href="/tools/{{ category | slugify }}">▶ 查看全部</a>
-  </span>
-
   <div class="post-list">
-    {% for tool in tools %}
+    {% for tool_name, tool_data in site.data.tools %}
       <div class="card">
         <article class="post-item">
-          <h3>{{ tool.name }}</h3>
-          <img src="{{ tool.icon | relative_url }}" alt="{{ tool.name }} 图标">
-          <p class="post-excerpt">{{ tool.description }}</p>
+          <h3>{{ tool_name }}</h3>
+          <img src="{{ tool_data.icon | relative_url }}" alt="{{ tool_name }} 图标">
+          <p class="post-excerpt">{{ tool_data.description }}</p>
         </article>
         <div class="tag-meta">
-          <div class="tag-box">{{ category }}</div>
+          <div class="tag-box">{{ tool_data.category }}</div>
         </div>
       </div>
     {% endfor %}
   </div>
-{% endfor %}
 
   <div id="pagination"></div>
 </main>
