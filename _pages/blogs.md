@@ -43,7 +43,7 @@ extra_js:
     </span>
     
     {% if category_file %}
-      <p>{{ category_file.subtitle }}</p>
+      <p class="section-subheader">{{ category_file.subtitle }}</p>
     {% endif %}
 
     <div class="post-list">
