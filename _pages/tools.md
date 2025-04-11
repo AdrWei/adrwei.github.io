@@ -38,6 +38,7 @@ extra_js:
 
 {% for category in categories %}
     <h2>{{ category }}</h2>
+    <div class="post-list">
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
                 <div class="card">
@@ -47,6 +48,7 @@ extra_js:
                 </div>
             {% endif %}
         {% endfor %}
+    </div>
 {% endfor %}
   
   <div id="pagination"></div>
