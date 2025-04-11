@@ -28,6 +28,24 @@
     object-fit: cover;
 }
 
+.breadcrumb {
+    font-size: calc(var(--p-size) / 1.3);
+    color: #777;
+    gap: 5px;
+    place-items: center;
+    display: flex;
+    padding-bottom: 5px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #007bff; /* 设置面包屑链接颜色 */
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .card{
         max-width:100%;
