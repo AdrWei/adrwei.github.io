@@ -7,7 +7,9 @@
 
 .tool-content h2{
     font-size: var(--h3-size);
-    padding-right:10px;
+    min-width: 150px;
+    text-align: center;
+    align-self: center;
 }
 
 .tool-content a {
@@ -27,6 +29,7 @@
     padding-top: 20px;
     margin-top: 20px;
     gap: 20px;
+    align-items: stretch;
 }
 
 .tool-card {
@@ -40,14 +43,8 @@
 
 .tool-info {
     color: #34495e;
-    margin: 10px 0;
     line-height: 1.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size:1rem;
+    font-size: large;
 }
 
 .tool-icon {
@@ -57,6 +54,7 @@
     object-fit: cover;
     padding: 10px;
     background: var(--VI-border);
+    margin-bottom: 5px;
 }
 
 .breadcrumb {
