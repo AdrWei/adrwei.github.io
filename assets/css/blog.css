@@ -213,6 +213,7 @@ time {
     
 .post-list{
     flex-direction:column;
+    gap:0;
 }
 
 .category-content{    
