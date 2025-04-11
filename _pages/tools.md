@@ -36,7 +36,7 @@ extra_css:
 
 {% for category in categories %}
 <div class="tool-container">
-    <h2><{{ category }}></h2>
+    <h2>&lt;{{ category }}&gt;</h2>
         {% for project in site.data.tools %}
             {% if project[1].category == category %}
                 <div class="tool-card">
