@@ -4,15 +4,19 @@ layout: default
 
 <link rel="stylesheet" href="/assets/css/post.css">
 
-  <div class="breadcrumb-container">
+<div class="breadcrumb-container">
   <div class="breadcrumb">
-    <a href="/">首页</a> / 
-    <a href="/blogs/">博客</a> / 
-    {% if page.categories %}
-      {% for category in page.categories %}
-        <a href="/blogs/{{ category | slugify }}/">{{ category }}</a> {% unless forloop.last %}/ {% endunless %}
-      {% endfor %}
-    {% endif %}
+    <a href="/">首页</a> /
+    {% assign path_parts = page.url | split: '/' %}
+    {% for part in path_parts %}
+      {% if part != '' %}
+        {% assign part_url = '' %}
+        {% for i in (0..forloop.index0) %}
+          {% assign part_url = part_url | append: path_parts[i] | append: '/' %}
+        {% endfor %}
+        <a href="{{ part_url }}">{{ part | capitalize }}</a> {% unless forloop.last %}/ {% endunless %}
+      {% endif %}
+    {% endfor %}
     / {{ page.title }}
   </div>
 </div>
