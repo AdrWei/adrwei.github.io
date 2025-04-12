@@ -31,7 +31,7 @@ meta:
           <div class="text-box" style="background-color: #89CFF0;">实力展示</div>
           <div class="text-box" style="background-color: #FFB366;">品牌背书</div>
           <div class="text-box" style="background-color: #90EE90;">业务支持</div>
-          <div class="text-box" style="background-color: #C8A2C8;">差异化</div>
+          <div class="text-box" style="background-color: #C8A2C8;">差异建立</div>
           <div class="text-box" style="background-color: #F08080;">询盘获取</div>
           <div class="text-box" style="background-color: #77D8D8;">行动号召</div>
         </div>
