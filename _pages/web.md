@@ -1,10 +1,12 @@
 ---
 layout: default
 title: 橡树工作室 - 助力品牌出海
+excerpt: 第三方外贸工具列表
 meta:
   - name: description
     content: 定制全球品牌营销，0-1内容体系深耕建设
 ---
+
 <!-- 内容横幅 -->
 <div class="content-banner">
   <div class="content-banner-text">
@@ -112,11 +114,11 @@ meta:
         <p>自主运营人才难寻？本地团队水平堪忧？一线运营难以契合？品牌出海，选对团队至关重要。我们，为您扫清障碍。</p>
         <div class='short-box'>
           <button class="button-box">
-            <img src="{{ '/assets/images/vectorys/thumbs-up.svg' | relative_url }}" alt="专业化服务" class="icon">
+            <img src="{{ '/assets/images/vectors/thumbs-up.svg' | relative_url }}" alt="专业化服务" class="icon">
             专业化服务
           </button>
           <button class="button-box">
-            <img src="{{ '/assets/images/vectorys/hold-hands.svg' | relative_url }}" alt="高效协同合作" class="icon">
+            <img src="{{ '/assets/images/vectors/hold-hands.svg' | relative_url }}" alt="高效协同合作" class="icon">
             高效协同合作
           </button>
         </div>
