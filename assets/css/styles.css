@@ -762,8 +762,12 @@ button {
     order: 2;
   }
 
-.two-column-content, .content-header, .image-card {
+.two-column-content, .image-card {
   width: 100%;
+}
+
+ .content-header{
+     width: 85%;
 }
    
   .image-card img {
