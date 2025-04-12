@@ -625,12 +625,7 @@ button {
 @media (max-width: 768px) {
   :root {
     --section-padding-vertical: 12vw; /* 修改此处：手机端的垂直内边距 */
-     --h1-size: 6vw;
-     --h2-size: 6vw;
-     --h3-size: 5vw;
-     --h4-size: 6vw;
-     --h5-size: 5vw;
-     --p-size: 4.5vw;
+    --base-size: 1rem; 
   }
 
   header {
@@ -760,6 +755,7 @@ button {
   /* 将 image-card 元素放在最后 */
   .image-card {
     order: 2;
+    padding-top: 15px;
   }
 
 .two-column-content, .image-card {
