@@ -42,7 +42,7 @@ extra_js:
       {% if category_posts.size > 0 %}
         <span class="one-line">
           <h2>{{ category }}</h2>
-          <a href="/blogs/{{ category | slugify }}">▶ 查看全部</a>
+          <a href="/blog/{{ category | slugify }}">▶ 查看全部</a>
         </span>
 
         {% assign category_file = site.blogs | where: "title", category | first %}
