@@ -52,7 +52,7 @@ p {
 }
 
 p, li, button, .toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before, {
-   font-size:calc(var(--base-size)*1.1)
+   font-size:calc(var(--base-size)*1.1);
 }
 
 .features li, .text-box, .toggle-content.active, .button-box{
