@@ -409,14 +409,6 @@ button {
 }
 
 /* 两列布局容器 */
-.column-layout-3vwgap {
-    display: flex;
-    margin: 0 auto;
-    max-width: var(--layout-max-width);
-    gap: 6vw;
-    align-items: center;
-}
-
 .column-layout {
    display: flex;
    justify-content: space-between;
@@ -748,7 +740,7 @@ button {
      align-items: flex-start;
    }
    
-   /* 将 column-layout 和 column-layout-3vwgap 内部的非 image-card 元素放在前面 */
+   /* 将 column-layout 内部的非 image-card 元素放在前面 */
    .column-layout > *:not(.image-card){
      order: 1;
    }
@@ -760,6 +752,10 @@ button {
 
 .two-column-content, .content-header, .image-card {
   width: 100%;
+}
+
+.content-header{
+   justify-items:center;
 }
    
   .image-card img {
