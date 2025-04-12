@@ -7,7 +7,6 @@ extra_js:
   - /assets/js/gallery.js
 ---
 <div class="folder-tabs">
-  <button class="folder-tab" data-folder="">所有文件夹</button>
   <button class="folder-tab active" data-folder="images">images</button> </div>
 
 <div class="gallery">
