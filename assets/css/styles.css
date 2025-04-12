@@ -376,6 +376,7 @@ button {
 }
 
 .content-header{
+  width: clamp(70%, 75%, 80%);
 }
 
 .short-box{
