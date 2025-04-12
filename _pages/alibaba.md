@@ -7,13 +7,14 @@ meta:
     content: 定制全球品牌营销，0-1内容体系深耕建设
 ---
 
-    <div class="content-banner">
-    <div class="content-banner-text">
-      <h1>国际站体系优化</h1>
-      <p>帮您有效利用每一分钱<br>
-    </div>
-      <img src="{{ '/assets/images/alibaba-com-2.svg' | relative_url }}" alt="PC Banner" class="pc-banner">
-        </div>
+<!-- 内容横幅 -->
+<div class="content-banner">
+  <div class="content-banner-text">
+    <h1>国际站体系优化</h1>
+    <p>帮您有效利用每一分钱</p>
+  </div>
+  <img src="{{ '/assets/images/alibaba-com-2.svg' | relative_url }}" alt="PC Banner" class="pc-banner">
+</div>
   
   <section class="section">
   <div class="column-layout">
