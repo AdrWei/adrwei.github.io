@@ -758,9 +758,9 @@ button {
     order: 2;
   }
 
- .two-column-content .content-header .image-card img{
-    width: 100%;
- }
+.two-column-content img, .content-header img, .image-card img {
+  width: 100%;
+}
    
   .image-card img {
     aspect-ratio: 1/1; /* 直接设置宽高比 */
