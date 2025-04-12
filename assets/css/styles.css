@@ -335,7 +335,7 @@ button {
 
 /* 每张图片卡片样式 */
 .image-card {
-  width: 100%;
+  width: 50%;
   aspect-ratio: 16/9; /* 直接设置宽高比 */
   border-radius: 8px; /* 可选：圆角 */
   overflow: hidden; /* 裁剪溢出部分 */
@@ -418,16 +418,17 @@ button {
 }
 
 .column-layout {
-  display: flex;           /* 启用 Flexbox */
-  gap: 6vw;               /* 两列之间的间距 */
-  align-items: center;     /* 垂直居中（可选） */
-  margin: 0 auto;
-  max-width: var(--layout-max-width);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 0 auto;
+   max-width: var(--layout-max-width);
 }
 
 /* 左侧文字区域 */
 .two-column-content {
-  flex: 0 0 45%; /* 不扩展(flex-grow:0) 不收缩(flex-shrink:0) 基础宽度40% */
+    width: 50%;
+    justify-items: center;
 }
 
 .content-card {
