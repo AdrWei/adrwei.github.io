@@ -26,7 +26,7 @@
  --h3-size: calc(var(--base-size)*1.4);
  --h4-size: calc(var(--base-size)*1.2);
  --h5-size: calc(var(--base-size)*1.2);
- --p-size: calc(var(--base-size)*1);
+ --p-size: calc(var(--base-size)*1.1);
 }
 
 /* 通用函数 */
@@ -373,7 +373,7 @@ button {
 
 .section-subheader{
    color:var(--VI-sub);
-   font-size:var(--p-size);
+   font-size:var(--base-size);
 }
 
 .content-header{
