@@ -52,15 +52,11 @@ p {
   margin-top:0px;
 }
 
-li, .toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before, .text-box {
+li, .toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before, {
    font-size:calc(var(--base-size)*1.1)
 }
 
-.toggle-content.active {
-    font-size:calc(var(--base-size) /1.1);
-}
-
-.features li {
+.features li, .text-box, .toggle-content.active, .button-box, button{
   font-size: var(--base-size);
 }
 
@@ -69,6 +65,7 @@ a {
   color: var(--VI-bright);
   text-decoration: none;
 }
+
 a:hover {
   color: var(--VI-dark);
 }
@@ -262,12 +259,11 @@ button {
     padding: 10px;
     border: 1px solid var(--VI-dark);
     border-radius: 5px;
-    cursor: pointer;
     background-color: transparent;
     color: var(--VI-dark);
     font-weight: normal;
-   gap:10px;
-   align-items: center;
+    gap:10px;
+    align-items: center;
 }
 
 .icon{
