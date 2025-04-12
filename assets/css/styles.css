@@ -742,8 +742,8 @@ button {
     max-width: 80%;
    }
 
-  .section-header, .content-header, .content-header-left{
-  margin-bottom:0px;
+  .section-header, .content-header-left{
+     margin-bottom:0px;
   }
 
    .column-layout {
@@ -770,20 +770,23 @@ button {
    width: 95%;
    margin: 0 auto;
 }
+
+  .content-card .content-header{
+   width:85%;
+   margin:0 auto;
+  }
    
   .image-card img {
     aspect-ratio: 1/1; /* 直接设置宽高比 */
   }
 
   .content-card {
-    text-align:center;
     margin-bottom: 20px; /* 添加内容卡之间的间距 */
     aspect-ratio: 1/1;
   }
    
   .features {
      grid-template-columns: repeat(2, 1fr); /* 创建 3 列，每列宽度相等 */
-     justify-items: center;
    }
    
    .features li:before {
