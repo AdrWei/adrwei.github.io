@@ -36,7 +36,7 @@ excerpt: 深入解析阿里国际站溢价策略，揭秘定向标签背后的�
 
 访问偏好，做过推广的朋友都知道，溢价栏里有诸如“定制偏好”等标签，阿里可以用这个问卷给买家打标。
 
-![客户访问偏好]({{ "/assets/images/post-media/post-media/target-markup (4).png" | relative_url }})
+![客户访问偏好]({{ "/assets/images/post-media/target-markup (4).png" | relative_url }})
 
 采购金额与采购频率，这两项可以综合得出买家的采购规模与采购单价。听着是不是很熟悉？
 
