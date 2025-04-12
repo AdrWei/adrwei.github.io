@@ -2,6 +2,16 @@
   margin-top: var(--header-height);
 }
 
+/* 统一调整尺寸 */
+article.post h1{font-size:calc(var(--base-size)*2);}
+article.post h2{font-size:calc(var(--base-size)*1.5);}
+article.post h3{font-size:calc(var(--base-size)*1.2);}
+article.post h4 h5 h6{font-size:calc(var(--base-size)*1);
+                color:var(--VI-sub);}
+article.post h5{font-size:calc(var(--base-size)*1);}
+article.post h6{font-size:calc(var(--base-size)*1);}
+article.post p{font-size:calc(var(--base-size)*1;)}
+
 article.post {
   max-width: 800px;
   margin:0 auto;
