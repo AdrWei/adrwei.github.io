@@ -771,13 +771,14 @@ button {
   }
 
   .content-card {
+    text-align:center;
     margin-bottom: 20px; /* 添加内容卡之间的间距 */
     aspect-ratio: 1/1;
   }
    
-     .features {
+  .features {
      grid-template-columns: repeat(2, 1fr); /* 创建 3 列，每列宽度相等 */
-     justify-items: left;
+     justify-items: center;
    }
    
    .features li:before {
