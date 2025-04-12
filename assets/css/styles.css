@@ -55,12 +55,8 @@ p, li, button, .toggle-header, .toggle-header.active, .toggle-header:before, .se
    font-size: calc(var(--base-size)*1.1);
 }
 
-.features li, .toggle-content.active, .button-box, .breadcrumb, .footer-links li, .footer-title {
+.text-box, .features li, .toggle-content.active, .button-box, .breadcrumb, .footer-links li, .footer-title {
   font-size: var(--base-size);
-}
-
-.text-box {
-  font-size: calc(var(--base-size)/1.1);
 }
 
 /* 可选：链接样式 */
