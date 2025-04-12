@@ -1,0 +1,90 @@
+  main {    
+    padding: 100px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f9f9f9;
+    aspect-ratio: 16/9;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    object-fit: contain;
+  }
+
+  .filepath {
+    font-size: 14px;
+    color: #555;
+    word-break: break-all;
+    text-align: center;
+  }
+
+  .folder-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--VI-color);
+    overflow-x: auto;
+  }
+
+  .folder-tab {
+    color: black;
+    background-color: unset;
+    border: 1px solid var(--VI-color);
+    border-bottom: aliceblue;
+    padding: 10px 20px;
+    margin-right: 5px;
+    font-size: 14px;
+    border-radius: unset;
+  }
+
+  .folder-tab.active {
+   background-color: var(--VI-color);
+   color: white;
+  }
+  
+    .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+  }
+
+  .overlay img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+  }
+
+   @media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-item{
+    aspect-ratio: unset;
+  }
+  }
