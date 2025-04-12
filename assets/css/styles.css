@@ -55,7 +55,7 @@ p, li, button, .toggle-header, .toggle-header.active, .toggle-header:before, .se
    font-size: calc(var(--base-size)*1.1);
 }
 
-.text-box, .features li, .toggle-content.active, .button-box, .breadcrumb, .footer-links li, .footer-title {
+.features li, .text-box, .toggle-content.active, .button-box, .breadcrumb, .footer-links li, .footer-title {
   font-size: var(--base-size);
 }
 
@@ -404,7 +404,6 @@ button {
 }
 
 .short-box{
-   display: flow;
    margin-bottom: 20px;
 }
 
@@ -692,6 +691,7 @@ button {
   .mobile-nav-toggle {
     display: block; /* 在手机端显示导航切换按钮 */
     font-size: 24px;
+   cursor: pointer;
     z-index:5;
   }
 
@@ -752,28 +752,23 @@ button {
      align-items: flex-start;
    }
    
-   .two-column-content, .content-header, .image-card {
-     width: 100%;
+   /* 将 column-layout 内部的非 image-card 元素放在前面 */
+   .column-layout > *:not(.image-card){
+     order: 1;
    }
 
-   /*布局手机端图文顺序*/
-       .column-layout {
-        grid-template-columns: 1fr; /* 手机端单列 */
-    }
+  /* 将 image-card 元素放在最后 */
+  .image-card {
+    order: 2;
+  }
 
-    .two-column-content {
-        grid-column: 1; /* 手机端在上 */
-        grid-row: 1;
-    }
+.two-column-content, .content-header, .image-card {
+  width: 100%;
+}
 
-    .image-card {
-        grid-column: 1; /* 手机端在下 */
-        grid-row: 2;
-    }
-   
-   .content-header{
-      justify-items:center;
-   }
+.content-header{
+   justify-items:center;
+}
    
   .image-card img {
     aspect-ratio: 1/1; /* 直接设置宽高比 */
@@ -784,7 +779,7 @@ button {
     aspect-ratio: 1/1;
   }
    
-    .features {
+     .features {
      grid-template-columns: repeat(2, 1fr); /* 创建 3 列，每列宽度相等 */
      justify-items: left;
    }
