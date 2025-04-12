@@ -38,6 +38,10 @@ title: 图片展示
   }
 </style>
 
+<select id="folder-select">
+  <option value="">所有文件夹</option>
+</select>
+
 <div class="gallery">
   {% assign image_files = site.static_files | where_exp: 'file', 'file.path contains "/assets/images/"' %}
   {% assign sorted_images = image_files | sort: 'modified_time' | reverse %}
@@ -46,7 +50,7 @@ title: 图片展示
     {% assign parts = image.path | split: '/' %}
     {% assign foldername = parts[-2] %}
     {% assign filename = parts[-1] %}
-    <div class="gallery-item">
+    <div class="gallery-item" data-folder="{{ foldername }}">
       <img
         src="{{ image.path | relative_url }}"
         alt="{{ filename }}"
@@ -56,3 +60,44 @@ title: 图片展示
     </div>
   {% endfor %}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // DOM 元素
+    const galleryItems = document.querySelectorAll('.gallery .gallery-item');
+    const folderSelect = document.getElementById('folder-select');
+
+    // 填充文件夹下拉菜单选项
+    function populateFolderOptions() {
+      const folders = new Set();
+
+      galleryItems.forEach(item => {
+        folders.add(item.dataset.folder);
+      });
+
+      folders.forEach(folder => {
+        folderSelect.add(new Option(folder, folder));
+      });
+    }
+
+    // 更新文件夹筛选函数
+    function updateFolderFilters() {
+      const selectedFolder = folderSelect.value;
+
+      galleryItems.forEach(item => {
+        const itemFolder = item.dataset.folder;
+
+        const showFolder = !selectedFolder || itemFolder === selectedFolder;
+
+        item.style.display = showFolder ? 'block' : 'none';
+      });
+    }
+
+    // 绑定文件夹选择事件
+    folderSelect.addEventListener('change', updateFolderFilters);
+
+    // 初始填充文件夹下拉菜单和筛选
+    populateFolderOptions();
+    updateFolderFilters();
+  });
+</script>
