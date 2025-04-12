@@ -7,7 +7,7 @@ layout: default
   <div class="breadcrumb-container">
   <div class="breadcrumb">
     <a href="/">首页</a> / 
-    <a href="/blogs/">博客</a> / 
+    <a href="/blog/">博客</a> / 
     {% if page.categories %}
       {% for category in page.categories %}
         <a href="/blogs/{{ category | slugify }}/">{{ category }}</a> {% unless forloop.last %}/ {% endunless %}
