@@ -36,11 +36,27 @@ title: 图片展示
     word-break: break-all;
     text-align: center;
   }
+
+  .folder-tabs {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .folder-tab {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+
+  .folder-tab.active {
+    background-color: #ddd;
+  }
 </style>
 
-<select id="folder-select">
-  <option value="">所有文件夹</option>
-</select>
+<div class="folder-tabs">
+  <button class="folder-tab active" data-folder="">所有文件夹</button>
+</div>
 
 <div class="gallery">
   {% assign image_files = site.static_files | where_exp: 'file', 'file.path contains "/assets/images/"' %}
@@ -65,10 +81,10 @@ title: 图片展示
   document.addEventListener('DOMContentLoaded', function() {
     // DOM 元素
     const galleryItems = document.querySelectorAll('.gallery .gallery-item');
-    const folderSelect = document.getElementById('folder-select');
+    const folderTabs = document.querySelector('.folder-tabs');
 
-    // 填充文件夹下拉菜单选项
-    function populateFolderOptions() {
+    // 填充文件夹标签（tab）
+    function populateFolderTabs() {
       const folders = new Set();
 
       galleryItems.forEach(item => {
@@ -76,14 +92,16 @@ title: 图片展示
       });
 
       folders.forEach(folder => {
-        folderSelect.add(new Option(folder, folder));
+        const tab = document.createElement('button');
+        tab.classList.add('folder-tab');
+        tab.dataset.folder = folder;
+        tab.textContent = folder;
+        folderTabs.appendChild(tab);
       });
     }
 
     // 更新文件夹筛选函数
-    function updateFolderFilters() {
-      const selectedFolder = folderSelect.value;
-
+    function updateFolderFilters(selectedFolder) {
       galleryItems.forEach(item => {
         const itemFolder = item.dataset.folder;
 
@@ -93,11 +111,26 @@ title: 图片展示
       });
     }
 
-    // 绑定文件夹选择事件
-    folderSelect.addEventListener('change', updateFolderFilters);
+    // 绑定文件夹标签（tab）点击事件
+    folderTabs.addEventListener('click', function(event) {
+      if (event.target.classList.contains('folder-tab')) {
+        const selectedFolder = event.target.dataset.folder;
 
-    // 初始填充文件夹下拉菜单和筛选
-    populateFolderOptions();
-    updateFolderFilters();
+        // 移除所有标签（tab）的 active 类
+        folderTabs.querySelectorAll('.folder-tab').forEach(tab => {
+          tab.classList.remove('active');
+        });
+
+        // 为当前点击的标签（tab）添加 active 类
+        event.target.classList.add('active');
+
+        // 更新文件夹筛选
+        updateFolderFilters(selectedFolder);
+      }
+    });
+
+    // 初始填充文件夹标签（tab）和筛选
+    populateFolderTabs();
+    updateFolderFilters(''); // 默认显示所有文件夹
   });
 </script>
