@@ -742,15 +742,14 @@ button {
   margin-bottom:0px;
   }
 
-   .column-layout,.column-layout-3vwgap {
+   .column-layout {
      display: flex;
      flex-direction: column;
      align-items: flex-start;
    }
    
    /* 将 column-layout 和 column-layout-3vwgap 内部的非 image-card 元素放在前面 */
-   .column-layout > *:not(.image-card),
-   .column-layout-3vwgap > *:not(.image-card) {
+   .column-layout > *:not(.image-card){
      order: 1;
    }
 
@@ -759,6 +758,10 @@ button {
     order: 2;
   }
 
+ .two-column-content .content-header .image-card img{
+    width: 100%;
+ }
+   
   .image-card img {
     aspect-ratio: 1/1; /* 直接设置宽高比 */
   }
@@ -767,10 +770,6 @@ button {
     margin-bottom: 20px; /* 添加内容卡之间的间距 */
     aspect-ratio: 1/1;
   }
-
-   .short-box{
-      width:100%;
-   }
    
      .features {
      grid-template-columns: repeat(2, 1fr); /* 创建 3 列，每列宽度相等 */
