@@ -253,7 +253,6 @@ display: block; /* 鼠标悬停时显示图片 */
 .breadcrumb {
     color: #777;
     gap: 5px;
-    margin-top: var(--header-height);
     place-items: center;
     display: flex;
 }
