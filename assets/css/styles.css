@@ -410,11 +410,11 @@ button {
 
 /* 两列布局容器 */
 .column-layout-3vwgap {
-  display: flex;           /* 启用 Flexbox */
-  gap: 3vw;               /* 两列之间的间距 */
-  align-items: center;     /* 垂直居中（可选） */
-  margin: 0 auto;
-  max-width: var(--layout-max-width);
+    display: flex;
+    margin: 0 auto;
+    max-width: var(--layout-max-width);
+    gap: 6vw;
+    align-items: center;
 }
 
 .column-layout {
