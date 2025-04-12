@@ -23,8 +23,7 @@ extra_js:
         loading="lazy"
         data-src="{{ image.path | relative_url }}"
       >
-      <div class="filepath">{{ foldername }}/{{ filename }}</div>
-    </div>
+      <div class="filename">{{ filename }}</div> </div>
   {% endfor %}
 </div>
 
