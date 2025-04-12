@@ -770,7 +770,12 @@ button {
   .content-card .content-header{
    width:85%;
    margin:0 auto;
+   padding: 20px 0;
   }
+
+  .content-header h2, .content-header h3，content-header button, .content-header .section-subheader{
+   text-align:center;
+}
    
   .image-card img {
     aspect-ratio: 1/1; /* 直接设置宽高比 */
