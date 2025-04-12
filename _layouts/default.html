@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
-  <link rel="icon" href="{{ page.favicon | default: '/assets/images/logo-pure-blue.gif' | relative_url }}">
+  <link rel="icon" href="{{ page.favicon | default: '/assets/images/profiles/logo-pure-blue.gif' | relative_url }}">
   {% for meta in page.meta %}
     <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}content="{{ meta.content }}">
   {% endfor %}
