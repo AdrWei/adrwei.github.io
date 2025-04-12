@@ -51,7 +51,7 @@ p {
   margin-top:0px;
 }
 
-p, li, button, .toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before, {
+button, p, li, .toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before, {
    font-size:calc(var(--base-size)*1.1)
 }
 
