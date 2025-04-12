@@ -1,3 +1,4 @@
+<script>
   document.addEventListener('DOMContentLoaded', function() {
     // DOM 元素
     const galleryItems = document.querySelectorAll('.gallery .gallery-item');
@@ -51,7 +52,7 @@
 
     // 初始填充文件夹标签（tab）和筛选
     populateFolderTabs();
-    updateFolderFilters(''); // 默认显示所有文件夹
+    updateFolderFilters('images'); // 默认显示 images 文件夹
 
     // 添加图片放大功能
     const overlay = document.querySelector('.overlay');
@@ -71,3 +72,4 @@
       overlay.style.display = 'none';
     });
   });
+</script>
