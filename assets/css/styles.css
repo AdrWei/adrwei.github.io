@@ -45,7 +45,7 @@ h1 { font-size: calc(var(--base-size)*2.5);}
 h2 { font-size: calc(var(--base-size)*2);}
 h3 { font-size: calc(var(--base-size)*1.6);}
 
-h4, h5, .toggle-header, .toggle-header.active{
+h4, h5, h6, .toggle-header, .toggle-header.active{
    font-size: calc(var(--base-size)*1.2);
 }
 
@@ -80,6 +80,7 @@ ul {
     list-style-position: inside;
     padding-inline-start:0px;
     gap:5px;
+   padding-bottom:10px;
 }
 
 li::marker {
@@ -400,6 +401,7 @@ button {
 .section-subheader{
    color:var(--VI-sub);
    font-size:var(--base-size);
+   margin-top: 0;
 }
 
 .content-header{
@@ -629,6 +631,23 @@ button {
     --base-size: 1rem; 
   }
 
+     /* 统一设定尺寸 */
+   h1 { font-size: calc(var(--base-size)*1.5);}
+   h2 { font-size: calc(var(--base-size)*1.3);}
+   h3 { font-size: calc(var(--base-size)*1.6);}
+   
+   h4, h5, h6, .toggle-header, .toggle-header.active{
+      font-size: calc(var(--base-size)*1.1);
+   }
+   
+   p, li, button, .toggle-header:before, .section-fence p, .features li:before {
+      font-size: calc(var(--base-size)*1);
+   }
+   
+   .features li, .text-box, .toggle-content.active, .button-box, .breadcrumb, .footer-links li, .footer-title {
+     font-size: var(--base-size);
+   }
+   
   header {
     padding: 15px 20px; /* 缩小手机端的内边距 */
     justify-content:space-between;
@@ -790,6 +809,11 @@ button {
    
   .features {
      grid-template-columns: repeat(2, 1fr); /* 创建 3 列，每列宽度相等 */
+   }
+   
+   .features li {
+  /* 可以添加一些额外的样式，例如边框、内边距等 */
+  padding-bottom: 0px;
    }
    
    .features li:before {
