@@ -74,13 +74,9 @@ title: 图片展示
     aspect-ratio: unset;
   }
   }
-
-  
 </style>
 
-<div class="folder-tabs">
-  <button class="folder-tab active" data-folder="">所有文件夹</button>
-</div>
+<div class="folder-tabs"></div>
 
 <div class="gallery">
   {% assign image_files = site.static_files | where_exp: 'file', 'file.path contains "/assets/images/"' %}
