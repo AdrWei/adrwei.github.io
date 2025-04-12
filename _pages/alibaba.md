@@ -37,7 +37,7 @@ meta:
   </div>
 </section>
 
-    <section class="section-dark">
+<section class="section-dark">
   <div class="column-layout">
     <div class="two-column-content">
         <div class="content-header">
@@ -59,7 +59,7 @@ meta:
   </div>
 </section>
 
-    <section class="section">
+<section class="section">
   <div class="column-layout">
     <div class="image-card">
         <img src="{{ '/assets/images/social-media.jpg' | relative_url }}" alt="图片3">
@@ -84,9 +84,9 @@ meta:
   </div>
 </section>
   
-    <!-- 底部悬浮栏 -->
-    <div class="section-fence">
-            <h4>开始定制出海方案</h4>
-            <p>我们将深入了解您的需求，为您打造专属方案</p>
-            <button>立即咨询</button>
-    </div>
+<!-- 底部悬浮栏 -->
+<div class="section-fence">
+        <h4>开始定制出海方案</h4>
+        <p>我们将深入了解您的需求，为您打造专属方案</p>
+        <button>立即咨询</button>
+</div>
