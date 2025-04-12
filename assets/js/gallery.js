@@ -6,31 +6,18 @@
     // 填充文件夹标签（tab）
     function populateFolderTabs() {
       const folders = new Set();
-      let firstFolder = null; // 用于存储第一个文件夹名称
 
       galleryItems.forEach(item => {
         folders.add(item.dataset.folder);
       });
 
       folders.forEach(folder => {
-        if (folder !== "") { // 移除“所有文件夹”的标签
-          const tab = document.createElement('button');
-          tab.classList.add('folder-tab');
-          tab.dataset.folder = folder;
-          tab.textContent = folder;
-          folderTabs.appendChild(tab);
-
-          if (!firstFolder) {
-            firstFolder = folder; // 存储第一个文件夹名称
-          }
-        }
+        const tab = document.createElement('button');
+        tab.classList.add('folder-tab');
+        tab.dataset.folder = folder;
+        tab.textContent = folder;
+        folderTabs.appendChild(tab);
       });
-
-      // 将第一个文件夹的标签设置为 active
-      if (firstFolder) {
-        folderTabs.querySelector(`[data-folder="${firstFolder}"]`).classList.add('active');
-        updateFolderFilters(firstFolder); // 默认显示第一个文件夹的图片
-      }
     }
 
     // 更新文件夹筛选函数
@@ -64,6 +51,7 @@
 
     // 初始填充文件夹标签（tab）和筛选
     populateFolderTabs();
+    updateFolderFilters(''); // 默认显示所有文件夹
 
     // 添加图片放大功能
     const overlay = document.querySelector('.overlay');
