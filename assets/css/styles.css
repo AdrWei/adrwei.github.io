@@ -404,6 +404,7 @@ button {
 }
 
 .short-box{
+   display: flow;
    margin-bottom: 20px;
 }
 
