@@ -765,10 +765,6 @@ button {
 .two-column-content, .content-header, .image-card {
   width: 100%;
 }
-
-.content-header{
-   justify-items:center;
-}
    
   .image-card img {
     aspect-ratio: 1/1; /* 直接设置宽高比 */
