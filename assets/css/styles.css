@@ -6,6 +6,7 @@
   --VI-bright: #fff;
   --VI-ltgreen: #e0f2f7;
   --VI-border: #eaeaea;
+  --VI-sub: #656565;
 
   --header-height: 70px; /* 定义变量 */
   /* 默认section的padding值 */
@@ -24,7 +25,7 @@
  --h3-size: 1.4rem;
  --h4-size: 1.2rem;
  --h5-size: 1.2rem;
- --p-size: 1.2rem;
+ --p-size: 1.1rem;
 }
 
 /* 通用函数 */
@@ -145,7 +146,7 @@ nav {
   display: none; /* 初始状态下隐藏图片 */
   width: 100px; /* 设置图片最大宽度 */
   height:auto;
-  border: 1px solid #ccc; /* 添加边框 */
+  border: 1px solid var(--VI-light); /* 添加边框 */
   padding: 5px; /* 添加内边距 */
   z-index: 1000; /* 确保图片在其他元素之上 */
 }
@@ -371,8 +372,8 @@ button {
 }
 
 .section-subheader{
-   color:#656565;
-   font-size:100%;
+   color:var(--VI-sub);
+   font-size:var(--p-size);
 }
 
 .content-header{
@@ -446,7 +447,7 @@ button {
 }
 
 .toggle-item {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--VI-light);
 }
 
 .toggle-header {
