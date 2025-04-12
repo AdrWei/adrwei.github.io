@@ -6,7 +6,7 @@ extra_css:
 extra_js:
   - /assets/js/gallery.js
 ---
-<div class="folder-tabs">
+<div class="folder-tabs"></div>
 
 <div class="gallery">
   {% assign image_files = site.static_files | where_exp: 'file', 'file.path contains "/assets/images/"' %}
@@ -23,7 +23,7 @@ extra_js:
         loading="lazy"
         data-src="{{ image.path | relative_url }}"
       >
-      <div class="filename">{{ filename }}</div>
+      <div class="filepath">{{ filename }}</div>
     </div>
   {% endfor %}
 </div>
