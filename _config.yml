@@ -23,7 +23,10 @@ collections:
     permalink: /:path/
   blogs:
     output: true   # 允许生成分类页
-    permalink: /blogs/:name/  # 控制URL格式
+    permalink: /blog/:name/  # 控制URL格式
+  policies:
+    output: true   # 允许生成分类页
+    permalink: /policy/:name/  # 控制URL格式
 
 # 需要特别保留的HTML文件
 include:
