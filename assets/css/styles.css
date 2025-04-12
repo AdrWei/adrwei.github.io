@@ -325,7 +325,6 @@ button {
   left: 25%; /* 水平居中 */
   transform: translate(-50%, -50%); /* 精确居中 */
   text-align: left;
-  color: var(--VI-bright); /* 文字颜色 */
   padding: 20px;
 }
 
