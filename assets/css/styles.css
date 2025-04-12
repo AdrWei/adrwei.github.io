@@ -415,7 +415,7 @@ button {
    align-items: center;
    margin: 0 auto;
    max-width: var(--layout-max-width);
-   gap: 6vw;
+   gap: 3vw;
 }
 
 /* 左侧文字区域 */
