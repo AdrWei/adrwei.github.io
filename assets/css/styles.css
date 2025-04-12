@@ -775,7 +775,7 @@ button {
   }
 
 .content-header > *:not(h2):not(h3):not(.section-subheader) {
-       text-align: unset;
+    text-align: left;
    }
    
   .image-card img {
