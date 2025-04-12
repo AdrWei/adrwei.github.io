@@ -758,7 +758,7 @@ button {
     order: 2;
   }
 
-.two-column-content, .content-header, .image-card img {
+.two-column-content, .content-header, .image-card {
   width: 100%;
 }
    
