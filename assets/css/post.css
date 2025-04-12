@@ -75,6 +75,7 @@ article.post .content img {
   height: auto; /* 高度自动调整 */
   display: block; /* 使图片独占一行 */
   margin: 1em auto; /* 图片居中显示 */
+  width:unset;
 }
 
 article.post .content pre {
