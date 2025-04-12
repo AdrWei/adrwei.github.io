@@ -13,33 +13,6 @@ article.post a{
   color: #007bff;
 }
 
-.breadcrumb-container{
-    max-width: 100vw;
-    height: 30vh;
-    background: var(--VI-ltgreen);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.breadcrumb {
-    font-size: calc(var(--p-size) / 1.3);
-    color: #777;
-    gap: 5px;
-    margin-top: var(--header-height);
-    place-items: center;
-    display: flex;
-}
-
-.breadcrumb a {
-  text-decoration: none;
-  color: #007bff; /* 设置面包屑链接颜色 */
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
 .data {
   display: flex;
   align-items: center;
