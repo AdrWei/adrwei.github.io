@@ -1,4 +1,3 @@
-<script>
   document.addEventListener('DOMContentLoaded', function() {
     // DOM 元素
     const galleryItems = document.querySelectorAll('.gallery .gallery-item');
@@ -72,4 +71,3 @@
       overlay.style.display = 'none';
     });
   });
-</script>
