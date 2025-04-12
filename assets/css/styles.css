@@ -46,13 +46,12 @@ h4 { font-size: calc(var(--base-size)*1.2);}
 h5 { font-size: calc(var(--base-size)*1.2);}
 
 p {
-  font-size:calc(var(--base-size)*1.1)
   color: var(--p-color);
   line-height: 1.6;
   margin-top:0px;
 }
 
-.toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before, {
+p, li, button, .toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before, {
    font-size:calc(var(--base-size)*1.1)
 }
 
@@ -82,10 +81,6 @@ ul {
     padding-inline-start:0px;
     gap:5px;
 }
-
-li {
-    font-size:calc(var(--base-size)*1.1)
-   {
 
 li::marker {
   color: var(--VI-color); /* 设置列表项标记的颜色为红色 */
@@ -287,7 +282,6 @@ button {
   border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
-  font-size:calc(var(--base-size)*1.1);
 }
 
 .button-box {
