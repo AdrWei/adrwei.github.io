@@ -2,7 +2,6 @@
 layout: post
 title: "网站使用声明"
 date: 2025-04-11 16:44:20 +0800
-categories: [声明]
 author: Aoke
 excerpt: ''
 ---
