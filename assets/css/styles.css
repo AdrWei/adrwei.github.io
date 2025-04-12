@@ -767,7 +767,8 @@ button {
 }
 
  .content-header{
-     width: 85%;
+   width: 95%;
+   margin: 0 auto;
 }
    
   .image-card img {
