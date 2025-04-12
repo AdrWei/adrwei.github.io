@@ -1,3 +1,7 @@
+.breadcrumb{
+  margin-top: var(--header-height);
+}
+
 article.post {
   max-width: 800px;
   margin:0 auto;
