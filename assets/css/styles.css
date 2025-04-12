@@ -820,6 +820,16 @@ button {
      left: -10px;
    }
    
+.short-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 始终 3 列 */
+}
+
+.short-box.text-box {
+  width: 100%; /* 按钮宽度填满网格单元格 */
+  /* 其他按钮样式 */
+}
+
   .site-footer {
     padding: 20px 0 20px;
   }
