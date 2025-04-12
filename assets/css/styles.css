@@ -7,18 +7,18 @@
   --VI-ltgreen: #e0f2f7;
   --VI-border: #eaeaea;
   --VI-sub: #656565;
+  --h-color: #333;    /* 标题颜色 */
+  --p-color: #333;  /* 段落颜色 */
 
   --header-height: 70px; /* 定义变量 */
+   
   /* 默认section的padding值 */
   --section-padding-vertical: 4vw;  
   --section-padding-horizontal: 3vh;
+   
   /* 可选：其他样式变量（如背景色） */
   --layout-max-width:1400px;
-    
-  /* 定义颜色变量 */
-  --heading-color: #333;    /* 标题颜色 */
-  --paragraph-color: #333;  /* 段落颜色 */
-  
+
   /* 字体大小变量（可选） */
  --base-size: 1rem;
 }
@@ -36,7 +36,7 @@ img {
 
 /* 应用变量到标题和段落 */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--heading-color);
+  color: var(--h-color);
   margin: 0 0 1vh 0; /* 统一标题间距 */
 }
 h1 { font-size: calc(var(--base-size)*2.5);}
@@ -46,17 +46,16 @@ h4 { font-size: calc(var(--base-size)*1.2);}
 h5 { font-size: calc(var(--base-size)*1.2);}
 
 p {
-  color: var(--paragraph-color);
-  font-size: calc(var(--base-size)*1.1);
+  color: var(--p-color);
   line-height: 1.6;
   margin-top:0px;
 }
 
-li, .toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before, {
+p, li, button, .toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before, {
    font-size:calc(var(--base-size)*1.1)
 }
 
-.features li, .text-box, .toggle-content.active, .button-box, button{
+.features li, .text-box, .toggle-content.active, .button-box{
   font-size: var(--base-size);
 }
 
