@@ -55,12 +55,8 @@ p, li, button, .toggle-header, .toggle-header.active, .toggle-header:before, .se
    font-size:calc(var(--base-size)*1.1);
 }
 
-.features li, .text-box, .toggle-content.active, .button-box{
+.features li, .text-box, .toggle-content.active, .button-box, .breadcrumb, .footer-links li, .footer-title {
   font-size: var(--base-size);
-}
-
-.breadcrumb {
-    font-size: 0.85rem;
 }
 
 /* 可选：链接样式 */
@@ -571,7 +567,6 @@ button {
 }
 
 .footer-title {
-  font-size: 14px;
   color:var(--VI-bright);
   margin-bottom: 20px;
   position: relative;
@@ -592,7 +587,6 @@ button {
 .footer-links li {
   margin-bottom: 10px;
   list-style: none;
-  font-size: 14px;
 }
 
 .footer-links a {
