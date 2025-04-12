@@ -20,12 +20,13 @@
   --paragraph-color: #333;  /* 段落颜色 */
   
   /* 字体大小变量（可选） */
- --h1-size: 2.5rem;
- --h2-size: 1.8rem;
- --h3-size: 1.4rem;
- --h4-size: 1.2rem;
- --h5-size: 1.2rem;
- --p-size: 1.1rem;
+ --base-size: 1rem;
+ --h1-size: calc(var(--base-size) x 2.5);
+ --h2-size: calc(var(--base-size) x 1.8);
+ --h3-size: calc(var(--base-size) x 1.4);
+ --h4-size: calc(var(--base-size) x 1.2);
+ --h5-size: calc(var(--base-size) x 1.2);
+ --p-size: calc(var(--base-size) x 1);
 }
 
 /* 通用函数 */
@@ -264,7 +265,6 @@ button {
     background-color: transparent;
     color: var(--VI-dark);
     font-weight: normal;
-    font-size: calc(var(--p-size) / 1.2);
    gap:10px;
    align-items: center;
 }
