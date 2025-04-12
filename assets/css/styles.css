@@ -39,19 +39,17 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--h-color);
   margin: 0 0 1vh 0; /* 统一标题间距 */
 }
-h1 { font-size: calc(var(--base-size)*2.5);}
-h2 { font-size: calc(var(--base-size)*1.8);}
-h3 { font-size: calc(var(--base-size)*1.4);}
-h4 { font-size: calc(var(--base-size)*1.2);}
-h5 { font-size: calc(var(--base-size)*1.2);}
 
-p {
-  color: var(--p-color);
-  line-height: 1.6;
-  margin-top:0px;
+/* 统一设定尺寸 */
+h1 { font-size: calc(var(--base-size)*2.5);}
+h2 { font-size: calc(var(--base-size)*2);}
+h3 { font-size: calc(var(--base-size)*1.6);}
+
+h4, h5, .toggle-header, .toggle-header.active{
+   font-size: calc(var(--base-size)*1.2);
 }
 
-p, li, button, .toggle-header, .toggle-header.active, .toggle-header:before, .section-fence p, .features li:before {
+p, li, button, .toggle-header:before, .section-fence p, .features li:before {
    font-size: calc(var(--base-size)*1.1);
 }
 
@@ -59,7 +57,13 @@ p, li, button, .toggle-header, .toggle-header.active, .toggle-header:before, .se
   font-size: var(--base-size);
 }
 
-/* 可选：链接样式 */
+/ * 调整颜色与其他 * /
+p {
+  color: var(--p-color);
+  line-height: 1.6;
+  margin-top:0px;
+}
+
 a {
   color: var(--VI-bright);
   text-decoration: none;
