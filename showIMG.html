@@ -65,6 +65,17 @@ title: 图片展示
    background-color: var(--VI-color);
    color: white;
   }
+
+   @media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-item{
+    aspect-ratio: unset;
+  }
+  }
+
+  
 </style>
 
 <div class="folder-tabs">
