@@ -765,17 +765,19 @@ button {
  .content-header{
    width: 95%;
    margin: 0 auto;
+   text-align:center;
 }
 
   .content-card .content-header{
+   text-align:unset;
    width:85%;
    margin:0 auto;
    padding: 20px 0;
   }
 
-  .content-header h2, .content-header h3, content-header button, .content-header .section-subheader{
-   text-align:center;
-}
+.content-header > *:not(h2):not(h3):not(.section-subheader) {
+       text-align: unset;
+   }
    
   .image-card img {
     aspect-ratio: 1/1; /* 直接设置宽高比 */
