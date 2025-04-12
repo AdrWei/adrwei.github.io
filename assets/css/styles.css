@@ -556,8 +556,6 @@ button {
 /* 各栏目样式 */
 .footer-col {
   margin-bottom: 30px;
-  justify-items: center;
-  text-align: center;
 }
 
 .footer-logo {
