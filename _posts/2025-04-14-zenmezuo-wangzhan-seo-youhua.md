@@ -17,13 +17,13 @@ hidden: true  # 或 false
 5. [数据监控](#五数据监控)  
 6. [进阶技巧](#六进阶技巧)  
 7. [执行清单](#七执行清单)
-8. [基本格式](#七执行清单)
+9. [资源推荐](#八资源推荐)
 
 ## 一、基础准备阶段
 
 ### 1. 关键词研究
 ​**工具推荐**  
-🔧 Google Keyword Planner | SEMrush | Ahrefs | Ubersuggest  
+* 🔧 Google Keyword Planner | SEMrush | Ahrefs | Ubersuggest  
 
 **操作步骤**  
 * 确定核心业务词（如`hotel furniture supplier`）  
@@ -53,16 +53,20 @@ hidden: true  # 或 false
 ## 二、技术SEO优化
 ### 1. 可抓取与索引
 **robots.txt示例**  
+```
 *  User-agent: *
 *  Disallow: /admin/
 *  Disallow: /tmp/
 *  Allow: /assets/
+```
 
 **​XML Sitemap**
-*  📌 必须包含：
+```
+📌 必须包含：
 *  所有重要页面URL
 *  更新频率标记（如<changefreq>weekly</changefreq>）
 *  📤 提交到：Google Search Console
+```
 
 
 ### 2. 页面速度优化（Web Vitals标准）
@@ -75,8 +79,10 @@ hidden: true  # 或 false
 ## 三、内容优化
 ### 1. 页面元素规范
 **标题(Title)模板**  
+```
 *[核心关键词] - [品牌词] | [差异化描述]  
 *示例：Hotel Furniture Manufacturer - YourBrand | Custom Solutions Since 2010
+```
 
 ​**正文优化技巧**
 ✨ 使用结构化段落：
@@ -98,7 +104,7 @@ hidden: true  # 或 false
 
 ### 2. 品牌信号强化
 ​**品牌词矩阵**  
-  🔍 确保品牌词出现在：  
+  🔍 确保品牌词出现在：
   - 官网Footer  
   - 社交媒体主页  
   - 行业目录描述  
@@ -141,12 +147,13 @@ hidden: true  # 或 false
 
 ✍️ ​**第2周**  
    - 发布3篇解决方案型博客（800+单词）  
-   - 提交sitemap到Google+Bing  
+   - 提交sitemap到Google+Bing
+
 🚀 ​**第3-4周**  
    - 获取2个.edu/.gov外链  
    - 修复所有PageSpeed Issues问题
 
-## 资源推荐
+## 八、资源推荐
 [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)  
 [Ahrefs SEO Tutorials](https://ahrefs.com/blog/)
 
