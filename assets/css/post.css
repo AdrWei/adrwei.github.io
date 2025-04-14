@@ -76,6 +76,19 @@ article.post .content code {
   font-family: monospace; /* 代码字体 */
 }
 
+article.post .content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+article.post .content th,
+article.post .content td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
 @media (max-width: 768px) {
 /* 统一调整尺寸 */
 article.post h1{font-size:calc(var(--base-size)*1.5);}
