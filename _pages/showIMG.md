@@ -6,7 +6,9 @@ extra_css:
 extra_js:
   - /assets/js/gallery.js
 ---
-<div class="folder-tabs"></div>
+<div class="folder-tabs">
+  <button class="folder-tab" data-folder="">所有文件夹</button>
+</div>
 
 <div class="gallery">
   {% assign image_files = site.static_files | where_exp: 'file', 'file.path contains "/assets/images/"' %}
