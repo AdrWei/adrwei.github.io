@@ -1,3 +1,15 @@
+.tool-content h2{
+    calc(var(--base-size)* 1.4);
+}
+
+.tool-content a {
+    calc(var(--base-size)* 1.2);
+}
+
+.tool-info {
+    var(--base-size);
+}
+
 .tool-content {
     min-height: 35vh;
     max-width: 1200px;
@@ -6,7 +18,6 @@
 }
 
 .tool-content h2{
-    font-size: var(--h3-size);
     min-width: 150px;
     text-align: center;
     align-self: center;
@@ -19,7 +30,6 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: var(--p-size);
 }
 
 .tool-container{
@@ -52,7 +62,6 @@
 .tool-info {
     color: #34495e;
     line-height: 1.6;
-    font-size: medium;
     margin: 0;
 }
 
@@ -64,24 +73,6 @@
     padding: 10px;
     background: var(--VI-border);
     margin-bottom: 10px;
-}
-
-.breadcrumb {
-    font-size: calc(var(--p-size) / 1.3);
-    color: #777;
-    gap: 5px;
-    place-items: center;
-    display: flex;
-    padding-bottom: 5px;
-}
-
-.breadcrumb a {
-  text-decoration: none;
-  color: #007bff; /* 设置面包屑链接颜色 */
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
