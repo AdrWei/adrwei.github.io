@@ -59,7 +59,7 @@ p, li, button, .toggle-header:before, .section-fence p, .features li:before {
   font-size: var(--base-size);
 }
 
-/ * 调整颜色与其他 * /
+/* 调整颜色与其他 */
 p {
   color: var(--p-color);
   line-height: 1.6;
