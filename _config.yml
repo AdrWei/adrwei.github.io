@@ -8,7 +8,6 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-redirect-from
-  - jekyll-tablegen
 
 # 默认布局设置
 defaults:
