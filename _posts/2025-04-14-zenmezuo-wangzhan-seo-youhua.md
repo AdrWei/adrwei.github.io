@@ -124,7 +124,7 @@ hidden: true  # 或 false
 </script>
 ```
 
-###2. 国际化SEO配置
+### 2. 国际化SEO配置
 - ​**hreflang标签**  
 ```html
   <!-- 英文主站 -->
