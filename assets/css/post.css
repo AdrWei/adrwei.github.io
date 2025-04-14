@@ -2,8 +2,6 @@
   margin-top: var(--header-height);
 }
 
-ul { all: unset; }
-
 /* 统一调整尺寸 */
 article.post h1{font-size:calc(var(--base-size)*2);}
 article.post h2{font-size:calc(var(--base-size)*1.5);}
@@ -24,10 +22,6 @@ article.post h1{
 
 article.post a{
   color: #007bff;
-}
-
-li::marker {
-    color: var(--VI-dark);
 }
 
 .data {
