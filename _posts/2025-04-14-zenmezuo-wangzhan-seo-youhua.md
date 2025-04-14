@@ -30,7 +30,7 @@ hidden: true  # 或 false
 * 挖掘长尾词（如`custom hotel bedroom furniture manufacturer`）  
 * 分析竞品关键词（用Ahrefs输入竞品域名）  
 
-####​**注意事项**  
+**注意事项**  
 * ✅ 优先选择搜索量**100-1000/月**、竞争度低的词  
 * ❌ 避免品牌词占比过高（超过30%）
 
