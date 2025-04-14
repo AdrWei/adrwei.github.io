@@ -114,7 +114,7 @@ meta:
       <div class="content-header">
         <h2>数据驱动运营/推广优化</h2>
         <p class="section-subheader">知道钱怎么花，才算得上投资</p>
-        <ul class="data-driven-list">
+        <ul class="page-list">
           <li>内容要怎么收集和运用？</li>
           <li>品牌运作的阻碍在哪？</li>
           <li>投出去的钱，都带来了多少回报？</li>
