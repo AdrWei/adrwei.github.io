@@ -4,7 +4,8 @@
 
 /* 统一调整尺寸 */
 article.post h1{font-size:calc(var(--base-size)*2);}
-article.post h2{font-size:calc(var(--base-size)*1.5);}
+article.post h2{font-size:calc(var(--base-size)*1.5);
+               padding-top:20px;}
 article.post h3{font-size:calc(var(--base-size)*1.2);}
 article.post h4 h5 h6 p{font-size:calc(var(--base-size)*1);
                 color:var(--VI-sub);}
