@@ -17,7 +17,7 @@ meta:
 <section class="section">
   <div class="column-layout">
     <div class="image-card">
-      <img src="{{ '/assets/images/AdrW.webp' | relative_url }}" alt="Adrian Wei">
+      <img src="{{ '/assets/images/profiles/adr-img.webp' | relative_url }}" alt="Adrian Wei">
     </div>
     <div class="two-column-content">
       <div class="content-header">
