@@ -24,6 +24,10 @@ article.post a{
   color: #007bff;
 }
 
+li::marker {
+    color: var(--VI-dark);
+}
+
 .data {
   display: flex;
   align-items: center;
