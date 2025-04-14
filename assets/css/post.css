@@ -55,6 +55,7 @@ article.post .content {
 }
 
 article.post .content img {
+  display:block;
   max-width: 100%; /* 图片最大宽度为容器宽度 */
   height: auto; /* 高度自动调整 */
   width:unset;
