@@ -10,6 +10,7 @@
   --VI-sub: #656565;
   --h-color: #333;    /* 标题颜色 */
   --p-color: #333;  /* 段落颜色 */
+  --link-color: #007bff;
 
   --header-height: 70px; /* 定义变量 */
    
@@ -265,7 +266,7 @@ display: block; /* 鼠标悬停时显示图片 */
 
 .breadcrumb a {
   text-decoration: none;
-  color: #007bff; /* 设置面包屑链接颜色 */
+  color: var(--link-color); /* 设置面包屑链接颜色 */
 }
 
 .breadcrumb a:hover {
@@ -740,6 +741,13 @@ button {
    color:white;
 }
 
+   .breadcrumb span{
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+   }
+   
    .banner, .content-banner {
      height: 50vh; /* 同时设置 banner 和 content-banner 的高度 */
      justify-content: center;
