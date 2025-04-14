@@ -8,6 +8,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-redirect-from
+  - jekyll-tablegen
 
 # 默认布局设置
 defaults:
@@ -35,8 +36,3 @@ include:
 
 # 添加permalink设置
 permalink: /blog/:categories/:title/
-
-# 添加Markdown渲染器配置
-markdown: kramdown
-kramdown:
-  input: GFM
