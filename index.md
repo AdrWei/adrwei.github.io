@@ -133,7 +133,7 @@ meta:
       <div class="content-header">
         <h2>方案定制，我们更懂你</h2>
         <p class="section-subheader">适合自己的才是最好的</p>
-        <p class="customized-text">
+        <p>
           自主运营人才难寻？本地团队水平堪忧？一线运营难以契合？品牌出海，选对团队至关重要。我们，为您扫清障碍。
         </p>
         
