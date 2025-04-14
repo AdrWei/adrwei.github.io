@@ -23,7 +23,7 @@ meta:
   <div class="column-layout">
     <div class="image-card">
       <img 
-        src="{{ '/assets/images/AdrW.webp' | relative_url }}" 
+        src="{{ '/assets/images/profiles/adr-img.webp' | relative_url }}" 
         alt="Adrian Wei"
         loading="lazy"
       >
