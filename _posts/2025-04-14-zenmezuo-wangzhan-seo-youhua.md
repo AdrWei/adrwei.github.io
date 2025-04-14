@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: null
 title: "网站搜索引擎优化 (SEO) 详细指南"
 date: 2022-08-04 10:27:00 +0800
 categories: [独立站]
