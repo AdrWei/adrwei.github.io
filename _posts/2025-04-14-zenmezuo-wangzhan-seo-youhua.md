@@ -72,13 +72,13 @@ hidden: true  # 或 false
 | FID (交互延迟)     | ≤100毫秒    | 减少第三方脚本            |
 | CLS (视觉稳定性)   | ≤0.1        | 预留图片/广告位空间       |
 
-##三、内容优化
-###1. 页面元素规范
+## 三、内容优化
+### 1. 页面元素规范
 **标题(Title)模板**  
 *[核心关键词] - [品牌词] | [差异化描述]  
 *示例：Hotel Furniture Manufacturer - YourBrand | Custom Solutions Since 2010
 
-####​**正文优化技巧**
+​**正文优化技巧**
 ✨ 使用结构化段落：
 ```html
 ## Why Choose Our Hotel Furniture?  
