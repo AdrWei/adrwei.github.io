@@ -63,7 +63,7 @@ p, li, button, .toggle-header:before, .section-fence p, .features li:before {
 p {
   color: var(--p-color);
   line-height: 1.6;
-  margin-top:0px;
+  margin-top: 0; 
 }
 
 a {
@@ -568,6 +568,10 @@ button {
 /* 各栏目样式 */
 .footer-col {
   margin-bottom: 30px;
+}
+
+.fotter-links {
+  padding-left: 0;
 }
 
 .footer-logo {
