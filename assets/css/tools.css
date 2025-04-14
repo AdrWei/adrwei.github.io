@@ -1,13 +1,13 @@
-.tool-content h2{
-    calc(var(--base-size)* 1.4);
+.tool-content h2 {
+    font-size: calc(var(--base-size)*1.4);
 }
 
 .tool-content a {
-    calc(var(--base-size)* 1.2);
+    font-size: calc(var(--base-size)*1.2);
 }
 
 .tool-info {
-    var(--base-size);
+    font-size: var(--base-size);
 }
 
 .tool-content {
