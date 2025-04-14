@@ -75,20 +75,6 @@ a:hover {
   color: var(--VI-dark);
 }
 
-ul {
-    display: flex;
-    list-style: disc;
-    flex-direction: column;
-    list-style-position: inside;
-    padding-inline-start:0px;
-    gap:5px;
-   padding-bottom:10px;
-}
-
-li::marker {
-  color: var(--VI-color); /* 设置列表项标记的颜色为红色 */
-}
-
 header {
    position: fixed;
    height: var(--header-height);
@@ -271,6 +257,20 @@ display: block; /* 鼠标悬停时显示图片 */
 
 .breadcrumb a:hover {
   text-decoration: underline;
+}
+
+.page-list {
+    display: flex;
+    list-style: disc;
+    flex-direction: column;
+    list-style-position: inside;
+    padding-inline-start:0px;
+    gap:5px;
+   padding-bottom:10px;
+}
+
+.page-list li::marker {
+  color: var(--VI-color); /* 设置列表项标记的颜色为红色 */
 }
 
 /* 按钮样式 */
