@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Jekyll MD使用指南
+title: "网站搜索引擎优化 (SEO) 详细指南"
 date: 2022-08-04 10:27:00 +0800
 categories: [独立站]
 tags: [实操]
 author: Aoke
-excerpt: ``
+excerpt: 想做好SEO却不知从何开始？Google官方指南与Ahrefs专业教程，手把手教你关键词挖掘、页面优化和流量增长方法！"
 hidden: true  # 或 false
 ---
 
