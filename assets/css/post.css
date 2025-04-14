@@ -76,6 +76,24 @@ article.post .content code {
   font-family: monospace; /* 代码字体 */
 }
 
+article.post .content table {
+  width: 100%; /* 设置表格宽度为容器宽度 */
+  border-collapse: collapse; /* 合并边框 */
+  margin: 1em 0; /* 设置表格上下外边距 */
+}
+
+article.post .content th,
+article.post .content td {
+  border: 1px solid #ddd; /* 设置单元格边框 */
+  padding: 8px; /* 设置单元格内边距 */
+  text-align: left; /* 设置文本对齐方式 */
+}
+
+article.post .content th {
+  background-color: #f2f2f2; /* 设置表头背景颜色 */
+  font-weight: bold; /* 设置表头字体加粗 */
+}
+
 @media (max-width: 768px) {
 /* 统一调整尺寸 */
 article.post h1{font-size:calc(var(--base-size)*1.5);}
