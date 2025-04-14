@@ -164,22 +164,19 @@ meta:
     <div class="image-card">
       <img src="{{ '/assets/images/团队合作理念.svg' | relative_url }}" alt="团队合作">
     </div>
-    
     <div class="two-column-content">
       <div class="content-header">
         <h2>深度合作，不局限于方案</h2>
         <p class="section-subheader">不止策划，我们也为您培训您的执行团队</p>
-        
         <div class="short-box">
-          <div class="text-box brand">品牌方案</div>
-          <div class="text-box industry">行业分析</div> 
-          <div class="text-box product">产品研究</div>          
-          <div class="text-box content">内容指导</div> 
-          <div class="text-box system">体系优化</div> 
-          <div class="text-box operation">运营流程</div>
-          <div class="text-box business">业务拓客</div>    
+          <div class="text-box" style="background-color: #89CFF0;">品牌方案</div>
+          <div class="text-box" style="background-color: #FFB366;">行业分析</div> 
+          <div class="text-box" style="background-color: #90EE90;">产品研究</div>          
+          <div class="text-box" style="background-color: #C8A2C8;">内容指导</div> 
+          <div class="text-box" style="background-color: #FFE4B5;">体系优化</div> 
+          <div class="text-box" style="background-color: #F08080;">运营流程</div>
+          <div class="text-box" style="background-color: #77D8D8;">业务拓客</div>    
         </div>
-        
         <button class="consult-button">立即咨询</button>
       </div>
     </div>
