@@ -15,8 +15,9 @@ meta:
     <div class="two-column-content">
       <div class="content-header">
         <h2>这是一个门户页面</h2>
-        <p class="section-subheader">后续会将其他页面链接到此处</p>
-        <button class="learn-more">了解更多</button>
+        <p class="section-subheader">暂时用于中转其他链接</p>
+        <button class="learn-more" onclick="window.location.href='https://adrwei.github.io/aokestudio';">橡树工作室</button>
+        <button class="learn-more" onclick="window.location.href='https://adrwei.github.io/hurricanechip';">飓芯科技</button>
       </div>
     </div>
   </div>
