@@ -25,11 +25,16 @@
  --base-size: 1rem;
 }
 
+main{
+   height:80vh;
+}
+
 /* 通用函数 */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+   height:80vh;
 }
 
 img {
@@ -76,8 +81,6 @@ a:hover {
 }
 
 header {
-   position: fixed;
-   height: var(--header-height);
    width: 100%;
    background-color: var(--VI-color); /* 背景颜色 */
    color: var(--VI-bright); /* 文字颜色 */
