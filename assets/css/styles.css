@@ -81,6 +81,7 @@ a:hover {
 }
 
 header {
+   height: var(--header-height);
    width: 100%;
    background-color: var(--VI-color); /* 背景颜色 */
    color: var(--VI-bright); /* 文字颜色 */
